@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: beatrice_page
 title:  "Welcome to Jekyll!"
 date:   2019-12-03 16:04:54 +0100
 categories: jekyll update

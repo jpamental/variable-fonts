@@ -1,0 +1,19 @@
+// HTML Elements
+// =============================================================================
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,86 @@
+
+// mq values (no unit)
+$bp--small-value: 28;
+$bp--medium-value: 45;
+$bp--large-value: 60;
+$bp--xlarge-value: 75;
+$bp--xxlarge-value: 80;
+
+@supports (font-variation-settings: normal) {
+  :root {
+
+    /* Breakpoint variables */
+    --bp-small: #{$bp--small-value};
+    --bp-medium: #{$bp--medium-value};
+    --bp-large: #{$bp--large-value};
+    --bp-xlarge: #{$bp--xlarge-value};
+    --bp-xxlarge: #{$bp--xxlarge-value};
+  
+    /* General text variables */
+    --text-wght: 400;
+    --text-opsz: 16;
+    --text-size-base: 16;
+    
+    /* Paragraph variables */
+    --p-line-height-min: 1.35;
+    --p-line-height-max: 1.5;
+    --p-font-size-min: 1;
+    --p-font-size-max: 1.25;
+    --p-vf-wght: 300;
+    --p-vf-opsz: 16;
+  
+    /* Super heading variables */
+    --hs-line-height-min: 1.1;
+    --hs-line-height-max: 1.1;
+    --hs-font-size-min: 2.75;
+    --hs-font-size-max: 4.5;
+    --hs-vf-wght-multiplier-s: .3334;
+    --hs-vf-wght-multiplier-m: .3334;
+    --hs-vf-wght-multiplier-l: .3334;
+  
+    /* H1 variables */
+    --h1-line-height-min: 1;
+    --h1-line-height-max: 1.05;
+    --h1-font-size-min: 2.25;
+    --h1-font-size-max: 4;
+    --h1-vf-wght-multiplier-s: 2.6;
+    --h1-vf-wght-multiplier-m: 2.7;
+    --h1-vf-wght-multiplier-l: 2.85;
+  
+    /* H2 variables */
+    --h2-line-height-min: 1;
+    --h2-line-height-max: 1.05;
+    --h2-font-size-min: 1.75;
+    --h2-font-size-max: 3;
+    --h2-vf-wght-multiplier-s: 2.25;
+    --h2-vf-wght-multiplier-m: 2.5;
+    --h2-vf-wght-multiplier-l: 2.65;
+  
+    /* H3 variables */
+    --h3-line-height-min: 1.05;
+    --h3-line-height-max: 1.1;
+    --h3-font-size-min: 1.65;
+    --h3-font-size-max: 2.5;
+    --h3-vf-wght-multiplier-s: 2.3;
+    --h3-vf-wght-multiplier-m: 2.4;
+    --h3-vf-wght-multiplier-l: 2.5;
+  
+    /* H4 variables */
+    --h4-line-height-min: 1.05;
+    --h4-line-height-max: 1.1;
+    --h4-font-size-min: 1.5;
+    --h4-font-size-max: 2;
+    --h4-vf-wght-multiplier-s: 2.3;
+    --h4-vf-wght-multiplier-m: 2.4;
+    --h4-vf-wght-multiplier-l: 2.5;
+  
+    /* H5 variables */
+    --h5-line-height-min: 1.1;
+    --h5-line-height-max: 1.15;
+    --h5-font-size-min: 1.25;
+    --h5-font-size-max: 1.5;
+    --h5-vf-wght-multiplier-s: 2;
+    --h5-vf-wght-multiplier-m: 2.1;
+    --h5-vf-wght-multiplier-l: 2.2;
+  }
+}

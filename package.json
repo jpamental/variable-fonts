@@ -1,0 +1,36 @@
+{
+  "name": "typography",
+  "version": "1.0.0",
+  "description": "Variable Fonts educational site",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/googlefonts/typography.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/googlefonts/typography/issues"
+  },
+  "homepage": "https://github.com/googlefonts/typography#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "browsersync": "0.0.1-security",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-util": "^3.0.8",
+    "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "@material/density": "^4.0.0",
+    "@material/drawer": "^4.0.0",
+    "@material/icon-button": "^4.0.0",
+    "@material/top-app-bar": "^4.0.0"
+  }
+}

@@ -1,0 +1,13 @@
+/**
+ * Breakpoint Configuration
+ *
+ */
+
+/* mq values are defined in 00_variables */
+
+// mq's in ems
+$bp--small: $bp--small-value * 1em;
+$bp--medium: $bp--medium-value * 1em;
+$bp--large: $bp--large-value * 1em;
+$bp--xlarge: $bp--xlarge-value * 1em;
+$bp--xxlarge: $bp--xxlarge-value * 1em;

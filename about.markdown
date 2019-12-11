@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: beatrice_page
 title: About
 permalink: /about/
 ---

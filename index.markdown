@@ -1,6 +1,6 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-layout: home
+layout: beatrice_page
 ---
+  <h1>Some stuff here</h1>
+  <p>And some text that goes with it</p>
