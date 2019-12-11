@@ -24,7 +24,7 @@
     <!-- Icons -->
     <link
       rel="shortcut icon"
-      href="/assets/img/google_fonts_lodp.ico"
+      href="{{ site.baseurl }}/assets/img/google_fonts_lodp.ico"
       type="image/x-icon"
     />
 
@@ -33,13 +33,13 @@
       rel="alternate"
       type="application/rss+xml"
       title="{{ site.name }} RSS Feed"
-      href="{{ '/feed.xml' | relative_url }}"
+      href="{{ '{{ site.baseurl }}/feed.xml' }}"
     />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css" />
 
-    <script src="/assets/js/vendor/fontfaceobserver.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/vendor/fontfaceobserver.js"></script>
     <script type="text/javascript">
   		(function() {
   			document.documentElement.className += " wf-inactive"; 
@@ -145,7 +145,7 @@
     {% else %}
     <meta
       name="twitter:image:src"
-      content="{{ '/assets/img/design/twitter-card.png' | absolute_url }}"
+      content="{{ '{{ site.baseurl }}/assets/img/design/twitter-card.png' | absolute_url }}"
     />
     {% endif %}
     <meta property="og:url" content="{{ page.url | absolute_url }}" />
@@ -164,7 +164,7 @@
     {% else %}
     <meta
       property="og:image"
-      content="{{ '/assets/img/design/og-card.png' | absolute_url }}"
+      content="{{ '{{ site.baseurl }}/assets/img/design/og-card.png' | absolute_url }}"
     />
     {% endif %}
     <meta
