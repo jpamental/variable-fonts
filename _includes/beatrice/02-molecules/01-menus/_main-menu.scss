@@ -1,0 +1,11 @@
+.vf-menu {
+  list-style: none;
+  &-item {
+    display: inline-block;
+
+  }
+  a {
+    display: block;
+    padding: 0.15rem 0.5rem 0.2rem;
+  }
+}
