@@ -13,26 +13,6 @@ const child = require('child_process');
 const gutil = require('gulp-util');
 const sassGlob = require('gulp-sass-glob');
 const webpack = require('webpack-stream');
-const del = require('del');
-
-const siteRoot = '_site';
-
-function reload(done) {
-  server.reload();
-  done();
-}
-
-function serve(done) {
-  server.init({
-    files: [siteRoot + '/**'],
-    port: 4000,
-    server: {
-      baseDir: siteRoot
-    }
-  });
-  watchTask();
-  done();
-}
 
 // File paths
 const files = { 
@@ -77,7 +57,7 @@ function jekyll(done) {
   const jekyll = child.spawn('bundle', ['exec',
     'jekyll',
     'serve'
-]);
+  ]);
 
   const jekyllLogger = (buffer) => {
     buffer.toString()
@@ -94,8 +74,7 @@ function jekyllBuild(done) {
   const jekyll = child.spawn('bundle', ['exec',
     'jekyll',
     'build'
-]);
-
+  ]);
 
   const jekyllLogger = (buffer) => {
     buffer.toString()
