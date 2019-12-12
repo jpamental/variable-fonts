@@ -9,3 +9,9 @@
 .mdc-top-app-bar {
   z-index: 7;
 }
+
+.mdc-top-app-bar {
+  --mdc-theme-primary: #ffffff;
+  border-bottom: solid 1px $color-gray-lighter;
+  color: $color-gray;
+}

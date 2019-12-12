@@ -1,0 +1,19 @@
+// Colors
+// =============================================================================
+
+$color-gray: #565656;
+$color-gray-dark: #4c4d41;
+$color-gray-light: #a9a9a9;
+$color-gray-lighter: #e9e9e9;
+$color-gray-lightest: #fafafa;
+
+$color-offwhite: #fafafc;
+
+$color-coral: #ff5252;
+
+/* functional assignments */
+
+$color-text: $color-gray-dark;
+$color-text-link: $color-coral;
+$color-text-link-visited: darken($color-coral, 15%);
+$color-text-link-hover: lighten($color-coral,10%);

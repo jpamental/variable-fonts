@@ -19,6 +19,8 @@
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "browsersync": "0.0.1-security",
+    "cssnano": "^4.1.10",
+    "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^4.0.2",
