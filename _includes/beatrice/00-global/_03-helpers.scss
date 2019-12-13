@@ -5,8 +5,8 @@
 $serif-fallback: Georgia, "Times New Roman", serif;
 $sans-serif-fallback: Helvetica, Arial, sans-serif;
 
-$serif-novf: $serif-fallback;
-$sans-serif-novf: $sans-serif-fallback;
+$serif-novf: "Roboto Slab", $serif-fallback;
+$sans-serif-novf: "Roboto", $sans-serif-fallback;
 
 $serif: "Roboto Slab Variable", $serif-fallback;
 $sans-serif: "Roboto Variable", $sans-serif-fallback;

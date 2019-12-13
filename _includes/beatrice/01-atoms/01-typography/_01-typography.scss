@@ -20,5 +20,8 @@ html {
 }
 
 body {
-  font-family: $sans-serif;
+  font-family: $sans-serif-novf;
+  @supports (font-variation-settings: normal) {
+    font-family: $sans-serif;
+  }
 }
