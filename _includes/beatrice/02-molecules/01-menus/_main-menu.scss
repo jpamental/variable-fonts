@@ -1,11 +1,28 @@
+
+
 .vf-menu {
   list-style: none;
+  margin: 2rem 0 0 1rem;
+  padding: 0;
+  @media (min-width: $bp--large) {
+    height: 100%;
+    margin: 0;
+  }
   &-item {
-    display: inline-block;
+    display: block;
+    @media (min-width: $bp--large) {
+      display: inline-block;
+      height: 100%;
+    }
 
   }
   a {
     display: block;
     padding: 0.15rem 0.5rem 0.2rem;
+    @media (min-width: $bp--large) {
+      display: flex;
+      height: 100%;
+      align-items: center;
+    }
   }
 }

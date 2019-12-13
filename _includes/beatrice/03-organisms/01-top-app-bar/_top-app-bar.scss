@@ -5,21 +5,25 @@
   position: absolute;
 }
 
-// only apply this style if below top app bar
-.mdc-top-app-bar {
-  z-index: 7;
-}
-
 .mdc-top-app-bar {
   --mdc-theme-primary: #ffffff;
+  --mdc-theme-on-primary: $color-gray;
   border-bottom: solid 1px $color-gray-lighter;
   color: $color-gray;
-}
-
-.mdc-top-app-bar__title {
-  font-family: $sans-serif-novf;
-  @supports (font-variation-settings: normal) {
-    font-family: $sans-serif;
-    font-weight: 525;
+  &__row {
+    height: 4rem;
+  }
+  &__navigation-icon.material-icons {
+    @media (min-width: $bp--large) {
+      display: none;
+    }
+  }
+  &__title {
+    font-family: $sans-serif-novf;
+    @supports (font-variation-settings: normal) {
+      font-family: $sans-serif;
+      font-weight: 525;
+    }
   }
 }
+

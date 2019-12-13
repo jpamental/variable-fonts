@@ -1,4 +1,26 @@
 @import "@material/drawer/mdc-drawer";
 @import "@material/list/mdc-list";
 
+.mdc-drawer {
+  width: 85vw;
+  @media (min-width: $bp--large) {
+    background-color: transparent;
+    width: auto;
+  }
+  &__content {
+    @media (min-width: $bp--large) {
+      height: 4rem;
+    }
+  }
+  &--modal {
+    @media (min-width: $bp--large) {
+      border: none;
+      box-shadow: none;
+      display: block;
+      height: auto;
+      left: auto;
+      right: 0;
+    }
+  }
+}
 
