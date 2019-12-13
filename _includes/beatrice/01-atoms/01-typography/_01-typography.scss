@@ -25,3 +25,153 @@ body {
     font-family: $sans-serif;
   }
 }
+
+p, 
+th, 
+td, 
+li {
+	font-family: $sans-serif-novf;
+	font-weight: normal;
+  font-style: normal;
+  .wf-inactive & {
+	  font-family: $sans-serif-fallback;
+  }
+  @supports (font-variation-settings: normal) {
+    font-family: $sans-serif;
+  	font-weight: var(--p-vf-wght);
+    font-style: normal;
+    font-variation-settings: 'opsz' var(--text-opsz);
+  }
+}
+
+
+p {
+  @include text-body;
+  @include content-width;
+  margin-top: 0;
+  margin-bottom: var(--body-text-spacer);
+  -webkit-hyphens: auto;
+  hyphens: auto;
+
+  .wf-inactive & {
+	  font-size: 1.075em;
+	  line-height: 1.125;
+	  word-spacing: -0.75px;
+  }
+  @media screen and (min-width: $bp--small) {
+    .wf-inactive & {
+      line-height: 1.2;
+    }
+  }
+  @media screen and (min-width: $bp--medium) {
+    -webkit-hyphens: none;
+    hyphens: none;
+    .wf-inactive & {
+      font-size: 1.1em;
+      line-height: 1.375;
+      word-spacing: -1px;
+        }
+  }
+  @media (min-width: $bp--large) {
+    .wf-inactive & {
+  	  font-size: 1.1em;
+      line-height: 1.4;
+      word-spacing: 1.75px;
+    }
+  }
+  @media (min-width: $bp--xxlarge) {
+    .wf-inactive & {
+  	  font-size: 1.25em;
+  	  line-height: 1.3;
+  	  letter-spacing: 0.25px;
+  	  word-spacing: normal;
+    }
+  }
+  @supports (font-variation-settings: normal) {
+    --text-opsz: calc( var(--p-font-size-min) * var(--text-size-base) );
+    font-size: calc( var(--p-font-size-min) * 1rem );
+    font-weight: var(--p-vf-wght);
+    line-height: var(--p-line-height-min);
+    @media screen and (min-width: $bp--small) {
+      line-height: calc(( var(--p-line-height-min) * 1em ) + ( var(--p-line-height-max) - var(--p-line-height-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-large) - var(--bp-small) )));
+    }
+    @media (min-width: $bp--large) {
+      font-size: calc(( var(--p-font-size-min) * 1em ) + ( var(--p-font-size-max) - var(--p-font-size-min) ) * ((100vw - ( var(--bp-large) * 1em )) / ( var(--bp-xxlarge) - var(--bp-large) )));
+      line-height: var(--p-line-height-max);
+    }
+    @media (min-width: $bp--xxlarge) {
+      --text-opsz: calc( var(--p-font-size-max) * var(--text-size-base) );
+      font-size: calc( var(--p-font-size-max) * 1em );
+    }    
+  }
+}
+
+strong {
+  font-weight: calc(var(--p-vf-wght) * 2.125);
+}
+
+
+h1 {
+	@include text-xlarge;
+	font-family: $serif-novf;
+  font-weight: 300;
+  margin-top: calc( var(--body-text-spacer) * 2 );
+  margin-bottom: calc( var(--body-text-spacer) * 1.5 );
+  .wf-inactive & {
+	  font-family: $serif-fallback;
+	  letter-spacing: -.5px;
+  }
+  @media screen and (min-width: $bp--medium) {
+    .wf-inactive & {
+  	  letter-spacing: normal;
+    }
+  }
+  @media screen and (min-width: $bp--large) {
+    .wf-inactive & {
+      font-size: 3rem;
+    }
+  }
+  @media (min-width: $bp--xxlarge) {
+    .wf-inactive & {
+      font-size: 4.05em;
+    }
+  }
+  @supports (font-variation-settings: normal) {
+    font-family: $serif;
+    font-weight: calc( var(--p-vf-wght) * var(--h1-vf-wght-multiplier-s) );
+    font-size: calc( var(--h1-font-size-min) * 1em );
+    font-style: normal;
+    line-height: var(--h1-line-height-min);
+    .wf-inactive & {
+      
+    }
+    @media screen and (min-width: $bp--small) {
+      line-height: calc(( var(--h1-line-height-min) * 1em ) + ( var(--h1-line-height-max) - var(--h1-line-height-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-xxlarge) - var(--bp-small) )));
+      font-size: calc(( var(--h1-font-size-min) * 1em ) + ( var(--h1-font-size-max) - var(--h1-font-size-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-xxlarge) - var(--bp-small) )));
+      .wf-inactive & {
+        font-size: calc(( var(--h1-font-size-min) * 1em ) + ( var(--h1-font-size-max) - var(--h1-font-size-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-xxlarge) - var(--bp-small) )));
+
+      }
+    }
+    @media screen and (min-width: $bp--medium) {
+      font-weight: calc( var(--p-vf-wght) * var(--h1-vf-wght-multiplier-m) );
+      .wf-inactive & {
+        
+      }
+    }
+    @media screen and (min-width: $bp--large) {
+      font-stretch: 90%;
+    }
+    @media (min-width: $bp--xlarge) {
+      font-weight: calc( var(--p-vf-wght) * var(--h1-vf-wght-multiplier-l) );
+      .wf-inactive & {
+        
+      }
+    }
+    @media (min-width: $bp--xxlarge) {
+      font-size: calc( var(--h1-font-size-max) * 1em );
+      line-height: var(--h1-line-height-max);
+    }
+  
+  }
+}

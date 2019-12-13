@@ -64,24 +64,16 @@
   			}
         
         if( vfSupport == true ) {
-					var fontA = new FontFaceObserver('Portada VF', {
+					var fontA = new FontFaceObserver('Roboto Slab Variable', {
 						weight: 400,
 						style: 'normal'
 					});
-					var fontB = new FontFaceObserver('Portada VF', {
+					var fontB = new FontFaceObserver('Roboto Variable', {
 							weight: 400,
-							style: 'italic'
+							style: 'normal'
 						});
-          var fontC = new FontFaceObserver('Proxima Nova VF', {
-            weight: 400,
-            style: 'normal'
-					});
-					var fontD = new FontFaceObserver('Proxima Nova VF', {
-						weight: 400,
-						style: 'italic'
-					});
 			
-					Promise.all([fontA.load(), fontB.load(), fontC.load(), fontD.load()]).then(function () {
+					Promise.all([fontA.load(), fontB.load()]).then(function () {
             document.documentElement.classList.remove("wf-inactive");
             document.documentElement.classList.add("wf-active");
           
@@ -89,28 +81,32 @@
     				sessionStorage.foutFontsLoaded = true;
   				});
         } else {
-					var fontA = new FontFaceObserver('Source Serif Pro', {
-							weight: 300,
+					var fontA = new FontFaceObserver('Roboto Slab', {
+							weight: 'normal',
 							style: 'normal'
 						});
-					var fontB = new FontFaceObserver('Source Serif Pro', {
-							weight: 400,
+					var fontB = new FontFaceObserver('Roboto Slab', {
+							weight: 'bold',
 							style: 'normal'
 						});
-					var fontC = new FontFaceObserver('Source Serif Pro', {
-							weight: 600,
+					var fontC = new FontFaceObserver('Roboto', {
+							weight: 'normal',
 							style: 'normal'
 						});
-					var fontD = new FontFaceObserver('Source Serif Pro', {
-							weight: 400,
+					var fontD = new FontFaceObserver('Roboto', {
+							weight: 'normal',
 							style: 'italic'
 						});
-					var fontE = new FontFaceObserver('Source Serif Pro', {
-							weight: 600,
+          var fontE = new FontFaceObserver('Roboto', {
+							weight: 'bold,
+							style: 'normal'
+						});
+					var fontF = new FontFaceObserver('Roboto', {
+							weight: 'bold,
 							style: 'italic'
 						});
 
-					Promise.all([fontA.load(), fontB.load(), fontC.load(), fontD.load(), fontE.load()]).then(function () {
+					Promise.all([fontA.load(), fontB.load(), fontC.load(), fontD.load(), fontE.load(), fontF.load()]).then(function () {
             document.documentElement.classList.remove("wf-inactive");
             document.documentElement.classList.add("wf-active");
           

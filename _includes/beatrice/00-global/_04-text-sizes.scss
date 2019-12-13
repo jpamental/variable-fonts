@@ -1,0 +1,116 @@
+// CONVERT PX TO REMS
+// =============================================================================
+$browser-context: 16;
+
+@function rem($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
+
+// Mixins to use everywhere you need to set font size.
+@mixin text-xxlarge() {
+  font-size: rem(44);
+
+	@media only screen and (min-width: $bp--medium) {
+    font-size: rem(56);
+  }
+
+	@media only screen and (min-width: $bp--xxlarge) {
+    font-size: rem(72);
+  }
+}
+
+@mixin text-xlarge() {
+  font-size: rem(40);
+
+	@media only screen and (min-width: $bp--medium) {
+    font-size: rem(48);
+  }
+
+  @media only screen and (min-width: $bp--xxlarge) {
+    font-size: rem(64);
+  }
+}
+
+@mixin text-large() {
+  font-size: rem(32);
+
+	@media only screen and (min-width: $bp--medium) {
+    font-size: rem(40);
+  }
+
+  @media only screen and (min-width: $bp--xxlarge) {
+    font-size: rem(48);
+  }
+}
+
+@mixin text-mlarge() {
+  font-size: rem(24);
+
+	@media only screen and (min-width: $bp--medium) {
+    font-size: rem(28);
+  }
+
+  @media only screen and (min-width: $bp--xxlarge) {
+    font-size: rem(32);
+  }
+}
+
+@mixin text-medium() {
+  font-size: rem(21);
+
+	@media only screen and (min-width: $bp--medium) {
+    font-size: rem(22);
+  }
+
+  @media only screen and (min-width: $bp--xxlarge) {
+    font-size: rem(24);
+  }
+}
+
+@mixin text-smedium() {
+  font-size: rem(19);
+
+  @media only screen and (min-width: $bp--medium) {
+    font-size: rem(20);
+  }
+}
+
+@mixin text-body() {
+  font-size: rem(16);
+
+  @media only screen and (min-width: $bp--medium) {
+    font-size: rem(18);
+  }
+
+  @media only screen and (min-width: $bp--large) {
+    font-size: rem(18);
+  }
+
+  @media only screen and (min-width: $bp--xxlarge) {
+    font-size: rem(20);
+  }
+}
+
+@mixin text-small() {
+  font-size: rem(14);
+
+  @media only screen and (min-width: $bp--large) {
+    font-size: rem(16);
+  }
+}
+
+@mixin text-xsmall() {
+  font-size: rem(14);
+
+  @media only screen and (min-width: $bp--large) {
+    font-size: rem(14);
+  }
+}
