@@ -4,7 +4,8 @@ $bp--small-value: 28;
 $bp--medium-value: 45;
 $bp--large-value: 60;
 $bp--xlarge-value: 75;
-$bp--xxlarge-value: 80;
+$bp--xxlarge-value: 90;
+$bp--xxxlarge-value: 110;
 
 @supports (font-variation-settings: normal) {
   :root {
@@ -15,10 +16,10 @@ $bp--xxlarge-value: 80;
     --bp-large: #{$bp--large-value};
     --bp-xlarge: #{$bp--xlarge-value};
     --bp-xxlarge: #{$bp--xxlarge-value};
+    --bp-xxxlarge: #{$bp--xxxlarge-value};
   
     /* General text variables */
     --text-wght: 400;
-    --text-opsz: 16;
     --text-size-base: 16;
     
     /* Paragraph variables */
@@ -28,15 +29,6 @@ $bp--xxlarge-value: 80;
     --p-font-size-max: 1.25;
     --p-vf-wght: 300;
     --p-vf-opsz: 16;
-  
-    /* Super heading variables */
-    --hs-line-height-min: 1.1;
-    --hs-line-height-max: 1.1;
-    --hs-font-size-min: 2.75;
-    --hs-font-size-max: 4.5;
-    --hs-vf-wght-multiplier-s: .3334;
-    --hs-vf-wght-multiplier-m: .3334;
-    --hs-vf-wght-multiplier-l: .3334;
   
     /* H1 variables */
     --h1-line-height-min: 1;

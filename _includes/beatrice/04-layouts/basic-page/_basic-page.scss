@@ -1,0 +1,31 @@
+/* Material styles */
+.mdc-drawer-app-content {
+  flex: auto;
+  overflow: auto;
+  position: relative;
+}
+
+.main-content {
+  height: 100%;
+  overflow: auto;
+}
+
+/* Site styles */
+.vf-content-wrapper {
+  width: 100%;
+}
+
+.vf-main-content {
+  margin: 0 auto;
+  max-width: 96vw;
+  @media screen and (min-width: $bp--medium) {
+    max-width: 94vw;
+  }
+  @media screen and (min-width: $bp--large) {
+    max-width: 90vw;
+  }
+  @media screen and (min-width: $bp--xxxlarge) {
+    max-width: 90rem;
+  }
+}
+

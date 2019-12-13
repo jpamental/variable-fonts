@@ -2,11 +2,9 @@
 
 {% include beatrice/header.html %}
 
-<div class="mdc-drawer-app-content mdc-top-app-bar--fixed-adjust">
-  <main class="main-content" id="main-content">
-    {{ content }}
-  </main>
-</div>
+{% include beatrice/04-layouts/basic-page/basic-page.html
+  content = content
+%}
 
 {% include beatrice/footer.html %}
 

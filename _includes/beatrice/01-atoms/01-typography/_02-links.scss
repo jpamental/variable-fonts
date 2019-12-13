@@ -1,0 +1,53 @@
+// Links
+// =============================================================================
+
+a {
+  text-decoration-skip-ink: auto;
+  &:link {
+    color: $color-text-link;
+    text-decoration: underline;
+    text-decoration-skip-ink: auto;
+
+  }
+  &:visited,
+  &.visited {
+    color: $color-text-link-visited;
+    text-decoration: underline;
+    text-decoration-skip-ink: auto;
+  }
+  &:hover {
+    color: $color-text-link-hover;
+    text-decoration: underline;
+    text-decoration-skip-ink: auto;
+  }
+  &:focus {
+    color: $color-text-link-hover;
+    text-decoration: underline;
+    text-decoration-skip-ink: auto;
+  }
+  &:active {
+    color: $color-text-link-hover;
+    text-decoration: underline;
+    text-decoration-skip-ink: auto;
+  }
+}
+
+@supports (text-decoration-thickness: 1em) {
+  a {
+    &:link,
+    &:visited {
+      background-image: none;
+      text-decoration: underline;
+      text-shadow: none;
+      /* this below is so new it's not even in the editor's draft of the spec yet */
+      text-decoration-thickness: 0.05em;
+      text-underline-offset: .075em;
+      transition: all .2s ease; 
+      /* just to smooth the effect on hover */
+    }
+    &:hover,
+    &:focus {
+      text-decoration-thickness: 0.15em;
+    }
+  }
+}

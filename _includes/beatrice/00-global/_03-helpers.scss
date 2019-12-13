@@ -1,0 +1,49 @@
+// Helper mixins
+// =============================================================================
+
+// Font stacks
+$serif-fallback: Georgia, "Times New Roman", serif;
+$sans-serif-fallback: Helvetica, Arial, sans-serif;
+
+$serif-novf: $serif-fallback;
+$sans-serif-novf: $sans-serif-fallback;
+
+$serif: "Roboto Slab Variable", $serif-fallback;
+$sans-serif: "Roboto Variable", $sans-serif-fallback;
+
+@mixin content-width() {
+  max-width: 40rem;
+
+  @media screen and (min-width: $bp--large) {
+    max-width: 42rem;
+  }
+
+  @media screen and (min-width: $bp--xlarge) {
+    max-width: 44rem;
+  }
+}
+:root {
+  --content-width: 40rem;
+
+  @media screen and (min-width: $bp--large) {
+    --content-width: 42rem;
+  }
+
+  @media screen and (min-width: $bp--xlarge) {
+    --content-width: 44rem;
+  }
+}
+
+.visually-hidden:not(:focus):not(:active) { 
+  position: absolute !important;
+  height: 1px; 
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
+}
+
+.vertical-center-flex {
+  align-self: center;
+}

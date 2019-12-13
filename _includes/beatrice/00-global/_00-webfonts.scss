@@ -1,0 +1,20 @@
+
+/* Variable fonts */
+@font-face{
+  font-family: 'Roboto Slab Variable';
+  font-weight: 100 900; /* default: 400 */
+  font-style: normal;
+  font-stretch: normal;
+  src: url('../fonts/RobotoSlab.woff2') format('woff2 supports variations'), url('../fonts/RobotoSlab.woff2') format('woff2-variations');
+  /* opsz: 14-36 */
+}
+
+@font-face{
+  font-family: 'Roboto Variable';
+  font-weight: 100 900; /* default: 400 */
+  font-style: normal;
+  font-stretch: 75% 125%; /* default: 100% */
+  src: url('../fonts/RobotoDelta_v2-VF.woff2') format('woff2 supports variations'), url('../fonts/RobotoDelta_v2-VF.woff2') format('woff2-variations');
+  /* opsz: 8-144, 12 default */
+  /* GRAD: -1 - 1, 0 default */
+}
