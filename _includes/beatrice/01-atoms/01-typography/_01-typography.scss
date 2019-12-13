@@ -175,3 +175,238 @@ h1 {
   
   }
 }
+
+h2 {
+	@include text-large;
+	font-family: $serif-novf;
+	font-weight: 300;
+  margin-top: 1.5rem;
+  margin-bottom: var(--body-text-spacer);
+  max-width: var(--content-width);
+  .wf-inactive & {
+	  font-family: $serif-fallback;
+	  letter-spacing: -.75px;
+  }
+  @media screen and (min-width: $bp--medium) {
+    .wf-inactive & {
+  	  letter-spacing: 0.5px;
+  	  word-spacing: -1px;
+    }
+  }
+  @media (min-width: $bp--xlarge) {
+    .wf-inactive & {
+  	  letter-spacing: 0.5px;
+    }
+  }
+  p + & {
+    margin-top: 2rem;
+  }
+  @supports (font-variation-settings: normal) {
+  	font-family: $serif;
+    font-size: calc( var(--h2-font-size-min) * 1em );
+  	font-weight: calc( var(--p-vf-wght) * var(--h2-vf-wght-multiplier-s) );
+    line-height: var(--h2-line-height-min);
+    .wf-inactive & {
+  	  
+    }
+    @media screen and (min-width: $bp--small) {
+      line-height: calc(( var(--h2-line-height-min) * 1em ) + ( var(--h2-line-height-max) - var(--h2-line-height-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-xxlarge) - var(--bp-small) )));
+      font-size: calc(( var(--h2-font-size-min) * 1em ) + ( var(--h2-font-size-max) - var(--h2-font-size-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-xxlarge) - var(--bp-small) )));
+      .wf-inactive & {
+    	  font-size: calc(( var(--h2-font-size-min) * 1em ) + ( var(--h2-font-size-max) - var(--h2-font-size-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-xxlarge) - var(--bp-small) )));
+      }
+    }
+    @media screen and (min-width: $bp--medium) {
+      font-weight: calc( var(--p-vf-wght) * var(--h2-vf-wght-multiplier-m) );
+    }
+    @media screen and (min-width: $bp--large) {
+
+    }
+    @media (min-width: $bp--xlarge) {
+      font-weight: calc( var(--p-vf-wght) * var(--h2-vf-wght-multiplier-l) );
+    }
+    @media (min-width: $bp--xxlarge) {
+      font-size: calc( var(--h2-font-size-max) * 1em );
+      line-height: var(--h2-line-height-max);
+    }
+  }
+}
+
+h3 {
+	@include text-mlarge;
+  @include content-width;
+	font-family: $serif-novf;
+	font-weight: 400;
+  margin-top: 0;
+  margin-bottom: calc( var(--body-text-spacer) / 2 );
+  .wf-inactive & {
+	  font-family: $serif-fallback;
+	  letter-spacing: -.75px;
+  }
+  @media screen and (min-width: $bp--medium) {
+    .wf-inactive & {
+  	  letter-spacing: 0.5px;
+  	  word-spacing: -1px;
+    }
+  }
+  @media screen and (min-width: $bp--large) {
+    .wf-inactive & {
+  	  letter-spacing: 0.5px;
+  	  word-spacing: -1px;
+    }
+  }
+  @media (min-width: $bp--xlarge) {
+    .wf-inactive & {
+  	  letter-spacing: 0.5px;
+  	  word-spacing: -1px;
+    }
+  }
+  p + & {
+    margin-top: 1.5rem;
+  }
+  @supports (font-variation-settings: normal) {
+    font-family: $serif;
+    font-size: calc( var(--h3-font-size-min) * 1em );
+  	font-weight: calc( var(--p-vf-wght) * var(--h3-vf-wght-multiplier-s) );
+    line-height: var(--h3-line-height-min);
+    .wf-inactive & {
+  	  
+    }
+    @media screen and (min-width: $bp--small) {
+      line-height: calc(( var(--h3-line-height-min) * 1em ) + ( var(--h3-line-height-max) - var(--h3-line-height-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-xxlarge) - var(--bp-small) )));
+      font-size: calc(( var(--h3-font-size-min) * 1em ) + ( var(--h3-font-size-max) - var(--h3-font-size-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-xxlarge) - var(--bp-small) )));
+      .wf-inactive & {
+    	  font-size: calc(( var(--h3-font-size-min) * 1em ) + ( var(--h3-font-size-max) - var(--h3-font-size-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-xxlarge) - var(--bp-small) )));
+      }
+    }
+    @media screen and (min-width: $bp--medium) {
+      font-weight: calc( var(--p-vf-wght) * var(--h3-vf-wght-multiplier-m) );
+    }
+    @media screen and (min-width: $bp--large) {
+
+    }
+    @media (min-width: $bp--xlarge) {
+      font-weight: calc( var(--p-vf-wght) * var(--h3-vf-wght-multiplier-l) );
+    }
+    @media (min-width: $bp--xxlarge) {
+      font-size: calc( var(--h3-font-size-max) * 1em );
+      line-height: var(--h3-line-height-max);
+    }
+  }
+}
+
+h4 {
+	@include text-medium;
+  @include content-width;
+	font-family: $sans-serif-novf;
+	font-weight: bold;
+  margin-top: 0;
+  margin-bottom: calc( var(--body-text-spacer) / 4 );
+  .wf-inactive & {
+	  font-family: $sans-serif-fallback;
+	  letter-spacing: -.75px;
+  }
+  @media screen and (min-width: $bp--medium) {
+    margin-bottom: calc( var(--body-text-spacer) / 2 );
+    .wf-inactive & {
+  	  letter-spacing: -1px;
+    }
+  }
+  @media (min-width: $bp--xlarge) {
+    .wf-inactive & {
+  	  letter-spacing: -1px;
+  	  word-spacing: -1px;
+    }
+  }
+  p + & {
+    margin-top: 1rem;
+  }
+  @supports (font-variation-settings: normal) {
+  	font-family: $sans-serif;
+    font-size: calc( var(--h4-font-size-min) * 1em );
+    font-stretch: 80%;
+  	font-weight: calc( var(--p-vf-wght) * var(--h4-vf-wght-multiplier-s) );
+    line-height: var(--h4-line-height-min);
+    .wf-inactive & {
+  	  
+    }
+    @media screen and (min-width: $bp--small) {
+      line-height: calc(( var(--h4-line-height-min) * 1em ) + ( var(--h4-line-height-max) - var(--h4-line-height-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-xxlarge) - var(--bp-small) )));
+      font-size: calc(( var(--h4-font-size-min) * 1em ) + ( var(--h4-font-size-max) - var(--h4-font-size-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-xxlarge) - var(--bp-small) )));
+      .wf-inactive & {
+    	  font-size: calc(( var(--h4-font-size-min) * 1em ) + ( var(--h4-font-size-max) - var(--h4-font-size-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-xxlarge) - var(--bp-small) )));
+      }
+    }
+    @media screen and (min-width: $bp--medium) {
+      font-weight: calc( var(--p-vf-wght) * var(--h4-vf-wght-multiplier-m) );
+    }
+    @media screen and (min-width: $bp--large) {
+
+    }
+    @media (min-width: $bp--xlarge) {
+      font-weight: calc( var(--p-vf-wght) * var(--h4-vf-wght-multiplier-l) );
+    }
+    @media (min-width: $bp--xxlarge) {
+      font-size: calc( var(--h4-font-size-max) * 1em );
+      line-height: var(--h4-line-height-max);
+    }
+  }
+}
+
+h5 {
+	@include text-medium;
+  @include content-width;
+	font-family: $sans-serif-novf;
+	font-weight: bold;
+  margin-top: 0;
+  margin-bottom: calc( var(--body-text-spacer) / 4 );
+  .wf-inactive & {
+	  font-family: $serif-fallback;
+	  letter-spacing: -.75px;
+  }
+  @media screen and (min-width: $bp--medium) {
+    margin-bottom: calc( var(--body-text-spacer) / 2 );
+    .wf-inactive & {
+  	  letter-spacing: -1px;
+    }
+  }
+  @media (min-width: $bp--xlarge) {
+    .wf-inactive & {
+  	  letter-spacing: -1px;
+  	  word-spacing: -1px;
+    }
+  }
+  p + & {
+    margin-top: 1rem;
+  }
+  @supports (font-variation-settings: normal) {
+  	font-family: $sans-serif;
+    font-size: calc( var(--h5-font-size-min) * 1em );
+    font-stretch: 90%;
+  	font-weight: calc( var(--p-vf-wght) * var(--h5-vf-wght-multiplier-s) );
+    line-height: var(--h5-line-height-min);
+    .wf-inactive & {
+  	  
+    }
+    @media screen and (min-width: $bp--small) {
+      line-height: calc(( var(--h5-line-height-min) * 1em ) + ( var(--h5-line-height-max) - var(--h5-line-height-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-xxlarge) - var(--bp-small) )));
+      font-size: calc(( var(--h5-font-size-min) * 1em ) + ( var(--h5-font-size-max) - var(--h5-font-size-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-xxlarge) - var(--bp-small) )));
+      .wf-inactive & {
+    	  font-size: calc(( var(--h5-font-size-min) * 1em ) + ( var(--h5-font-size-max) - var(--h5-font-size-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-xxlarge) - var(--bp-small) )));
+      }
+    }
+    @media screen and (min-width: $bp--medium) {
+      font-weight: calc( var(--p-vf-wght) * var(--h5-vf-wght-multiplier-m) );
+    }
+    @media screen and (min-width: $bp--large) {
+
+    }
+    @media (min-width: $bp--xlarge) {
+      font-weight: calc( var(--p-vf-wght) * var(--h5-vf-wght-multiplier-l) );
+    }
+    @media (min-width: $bp--xxlarge) {
+      font-size: calc( var(--h5-font-size-max) * 1em );
+      line-height: var(--h5-line-height-max);
+    }
+  }
+}
