@@ -15,5 +15,7 @@ $color-coral: #ff5252;
 
 $color-text: $color-gray-dark;
 $color-text-link: $color-coral;
-$color-text-link-visited: darken($color-coral, 15%);
-$color-text-link-hover: lighten($color-coral,10%);
+$color-text-link-visited: lighten($color-coral, 7.5%);
+$color-text-link-hover: darken($color-coral,10%);
+$color-text-link-focus: darken($color-coral,10%);
+$color-text-link-active: darken($color-coral,10%);

@@ -107,7 +107,17 @@ p {
 }
 
 strong {
-  font-weight: calc(var(--p-vf-wght) * 2.125);
+  @supports (font-variation-settings: normal) {
+    font-synthesis: none;
+    font-weight: calc(var(--p-vf-wght) * 2.125);
+  }
+}
+
+em {
+  @supports (font-variation-settings: normal) {
+    font-synthesis: none;
+    font-weight: calc(var(--p-vf-wght) * 1.35);
+  }
 }
 
 
@@ -158,9 +168,6 @@ h1 {
       .wf-inactive & {
         
       }
-    }
-    @media screen and (min-width: $bp--large) {
-      font-stretch: 90%;
     }
     @media (min-width: $bp--xlarge) {
       font-weight: calc( var(--p-vf-wght) * var(--h1-vf-wght-multiplier-l) );

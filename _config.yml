@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: A Variable Fonts Design & Development Primer
+title: A Variable Fonts Primer
 email: jason@rwt.io
 description: >- # this means to ignore newlines until "baseurl:"
   A site devoted to teaching about variable fonts, what they are, why to 
