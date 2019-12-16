@@ -214,7 +214,7 @@ h2 {
   	font-weight: calc( var(--p-vf-wght) * var(--h2-vf-wght-multiplier-s) );
     line-height: var(--h2-line-height-min);
     .wf-inactive & {
-  	  
+  	  /* loading styles here */
     }
     @media screen and (min-width: $bp--small) {
       line-height: calc(( var(--h2-line-height-min) * 1em ) + ( var(--h2-line-height-max) - var(--h2-line-height-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-xxlarge) - var(--bp-small) )));
@@ -268,7 +268,7 @@ h3 {
   	  word-spacing: -1px;
     }
   }
- * + & {
+  * + & {
     margin-top: calc( var(--body-text-spacer) * 2 );
   }
   @supports (font-variation-settings: normal) {
@@ -279,6 +279,7 @@ h3 {
     .wf-inactive & {
   	  
     }
+
     @media screen and (min-width: $bp--small) {
       line-height: calc(( var(--h3-line-height-min) * 1em ) + ( var(--h3-line-height-max) - var(--h3-line-height-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-xxlarge) - var(--bp-small) )));
       font-size: calc(( var(--h3-font-size-min) * 1em ) + ( var(--h3-font-size-max) - var(--h3-font-size-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-xxlarge) - var(--bp-small) )));

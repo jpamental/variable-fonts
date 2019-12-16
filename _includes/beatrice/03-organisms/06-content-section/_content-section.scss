@@ -6,14 +6,17 @@
     }
   }
   @media (min-width: $bp--medium) {
-  &--main {
+    &--main {
       padding-right: 2rem;
+      .content-section--aside + & {
+        padding-top: calc( var(--body-text-spacer) * 2 );
+      }
     }
     &--aside {
       padding-left: 2rem;
     }
   }
   + .content-section {
-    margin-top: calc( var(--body-text-spacer) * 2 );
+    margin-top: calc( var(--body-text-spacer) * 3 );
   }
 }
