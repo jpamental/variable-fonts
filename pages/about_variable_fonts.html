@@ -4,3 +4,56 @@ title: "All About Variable Fonts"
 permalink: about-variable-fonts
 ---
 <h1>{{ page.title }}</h1>
+
+
+<section class="content-section">
+<h2>Weight</h2>
+  <div class="content-section--grid">
+    <div class="content-section--main">
+      <p>Probably the most obvious axis is weight—since almost every typeface is designed with at least regular and bold weights, and quite often much lighter/thinner and bolder extremes. With a variable font, you can use the standard attribute of font-weight and supply a number somewhere between the minimum and maximum value defined for the font rather than just a keyword like normal or bold. According to the OpenType specification, 400 should equate to normal for any given font, but in practice you’ll see that at the moment it can be quite varied by typeface.</p>
+
+<pre class="prettyprint">
+  p {
+    font-weight: 425;
+  }
+  strong {
+    font-weight: 675;
+  }
+</pre>
+    </div>
+    <div class="content-section--aside">
+        {% include beatrice/02-molecules/10-embeds/axis-embed.html 
+          axis = 'weight'
+        %}
+    </div>
+  </div>
+  <div class="content-section--main">
+    <h3>Why you’ll like this</h3>
+    <p>Besides being able to make use of a broader range for things like big quotes in an extra-thin weight, or adding even more emphasis with a super-chonky one, you should try varying what it means for something to be ‘bold’. Using a ’slightly less bold’ value for bold text inline with body copy (i.e. the ‘’strong’ tag) can bring a bit more legibility to your text while still standing out. The heavier the weight, the more closed the letterforms will be, so by getting a bit more subtle at smaller sizes you can still gain emphasis while maintaining a bit more open feel. Try setting strong to a font-weight somewhere between 500-600 instead of the default 700.</p>
+  </div>
+</section>
+
+
+<section class="content-section">
+  <h2>Width</h2>
+  <div class="content-section--grid">
+    <div class="content-section--main">
+      <p>Another common variation in typeface design is width. It’s often seen referred to as ‘condensed’ or ‘compressed’ or ‘extended’—though the specifics of what these keywords mean is entirely subjective. According to the spec, 100 should equate to a ‘’normal’ width, and valid values can range from 1 to 1000. Like weight, it does map to an existing CSS attribute—in this case the unfortunately-named font-stretch attribute and is expressed as a percentage. In these early stages of adoption many type designers and foundries have not necessarily adhered to this standard with the numeric ranges, so it can look a little odd in your CSS. But a width range of 3%-5% is still valid, even if in this case 5% is actually the normal width. I’m hopeful that with more nudging we’ll see more standardization emerge.</p>
+    
+<pre class="prettyprint">
+  p {
+    font-stretch: 89%;
+  }
+</pre>
+    </div>
+    <div class="content-section--aside">
+        {% include beatrice/02-molecules/10-embeds/axis-embed.html 
+          axis = 'width'
+        %}
+    </div>
+  </div>
+  <div class="content-section--main">
+      <h3>Why you’ll like this</h3>
+      <p>One of the tricky things about responsive design is making sure your larger headings don’t end up as monstrous one-word-per-line ordeals on small screens. Besides tweaking font-size, try making your headings slightly narrower as well. You’ll fit more words per line without sacrificing emphasis or hierarchy by having to make the font-size even smaller.</p>
+    </div>
+  </section>

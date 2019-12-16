@@ -1,0 +1,15 @@
+.content-section {
+  &--grid {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+  }
+  &--main {
+    padding-right: 2rem;
+  }
+  &--aside {
+    padding-left: 2rem;
+  }
+  + .content-section {
+    margin-top: calc( var(--body-text-spacer) * 2 );
+  }
+}
