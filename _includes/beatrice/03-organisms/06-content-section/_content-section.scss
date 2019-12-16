@@ -1,13 +1,17 @@
 .content-section {
   &--grid {
     display: grid;
-    grid-template-columns: max-content 1fr;
+    @media (min-width: $bp--medium) {
+      grid-template-columns: minmax(22rem, 45rem) minmax(22rem, 1fr);
+    }
   }
+  @media (min-width: $bp--medium) {
   &--main {
-    padding-right: 2rem;
-  }
-  &--aside {
-    padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    &--aside {
+      padding-left: 2rem;
+    }
   }
   + .content-section {
     margin-top: calc( var(--body-text-spacer) * 2 );

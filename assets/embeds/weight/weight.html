@@ -17,6 +17,11 @@
   font-stretch: 85% 100%;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .range__axis {
   --text-vf-wght: 400;
   --text-vf-wdth: 95;
@@ -24,12 +29,11 @@
   --low-value: 85;
   --current-value: var(--text-vf-wght);
   --high-value: 100;
-  max-width: 95vw;
-  width: 25em;
   margin-left: auto;
   margin-right: auto;
 }
 .range__axis .paragraph .text {
+  background-color: #c8c8c8;
   font-family: "Plex Sans VF", Helvetica, sans-serif;
   font-size: 5rem;
   font-weight: var(--text-vf-wght);
@@ -43,7 +47,8 @@
   grid-template-columns: min-content 1fr min-content;
   margin: 2em auto;
   text-align: center;
-  width: 20rem;
+  max-width: 20rem;
+  padding: 0 0.5rem;
 }
 .range__axis .controls h3 {
   display: inline;
@@ -107,11 +112,16 @@
   padding: 0.25rem 0.25rem 0.2rem 0.25rem;
 }
 
+.range__axis .code {
+  border-top: solid 1px #d8d8d8;
+}
+
 .range__axis code {
-  display: inline-block;
+  display: block;
   font-size: 1.25rem;
   line-height: 1.5;
-  margin-left: 5rem;
+  margin: 0 auto;
+  max-width: 20rem;
 }
 
 .range__axis code .current-value::before {

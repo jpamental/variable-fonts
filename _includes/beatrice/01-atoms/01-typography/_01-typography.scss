@@ -205,8 +205,8 @@ h2 {
   	  letter-spacing: 0.5px;
     }
   }
-  p + & {
-    margin-top: 2rem;
+  * + & {
+    margin-top: calc( var(--body-text-spacer) * 2.5 );
   }
   @supports (font-variation-settings: normal) {
   	font-family: $serif;
@@ -268,8 +268,8 @@ h3 {
   	  word-spacing: -1px;
     }
   }
-  p + & {
-    margin-top: 1.5rem;
+ * + & {
+    margin-top: calc( var(--body-text-spacer) * 2 );
   }
   @supports (font-variation-settings: normal) {
     font-family: $serif;
