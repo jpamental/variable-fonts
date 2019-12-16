@@ -29,9 +29,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-.range__axis .paragraph {
-  background-color: #ffffff;
-}
 .range__axis .paragraph .text {
   font-family: "Plex Sans VF", Helvetica, sans-serif;
   font-size: 5rem;
@@ -123,6 +120,27 @@
   display: inline;
 }
 
+code.prettyprint {
+  border: none !important;
+  font-size: 1.125rem;
+  padding: 1.5rem !important;
+}
+.code.prettyprint.css {
+  position: relative;
+}
+.code.prettyprint.css::before {
+  content: "CSS";
+  background-color: #565656;
+  color: #ffffff;
+  padding: 0.25em 0 0.15em;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+}
   
     </style>
   </head>
