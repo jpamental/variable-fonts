@@ -5,154 +5,17 @@
     <meta charset="utf-8">
     <title>Variable Font example - width</title>
     
+    <link rel="stylesheet" href="../css/axis-demo-styles.css" />
     <style>
-  /* Plex Sans Variable Font */
-@font-face {
-  font-family: "Plex Sans VF";
-  src: url("../fonts/IBMPlexSansVar-Roman.woff2")
-    format("woff2 supports variations"), url("../fonts/IBMPlexSansVar-Roman.woff2")
-    format("woff2-variations");
-  font-display: swap;
-  font-weight: 100 700;
-  font-stretch: 85% 100%;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-.range__axis {
-  --text-vf-wght: 400;
-  --text-vf-wdth: 95;
-  --value-tag: 'wdth';
-  --low-value: 85;
-  --current-value: var(--text-vf-wdth);
-  --high-value: 100;
-  margin-left: auto;
-  margin-right: auto;
-}
-.range__axis .paragraph .text {
-  background-color: #c8c8c8;
-  font-family: "Plex Sans VF", Helvetica, sans-serif;
-  font-size: 5rem;
-  font-weight: var(--text-vf-wght);
-  font-stretch: calc( var(--text-vf-wdth) * 1% );
-  line-height: 7rem;
-  margin: 0 auto 0 auto;
-  text-align: center;
-}
-.range__axis .controls {
-  display: grid;
-  grid-template-columns: min-content 1fr min-content;
-  margin: 2em auto;
-  text-align: center;
-  max-width: 20rem;
-  padding: 0 0.5rem;
-}
-.range__axis .controls h3 {
-  display: inline;
-  font-weight: normal;
-  font-family: monospace;
-}
-.range__axis .controls label {
-  float: left;
-  height: 1px;
-  text-indent: -999em;
-  visibility: hidden;
-}
-.range__axis .controls .slider {
-  grid-column: 2/4;
-}
-.range__axis .controls .slider input {
-  width: 100%;
-}
-.range__axis .controls .value-tag {
-  grid-column: span 3;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  text-align: left;
-}
-.range__axis .controls .value-tag::before {
-  counter-reset: tag var(--value-tag);
-  content: "'" var(--value-tag) "' range";
-  font-family: sans-serif;
-}
-.range__axis .controls .low-value {
-  grid-column: 1/2;
-  text-align: left;
-  width: 2.5rem;
-}
-.range__axis .controls .low-value::before {
-  counter-reset: tag var(--low-value);
-  content: counter(tag);
-  font-family: sans-serif;
-}
-.range__axis .controls .high-value {
-  grid-column: 4/5;
-  text-align: right;
-  width: 2.5rem;
-}
-.range__axis .controls .high-value::before {
-  counter-reset: tag var(--high-value);
-  content: counter(tag);
-  font-family: sans-serif;
-}
-.range__axis .controls .current-value {
-  grid-column: 2/3;
-}
-.range__axis .controls .current-value::before {
-  counter-reset: tag var(--current-value);
-  border: solid 1px black;
-  content: counter(tag);
-  display: inline-block;
-  font-family: sans-serif;
-  min-width: 3rem;
-  margin: 0 auto;
-  padding: 0.25rem 0.25rem 0.2rem 0.25rem;
-}
-
-.range__axis .code {
-  border-top: solid 1px #d8d8d8;
-}
-
-.range__axis code {
-  display: block;
-  font-size: 1.25rem;
-  line-height: 1.5;
-  margin: 0 auto;
-  max-width: 20rem;
-}
-
-.range__axis code .current-value::before {
-  counter-reset: tag var(--current-value);
-  content: counter(tag);
-  display: inline;
-}
-
-code.prettyprint {
-  border: none !important;
-  font-size: 1.125rem;
-  padding: 1.5rem !important;
-}
-code.prettyprint.css {
-  position: relative;
-}
-code.prettyprint.css::before {
-  content: "CSS";
-  background-color: #565656;
-  color: #ffffff;
-  padding: 0.25em 0 0.15em;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-  transform: rotate(180deg);
-  writing-mode: vertical-rl;
-}
+      .range__axis {
+        --text-vf-wght: 400;
+        --text-vf-wdth: 95;
+        --value-tag: 'wdth';
+        --low-value: 85;
+        --current-value: var(--text-vf-wdth);
+        --high-value: 100;
+      }
  
-  
     </style>
   </head>
 
