@@ -2,6 +2,8 @@
 @import "@material/list/mdc-list";
 
 .mdc-drawer {
+  background-color: #ffffff;
+  background-color: var(--color-background);
   width: 85vw;
   @media (min-width: $bp--large) {
     background-color: transparent;
