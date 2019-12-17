@@ -11,11 +11,25 @@
   @media screen and (min-width: $bp--xxlarge) {
     --body-text-spacer: 1.25rem;
   }  
+
+  --color-background: #ffffff;
+  --color-text: #{$color-text};
+  --color-text-link: #{$color-text-link};
+  --color-text-link-visited: #{$color-text-link-visited};
+  --color-text-link-hover: #{$color-text-link-hover};
+  --color-text-link-active: #{$color-text-link-active};
+  --color-text-link-focus: #{$color-text-link-focus};
+  @media (prefers-color-scheme:dark) {
+    --color-background: #{$color-gray-darker};
+    --color-text: #ffffff;
+  }
 }
 
 html {
   background-color: #ffffff;
+  background-color: var(--color-background);
   color: $color-text;
+  color: var(--color-text);
   font-size: 100%;
 }
 

@@ -6,10 +6,14 @@
 }
 
 .mdc-top-app-bar {
-  --mdc-theme-primary: #ffffff;
-  --mdc-theme-on-primary: $color-gray;
+  --mdc-theme-primary: var(--color-background);
+  --mdc-theme-on-primary: var(--color-text);
   border-bottom: solid 1px $color-gray-lighter;
   color: $color-gray;
+  color: var(--color-text);
+  @media (prefers-color-scheme:dark) {
+    border-bottom-color: $color-gray;
+  }
   &__row {
     height: 4rem;
   }

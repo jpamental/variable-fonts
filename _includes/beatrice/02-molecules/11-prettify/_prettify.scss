@@ -3,11 +3,26 @@ pre.prettyprint {
   border-top: solid 1px $color-gray-lighter !important;
   font-size: 1.125rem;
   padding: 1.5rem !important;
-  &.css {
+  @media (prefers-color-scheme:dark) {
+    border-top: solid 1px $color-gray-dark !important;
+    .pln {
+      color: #ffffff;
+    }
+    .pun {
+      color: $color-gray-lighter;
+    }
+    .lit {
+      color: #65B042;
+    }
+  }
+&.css {
     position: relative;
     background: rgb(228,228,228);
     background: radial-gradient(ellipse at top left, rgba($color-gray-lighter,1) 0%, rgba(255,255,255,1) 70%);
-    &::before {
+    @media (prefers-color-scheme:dark) {
+      background: radial-gradient(ellipse at top left, rgba($color-gray-dark,1) 0%, rgba($color-gray-darker,1) 70%);
+    }
+      &::before {
       content: "CSS";
       background-color: $color-gray;
       color: #ffffff;

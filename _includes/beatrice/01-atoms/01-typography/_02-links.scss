@@ -5,6 +5,7 @@ a {
   text-decoration-skip-ink: auto;
   &:link {
     color: $color-text-link;
+    color: var(--color-text-link);
     text-decoration: underline;
     text-decoration-skip-ink: auto;
 
@@ -12,21 +13,25 @@ a {
   &:visited,
   &.visited {
     color: $color-text-link-visited;
+    color: var(--color-text-visited);
     text-decoration: underline;
     text-decoration-skip-ink: auto;
   }
   &:hover {
     color: $color-text-link-hover;
+    color: var(--color-text-hover);
     text-decoration: underline;
     text-decoration-skip-ink: auto;
   }
   &:focus {
     color: $color-text-link-focus;
+    color: var(--color-text-focus);
     text-decoration: underline;
     text-decoration-skip-ink: auto;
   }
   &:active {
     color: $color-text-link-active;
+    color: var(--color-text-active);
     text-decoration: underline;
     text-decoration-skip-ink: auto;
   }
