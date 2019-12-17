@@ -54,7 +54,7 @@ li {
     font-family: $sans-serif;
   	font-weight: var(--p-vf-wght);
     font-style: normal;
-    font-variation-settings: 'opsz' var(--text-opsz);
+    font-variation-settings: 'opsz' var(--text-opsz), 'GRAD' var(--p-vf-GRAD);
   }
 }
 
@@ -117,6 +117,10 @@ p {
       --text-opsz: calc( var(--p-font-size-max) * var(--text-size-base) );
       font-size: calc( var(--p-font-size-max) * 1em );
     }    
+  }
+  @media (prefers-color-scheme:dark) {
+    --p-vf-GRAD: 0.25;
+    letter-spacing: 0.025em;
   }
 }
 
