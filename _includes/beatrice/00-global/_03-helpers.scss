@@ -5,10 +5,10 @@
 $serif-fallback: Georgia, "Times New Roman", serif;
 $sans-serif-fallback: Helvetica, Arial, sans-serif;
 
-$serif-novf: "Roboto Slab", $serif-fallback;
+$serif-novf: "Roboto Slab Static", $serif-fallback;
 $sans-serif-novf: "Roboto", $sans-serif-fallback;
 
-$serif: "Roboto Slab Variable", $serif-fallback;
+$serif: "Roboto Slab", $serif-fallback;
 $sans-serif: "Roboto Variable", $sans-serif-fallback;
 
 @mixin content-width() {

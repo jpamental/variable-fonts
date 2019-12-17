@@ -58,7 +58,7 @@
 
 /* roboto-slab-regular - latin_latin-ext */
 @font-face {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab Static';
   font-style: normal;
   font-weight: normal;
   src: url('../fonts/roboto-slab/roboto-slab-v10-latin_latin-ext-regular.eot'); /* IE9 Compat Modes */
@@ -72,7 +72,7 @@
 
 /* roboto-slab-700 - latin_latin-ext */
 @font-face {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab Static';
   font-style: normal;
   font-weight: bold;
   src: url('../fonts/roboto-slab/roboto-slab-v10-latin_latin-ext-700.eot'); /* IE9 Compat Modes */
@@ -86,14 +86,8 @@
 
 
 /* Variable fonts */
-@font-face{
-  font-family: 'Roboto Slab Variable';
-  font-weight: 100 900; /* default: 400 */
-  font-style: normal;
-  font-stretch: normal;
-  src: url('../fonts/RobotoSlab.woff2') format('woff2 supports variations'), url('../fonts/RobotoSlab.woff2') format('woff2-variations');
-  /* opsz: 14-36 */
-}
+/* Load Roboto Slab from GF API */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
 @font-face{
   font-family: 'Roboto Variable';
