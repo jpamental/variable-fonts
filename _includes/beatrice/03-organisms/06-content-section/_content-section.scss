@@ -5,6 +5,11 @@
       grid-template-columns: minmax(22rem, 45rem) minmax(22rem, 1fr);
     }
   }
+  &--main {
+    .content-section--aside + & {
+      padding-top: calc( var(--body-text-spacer) * 1 );
+    }
+  }
   @media (min-width: $bp--medium) {
     &--main {
       padding-right: 2rem;
@@ -14,6 +19,12 @@
     }
     &--aside {
       padding-left: 2rem;
+      &.sticky {
+        display: block;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 100px;
+      }
     }
   }
   + .content-section {
