@@ -2,6 +2,7 @@ pre.prettyprint {
   border: none !important;
   border-top: solid 1px $color-gray-lighter !important;
   font-size: 1.125rem;
+  overflow: scroll;
   padding: 1.5rem !important;
   @media (prefers-color-scheme:dark) {
     border-top: solid 1px $color-gray-dark !important;
@@ -15,14 +16,14 @@ pre.prettyprint {
       color: #65B042;
     }
   }
-&.css {
+  &.css {
     position: relative;
     background: rgb(228,228,228);
     background: radial-gradient(ellipse at top left, rgba($color-gray-lighter,1) 0%, rgba(255,255,255,1) 70%);
     @media (prefers-color-scheme:dark) {
       background: radial-gradient(ellipse at top left, rgba($color-gray-dark,1) 0%, rgba($color-gray-darker,1) 70%);
     }
-      &::before {
+    &::before {
       content: "CSS";
       background-color: $color-gray;
       color: #ffffff;
@@ -34,6 +35,16 @@ pre.prettyprint {
       text-align: center;
       transform: rotate(180deg);
       writing-mode: vertical-rl;
+    }
+    &::after {
+      content: " ";
+      background-color: $color-gray;
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 2rem;
     }
   }
 }

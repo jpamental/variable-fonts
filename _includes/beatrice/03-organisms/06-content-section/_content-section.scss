@@ -1,7 +1,9 @@
 .content-section {
+  padding-left: 1vw;
+  padding-right: 1vw;
   &--grid {
-    display: grid;
     @media (min-width: $bp--medium) {
+      display: grid;
       grid-template-columns: minmax(22rem, 45rem) minmax(22rem, 1fr);
     }
   }
