@@ -17,7 +17,8 @@ const webpack = require('webpack-stream');
 // File paths
 const files = { 
     scssPath: '_includes/beatrice/**/*.scss',
-    jsPath: '_includes/beatrice/**/*.js'
+    jsPath: '_includes/beatrice/**/*.js',
+    js3rdPartyPath: 'third_party/**'
 }
 
 // Sass task: compiles the style.scss file into style.css
@@ -30,7 +31,7 @@ function scssTask(){
       outputStyle: 'compressed'
     }))
     .pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
-    .pipe(gulp.dest('assets/css')); // put final CSS in dist folder
+    .pipe(gulp.dest('assets/css')); // put final CSS in assets folder
 }
 
 // JS task: compiles JS files into main.js
@@ -38,9 +39,13 @@ function jsTask(){
   return gulp.src(files.jsPath)
       .pipe(webpack())
       .pipe(concat('main.js'))
-      .pipe(gulp.dest('assets/js')); // put final JS in dist folder
+      .pipe(gulp.dest('assets/js')); // put final JS in assets folder
 }
 
+function js3rdPartyTask(){    
+  return gulp.src(files.js3rdPartyPath)
+      .pipe( gulp.dest('assets/js') ); // put final 3rd party JS in assets folder
+}
 // Watch task: watch SCSS and JS files for changes
 // If any change, run scss and js tasks simultaneously
 function watchTask(){
@@ -93,6 +98,7 @@ function jekyllBuild(done) {
 exports.default = gulp.series(
     scssTask,
     jsTask, 
+    js3rdPartyTask, 
     jekyll,
     watchTask
 );
