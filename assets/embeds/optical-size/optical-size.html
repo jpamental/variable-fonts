@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Variable Font example - optical size</title>
+    <link rel="stylesheet" href="../css/axis-demo-styles.css" />
+    <style>
+      .range__axis {
+        --text-vf-wght: 400;
+        --text-vf-wdth: 95;
+        --text-vf-opsz: 80;
+        --value-tag: 'opsz';
+        --low-value: 8;
+        --current-value: var(--text-vf-opsz);
+        --high-value: 144;
+      }
+      .range__axis .paragraph .text {
+        font-family: "Amstelvar VF", serif;
+        font-size: calc( 10vw + 1.25rem );
+        font-variation-settings: 'opsz' var(--text-vf-opsz);
+      }
+      code.prettyprint {
+        font-size: 1rem;
+        max-width: 24rem;
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="container range__axis">
+
+
+      <div class="paragraph">
+
+        <div class="text">Optical Size</div>
+
+      </div>
+      <div id='demo-controls' class="controls">
+        <div class="value-tag"></div>
+        <div class="low-value"></div>
+        <div class="slider range-width">
+          <input type="range" name="range-slider" value="80" id="text-vf-opsz" class="controls--axis" min="8" max="144"> 
+          <label for="range-slider">Optical Size</label>
+        </div>
+        <div class="high-value"></div>
+        <div class="current-value"></div>
+
+      </div>
+      <div class="code">
+        <code class="prettyprint">
+          .text { <br />
+          &nbsp;&nbsp;  font-variation-settings: 'opsz' <span class="current-value"></span>; <br />
+          }
+        </code>
+      </div>
+    </div>
+
+  </body>
+  <script>
+      // get the inputs
+    const inputs = [].slice.call(document.querySelectorAll('.range__axis .controls input'));
+
+    // listen for changes
+    inputs.forEach(input => input.addEventListener('change', handleUpdate));
+    inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+
+
+    function handleUpdate(e) {
+      document.querySelector('.range__axis').style.setProperty(`--${this.id}`, this.value);
+    }
+  </script>
+  <script src="../../js/google-code-prettify/run_prettify.js"></script>
+</html>

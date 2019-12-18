@@ -7,6 +7,32 @@
     font-display: swap;
     font-weight: 100 700;
     font-stretch: 85% 100%;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Jost VF";
+    src: url("../fonts/jost-VF.woff2")
+      format("woff2 supports variations"), url("../fonts/jost-VF.woff2")
+      format("woff2-variations");
+    font-display: swap;
+    font-weight: 100 900;
+  }
+  @font-face {
+    font-family: "Inter VF";
+    src: url("../fonts/Inter.var.woff2")
+      format("woff2 supports variations"), url("../fonts/Inter.var.woff2")
+      format("woff2-variations");
+    font-display: swap;
+    font-weight: 100 900;
+    font-style: oblique 0deg 10deg
+  }
+  @font-face {
+    font-family: "Amstelvar VF";
+    src: url("../fonts/AmstelvarAlpha-VF.woff2")
+      format("woff2 supports variations"), url("../fonts/AmstelvarAlpha-VF.woff2")
+      format("woff2-variations");
+    font-display: swap;
+    font-weight: 100 900;
   }
   
   body {

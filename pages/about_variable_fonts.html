@@ -57,3 +57,115 @@ permalink: about-variable-fonts
     </div>
   </div>
 </section>
+
+<section class="content-section">
+  <h2>Italic</h2>
+  <div class="content-section--grid">
+    <div class="content-section--main">
+      <p>The Italic axis is more or less what you’d expect. In most cases it’s a boolean 0 or 1: off (or upright) or on—usually meaning slanted strokes and often glyph replacements. Often times the lower case ‘a’ or ‘g’ have slightly different Italic forms. While it’s certainly possible to have a range rather than strictly 0 or 1, the off/on scenario is likely the most common that you’ll encounter. Unfortunately, while it is intended to map to font-style: italic, this is one of the areas where browsers have not fully resolved the implementation so we’re left having to rely upon the lower-level syntax of font-variation-settings. You might give some thought to using this in conjunction with a CSS custom property, or variable, so you don’t have to redeclare the whole string if you just want to alter the Italic/upright specification.</p>
+    
+<pre class="prettyprint css">
+  :root {
+    --text-ital: 0;
+  }
+  body {
+    font-variation-settings: 'ital' var(--text-ital);
+  }
+  em {
+      --text-ital: 1;
+  }
+</pre>
+    </div>
+    <div class="content-section--aside sticky">
+        {% include beatrice/02-molecules/10-embeds/axis-embed.html 
+          axis = 'italic'
+        %}
+    </div>
+    <div class="content-section--main">
+      <h3>Why you’ll like this</h3>
+      <p>Having Italics as well as upright, along with weight and any other axes available, means you can use one or two files instead of 4 to handle your body copy. And with the range of axes available, you might not need anything else.</p>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2>Slant</h2>
+  <div class="content-section--grid">
+    <div class="content-section--main">
+      <p>The slant axis is similar to Italic, but different in two key ways. First, it is expressed as a degree range, and according to the OpenType specification should be ‘greater than -90 and less than +90’, and second, does not include glyph substitution. Usually associated with sans-serif typeface designs, it allows for any value along the range specified. If the font you’re using only has a slant axis and no italics (I’ll talk about that in a bit), you can use the standard attribute of ‘font-style’ like so:</p>
+    
+<pre class="prettyprint css">
+  em {
+    font-style: oblique 12deg;
+  }
+</pre>
+      <p>If you have both axes, you’ll need to use font-variation-settings—though in this case you just supply a numeric value without the deg.</p>
+<pre class="prettyprint css">
+  :root {
+    --text-slnt: 0;
+  }
+  body {
+    font-variation-settings: 'slnt' var(--text-slnt);
+  }
+  em {
+      --text-slnt: 12;
+  }
+</pre>
+
+    </div>
+    <div class="content-section--aside sticky">
+        {% include beatrice/02-molecules/10-embeds/axis-embed.html 
+          axis = 'slant'
+        %}
+    </div>
+    <div class="content-section--main">
+      <h3>Why you’ll like this</h3>
+      <p>The slant axis allows for anything within the defined range, so opportunities abound to set the angle a little differently, or add animation so that the text becomes italic just a little after the page loads. It’s a nice way to draw attention to a text element on the screen in a very subtle way.</p>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2>Optical Size</h2>
+  <div class="content-section--grid">
+    <div class="content-section--main">
+      <p>This is a real gem. This is a practice that dates back over 400 years, whereby physically smaller type would be cut with slightly thicker strokes and a bit less contrast in order to ensure it would print well and be legible at smaller sizes. Other aspects can be tailored as well, like apertures becoming wider, terminals more angled, or bowls enlarged. Conversely, larger point sizes would be cut with greater delicacy, allowing for greater contrast and fine details. While this was in many ways due to poorer quality ink, paper, and type, it still had the effect of allowing a single typeface design to work optimally at a range of physical sizes. This practice was lost, however, with the shift to phototypesetting and then digital type. Both newer practices would take a single outline and scale it, so either the fine details would be lost for all, or the smaller sizes would end up getting spindly and frail (especially on early lower-resolution screens). Regaining this technique in the form of a variable axis gives tremendous range back to individual designs.</p>
+      <p>The concept is that the numeric value for this axis should match the rendered font-size, and a new attribute was introduced to go along with it: font-optical-sizing. The default is auto, and this is supported behavior in all shipping browsers (well, as soon as Chrome 79 ships). You can force it to off, or you can set an explicit value via font-variation-settings.
+          </p>
+    
+<pre class="prettyprint css">
+  body {
+    font-optical-sizing: auto;
+  }
+</pre>
+
+      <p>Or:</p>
+
+<pre class="prettyprint css">
+  :root {
+    --text-opsz: 16;
+  }
+  body {
+    font-variation-settings: 'opsz' var(--text-opsz);
+  }
+  h1 {
+      --text-opsz: 48;
+    font-size: 3em;
+  }
+</pre>
+    </div>
+    <div class="content-section--aside sticky">
+        {% include beatrice/02-molecules/10-embeds/axis-embed.html 
+          axis = 'optical-size-auto'
+        %}
+        {% include beatrice/02-molecules/10-embeds/axis-embed.html 
+          axis = 'optical-size'
+        %}
+    </div>
+    <div class="content-section--main">
+      <h3>Why you’ll like this</h3>
+      <p>One of the tricky things about responsive design is making sure your larger headings don’t end up as monstrous one-word-per-line ordeals on small screens. Besides tweaking font-size, try making your headings slightly narrower as well. You’ll fit more words per line without sacrificing emphasis or hierarchy by having to make the font-size even smaller.</p>
+    </div>
+  </div>
+</section>
+            
