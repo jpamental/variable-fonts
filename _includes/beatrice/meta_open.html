@@ -49,9 +49,16 @@
           d.style[prop] = value;
           return d.style[prop] === value;
         }
+        function vfSupported() {
+          const vfCheck = getComputedStyle(document.documentElement).getPropertyValue('--vf-support');
+          //console.log(vfCheck);
+          if (vfCheck) {
+            return vfCheck;
+          }
+        }
         var vfSupport = true;
         
-        var vfSupport = cssPropertyValueSupported('font-optical-sizing', 'auto');
+        var vfSupport = vfSupported();
         // should return true if the browser supports variable fonts
 				console.log('vfSupport: '+vfSupport);
 

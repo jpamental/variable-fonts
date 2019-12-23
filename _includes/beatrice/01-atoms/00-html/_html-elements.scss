@@ -29,3 +29,24 @@ img {
   max-width: 100%;
   width: 100%;
 }
+
+.aside {
+  background-color: $color-gray-lightest;
+  background: radial-gradient(ellipse at bottom right, rgba(238,238,238,1) 0%, rgba(248,248,248,1) 70%);
+  border-top: solid 1px $color-gray-lighter;
+  padding: 0.75rem;
+  &--right {
+    float: right;
+    margin-left: 2rem;
+    min-width: 15rem;
+    width: calc( 100% - (var(--content-width) + 2rem) );
+  }
+  h3 {
+    --h3-font-size-min: 1.25;
+    --h3-font-size-max: 1.5;
+  }
+  p {
+    --p-font-size-min: 0.875;
+    --p-font-size-max: 1;
+  }
+}

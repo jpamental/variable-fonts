@@ -35,6 +35,17 @@
     font-weight: 100 900;
   }
   
+  @font-face {
+    font-family: "Recursive";
+    src: url("../fonts/recursive-MONO_CASL_wght_slnt_ital--full_gsub--2019_12_21-21_07.woff2")
+      format("woff2 supports variations"), url("../fonts/recursive-MONO_CASL_wght_slnt_ital--full_gsub--2019_12_21-21_07.woff2")
+      format("woff2-variations");
+    font-display: swap;
+    font-weight: 300 900;
+    /* MONO: 0 1 */
+    /* CASL: 0 1 */
+  }
+
   body {
     margin: 0;
     padding: 0;
@@ -52,7 +63,7 @@
   }
   .range__axis .paragraph .text {
     background-color: #c8c8c8;
-    background: radial-gradient(ellipse at top left, rgba(200,200,200,1) 0%, rgba(220,220,220,1) 70%);
+    background: radial-gradient(ellipse at top left, rgba(175, 192, 215,1) 0%, rgba(175, 192, 215,0.5) 70%);
     font-family: "Plex Sans VF", Helvetica, sans-serif;
     font-size: 5rem;
     font-weight: var(--text-vf-wght);
@@ -86,7 +97,8 @@
   .range__axis .controls .slider input {
     width: 100%;
   }
-  .range__axis .controls .value-tag {
+  .range__axis .controls .value-tag,
+  .range__axis .controls .value-tag2 {
     grid-column: span 3;
     font-weight: bold;
     margin-bottom: 0.5rem;
@@ -97,7 +109,13 @@
     content: "'" var(--value-tag) "' range";
     font-family: sans-serif;
   }
-  .range__axis .controls .low-value {
+  .range__axis .controls .value-tag2::before {
+    counter-reset: tag var(--value-tag2);
+    content: "'" var(--value-tag2) "' range";
+    font-family: sans-serif;
+  }
+  .range__axis .controls .low-value,
+  .range__axis .controls .low-value2 {
     grid-column: 1/2;
     text-align: left;
     width: 2.5rem;
@@ -107,7 +125,13 @@
     content: counter(tag);
     font-family: sans-serif;
   }
-  .range__axis .controls .high-value {
+  .range__axis .controls .low-value2::before {
+    counter-reset: tag var(--low-value2);
+    content: counter(tag);
+    font-family: sans-serif;
+  }
+  .range__axis .controls .high-value,
+  .range__axis .controls .high-value2 {
     grid-column: 4/5;
     text-align: right;
     width: 2.5rem;
@@ -117,11 +141,27 @@
     content: counter(tag);
     font-family: sans-serif;
   }
-  .range__axis .controls .current-value {
+  .range__axis .controls .high-value2::before {
+    counter-reset: tag var(--high-value2);
+    content: counter(tag);
+    font-family: sans-serif;
+  }
+  .range__axis .controls .current-value,
+  .range__axis .controls .current-value2 {
     grid-column: 2/3;
   }
   .range__axis .controls .current-value::before {
     counter-reset: tag var(--current-value);
+    border: solid 1px black;
+    content: counter(tag);
+    display: inline-block;
+    font-family: sans-serif;
+    min-width: 3rem;
+    margin: 0 auto;
+    padding: 0.25rem 0.25rem 0.2rem 0.25rem;
+  }
+  .range__axis .controls .current-value2::before {
+    counter-reset: tag var(--current-value2);
     border: solid 1px black;
     content: counter(tag);
     display: inline-block;
@@ -145,6 +185,12 @@
   
   .range__axis code .current-value::before {
     counter-reset: tag var(--current-value);
+    content: counter(tag);
+    display: inline;
+  }
+  
+  .range__axis code .current-value2::before {
+    counter-reset: tag var(--current-value2);
     content: counter(tag);
     display: inline;
   }

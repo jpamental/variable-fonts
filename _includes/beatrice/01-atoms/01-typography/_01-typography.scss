@@ -1,6 +1,12 @@
 // Text styles
 // =============================================================================
 
+:root {
+  --vf-support: false;
+  @supports (font-variation-settings: normal) {
+    --vf-support: true;
+  }
+}
 
 /* text-size proportional spacer */
 :root {
@@ -128,6 +134,14 @@ strong {
   @supports (font-variation-settings: normal) {
     font-synthesis: none;
     font-weight: calc(var(--p-vf-wght) * 2.125);
+  }
+}
+
+.medium {
+  font-weight: bold;
+  @supports (font-variation-settings: normal) {
+    font-synthesis: none;
+    font-weight: calc(var(--p-vf-wght) * 1.75);
   }
 }
 
@@ -435,4 +449,20 @@ h5 {
       line-height: var(--h5-line-height-max);
     }
   }
+}
+
+code {
+  background-color: $color-gray-lighter;
+  display: inline;
+  font-family: monospace;
+  font-size: inherit;
+  padding: 0.15em;
+}
+
+/* smooth scrolling to anchor links */
+.smooth {
+  @media not (prefers-reduced-motion: reduce) {
+    scroll-behavior: smooth;
+  }
+  
 }

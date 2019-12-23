@@ -11,12 +11,13 @@ $color-gray-lightest: #f8f8f8;
 $color-offwhite: #fafafc;
 
 $color-coral: #ff5252;
+$color-blue: #0662ed;
 
 /* functional assignments */
 
 $color-text: $color-gray-dark;
-$color-text-link: $color-coral;
-$color-text-link-visited: lighten($color-coral, 7.5%);
-$color-text-link-hover: darken($color-coral,10%);
-$color-text-link-focus: darken($color-coral,10%);
-$color-text-link-active: darken($color-coral,10%);
+$color-text-link: $color-blue;
+$color-text-link-visited: darken($color-blue, 15%);
+$color-text-link-hover: $color-coral;
+$color-text-link-focus: $color-coral;
+$color-text-link-active: $color-coral;
