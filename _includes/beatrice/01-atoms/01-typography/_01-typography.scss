@@ -20,15 +20,24 @@
 
   --color-background: #ffffff;
   --color-text: #{$color-text};
+  --color-text-highlight: #{$color-text-highlight};
+  --color-text-highlight-secondary: #{$color-text-highlight-secondary};
   --color-text-link: #{$color-text-link};
   --color-text-link-visited: #{$color-text-link-visited};
   --color-text-link-hover: #{$color-text-link-hover};
   --color-text-link-active: #{$color-text-link-active};
   --color-text-link-focus: #{$color-text-link-focus};
   @media (prefers-color-scheme:dark) {
-    --color-background: #{$color-gray-darker};
+    --color-background: #{$color-gray-900};
     --color-text: #ffffff;
-  }
+    --color-text-highlight: #{$color-gray-800};
+    --color-text-highlight-secondary: #{$color-gray-700};
+    --color-text-link: #{$color-blue-100};
+    --color-text-link-visited: #{$color-blue-200};
+    --color-text-link-hover: #{$color-text-link-hover};
+    --color-text-link-active: #{$color-text-link-active};
+    --color-text-link-focus: #{$color-text-link-focus};
+      }
 }
 
 html {
@@ -452,7 +461,7 @@ h5 {
 }
 
 code {
-  background-color: $color-gray-lighter;
+  background-color: var(--color-text-highlight);
   display: inline;
   font-family: monospace;
   font-size: inherit;

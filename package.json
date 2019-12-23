@@ -30,6 +30,7 @@
     "@material/drawer": "^4.0.0",
     "@material/icon-button": "^4.0.0",
     "@material/menu": "^4.0.0",
+    "@material/slider": "^4.0.0",
     "@material/tab-bar": "^4.0.0",
     "@material/top-app-bar": "^4.0.0"
   }

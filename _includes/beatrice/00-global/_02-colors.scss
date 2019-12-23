@@ -8,16 +8,48 @@ $color-gray-light: #a9a9a9;
 $color-gray-lighter: #e9e9e9;
 $color-gray-lightest: #f8f8f8;
 
+// Google colors
+
 $color-offwhite: #fafafc;
 
 $color-coral: #ff5252;
 $color-blue: #0662ed;
 
+// Google colors
+$color-gray-900: #202124;
+$color-gray-800: #3c4043;
+$color-gray-700: #5f6368;
+$color-gray-600: #80868b;
+$color-gray-500: #9aa0a6;
+$color-gray-400: #bdc1c6;
+$color-gray-300: #dadce0;
+$color-gray-200: #e8eaed;
+$color-gray-100: #f1f3f4;
+$color-gray-50: #f8f9fa;
+
+$color-blue-900: #2838c4;
+$color-blue-800: #295ce4;
+$color-blue-700: #296ff6;
+$color-blue-600: #3481f7;
+$color-blue-500: #3b8ff7;
+$color-blue-400: #45a0f8;
+$color-blue-300: #66b1f9;
+$color-blue-200: #95c7fa;
+$color-blue-100: #bfddfc;
+$color-blue-50: #e4f2fe;
+
+
+
 /* functional assignments */
 
-$color-text: $color-gray-dark;
-$color-text-link: $color-blue;
-$color-text-link-visited: darken($color-blue, 15%);
+$color-heading: $color-gray-900;
+$color-text: $color-gray-800;
+$color-text-highlight: $color-gray-100;
+$color-text-highlight-secondary: $color-gray-50;
+$color-callout-highlight: darken($color-blue-50, 2.5%);
+$color-callout-highlight-secondary: lighten($color-blue-50, 2.5%);
+$color-text-link: $color-blue-700;
+$color-text-link-visited: $color-blue-900;
 $color-text-link-hover: $color-coral;
 $color-text-link-focus: $color-coral;
 $color-text-link-active: $color-coral;

@@ -63,7 +63,7 @@
   }
   .range__axis .paragraph .text {
     background-color: #c8c8c8;
-    background: radial-gradient(ellipse at top left, rgba(175, 192, 215,1) 0%, rgba(175, 192, 215,0.5) 70%);
+    background: radial-gradient(ellipse at top left, #95c7fa 0%, #bfddfc 70%);
     font-family: "Plex Sans VF", Helvetica, sans-serif;
     font-size: 5rem;
     font-weight: var(--text-vf-wght);

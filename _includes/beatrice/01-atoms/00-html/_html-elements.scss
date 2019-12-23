@@ -31,8 +31,8 @@ img {
 }
 
 .aside {
-  background-color: $color-gray-lightest;
-  background: radial-gradient(ellipse at bottom right, rgba(238,238,238,1) 0%, rgba(248,248,248,1) 70%);
+  background-color: var(--color-text-highlight);
+  background: radial-gradient(ellipse at bottom right, var(--color-text-highlight) 0%, var(--color-text-highlight-secondary) 70%);
   border-top: solid 1px $color-gray-lighter;
   padding: 0.75rem;
   &--right {
