@@ -1,8 +1,11 @@
-  /* Plex Sans Variable Font */
+@import "../../00-global/_02-colors.scss";
+@import "../../01-atoms/02-forms/slider/_slider.scss";
+
+/* Plex Sans Variable Font */
   @font-face {
     font-family: "Plex Sans VF";
-    src: url("../fonts/IBMPlexSansVar-Roman.woff2")
-      format("woff2 supports variations"), url("../fonts/IBMPlexSansVar-Roman.woff2")
+    src: url("../../../../assets/fonts/embeds/IBMPlexSansVar-Roman.woff2")
+      format("woff2 supports variations"), url("../../../../assets/fonts/embeds/IBMPlexSansVar-Roman.woff2")
       format("woff2-variations");
     font-display: swap;
     font-weight: 100 700;
@@ -11,16 +14,16 @@
   }
   @font-face {
     font-family: "Jost VF";
-    src: url("../fonts/jost-VF.woff2")
-      format("woff2 supports variations"), url("../fonts/jost-VF.woff2")
+    src: url("../../../../assets/fonts/embeds/jost-VF.woff2")
+      format("woff2 supports variations"), url("../../../../assets/fonts/embeds/jost-VF.woff2")
       format("woff2-variations");
     font-display: swap;
     font-weight: 100 900;
   }
   @font-face {
     font-family: "Inter VF";
-    src: url("../fonts/Inter.var.woff2")
-      format("woff2 supports variations"), url("../fonts/Inter.var.woff2")
+    src: url("../../../../assets/fonts/embeds/Inter.var.woff2")
+      format("woff2 supports variations"), url("../../../../assets/fonts/embeds/Inter.var.woff2")
       format("woff2-variations");
     font-display: swap;
     font-weight: 100 900;
@@ -28,8 +31,8 @@
   }
   @font-face {
     font-family: "Amstelvar VF";
-    src: url("../fonts/AmstelvarAlpha-VF.woff2")
-      format("woff2 supports variations"), url("../fonts/AmstelvarAlpha-VF.woff2")
+    src: url("../../../../assets/fonts/embeds/AmstelvarAlpha-VF.woff2")
+      format("woff2 supports variations"), url("../../../../assets/fonts/embeds/AmstelvarAlpha-VF.woff2")
       format("woff2-variations");
     font-display: swap;
     font-weight: 100 900;
@@ -37,8 +40,8 @@
   
   @font-face {
     font-family: "Recursive";
-    src: url("../fonts/recursive-MONO_CASL_wght_slnt_ital--full_gsub--2019_12_21-21_07.woff2")
-      format("woff2 supports variations"), url("../fonts/recursive-MONO_CASL_wght_slnt_ital--full_gsub--2019_12_21-21_07.woff2")
+    src: url("../../../../assets/fonts/recursive-MONO_CASL_wght_slnt_ital--full_gsub--2019_12_21-21_07.woff2")
+      format("woff2 supports variations"), url("../../../../assets/fonts/recursive-MONO_CASL_wght_slnt_ital--full_gsub--2019_12_21-21_07.woff2")
       format("woff2-variations");
     font-display: swap;
     font-weight: 300 900;
@@ -58,12 +61,14 @@
     --low-value: 85;
     --current-value: var(--text-vf-wght);
     --high-value: 100;
+    background-color: $color-callout-highlight;
+    background: radial-gradient(ellipse at bottom right, $color-callout-highlight 0%, $color-callout-highlight-secondary 70%);
     margin-left: auto;
     margin-right: auto;
   }
   .range__axis .paragraph .text {
-    background-color: #c8c8c8;
-    background: radial-gradient(ellipse at top left, #95c7fa 0%, #bfddfc 70%);
+    background-color: $color-blue-200;
+    background: radial-gradient(ellipse at top left, $color-blue-200 0%, $color-blue-100 70%);
     font-family: "Plex Sans VF", Helvetica, sans-serif;
     font-size: 5rem;
     font-weight: var(--text-vf-wght);
@@ -157,7 +162,7 @@
     display: inline-block;
     font-family: sans-serif;
     min-width: 3rem;
-    margin: 0 auto;
+    margin: 0.5rem auto 0 auto;
     padding: 0.25rem 0.25rem 0.2rem 0.25rem;
   }
   .range__axis .controls .current-value2::before {
@@ -167,7 +172,7 @@
     display: inline-block;
     font-family: sans-serif;
     min-width: 3rem;
-    margin: 0 auto;
+    margin: 0.5rem auto 0 auto;
     padding: 0.25rem 0.25rem 0.2rem 0.25rem;
   }
   
@@ -196,6 +201,7 @@
   }
   
   code.prettyprint {
+    --color-text-highlight: transparent;
     border: none !important;
     font-size: 1.125rem;
     padding: 1.5rem !important;

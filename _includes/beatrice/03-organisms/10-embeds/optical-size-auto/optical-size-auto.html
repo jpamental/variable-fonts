@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/03-organisms/10-embeds/axis-component.css" />
+<style>
+  .range__axis.range__axis-opsz-auto {
+    --text-vf-wght: 400;
+    --text-vf-wdth: 95;
+    --opsz-toggle: 'auto';
+    --value-tag: 'font-optical-sizing';
+    --low-value: 0;
+    --current-value: var(--opsz-toggle);
+    --high-value: 144;
+  }
+  .range__axis.range__axis-opsz-auto .paragraph .text {
+    font-family: "Amstelvar VF", serif;
+    font-size: calc( 3.25vw + 1.25rem );
+    font-optical-sizing: var(--opsz-toggle);
+  }
+  .range__axis.range__axis-opsz-autocode.prettyprint {
+    font-size: 1rem;
+    max-width: 24rem;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  .range__axis.range__axis-opsz-auto .controls .value-tag::before {
+    counter-reset: tag var(--value-tag);
+    content: "'" var(--value-tag) "'";
+  }
+  .range__axis.range__axis-opsz-auto code .current-value::before {
+      content: var(--current-value);
+  }
+  .range__axis-opsz-auto .opsz-toggle {
+    font-family: sans-serif;
+    grid-column: 2/3;
+    margin-top: 1rem;
+  }
+</style>
+
+<div class="container range__axis range__axis-opsz-auto">
+
+  <div class="paragraph">
+
+    <div class="text">Optical Size</div>
+
+  </div>
+  <div id='demo-controls' class="controls">
+    <div class="value-tag"></div>
+    <div class="opsz-toggle">
+        <input type="radio" id="opsz-toggle" name="opsz-toggle" value="auto" checked>Auto
+        <input type="radio" id="opsz-toggle" name="opsz-toggle" value="none">None
+        <label for="opsz-toggle">Optical Size</label>
+  
+  
+    </div>
+  
+  </div>
+  <div class="code">
+    <code class="prettyprint">
+      .text { <br />
+      &nbsp;&nbsp;  font-optical-sizing: <span class="current-value"></span>; <br />
+      }
+    </code>
+  </div>
+</div>
+
+<script>
+    // get the inputs
+  var inputs = [].slice.call(document.querySelectorAll('.range__axis-opsz-auto .controls input'));
+
+  // listen for changes
+  inputs.forEach(input => input.addEventListener('change', handleUpdate));
+
+
+  function handleUpdate(e) {
+    document.querySelector('.range__axis-opsz-auto').style.setProperty(`--${this.id}`, this.value);
+    document.querySelector('.range__axis-opsz-auto .current-value').textContent=this.value;
+  }
+</script>

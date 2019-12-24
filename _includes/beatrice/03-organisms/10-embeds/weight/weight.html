@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/03-organisms/10-embeds/axis-component.css" />
+<style>
+  .range__axis.range__axis--weight {
+    --text-vf-wght: 400;
+    --text-vf-wdth: 95;
+    --value-tag: 'wght';
+    --low-value: 100;
+    --current-value: var(--text-vf-wght);
+    --high-value: 700;
+  }
+</style>
+  
+<div class="container range__axis range__axis--weight">
+
+  <div class="paragraph">
+
+    <div class="text">Weight</div>
+
+  </div>
+  <div id='demo-controls' class="controls">
+    <div class="value-tag"></div>
+    <div class="low-value"></div>
+    <div class="slider range-width">
+      <input type="range" name="range-slider" value="400" id="text-vf-wght" class="controls--axis" min="100" max="700"> 
+      <label for="range-slider">Weight</label>
+    </div>
+    <div class="high-value"></div>
+    <div class="current-value"></div>
+
+  </div>
+  <div class="code">
+    <code class="prettyprint">
+      .text { <br />
+      &nbsp;&nbsp;  font-weight: <span class="current-value"></span>; <br />
+      }
+    </code>
+  </div>
+</div>
+
+<script>
+  // get the inputs
+  var inputs = [].slice.call(document.querySelectorAll('.range__axis--weight .controls input'));
+
+  // listen for changes
+  inputs.forEach(input => input.addEventListener('change', handleUpdate));
+  inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+
+
+  function handleUpdate(e) {
+    document.querySelector('.range__axis--weight').style.setProperty(`--${this.id}`, this.value);
+  }
+</script>

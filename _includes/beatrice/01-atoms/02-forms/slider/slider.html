@@ -1,0 +1,18 @@
+{% if include.min %}
+  {% assign min = include.min %}
+{% else %}
+  {% assign min = 0 %}
+{% endif %}
+{% if include.max %}
+  {% assign max = include.max %}
+{% else %}
+  {% assign max = 1 %}
+{% endif %}
+{% if include.now %}
+  {% assign now = include.now %}
+{% else %}
+  {% assign now = 0.5 %}
+{% endif %}
+
+<input type="range" name="range-slider" value="{{ now }}" id="{{ include.id }}" class="controls--axis" min="{{ min }}" max="{{ max }}"> 
+<label for="range-slider">{{ include.label }}</label>

@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/03-organisms/10-embeds/axis-component.css" />
+<style>
+  .range__axis.range__axis--slant {
+    --text-vf-wght: 400;
+    --text-vf-wdth: 95;
+    --text-vf-slnt: 7;
+    --value-tag: 'slnt';
+    --low-value: 0;
+    --current-value: var(--text-vf-slnt);
+    --high-value: 10;
+  }
+  .range__axis.range__axis--slant .paragraph .text {
+    font-family: "Inter VF", sans-serif;
+    font-style: oblique calc( var(--text-vf-slnt) * 1deg);
+  }
+</style>
+
+<div class="container range__axis range__axis--slant">
+
+  <div class="paragraph">
+
+    <div class="text">Slant</div>
+
+  </div>
+  <div id='demo-controls' class="controls">
+    <div class="value-tag"></div>
+    <div class="low-value"></div>
+    <div class="slider range-width">
+      <input type="range" name="range-slider" value="7" id="text-vf-slnt" class="controls--axis" min="0" max="10"> 
+      <label for="range-slider">Slant</label>
+    </div>
+    <div class="high-value"></div>
+    <div class="current-value"></div>
+
+  </div>
+  <div class="code">
+    <code class="prettyprint">
+      .text { <br />
+      &nbsp;&nbsp;  font-style: oblique <span class="current-value"></span>deg; <br />
+      }
+    </code>
+  </div>
+</div>
+
+<script>
+    // get the inputs
+  var inputs = [].slice.call(document.querySelectorAll('.range__axis--slant .controls input'));
+
+  // listen for changes
+  inputs.forEach(input => input.addEventListener('change', handleUpdate));
+  inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+
+
+  function handleUpdate(e) {
+    document.querySelector('.range__axis--slant').style.setProperty(`--${this.id}`, this.value);
+  }
+</script>

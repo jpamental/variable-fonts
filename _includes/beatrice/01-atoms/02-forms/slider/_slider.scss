@@ -1,0 +1,55 @@
+
+input[type=range] {
+	-webkit-appearance: none;
+	width: 100%;
+	border-radius: 8px;
+	height: 7px;
+	border: 1px solid $color-blue-600;
+	background-color: #fff; 
+  /* Webkit */
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: $color-blue-700;
+    border: 1px solid $color-blue-800;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  /* Mozilla */
+  &::-moz-range-track {
+    border-radius: 0.5rem;
+    height: 0.45rem;
+    border: 1px solid $color-blue-600;
+    background-color: #fff;
+  }
+  &::-moz-range-thumb {
+    background-color: $color-blue-700;
+    border: 1px solid $color-blue-800;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  /* Internet Explorer */
+  &::-ms-fill-lower,
+  &::-ms-fill-upper {
+    background: transparent;
+  }
+  &::-ms-track {
+    border-radius: 0.5rem;
+    height: 0.45rem;
+    border: 1px solid $color-blue-600;
+    background-color: #fff;
+  }
+  &::-ms-thumb {
+    background-color: $color-blue-700;
+    border: 1px solid $color-blue-800;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
+
+

@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/03-organisms/10-embeds/axis-component.css" />
+<style>
+  .range__axis.range__axis--width {
+    --text-vf-wght: 400;
+    --text-vf-wdth: 95;
+    --value-tag: 'wdth';
+    --low-value: 85;
+    --current-value: var(--text-vf-wdth);
+    --high-value: 100;
+  }
+
+</style>
+  
+<div class="container range__axis range__axis--width">
+
+  <div class="paragraph">
+
+    <div class="text">Width</div>
+
+  </div>
+  <div id='demo-controls' class="controls">
+    <div class="value-tag"></div>
+    <div class="low-value"></div>
+    <div class="slider range-width">
+      <input type="range" name="range-slider" value="95" id="text-vf-wdth" class="controls--axis" min="85" max="100"> 
+      <label for="range-slider">Width</label>
+    </div>
+    <div class="high-value"></div>
+    <div class="current-value"></div>
+
+  </div>
+  <div class="code">
+    <code class="prettyprint">
+      .text { <br />
+      &nbsp;&nbsp;  font-width: <span class="current-value"></span>%; <br />
+      }
+    </code>
+  </div>
+</div>
+
+<script>
+  // get the inputs
+  var inputs = [].slice.call(document.querySelectorAll('.range__axis--width .controls input'));
+
+  // listen for changes
+  inputs.forEach(input => input.addEventListener('change', handleUpdate));
+  inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+
+
+  function handleUpdate(e) {
+    document.querySelector('.range__axis--width').style.setProperty(`--${this.id}`, this.value);
+  }
+</script>

@@ -17,6 +17,7 @@ const webpack = require('webpack-stream');
 // File paths
 const files = { 
     scssPath: '_includes/beatrice/**/*.scss',
+    embedScssPath: 'embeds/scss/*.scss',
     jsPath: '_includes/beatrice/**/*.js',
     js3rdPartyPath: 'third_party/**'
 }
