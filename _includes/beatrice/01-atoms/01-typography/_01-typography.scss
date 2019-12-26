@@ -467,10 +467,3 @@ code {
   font-size: inherit;
   padding: 0.15em;
 }
-
-/* smooth scrolling to anchor links */
-.smooth {
-  @media not (prefers-reduced-motion: reduce) {
-    scroll-behavior: smooth;
-  }
-}
