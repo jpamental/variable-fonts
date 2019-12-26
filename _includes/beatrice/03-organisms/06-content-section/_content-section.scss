@@ -49,42 +49,4 @@
       }
     }
   }
-/* first reset the default style, then add the section mark using the 'content' attribute */
-hr {
-  border: none;
-}
-hr::after {
-  color: $color-gray-light;
-  content: "§";
-  display: block;
-  font-family: $sans-serif-novf;
-  font-size: 1.5em;
-  font-weight: bold;
-  line-height: 1;
-  margin: 1em auto;
-  padding-top: 0.1em;
-  text-align: center;
-  background: radial-gradient(0.801em at 50%, #fff 0.8em, transparent),
-    linear-gradient(
-        to left,
-        $color-gray-lighter,
-        $color-gray-lighter,
-        $color-gray-lighter
-      )
-      center / 100% 1px no-repeat,
-    linear-gradient(
-        to left,
-        rgba($color-gray-lighter, 0.5),
-        transparent 25%,
-        transparent 75%,
-        rgba($color-gray-lighter, 0.5)
-      )
-      center / 100% 3px no-repeat;
-  @supports (font-variation-settings: normal) {
-    font-family: $sans-serif;
-    padding-top: 0.05em;
-  }
-}
-
-
 }

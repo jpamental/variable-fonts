@@ -200,7 +200,7 @@
     display: inline;
   }
   
-  code.prettyprint {
+  .code code.prettyprint {
     --color-text-highlight: transparent;
     border: none !important;
     font-size: 1.125rem;
@@ -208,18 +208,5 @@
   }
   .code.prettyprint.css {
     position: relative;
-  }
-  .code.prettyprint.css::before {
-    content: "CSS";
-    background-color: #565656;
-    color: #ffffff;
-    padding: 0.25em 0 0.15em;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    text-align: center;
-    transform: rotate(180deg);
-    writing-mode: vertical-rl;
   }
    

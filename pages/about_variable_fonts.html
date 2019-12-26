@@ -35,14 +35,14 @@ permalink: about-variable-fonts
     <div class="content-section--main">
       <p>The most common axis is <span class="medium">weight</span>. Many typefaces are designed with at least regular and bold weights, and quite often with much lighter/thinner and bolder extremes. With a variable font, the standard CSS attribute of <code>font-weight</code> can be used and supplied with a number somewhere between the minimum and maximum value defined for the font. This allows far greater flexibility and precision in specifying weight rather than just a keyword like “normal” or “bold”. According to the OpenType specification, <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_wght">400 should equate to normal</a> for any given font. In practice,  though, that varies quite a bit from typeface to typeface.</p>
 
-<pre class="prettyprint css">
+<pre class="css"><code class="prettyprint">
   p {
     font-weight: 425;
   }
   strong {
     font-weight: 675;
   }
-</pre>
+</code></pre>
     </div>
     <div class="content-section--aside sticky">
         {% include beatrice/03-organisms/10-embeds/axis-component.html 
@@ -64,11 +64,11 @@ permalink: about-variable-fonts
       <div class="content-section--main">
         <p>Another common variation in typeface design is width. You often see it referred to as “condensed” or “compressed” or “extended”—though the meaning of those words is pretty subjective. <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_wdth">According to the spec</a>, 100 should equate to a “normal” width, and valid values can range from 1 to 1000. Like weight, it maps to an existing CSS attribute, in this case font-stretch, and is expressed as a percentage. In these early stages of adoption, many type designers and foundries have not necessarily adhered to this standard, so it can look a little odd in your CSS. But a width range of 3%–5% is still valid, even if in this case 5% is actually the normal width. Hopefully over time more standardization will emerge.</p>
     
-<pre class="prettyprint css">
+<pre class="css"><code class="prettyprint">
   p {
     font-stretch: 89%;
   }
-</pre>
+</code></pre>
     </div>
     <div class="content-section--aside sticky">
         {% include beatrice/03-organisms/10-embeds/axis-component.html 
@@ -89,7 +89,7 @@ permalink: about-variable-fonts
     <div class="content-section--main">
       <p>The italic axis is fairly straightforward. In most cases it’s a boolean 0 or 1: off (upright) or on—usually meaning slanted strokes and sometimes glyph replacements (the lowercase <strong>a</strong> and <strong>g</strong> often have different italic forms, for example). While it’s certainly possible to have a range rather than strictly 0 or 1, the off/on scenario is the most common. Unfortunately, while it is intended to map to <code>font-style: italic</code>, this is one of the areas where browsers have not fully resolved the implementation, so for now it’s necessary to use the lower-level syntax of <code>font-variation-settings</code>. This is a good case for using a CSS custom property so that you can alter only the italic/upright setting without having to redeclare the entire <code>font-variation-settings</code> string.</p>
     
-<pre class="prettyprint css">
+<pre class="css"><code class="prettyprint">
   :root {
     --text-ital: 0;
   }
@@ -99,7 +99,7 @@ permalink: about-variable-fonts
   em {
       --text-ital: 1;
   }
-</pre>
+</code></pre>
     </div>
     <div class="content-section--aside sticky">
         {% include beatrice/03-organisms/10-embeds/axis-component.html 
@@ -120,13 +120,13 @@ permalink: about-variable-fonts
     <div class="content-section--main">
       <p>The slant axis is similar to italic, but differs in two key ways. First, it’s expressed as a degree continuum, and <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_slnt">according to the OpenType specification</a> should be “greater than -90 and less than +90”; and, second, it doesn’t include glyph substitution. Usually associated with sans serifs, it allows for any value along the range specified. If the font in use only has a slant axis and no italics, use the standard attribute of <code>font-style</code>, like so:</p>
     
-<pre class="prettyprint css">
+<pre class="css"><code class="prettyprint">
   em {
     font-style: oblique 12deg;
   }
-</pre>
+</code></pre>
       <p>If the font in use has both slant and italic axes, then you have to use <code>font-variation-settings</code>. In this case, it’s just a numeric value without the <code>deg</code> nomenclature.</p>
-<pre class="prettyprint css">
+<pre class="css"><code class="prettyprint">
   :root {
     --text-slnt: 0;
   }
@@ -136,7 +136,7 @@ permalink: about-variable-fonts
   em {
       --text-slnt: 12;
   }
-</pre>
+</code></pre>
 
     </div>
     <div class="content-section--aside sticky">
@@ -159,15 +159,15 @@ permalink: about-variable-fonts
       <p>The practice of optical sizing evolved in the sixteenth century, back when punchcutters were carving type out of metal by hand. It involved cutting physically smaller type with slightly thicker strokes and less contrast to ensure it would print well and be legible at smaller sizes. Other aspects could be fine-tuned as well—apertures could become wider, terminals more angled, bowls enlarged. [needs an illustration here] Conversely, larger point sizes would be cut with greater finesse, allowing for heightened contrast and intricate details. This allowed a single typeface design to work optimally at a range of physical sizes. The practice of optical sizing was lost, however, with the shift to phototypesetting and then digital type. Both of these newer practices involved taking a single outline and scaling it up or down. Thus the fine details that appeared so graceful at larger sizes grew muddy or even hampered legibility when type was scaled down; sturdier types that worked well in running text at smaller sizes became spindly and frail (especially on early lower-resolution screens) when scaled up. Regaining optical sizing in the form of a variable axis gives tremendous range back to individual designs.</p>
       <p>The concept is that the numeric value for this axis should match the rendered font size, and a new attribute was introduced to go along with it: <code>font-optical-sizing</code>. The default is <code>auto</code>, and this is supported behavior in all shipping browsers. You can force it to off, or you can set an explicit value via <code>font-variation-settings</code>.</p>
     
-<pre class="prettyprint css">
+<pre class="css"><code class="prettyprint">
   body {
     font-optical-sizing: auto;
   }
-</pre>
+</code></pre>
 
       <p>Or:</p>
 
-<pre class="prettyprint css">
+<pre class="css"><code class="prettyprint">
   :root {
     --text-opsz: 16;
   }
@@ -178,7 +178,7 @@ permalink: about-variable-fonts
     --text-opsz: 48;
     font-size: 3em;
   }
-</pre>
+</code></pre>
     </div>
     <div class="content-section--aside sticky">
         {% include beatrice/03-organisms/10-embeds/axis-component.html 
@@ -202,7 +202,7 @@ permalink: about-variable-fonts
       <div class="content-section--main">
         <p>It’s unclear if the creators of the variable font specification were thinking of this when it was written, but technically there is no reason there can’t be separate axes for slant (i.e., angle) and italic (i.e., glyph substitution). Indeed, both David Jonathan Ross and Stephen Nixon have done just that, with <a href="https://djr.com/notes/roslindale-variable-italic-font-of-the-month/">Roslindale Italic</a> and <a href="https://recursive.design">Recursive</a>, respectively. With Recursive, it’s apparent how much flexibility can be achieved by separating the angle change from the glyph substitution. It can impart a completely different feel to a block of text to have an angle without the alternate forms. With the state of italic implementation and the fact that they share the same CSS attribute, this is a situation that requires the use of <code>font-variation-settings</code> in order to set the attributes separately.</p>
       
-<pre class="prettyprint css">
+<pre class="css"><code class="prettyprint">
   :root {
     --text-ital: 0;
     --text-slnt: 0;
@@ -220,7 +220,7 @@ permalink: about-variable-fonts
   .italic-forms-only {
     --text-ital: 1;
   }
-</pre>
+</code></pre>
   
       </div>
       <div class="content-section--aside sticky">

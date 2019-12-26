@@ -38,6 +38,7 @@ $color-blue-200: #95c7fa;
 $color-blue-100: #bfddfc;
 $color-blue-50: #e4f2fe;
 
+$color-purple-900: #4f14c4;
 
 
 /* functional assignments */
@@ -48,8 +49,8 @@ $color-text-highlight: $color-gray-100;
 $color-text-highlight-secondary: $color-gray-50;
 $color-callout-highlight: darken($color-blue-50, 2.5%);
 $color-callout-highlight-secondary: lighten($color-blue-50, 2.5%);
-$color-text-link: $color-blue-700;
-$color-text-link-visited: $color-blue-900;
+$color-text-link: $color-blue-900;
+$color-text-link-visited: $color-purple-900;
 $color-text-link-hover: $color-coral;
 $color-text-link-focus: $color-coral;
 $color-text-link-active: $color-coral;

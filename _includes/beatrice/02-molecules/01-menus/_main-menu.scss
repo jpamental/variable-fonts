@@ -18,11 +18,15 @@
   }
   a {
     display: block;
+    font-weight: 400;
     padding: 0.15rem 0.5rem 0.2rem;
     @media (min-width: $bp--large) {
       display: flex;
       height: 100%;
       align-items: center;
+    }
+    &:visited {
+      --color-text-link-visited: #{$color-blue-900};
     }
   }
 }
