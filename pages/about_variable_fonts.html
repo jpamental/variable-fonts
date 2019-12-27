@@ -7,9 +7,15 @@ permalink: about-variable-fonts
 <h1>{{ page.title }}</h1>
 <section class="content-section">
   <h2>A new kind of font</h2>
+  <figure class="figure--right">
+    {% include beatrice/03-organisms/10-embeds/a-overlays/a-overlays.html 
+    %}
+    <figcaption>Overlaid letterforms showing width and weight ranges</figcaption>
+    </figure>
   <p>Variable fonts are an evolution of the OpenType font specification. As of version 1.8 of the spec, different variations of a typeface can be incorporated into a single font file rather than requiring a separate file for every width, weight, or style. On the web, that means you can use CSS to access all of the variations contained in a font file without worrying about any artificial distortion by the browser, like faux bolds or faux italics. Previously, using multiple variations of a typeface meant loading multiple files, which created tension between design expressiveness and website performance. The more expressive the design, the slower the load times.</p>
     
   <h2>Variations without limitations</h2>
+
   <p>With variable fonts, that whole equation changes. Variation axes can include <a href="#wght"><span class="medium">weight</span></a>, <a href="#wdth"><span class="medium">width</span></a>, <a href="#ital"><span class="medium">italic</span></a>, <a href="#slnt"><span class="medium">slant</span></a>, <a href="#opsz"><span class="medium">optical size</span></a>, and anything else the typeface designer decides to include. Not every variable font will have every possible axis (weight will likely be the most popular), but the format and the implementation in browsers and operating systems guarantee they will all work as intended.</p>
 
   <aside class="aside aside--right">
