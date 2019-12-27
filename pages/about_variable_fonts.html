@@ -12,24 +12,38 @@ permalink: about-variable-fonts
     %}
     <figcaption>Overlaid letterforms showing width and weight ranges</figcaption>
     </figure>
-  <p>Variable fonts are an evolution of the OpenType font specification. As of version 1.8 of the spec, different variations of a typeface can be incorporated into a single font file rather than requiring a separate file for every width, weight, or style. On the web, that means you can use CSS to access all of the variations contained in a font file without worrying about any artificial distortion by the browser, like faux bolds or faux italics. Previously, using multiple variations of a typeface meant loading multiple files, which created tension between design expressiveness and website performance. The more expressive the design, the slower the load times.</p>
+  <p class="lede">Variable fonts are an evolution of the OpenType font specification. As of version 1.8 of the spec, different variations of a typeface can be incorporated into a single font file rather than requiring a separate file for every width, weight, or style. On the web, that means you can use CSS to access all of the variations contained in a font file without worrying about any artificial distortion by the browser, like faux bolds or faux italics. </p>
+  <p class="lede">Previously, using multiple variations of a typeface meant loading multiple files, which created tension between design expressiveness and website performance. The more expressive the design, the slower the load times.</p>
     
   <h2>Variations without limitations</h2>
 
-  <p>With variable fonts, that whole equation changes. Variation axes can include <a href="#wght"><span class="medium">weight</span></a>, <a href="#wdth"><span class="medium">width</span></a>, <a href="#ital"><span class="medium">italic</span></a>, <a href="#slnt"><span class="medium">slant</span></a>, <a href="#opsz"><span class="medium">optical size</span></a>, and anything else the typeface designer decides to include. Not every variable font will have every possible axis (weight will likely be the most popular), but the format and the implementation in browsers and operating systems guarantee they will all work as intended.</p>
-
+  <p>With variable fonts, that whole equation changes. Variation axes can include:</p>
+  <ul>
+    <li><a href="#wght" class="medium">Weight</a></li>
+    <li><a href="#wdth" class="medium">Width</a></li>
+    <li><a href="#ital" class="medium">Italic</a></li>
+    <li><a href="#slnt" class="medium">Slant</a></li>
+    <li><a href="#opsz" class="medium">Optical size</a></li>
+    <li>And any other variation the typeface designer chooses to include </li>
+  </ul>
   <aside class="aside aside--right">
     <h3>What’s an axis?</h3>
-    <p>A variation axis is simply an expression of one aspect of a typeface’s design. A weight axis, for example, defines how light or bold a font looks. With standard fonts, the terms “normal” and “bold” referred to specific files. With variable fonts, weight is conveyed through minimum and maximum numeric values; the web designer can choose any value in between.</p>
+    <p><span class="medium">A variation axis is simply an expression of one aspect of a typeface’s design.</span> The weight axis, for example,  defines how light or bold a font looks. With standard fonts, the terms “normal” and “bold” referred to specific files that would be called to serve those styles. Now, weight is conveyed through minimum and maximum numeric values—allowing the web designer to choose any value in between.</p>
   </aside>
+  <p>Not every variable font will have every possible axis (<span class="medium">weight</span> will likely be the most popular), but the format and the implementation in browsers and operating systems guarantee they will all work as intended.</p>
 
-  <p>The format itself is purposely left open. While there are currently five “registered” axes, type designers can define their own custom axes, allowing any kind of variations they can imagine. The registered axes are weight, width, italic, slant, and optical size. These are meant to map to mostly existing CSS attributes: <code>font-weight</code> (weight), <code>font-stretch</code> (width), <code>font-style</code> (italic and slant), and a new one: <code>font-optical-sizing</code> (optical size). Some custom axes already in use address grade, expressiveness, and even the ascender and descender height of lowercase letters.</p>
-  <h3>Why this matters</h3>
-  <p>What makes this new format so significant is the variety of ways it can benefit designing for the web and mobile applications. Downloading a single file instead of multiple individual fonts can yield a significant performance gain in reduced file size and fewer file requests. Since that single file includes the entire design space instead of a few very specific weights or other variants, the design vocabulary is much greater. Instead of only one or two weights, the entire available range can be referenced directly via CSS. That could mean everything from extra-light to extra-heavy, narrow to wide, upright to italic.</p> 
-  <p>Effective use of type generates greater clarity and hierarchy, which benefits both design and user experience. There are accessibility benefits, too—like providing a way for users to increase font weight and color contrast a tad to help with low vision, or making subtle adjustments to the typography for a dark-mode implementation for people who are sensitive to light.</p>
+
+  <p>Axes are divided into two types, registered and custom. While there are currently five registered axes, type designers can define their own custom ones, creating any kind of variations they can dream up. There are already examples of custom axes for grade, expressiveness, and even the ascender and descender height of lowercase letters. The format itself is purposely left open to allow this sort of innovation.</p>
+  <p>When used, the registered or conventional axes are referenced in lowercase, and the names of custom axes are referenced in uppercase.</p>
     
-  <h3>How this site is structured</h3>
-  <p>The purpose of this site is to show how variable fonts work, and to highlight how they can benefit user interface (UI) design, accessibility, and long-form reading, pushing the boundaries of skillful typographic design and expression on the web. Various registered and custom axes are shown below, while deeper explorations of how variable fonts can benefit user interface design, accessibility, performance, readability, and design are covered separately [links to these pages to come]. You can also find more details on <a href="{{ site.baseurl }}/implementing-variable-fonts">implementing variable fonts in a separate section</a>.</p>
+  <p>The registered axes are weight, width, italic, slant, and optical size. These are meant to map to four existing and one new CSS attribute: <code>font-weight</code> (weight), <code>font-stretch</code> (width), <code>font-style</code> (italic and slant), and a new one: <code>font-optical-sizing</code> (optical size).</p>
+  
+  <h3>Why this matters</h3>
+  <p>What makes this new format so significant is the variety of ways it can benefit designing for the web and mobile applications. </p>
+  <p>Downloading a single file instead of multiple individual fonts can yield a significant performance gain in reduced file size and fewer file requests. </p>
+  <p>Since that single file includes the entire design space instead of a few very specific weights or other variants, the design vocabulary is much greater. Instead of only one or two weights, the entire available range can be referenced directly via CSS. That could mean everything from extra-light to extra-heavy, narrow to wide, upright to italic.</p> 
+  <p>Effective use of type generates greater clarity and hierarchy, which benefits both design and user experience. There are accessibility benefits, too—like providing a way for users to increase font weight and color contrast a tad to help with low vision, or making subtle adjustments to the typography for a dark-mode implementation for people who are sensitive to light.</p>
+
   <h2>Registered Axes</h2>
   <p>As mentioned above, the five most commonly agreed upon axes of variation are known as “registered” axes and  and have been accepted by broad consensus, along with their four-letter tags, as standard. These axes also map directly to CSS attributes when used on the web. Each one is defined and demonstrated below.</p>
 

@@ -74,11 +74,12 @@ li {
 }
 
 
-p {
+p,
+li {
   @include text-body;
   @include content-width;
   margin-top: 0;
-  margin-bottom: var(--body-text-spacer);
+  margin-bottom: 0;
   -webkit-hyphens: auto;
   hyphens: auto;
 
@@ -137,8 +138,20 @@ p {
     --p-vf-GRAD: 0.25;
     letter-spacing: 0.025em;
   }
+  p + &, 
+  aside + & {
+    margin-top: var(--body-text-spacer);
+  }
 }
 
+.lede {
+  --p-font-size-min: 1.33;
+  --p-font-size-max: 1.5;
+  --p-vf-wght: 200;
+  &:first-of-type::first-line {
+    font-weight: 525;
+  }
+}
 strong {
   @supports (font-variation-settings: normal) {
     font-synthesis: none;
