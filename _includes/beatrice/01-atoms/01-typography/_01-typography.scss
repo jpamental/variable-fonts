@@ -56,6 +56,7 @@ body {
 }
 
 p, 
+em,
 th, 
 td, 
 li {
@@ -68,8 +69,7 @@ li {
   @supports (font-variation-settings: normal) {
     font-family: $sans-serif;
   	font-weight: var(--p-vf-wght);
-    font-style: normal;
-    font-variation-settings: 'opsz' var(--text-opsz);
+    font-variation-settings: 'opsz' var(--text-opsz), 'slnt' var(--p-vf-slnt);
   }
 }
 
@@ -170,7 +170,7 @@ strong {
 em {
   @supports (font-variation-settings: normal) {
     font-synthesis: none;
-    font-weight: calc(var(--p-vf-wght) * 1.35);
+    --p-vf-slnt: -12;
   }
 }
 
