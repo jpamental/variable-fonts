@@ -49,4 +49,20 @@
       }
     }
   }
+  &--wght {
+    > h2 {
+      background-image: url(../img/hdr_bkgrnd_weight.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding-bottom: calc( var(--body-text-spacer) / 2 );
+    }
+  }
+  &--wdth {
+    > h2 {
+      background-image: url(../img/hdr_bkgrnd_width.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding-bottom: calc( var(--body-text-spacer) / 2 );
+    }
+  }
 }
