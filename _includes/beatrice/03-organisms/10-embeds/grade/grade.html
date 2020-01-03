@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/03-organisms/10-embeds/axis-component.css" />
+<style>
+  .range__axis.range__axis--grade {
+    --text-vf-wght: 400;
+    --text-vf-wdth: 100;
+    --text-vf-grad: 0;
+    --value-tag: 'GRAD';
+    --low-value: -1;
+    --current-value: var(--text-vf-grad);
+    --high-value: 1;
+  }
+  .range__axis.range__axis--grade .controls .current-value::before,
+  .range__axis.range__axis--grade .code .current-value::before {
+    border: none;
+    content: none;
+    display: inline;
+    font-family: sans-serif;
+    min-width: none;
+    margin: 0;
+    padding: 0;
+  }
+  .range__axis.range__axis--grade .controls .current-value {
+    border: solid 1px black;
+    display: inline-block;
+    font-family: sans-serif;
+    min-width: 3rem;
+    margin: 0.5rem auto 0 auto;
+    padding: 0.25rem 0.25rem 0.2rem 0.25rem;
+  }
+  .range__axis.range__axis--grade .paragraph .text {
+    font-family: "Roboto Delta Variable", sans-serif;
+    font-variation-settings: 'GRAD' var(--text-vf-grad);
+  }
+  .range__axis.range__axis--grade code.prettyprint {
+    font-size: 1rem;
+    max-width: 26rem;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+</style>
+
+<div class="container range__axis range__axis--grade">
+
+  <div class="paragraph">
+
+    <div class="text">Grade</div>
+
+  </div>
+  <div id='demo-controls' class="controls">
+    <div class="value-tag"></div>
+    <div class="low-value"></div>
+    <div class="slider range-width">
+      <input type="range" name="range-slider" value="0" id="text-vf-grad" class="controls--axis" min="-1" max="1" step="0.01"> 
+      <label for="range-slider">Grade</label>
+    </div>
+    <div class="high-value"></div>
+    <div class="current-value">0</div>
+
+  </div>
+  <div class="code">
+    <code class="prettyprint">
+      .text { <br />
+      &nbsp;&nbsp;  font-variation-settings: 'GRAD' <span class="current-value">0</span>; <br />
+      }
+    </code>
+  </div>
+</div>
+
+<script>
+    // get the inputs
+  var inputs = [].slice.call(document.querySelectorAll('.range__axis--grade .controls input'));
+
+  // listen for changes
+  inputs.forEach(input => input.addEventListener('change', handleUpdate));
+  inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+
+
+  function handleUpdate(e) {
+    document.querySelector('.range__axis--grade').style.setProperty(`--${this.id}`, this.value);
+    document.querySelector('.range__axis--grade .controls .current-value').textContent=this.value;
+    document.querySelector('.range__axis--grade .code .current-value').textContent=this.value;
+  }
+</script>

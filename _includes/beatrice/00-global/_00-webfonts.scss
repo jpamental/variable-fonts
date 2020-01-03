@@ -92,6 +92,15 @@
 @font-face{
   font-family: 'Roboto Variable';
   font-weight: 100 900; /* default: 400 */
+  font-style: oblique 0deg 12deg;
+  font-stretch: 75% 100%; /* default: 100% */
+  src: url('../fonts/Roboto-min-VF_hinted-subset.woff2') format('woff2 supports variations'), url('../fonts/Roboto-min-VF_hinted-subset.woff2') format('woff2-variations');
+}
+
+
+@font-face{
+  font-family: 'Roboto Delta Variable';
+  font-weight: 100 900; /* default: 400 */
   font-style: normal;
   font-stretch: 75% 125%; /* default: 100% */
   src: url('../fonts/RobotoDelta_v2-VF.woff2') format('woff2 supports variations'), url('../fonts/RobotoDelta_v2-VF.woff2') format('woff2-variations');

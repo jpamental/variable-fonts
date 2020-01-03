@@ -69,7 +69,7 @@ li {
     font-family: $sans-serif;
   	font-weight: var(--p-vf-wght);
     font-style: normal;
-    font-variation-settings: 'opsz' var(--text-opsz), 'GRAD' var(--p-vf-GRAD);
+    font-variation-settings: 'opsz' var(--text-opsz);
   }
 }
 
@@ -135,7 +135,7 @@ li {
     }    
   }
   @media (prefers-color-scheme:dark) {
-    --p-vf-GRAD: 0.25;
+    --p-vf-wght: 375;
     letter-spacing: 0.025em;
   }
   p + &, 

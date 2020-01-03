@@ -216,11 +216,11 @@ permalink: about-variable-fonts
 </section>
        
 <section class="content-section axis registered" id="slnt_ital">
-    <hr />
-    <h2>Slant & Italics</h2>
-    <div class="content-section--grid">
-      <div class="content-section--main">
-        <p>It’s unclear if the creators of the variable font specification were thinking of this when it was written, but technically there is no reason there can’t be separate axes for slant (i.e., angle) and italic (i.e., glyph substitution). Indeed, both David Jonathan Ross and Stephen Nixon have done just that, with <a href="https://djr.com/notes/roslindale-variable-italic-font-of-the-month/">Roslindale Italic</a> and <a href="https://recursive.design">Recursive</a>, respectively. With Recursive, it’s apparent how much flexibility can be achieved by separating the angle change from the glyph substitution. It can impart a completely different feel to a block of text to have an angle without the alternate forms. With the state of italic implementation and the fact that they share the same CSS attribute, this is a situation that requires the use of <code>font-variation-settings</code> in order to set the attributes separately.</p>
+  <hr />
+  <h2>Slant & Italics</h2>
+  <div class="content-section--grid">
+    <div class="content-section--main">
+      <p>It’s unclear if the creators of the variable font specification were thinking of this when it was written, but technically there is no reason there can’t be separate axes for slant (i.e., angle) and italic (i.e., glyph substitution). Indeed, both David Jonathan Ross and Stephen Nixon have done just that, with <a href="https://djr.com/notes/roslindale-variable-italic-font-of-the-month/">Roslindale Italic</a> and <a href="https://recursive.design">Recursive</a>, respectively. With Recursive, it’s apparent how much flexibility can be achieved by separating the angle change from the glyph substitution. It can impart a completely different feel to a block of text to have an angle without the alternate forms. With the state of italic implementation and the fact that they share the same CSS attribute, this is a situation that requires the use of <code>font-variation-settings</code> in order to set the attributes separately.</p>
       
 <pre class="css"><code class="prettyprint">
   :root {
@@ -242,10 +242,117 @@ permalink: about-variable-fonts
   }
 </code></pre>
   
+    </div>
+    <div class="content-section--aside sticky">
+        {% include beatrice/03-organisms/10-embeds/axis-component.html 
+          axis = 'slant-italics'
+        %}
+    </div>
+    <div class="content-section--main">
+      <h3>Why this matters</h3>
+      <p>Having these axes separated offers greater design flexibility when creating typographic systems. In some cases, slant alone may be the best option; in others, both angle and glyph substitution may be desirable. Although not the most critical of features, this does add an extra dimension to the utility and dynamic range of a font.</p>
+    </div>
+  </div>
+</section>
+<section class="content-section">
+  <h2>Custom Axes</h2>
+  <p>There are many examples of custom axes, so it’s impossible to showcase them all here. The v-fonts.com site is a good place to browse and see just what sort of variety exists. Here there are a few examples to highlight usage for accessibility and UI improvements, and greater creativity in typographic systems and expressiveness.</p>
+</section>
+
+<section class="content-section axis registered" id="slnt">
+  <hr />
+  <h2>Grade</h2>
+  <div class="content-section--grid">
+    <div class="content-section--main">
+      <p>The notion of “grade” in a typeface was first introduced to compensate for ink gain on different kinds of paper and presses as a way to visually correct across workflows and have a typeface appear the same on every one. The concept is altering the weight of the font without changing the overall space the text occupies. Having this as a variable axis can be useful in a couple of ways. Creating a higher-contrast mode, where the text gets a bit heavier without reflowing, can make text more legible in lower-light situations or in designing for “dark mode.” And when animating interface elements, it can add a heavier text grade along with a background color shift on hover, tap, or focus. It can also come in handy for responding to lower-resolution screens, where type can easily become a bit spindly. Note that as with other custom axes, it needs to be specified in all caps.</p>
+    
+<pre class="css"><code class="prettyprint">
+  :root {
+    --text-grad: 0;
+  }
+  body {
+    font-variation-settings: 'GRAD' var(--text-grad);
+  }
+  body.dark {
+    --text-grad: 0.5;
+  }
+</code></pre>
+
+    </div>
+    <div class="content-section--aside sticky">
+        {% include beatrice/03-organisms/10-embeds/axis-component.html 
+          axis = 'grade'
+        %}
+    </div>
+    <div class="content-section--main">
+      <h3>Why this matters</h3>
+      <p>Likely the most significant use of a grade axis will be for accessibility—for example designing a dark or high-contrast mode. But it will also feature well in UI animations, like making text heavier on buttons or navigation on hover or focus without altering the physical space occupied by the text.</p>
+    </div>
+  </div>
+</section>
+
+<section class="content-section axis registered" id="slnt">
+  <hr />
+  <h2>Casual</h2>
+  <div class="content-section--grid">
+    <div class="content-section--main">
+      <p><a href="https://recursive.design">Recursive</a> is a variable font that actually has 5 different axes, but the custom one focused on here is called “Casual” and alters the look of the font from a more typical sans serif design to one that more resembles freehand sign painting.</p>
+    
+<pre class="css"><code class="prettyprint">
+  :root {
+    --text-casl: 0;
+  }
+  body {
+    font-variation-settings: 'CASL' var(--text-casl);
+  }
+  .casual {
+    --text-casl: 0.95;
+  }
+    
+</code></pre>
+
+    </div>
+    <div class="content-section--aside sticky">
+        {% include beatrice/03-organisms/10-embeds/axis-component.html 
+          axis = 'casual'
+        %}
+    </div>
+    <div class="content-section--main">
+      <h3>Why this matters</h3>
+      <p>While some might not find value in this axis, it does provide the ability to introduce a vastly different feel to a block of text (like headings perhaps) in addition to the more conservative and more standard sans serif without loading a second font. This introduces a tremendous range of design vocabulary.</p>
+    </div>
+  </div>
+</section>
+<section class="content-section axis registered" id="ytas_ytde">
+    <hr />
+    <h2>Ascenders & Descenders</h2>
+    <div class="content-section--grid">
+      <div class="content-section--main">
+        <p>This custom axis alters the height of the ascenders and descenders of lower case letters. These are the parts of the letters that ‘ascend’ (the tops of b’s, d’s, t’s, and h’s) and those that ‘descend’ (the bottom of p’s, q’s, g’s, and y’s). This axis is for altering just how expressive a block of text can feel and also when setting text with little extra line-height. It’s common to set large text blocks very tightly, and being able to reduce the height of the ascenders and descenders allows lines of text to be set very closely together without undesired collisions between the descenders on one line and the ascenders of the line below. The variable font Amstelvar has two custom axes: <code>YTAS</code> for ascenders and <code>YTDE</code> for descenders.
+          </p>
+        
+<pre class="css"><code class="prettyprint">
+  :root {
+    --text-ytas: 750;
+    --text-ytde: 250;
+  }
+  body {
+    font-variation-settings: 'YTAS' var(--text-ytas), 'YTDE' var(--text-ytde);
+  }
+  .shorter {
+      --text-ytas: 675;
+      --text-ytde: 185;
+  }
+  .taller {
+    --text-ytas: 825;
+    --text-ytde: 335;
+  }
+ </code></pre>
+    
       </div>
       <div class="content-section--aside sticky">
           {% include beatrice/03-organisms/10-embeds/axis-component.html 
-            axis = 'slant-italics'
+            axis = 'ascender-descender'
           %}
       </div>
       <div class="content-section--main">
@@ -254,3 +361,10 @@ permalink: about-variable-fonts
       </div>
     </div>
   </section>
+  
+<section class="content-section">
+  <hr />
+  <h2>Next steps</h2>
+  <p>This should provide a good start to understanding the power and flexibility of variable fonts. They may not always be the most appropriate solution, but there are many cases where they can bring substantial benefits. Have a look at <a href="{{ site.url }}/implementing_variable_fonts.html">Implementing Variable Fonts</a> to see how to incorporate them into your own projects and give them a try.</p>
+</section>
+

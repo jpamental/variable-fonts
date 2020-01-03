@@ -2,4 +2,9 @@
 .page-wrapper {
   overflow-x: hidden;
   width: 100%;
+  > footer {
+    margin-top: 2rem;
+    padding: 1rem;
+    text-align: center;
+  }
 }
