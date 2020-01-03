@@ -32,6 +32,7 @@
     "@material/menu": "^4.0.0",
     "@material/slider": "^4.0.0",
     "@material/tab-bar": "^4.0.0",
-    "@material/top-app-bar": "^4.0.0"
+    "@material/top-app-bar": "^4.0.0",
+    "lodash.template": "^4.5.0"
   }
 }
