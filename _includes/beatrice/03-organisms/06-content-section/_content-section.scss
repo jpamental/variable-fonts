@@ -36,16 +36,27 @@
 
 .axis {
   padding-top: 3rem;
+  > h2 {
+    margin-top: 0;
+    &::before {
+      display: block;
+      font-family: $sans-serif-novf;
+      font-size: 1rem;
+      font-weight: 375;
+      font-variant-caps: all-small-caps;
+    }
+  }
   &.registered {
     > h2 {
-      margin-top: 0;
       &::before {
         content: "Registered Axis";
-        display: block;
-        font-family: $sans-serif-novf;
-        font-size: 1rem;
-        font-weight: 375;
-        font-variant-caps: all-small-caps;
+      }
+    }
+  }
+  &.custom {
+    > h2 {
+      &::before {
+        content: "Custom Axis";
       }
     }
   }
