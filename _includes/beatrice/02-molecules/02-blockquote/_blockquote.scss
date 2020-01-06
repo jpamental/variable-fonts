@@ -1,0 +1,79 @@
+// Blockquote layout styles
+// =============================================================================
+
+blockquote {
+  @include content-width;
+  border-left: solid 0.5em $color-blue-300;
+  margin-left: 0;
+  margin-top: 0;
+  margin-bottom: var(--body-text-spacer);
+
+  * + & {
+    margin-top: var(--body-text-spacer);
+  }
+
+  p {
+    --p-font-size-min: 1.75;
+    --p-font-size-max: 2.5;
+    --p-vf-slnt: -12;
+  	
+  	color: $color-gray;
+  	font-style: italic;
+    font-weight: 100;
+    margin-left: 0;
+    margin-bottom: 0;
+    padding-left: 0.75em;
+    + p {
+      margin-top : var(--body-text-spacer);
+    }
+
+	}
+  @supports (font-variation-settings: normal) {
+    p {
+      --p-line-height-min: 1.25;
+      --p-line-height-max: 1.4;
+      --p-font-size-min: 1.5;
+      --p-font-size-max: 2;
+      --p-vf-wght: 100;
+      --text-opsz: calc( var(--p-font-size-min) * var(--text-size-base) );
+      color: $color-gray;
+      font-style: italic;
+      font-weight: var(--p-vf-wght);
+  
+      @media (min-width: $bp--xxlarge) {
+        --text-opsz: calc( var(--p-font-size-max) * var(--text-size-base) );
+      }
+    }
+  }
+  &.left {
+    clear: left;
+    float: left;
+    @media screen and (min-width: $bp--medium) {
+      margin-left: 1rem;
+      margin-right: 0.5rem;
+    }
+  }
+  &.right {
+    padding-right: 0.5rem;
+    @media screen and (min-width: $bp--medium) {
+      clear: right;
+      float: right;
+      margin-left: 2rem;
+      margin-right: 0;
+      margin-top: 0;
+      min-width: 15rem;
+      padding-right: 1rem;
+      width: calc( 100% - (var(--content-width) + 2rem) );
+    }
+  }
+  img {
+    height: auto;
+    max-width: 100%;
+    width: 100%;
+  }
+  cite {
+    @include text-smedium;
+    font-style: italic;
+    padding-left: 1.5rem;
+  }
+}

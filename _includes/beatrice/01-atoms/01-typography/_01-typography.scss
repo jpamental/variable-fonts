@@ -75,7 +75,9 @@ li {
 
 
 p,
-li {
+li, 
+th,
+td {
   @include text-body;
   @include content-width;
   margin-top: 0;
@@ -160,6 +162,14 @@ strong {
 }
 
 .medium {
+  font-weight: bold;
+  @supports (font-variation-settings: normal) {
+    font-synthesis: none;
+    font-weight: calc(var(--p-vf-wght) * 1.75);
+  }
+}
+
+th {
   font-weight: bold;
   @supports (font-variation-settings: normal) {
     font-synthesis: none;
@@ -472,6 +482,7 @@ h5 {
     }
   }
 }
+
 
 code {
   background-color: var(--color-text-highlight);

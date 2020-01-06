@@ -30,6 +30,13 @@ figure {
       width: calc( 100% - (var(--content-width) + 2rem) );
     }
   }
+  &.large {
+    float: none;
+    width: 100%;
+  }
+  * + & {
+    margin-top: var(--body-text-spacer);
+  }
 }
 
 figcaption {
@@ -108,3 +115,23 @@ hr::after {
   }
 }
 
+table {
+  @include content-min-width;
+  border: solid 1px $color-gray-300;
+  padding: 0;
+  * + & {
+    margin-top: var(--body-text-spacer);
+  }
+}
+tbody {
+  border-collapse: collapse;
+}
+th {
+  background-color: $color-blue-100;
+  color: $color-gray-900;
+  padding: 0.15rem 0.25rem;
+  text-align: left;
+}
+td {
+  padding: 0.15rem 0.25rem;
+}

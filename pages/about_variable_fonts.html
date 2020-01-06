@@ -12,48 +12,83 @@ permalink: about-variable-fonts
     %}
     <figcaption>Overlaid letterforms showing width and weight ranges</figcaption>
     </figure>
-  <p class="lede">Variable fonts are an evolution of the OpenType font specification. As of version 1.8 of the spec, different variations of a typeface can be incorporated into a single font file rather than requiring a separate file for every width, weight, or style. On the web, that means you can use CSS to access all of the variations contained in a font file without worrying about any artificial distortion by the browser, like faux <strong>bolds</strong> or faux <em>italics</em>. </p>
-  <p class="lede">Previously, using multiple variations of a typeface meant loading multiple files, which created tension between design expressiveness and website performance. The more expressive the design, the slower the load times.</p>
-    
-  <h2>Variations without limitations</h2>
+  <p class="lede">Variable fonts are an evolution of the <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/">OpenType specification</a>. They let you use CSS to access all the styles contained in a single font file without worrying about browser distortions like faux <strong>bolds</strong> or faux <em>italics</em>.</p> 
+  <p class="lede">Using multiple variations of a standard typeface means loading multiple files—a file for every style. This can create tension between design expressiveness (the number of fonts used) and website performance (the amount of data to download).</p> 
+          
+  <blockquote>
+    <p>Use as many variations of a font as you like without slowing down your site</p>
+  </blockquote>
 
-  <p>With variable fonts, that whole equation changes. Variation axes can include:</p>
+  <p>With variable fonts, that whole equation changes. <em>Variation axes</em> can include:</p>
   <ul>
     <li><a href="#wght" class="medium">Weight</a></li>
     <li><a href="#wdth" class="medium">Width</a></li>
     <li><a href="#ital" class="medium">Italic</a></li>
     <li><a href="#slnt" class="medium">Slant</a></li>
     <li><a href="#opsz" class="medium">Optical size</a></li>
-    <li>And any other variation the typeface designer chooses to include </li>
+    <li><a href="#custom" class="medium">And any other variation the typeface designer comes up with</a></li>
   </ul>
+  <h3>What’s an axis?</h3>
   <aside class="aside aside--right">
-    <h3>What’s an axis?</h3>
-    <p><span class="medium">A variation axis is simply an expression of one aspect of a typeface’s design.</span> The weight axis, for example,  defines how light or bold a font looks. With standard fonts, the terms “normal” and “bold” referred to specific files that would be called to serve those styles. Now, weight is conveyed through minimum and maximum numeric values—allowing the web designer to choose any value in between.</p>
+    <p class="medium">A variation axis is the expression of a single aspect of a typeface’s design</p> 
+    <p>The weight axis, for example, defines how light or bold a font looks. With standard fonts, the terms “normal” and “bold” refer to specific files that are called to serve those styles. With variable fonts, weight is conveyed through minimum and maximum numeric values, and designers or developers can choose any value in between.</p>
   </aside>
-  <p>Not every variable font will have every possible axis (<span class="medium">weight</span> will likely be the most popular), but the format and the implementation in browsers and operating systems guarantee they will all work as intended.</p>
 
+  <p>Not every variable font will have every possible axis (weight will likely be the most popular), but the format, browser implementation, and operating systems guarantee they’ll all work as intended.</p>
 
-  <p>Axes are divided into two types, registered and custom. While there are currently five registered axes, type designers can define their own custom ones, creating any kind of variations they can dream up. There are already examples of custom axes for grade, expressiveness, and even the ascender and descender height of lowercase letters. The format itself is purposely left open to allow this sort of innovation.</p>
-  <p>When used, the registered or conventional axes are referenced in lowercase, and the names of custom axes are referenced in uppercase.</p>
-    
-  <p>The registered axes are weight, width, italic, slant, and optical size. These are meant to map to four existing and one new CSS attribute: <code>font-weight</code> (weight), <code>font-stretch</code> (width), <code>font-style</code> (italic and slant), and a new one: <code>font-optical-sizing</code> (optical size).</p>
+  <p>Axes are divided into 2 types, registered and custom. While there are currently 5 registered axes, type designers can define their own custom axes, creating any kind of variations they can dream up. There are fonts with custom axes for grade, expressiveness, the ascender and descender height of lowercase letters, and countless more. The format itself is purposely left open to allow this sort of innovation.</p>
+  <p>In the CSS, the abbreviations of the registered or conventional axes are written in lowercase, and the abbreviations of custom axes are written in uppercase.</p> 
+  <p>The registered axes map to standard CSS attributes. Custom axes can be referenced using the new CSS attribute <code>font-variation-settings</code>. </p>
+  
+  <table>
+    <tbody>
+      <tr>
+        <th>Axis & Abbreviation</th>
+        <th>CSS attribute</th>
+      </tr>
+      <tr>
+        <td>Weight (<code>wght</code>)</td>
+        <td><code>font-weight</code></td>
+      </tr>
+      <tr>
+        <td>Width (<code>wdth</code>)</td>
+        <td><code>font-width</code></td>
+      </tr>
+      <tr>
+        <td>Italic (<code>ital</code>)</td>
+        <td><code>font-style</code></td>
+      </tr>
+      <tr>
+        <td>Slant (<code>slnt</code>)</td>
+        <td><code>font-style</code></td>
+      </tr>
+      <tr>
+        <td>Optical size (<code>opsz</code>)</td>
+        <td><code>font-optical-sizing</code></td>
+      </tr>
+    </tbody>
+  </table>
   
   <h3>Why this matters</h3>
-  <p>What makes this new format so significant is the variety of ways it can benefit designing for the web and mobile applications. </p>
-  <p>Downloading a single file instead of multiple individual fonts can yield a significant performance gain in reduced file size and fewer file requests. </p>
-  <p>Since that single file includes the entire design space instead of a few very specific weights or other variants, the design vocabulary is much greater. Instead of only one or two weights, the entire available range can be referenced directly via CSS. That could mean everything from extra-light to extra-heavy, narrow to wide, upright to italic.</p> 
-  <p>Effective use of type generates greater clarity and hierarchy, which benefits both design and user experience. There are accessibility benefits, too—like providing a way for users to increase font weight and color contrast a tad to help with low vision, or making subtle adjustments to the typography for a dark-mode implementation for people who are sensitive to light.</p>
+  
+  <blockquote class="right">
+    <p>Variable fonts are better for web and mobile apps</p>
+  </blockquote>
 
-  <h2>Registered Axes</h2>
-  <p>As mentioned above, the five most commonly agreed upon axes of variation are known as “registered” axes and  and have been accepted by broad consensus, along with their four-letter tags, as standard. These axes also map directly to CSS attributes when used on the web. Each one is defined and demonstrated below.</p>
+  <p>Downloading a single file instead of multiple individual fonts can yield a significant performance gain in reduced file size and fewer file requests. </p>
+  <p>Since that single file includes the entire design space instead of a few very specific weights or other variants, the design vocabulary is much greater. Instead of only 1 or 2 weights, the entire available range can be referenced directly via CSS—from extra-light to extra-heavy, narrow to wide, upright to italic. </p>
+  <p>Effective use of type generates greater clarity and hierarchy, which benefits both design and user experience. There are accessibility benefits, too, like providing a way for users to increase font weight and color contrast to help with low vision, or making subtle adjustments to the typography for a dark-mode implementation for people who are sensitive to light.</p>
+
+  <hr />
+  <h2>Axes</h2>
 
 </section>
 <section class="content-section axis registered axis--wght" id="wght">
-  <hr />
   <h2>Weight</h2>
   <div class="content-section--grid">
     <div class="content-section--main">
-      <p>The most common axis is <span class="medium">weight</span>. Many typefaces are designed with at least regular and bold weights, and quite often with much lighter/thinner and bolder extremes. With a variable font, the standard CSS attribute of <code>font-weight</code> can be used and supplied with a number somewhere between the minimum and maximum value defined for the font. This allows far greater flexibility and precision in specifying weight rather than just a keyword like “normal” or “bold”. According to the OpenType specification, <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_wght">400 should equate to normal</a> for any given font. In practice,  though, that varies quite a bit from typeface to typeface.</p>
+      <p>Many typefaces are designed with at least regular and bold weights, and quite often with much lighter/thinner and bolder extremes.</p>
+      <p>With a variable font, the standard CSS attribute of <code>font-weight</code> can be used with a number somewhere between the minimum and maximum value defined for the font. This allows far greater flexibility and precision in specifying weight than just a keyword like “normal” or “bold”. According to the OpenType specification, <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_wght">400 should equate to normal</a> for any given font. In practice, though, that varies quite a bit from typeface to typeface.</p>
 
 <pre class="css"><code class="prettyprint">
   p {
@@ -71,7 +106,8 @@ permalink: about-variable-fonts
     </div>
     <div class="content-section--main">
       <h3>Why this matters</h3>
-      <p>Besides being able to make use of a broader range for design elements like big quotes in an extra-thin weight, or adding even more emphasis with a very heavy one, it’s worth experimenting with what it means for something to be “bold.” Using a slightly less bold value for bold text inline with body copy (i.e., the strong tag) can bring more legibility to emphasized text while still standing out. With heavier weights, letterforms tend to close up, so being a bit subtler at smaller sizes can still provide emphasis while preserving openness. Try setting strong to a <code>font-weight</code> somewhere between 500–600 instead of the default 700.</p>
+      <p>A broader range for design elements, like an extra-thin weight for big quotes or a super-heavy one for extra emphasis, is very useful. It’s also worth experimenting with what it means for something to be “bold.” </p>
+      <p>Using a slightly less bold value for bold text inline with body copy (i.e., the <code>strong</code> tag) can bring more legibility to emphasized text while still standing out. With heavier weights, characters tend to close up, so being just a little bolder at smaller sizes can still provide emphasis while preserving openness. Try setting <code>strong</code> to a <code>font-weight</code> somewhere between 500–600 instead of the default 700.</p>
     </div>
   </div>
 </section>
@@ -82,7 +118,9 @@ permalink: about-variable-fonts
     <h2>Width</h2>
     <div class="content-section--grid">
       <div class="content-section--main">
-        <p>Another common variation in typeface design is width. You often see it referred to as “condensed” or “compressed” or “extended”—though the meaning of those words is pretty subjective. <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_wdth">According to the spec</a>, 100 should equate to a “normal” width, and valid values can range from 1 to 1000. Like weight, it maps to an existing CSS attribute, in this case font-stretch, and is expressed as a percentage. In these early stages of adoption, many type designers and foundries have not necessarily adhered to this standard, so it can look a little odd in your CSS. But a width range of 3%–5% is still valid, even if in this case 5% is actually the normal width. Hopefully over time more standardization will emerge.</p>
+        <p>Width in typeface design is often expressed in terms like  “condensed” or “compressed” or “extended”—though the exact meaning of those words is subjective. These terms all refer to how relatively narrow or wide a font is in relation to the “normal” design.</p>
+        <p><a href="https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_wdth">According to the specification</a>, 100 should equate to a “normal” width, and valid values can range from 1 to 1000. Like weight, it maps to an existing CSS attribute, in this case <code>font-stretch</code>, and is expressed as a percentage.</p> 
+        <p>In these early stages of adoption, many type designers and foundries have not necessarily adhered to this standard. Number ranges like 3%–5%, while still valid, can look a little odd in your CSS (in this case 5% is actually the normal width). Hopefully over time more standardization will emerge.</p>
     
 <pre class="css"><code class="prettyprint">
   p {
@@ -97,7 +135,7 @@ permalink: about-variable-fonts
     </div>
     <div class="content-section--main">
       <h3>Why this matters</h3>
-      <p>When designing responsively, making sure larger headings don’t end up fitting just one or two words per line on smaller screens can be a challenge. In addition to adjusting font-size based on viewport size using techniques like media queries or viewport units and calc(), you can also leverage the width axis to make headings slightly narrower. That will let you fit more words per line without having to make the font-size even smaller.</p>
+      <p>Making sure larger headlines don’t end up fitting only one or two words per line can be a challenge on smaller screens. In addition to adjusting <code>font-size</code> based on viewport size using techniques like media queries or viewport units and <calc>calc()</calc>, a width axis can make headings slightly narrower, fitting more words per line without having to make the <code>font-size</code> even smaller.</p>
     </div>
   </div>
 </section>
@@ -107,7 +145,9 @@ permalink: about-variable-fonts
   <h2>Italic</h2>
   <div class="content-section--grid">
     <div class="content-section--main">
-      <p>The italic axis is fairly straightforward. In most cases it’s a boolean 0 or 1: off (upright) or on—usually meaning slanted strokes and sometimes glyph replacements (the lowercase <strong>a</strong> and <strong>g</strong> often have different italic forms, for example). While it’s certainly possible to have a range rather than strictly 0 or 1, the off/on scenario is the most common. Unfortunately, while it is intended to map to <code>font-style: italic</code>, this is one of the areas where browsers have not fully resolved the implementation, so for now it’s necessary to use the lower-level syntax of <code>font-variation-settings</code>. This is a good case for using a CSS custom property so that you can alter only the italic/upright setting without having to redeclare the entire <code>font-variation-settings</code> string.</p>
+      <p>The italic axis is fairly straightforward. In most cases it’s a boolean 0 or 1: off ( upright) or on—usually meaning slanted strokes and sometimes glyph replacements (the lowercase <span class="medium">a</span> and <span class="medium">g</span> often have different italic forms, for example).</p> 
+      <p>It’s possible to have a range rather than strictly 0 or 1, but the off/on scenario is the most common.</p>  
+      <p>Unfortunately, while it is intended to map to <code>font-style: italic</code>, this is one of the areas where browsers have not fully resolved the implementation, so for now it’s necessary to use the lower-level syntax of <code>font-variation-settings</code>. This is a good case for using a CSS custom property so that you can alter only the italic/upright setting without having to redeclare the entire <code>font-variation-settings</code> string.</p>
     
 <pre class="css"><code class="prettyprint">
   :root {
@@ -128,7 +168,7 @@ permalink: about-variable-fonts
     </div>
     <div class="content-section--main">
       <h3>Why this matters</h3>
-      <p>Having italics available alongside the upright letterforms is useful when combined with weight to handle everyday needs for body copy, with only one or two files instead of at least four. Combined with the range of additional axes available in some typeface designs, there may be no need for other fonts at all.</p>
+      <p>Having italics available alongside the upright forms is useful when combined with weight to handle everyday needs for body copy, requiring only 1 or 2 files instead of at least 4. Combined with the range of additional axes available in some typeface designs, there may be no need for other fonts at all.</p>
     </div>
   </div>
 </section>
@@ -166,7 +206,7 @@ permalink: about-variable-fonts
     </div>
     <div class="content-section--main">
       <h3>Why this matters</h3>
-      <p>The slant axis allows for anything within the defined range, so opportunities abound to set the angle a little differently, or to add animation so the text becomes slanted just a little after the page loads. It’s a unique way to draw attention to a text element on the screen in an understated way.</p>
+      <p>The slant axis allows for anything within the defined range. Opportunities abound to set the angle a little differently, or to add animation so the text slants just a little after the page loads. It’s a unique way to draw attention to a text element in an understated way.</p>
     </div>
   </div>
 </section>
@@ -176,8 +216,13 @@ permalink: about-variable-fonts
   <h2>Optical Size</h2>
   <div class="content-section--grid">
     <div class="content-section--main">
-      <p>The practice of optical sizing evolved in the sixteenth century, back when punchcutters were carving type out of metal by hand. It involved cutting physically smaller type with slightly thicker strokes and less contrast to ensure it would print well and be legible at smaller sizes. Other aspects could be fine-tuned as well—apertures could become wider, terminals more angled, bowls enlarged. [needs an illustration here] Conversely, larger point sizes would be cut with greater finesse, allowing for heightened contrast and intricate details. This allowed a single typeface design to work optimally at a range of physical sizes. The practice of optical sizing was lost, however, with the shift to phototypesetting and then digital type. Both of these newer practices involved taking a single outline and scaling it up or down. Thus the fine details that appeared so graceful at larger sizes grew muddy or even hampered legibility when type was scaled down; sturdier types that worked well in running text at smaller sizes became spindly and frail (especially on early lower-resolution screens) when scaled up. Regaining optical sizing in the form of a variable axis gives tremendous range back to individual designs.</p>
-      <p>The concept is that the numeric value for this axis should match the rendered font size, and a new attribute was introduced to go along with it: <code>font-optical-sizing</code>. The default is <code>auto</code>, and this is supported behavior in all shipping browsers. You can force it to off, or you can set an explicit value via <code>font-variation-settings</code>.</p>
+      <p>The practice of optical sizing evolved in the sixteenth century, back when punchcutters were carving type out of metal by hand. It entailed cutting physically smaller type with slightly thicker strokes and less contrast to ensure it would print well and be legible at smaller sizes. Other aspects could be fine-tuned as well—apertures could become wider, terminals more angled, bowls enlarged. [needs an illustration here] Conversely, larger point sizes would be cut with greater finesse, allowing for heightened contrast and intricate details. This allowed a single typeface design to work optimally at a range of physical sizes. </p>
+      <figure class="large">
+        <img src="{{ site.baseurl }}/assets/img/optical_sizing_illustrated.jpg" alt="Illustration of optical sizing of text" />
+        <figcaption>Notice the difference in stroke contrast (thick and thin) between the letters in the heading and text below</figcaption>
+      </figure>
+      <p>The practice of optical sizing was lost, however, with the shift to phototypesetting and then digital type. Both of these newer practices involved taking a single outline and scaling it up or down. The fine details that appeared so graceful at larger sizes grew muddy or even hampered legibility when type was scaled down; sturdier type that worked well in running text at smaller sizes became spindly and frail (especially on early lower-resolution screens) when scaled up. Regaining optical sizing in the form of a variable axis restores tremendous range to individual designs.</p>
+      <p>The concept is that the numeric value for this axis should match the rendered font size, and a new attribute was introduced to go along with it: <code>font-optical-sizing</code>. The default is <code>auto</code>, and this is supported behavior in all shipping browsers. You can force it to <code>off</code>, or you can set an explicit value via <code>font-variation-settings</code>.</p>
     
 <pre class="css"><code class="prettyprint">
   body {
@@ -210,7 +255,7 @@ permalink: about-variable-fonts
     </div>
     <div class="content-section--main">
       <h3>Why this matters</h3>
-      <p>A good optical size axis makes type more legible at smaller sizes, and tailoring it to the size at which it’s used makes a remarkable difference. On the other end of the spectrum, the increased stroke contrast (and anything else the type designer decides to vary) means a single font can feel completely different when used smaller for body copy and larger for headings. The variable version of Roslindale (from David Jonathan Ross’ <a href="https://fontofthemonth.club">Font of the Month Club</a>) in use on RWT.io showcases what a big difference this can make. The site uses a single font for both headings and body copy, yet they feel completely different in width, weight, and stroke contrast.</p>
+      <p>A good optical-size axis makes type more legible at smaller sizes. Tailoring it to the size at which it’s used makes a remarkable difference. On the other end of the spectrum, increased stroke contrast (and anything else the type designer decides to vary) means a single font can feel completely different when used smaller for body copy and larger for headings. The variable version of Roslindale (from David Jonathan Ross’ <a href="https://fontofthemonth.club">Font of the Month Club</a>) <a href="https://web.archive.org/web/20191225211020/https://rwt.io/colophon">in use on RWT.io</a> (December 2019) showcases what a big impact this can have. The site uses a single font for both headings and body copy, yet they feel completely different in width, weight, and stroke contrast.</p>
     </div>
   </div>
 </section>
@@ -250,21 +295,22 @@ permalink: about-variable-fonts
     </div>
     <div class="content-section--main">
       <h3>Why this matters</h3>
-      <p>Having these axes separated offers greater design flexibility when creating typographic systems. In some cases, slant alone may be the best option; in others, both angle and glyph substitution may be desirable. Although not the most critical of features, this does add an extra dimension to the utility and dynamic range of a font.</p>
+      <p>Having these axes separated offers greater design flexibility when creating typographic systems. In some cases, slant alone may be the best option; in others, both angle and glyph substitution may be desirable. Although not the most critical of features, it does add an extra dimension to the utility and dynamic range of a font.</p>
     </div>
   </div>
 </section>
-<section class="content-section">
+<section class="content-section" id="custom">
   <h2>Custom Axes</h2>
-  <p>There are many examples of custom axes, so it’s impossible to showcase them all here. The v-fonts.com site is a good place to browse and see just what sort of variety exists. Here there are a few examples to highlight usage for accessibility and UI improvements, and greater creativity in typographic systems and expressiveness.</p>
+  <p>Because there are so many examples of custom axes, it’s impossible to cover them all here. Nick Sherman’s <a href="https://v-fonts.com">v-fonts.com</a> is a good place to browse if you want to  see what sort of variety exists. Let’s focus on examples of a few custom axes that highlight usage for accessibility and UI improvements, and that also give you creative latitude  with typographic systems and expressiveness.</p>
 </section>
 
-<section class="content-section axis custom" id="slnt">
+<section class="content-section axis custom" id="grad">
   <hr />
   <h2>Grade</h2>
   <div class="content-section--grid">
     <div class="content-section--main">
-      <p>The notion of “grade” in a typeface was first introduced to compensate for ink gain on different kinds of paper and presses as a way to visually correct across workflows and have a typeface appear the same on every one. The concept is altering the weight of the font without changing the overall space the text occupies. Having this as a variable axis can be useful in a couple of ways. Creating a higher-contrast mode, where the text gets a bit heavier without reflowing, can make text more legible in lower-light situations or in designing for “dark mode.” And when animating interface elements, it can add a heavier text grade along with a background color shift on hover, tap, or focus. It can also come in handy for responding to lower-resolution screens, where type can easily become a bit spindly. Note that as with other custom axes, it needs to be specified in all caps.</p>
+      <p>Grades were first introduced to compensate for ink gain on different kinds of paper and presses. They act as a sort of “equalizer”—a way of visually correcting a typeface across workflows so it appears the same in every environment. A grade alters the weight of a font without changing the overall space the text occupies. Having this as a variable axis can be useful in a couple of ways. Creating a higher-contrast mode, where the text gets slightly heavier without reflowing, can make text more legible in low-light situations or in designing for “dark mode.” And when animating interface elements, this axis can add a heavier text grade along with a background-color shift on hover, tap, or focus. </p>
+      <p>It can also be handy for responding to low-resolution screens, where type can easily become spindly. Note that as with other custom axes, the abbreviation needs to be specified in all caps.</p>
     
 <pre class="css"><code class="prettyprint">
   :root {
@@ -286,17 +332,17 @@ permalink: about-variable-fonts
     </div>
     <div class="content-section--main">
       <h3>Why this matters</h3>
-      <p>Likely the most significant use of a grade axis will be for accessibility—for example designing a dark or high-contrast mode. But it will also feature well in UI animations, like making text heavier on buttons or navigation on hover or focus without altering the physical space occupied by the text.</p>
+      <p>Likely the most significant use of a grade axis will be for accessibility—designing a dark or high-contrast mode, for example. But it will also work well in UI animations, like making text heavier on buttons or navigation on hover or focus without altering the physical space occupied by the text.</p>
     </div>
   </div>
 </section>
 
-<section class="content-section axis custom" id="slnt">
+<section class="content-section axis custom" id="casl">
   <hr />
   <h2>Casual</h2>
   <div class="content-section--grid">
     <div class="content-section--main">
-      <p><a href="https://recursive.design">Recursive</a> is a variable font that actually has 5 different axes, but the custom one focused on here is called “Casual” and alters the look of the font from a more typical sans serif design to one that more resembles freehand sign painting.</p>
+      <p>The variable font <a href="https://recursive.design">Recursive</a> has 5 different axes, but the custom one we’ll focus on here is called Casual. It makes the font shift from a typical sans serif design to one that looks more like freehand sign-painting.</p>
     
 <pre class="css"><code class="prettyprint">
   :root {
@@ -319,7 +365,7 @@ permalink: about-variable-fonts
     </div>
     <div class="content-section--main">
       <h3>Why this matters</h3>
-      <p>While some might not find value in this axis, it does provide the ability to introduce a vastly different feel to a block of text (like headings perhaps) in addition to the more conservative and more standard sans serif without loading a second font. This introduces a tremendous range of design vocabulary.</p>
+      <p>Some might not see the value in this axis, but it does let you introduce a vastly different feel to a block of text (like headings, perhaps) without loading a second font. This gives the design vocabulary tremendous range.</p>
     </div>
   </div>
 </section>
@@ -328,7 +374,7 @@ permalink: about-variable-fonts
     <h2>Ascenders & Descenders</h2>
     <div class="content-section--grid">
       <div class="content-section--main">
-        <p>This custom axis alters the height of the ascenders and descenders of lower case letters. These are the parts of the letters that ‘ascend’ (the tops of b’s, d’s, t’s, and h’s) and those that ‘descend’ (the bottom of p’s, q’s, g’s, and y’s). This axis is for altering just how expressive a block of text can feel and also when setting text with little extra line-height. It’s common to set large text blocks very tightly, and being able to reduce the height of the ascenders and descenders allows lines of text to be set very closely together without undesired collisions between the descenders on one line and the ascenders of the line below. The variable font Amstelvar has two custom axes: <code>YTAS</code> for ascenders and <code>YTDE</code> for descenders.
+        <p>This custom axis alters the height of the ascenders and descenders of lowercase letters. These are the parts of letters that “ascend” (the tops of b, d, t, and h) and “descend” (the bottoms of p, q, g, and y). This axis is useful for adjusting how expressive a block of text feels and for setting text without a lot of space between lines. The variable font Amstelvar has two custom axes: <code>YTAS</code> for ascenders and <code>YTDE</code> for descenders.
           </p>
         
 <pre class="css"><code class="prettyprint">
@@ -357,7 +403,7 @@ permalink: about-variable-fonts
       </div>
       <div class="content-section--main">
         <h3>Why this matters</h3>
-        <p>Having these axes separated offers greater design flexibility when creating typographic systems. In some cases, slant alone may be the best option; in others, both angle and glyph substitution may be desirable. Although not the most critical of features, this does add an extra dimension to the utility and dynamic range of a font.</p>
+        <p>It’s common to set large text blocks very tightly. Reducing the length of ascenders and descenders allows lines of text to be set very closely together without the descenders on one line crashing into the ascenders of the line below. </p>
       </div>
     </div>
   </section>
@@ -365,6 +411,6 @@ permalink: about-variable-fonts
 <section class="content-section">
   <hr />
   <h2>Next steps</h2>
-  <p>This should provide a good start to understanding the power and flexibility of variable fonts. They may not always be the most appropriate solution, but there are many cases where they can bring substantial benefits. Have a look at <a href="{{ site.url }}/implementing_variable_fonts.html">Implementing Variable Fonts</a> to see how to incorporate them into your own projects and give them a try.</p>
+  <p>Congratulations! You’re well on your way to understanding the power and flexibility of variable fonts. They may not always be the most appropriate solution, but in many cases they can offer substantial benefits. Take a look at <a href="{{ site.baseurl }}/implementing_variable_fonts.html">Implementing Variable Fonts</a> to give them a try and see how to incorporate them into your own projects.</p>
 </section>
 

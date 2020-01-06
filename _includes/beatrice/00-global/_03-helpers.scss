@@ -22,6 +22,19 @@ $sans-serif: "Roboto Variable", $sans-serif-fallback;
     max-width: 44rem;
   }
 }
+@mixin content-min-width() {
+  width: 100%;
+  max-width: 100%;
+
+  @media screen and (min-width: $bp--large) {
+    min-width: 42rem;
+    width: auto;
+  }
+
+  @media screen and (min-width: $bp--xlarge) {
+    min-width: 44rem;
+  }
+}
 :root {
   --content-width: 40rem;
 
