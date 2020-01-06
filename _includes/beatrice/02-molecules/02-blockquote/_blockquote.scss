@@ -13,10 +13,6 @@ blockquote {
   }
 
   p {
-    --p-font-size-min: 1.75;
-    --p-font-size-max: 2.5;
-    --p-vf-slnt: -12;
-  	
   	color: $color-gray;
   	font-style: italic;
     font-weight: 100;
@@ -32,8 +28,9 @@ blockquote {
     p {
       --p-line-height-min: 1.25;
       --p-line-height-max: 1.4;
-      --p-font-size-min: 1.5;
-      --p-font-size-max: 2;
+      --p-font-size-min: 2;
+      --p-font-size-max: 3;
+      --p-vf-slnt: -12;
       --p-vf-wght: 100;
       --text-opsz: calc( var(--p-font-size-min) * var(--text-size-base) );
       color: $color-gray;

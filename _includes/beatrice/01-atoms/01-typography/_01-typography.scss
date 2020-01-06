@@ -187,12 +187,12 @@ em {
 
 h1 {
 	@include text-xlarge;
-	font-family: $serif-novf;
+	font-family: $sans-serif-novf;
   font-weight: 300;
   margin-top: calc( var(--body-text-spacer) * 2 );
   margin-bottom: calc( var(--body-text-spacer) * 1.5 );
   .wf-inactive & {
-	  font-family: $serif-fallback;
+	  font-family: $sans-serif-fallback;
 	  letter-spacing: -.5px;
   }
   @media screen and (min-width: $bp--medium) {
@@ -211,9 +211,10 @@ h1 {
     }
   }
   @supports (font-variation-settings: normal) {
-    font-family: $serif;
+    font-family: $sans-serif;
     font-weight: calc( var(--p-vf-wght) * var(--h1-vf-wght-multiplier-s) );
     font-size: calc( var(--h1-font-size-min) * 1em );
+    font-stretch: calc( var(--h1-vf-wdth) * 1% );
     font-style: normal;
     line-height: var(--h1-line-height-min);
     .wf-inactive & {
@@ -249,13 +250,13 @@ h1 {
 
 h2 {
 	@include text-large;
-	font-family: $serif-novf;
+	font-family: $sans-serif-novf;
 	font-weight: 300;
   margin-top: 1.5rem;
   margin-bottom: var(--body-text-spacer);
   max-width: var(--content-width);
   .wf-inactive & {
-	  font-family: $serif-fallback;
+	  font-family: $sans-serif-fallback;
 	  letter-spacing: -.75px;
   }
   @media screen and (min-width: $bp--medium) {
@@ -273,8 +274,9 @@ h2 {
     margin-top: calc( var(--body-text-spacer) * 2.5 );
   }
   @supports (font-variation-settings: normal) {
-  	font-family: $serif;
+  	font-family: $sans-serif;
     font-size: calc( var(--h2-font-size-min) * 1em );
+    font-stretch: calc( var(--h2-vf-wdth) * 1% );
   	font-weight: calc( var(--p-vf-wght) * var(--h2-vf-wght-multiplier-s) );
     line-height: var(--h2-line-height-min);
     .wf-inactive & {
@@ -306,12 +308,12 @@ h2 {
 h3 {
 	@include text-mlarge;
   @include content-width;
-	font-family: $serif-novf;
+	font-family: $sans-serif-novf;
 	font-weight: 400;
   margin-top: 0;
   margin-bottom: calc( var(--body-text-spacer) / 2 );
   .wf-inactive & {
-	  font-family: $serif-fallback;
+	  font-family: $sans-serif-fallback;
 	  letter-spacing: -.75px;
   }
   @media screen and (min-width: $bp--medium) {
@@ -336,8 +338,9 @@ h3 {
     margin-top: calc( var(--body-text-spacer) * 2 );
   }
   @supports (font-variation-settings: normal) {
-    font-family: $serif;
+    font-family: $sans-serif;
     font-size: calc( var(--h3-font-size-min) * 1em );
+    font-stretch: calc( var(--h3-vf-wdth) * 1% );
   	font-weight: calc( var(--p-vf-wght) * var(--h3-vf-wght-multiplier-s) );
     line-height: var(--h3-line-height-min);
     .wf-inactive & {

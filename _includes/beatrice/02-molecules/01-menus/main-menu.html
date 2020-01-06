@@ -1,14 +1,25 @@
-<ul class="vf-menu">
-  <li class="vf-menu-item"><a href="{{ site.baseurl }}/">
-    <span class="mdc-list-item__text">Home</span>
-  </a></li>
-  <li class="vf-menu-item"><a href="{{ site.baseurl }}/about-variable-fonts" aria-current="page">
-    <span class="mdc-list-item__text">Designing with Variable Fonts</span>
-  </a></li>
-  <li class="vf-menu-item"><a href="{{ site.baseurl }}/implementing-variable-fonts">
-    <span class="mdc-list-item__text">Implementing Variable Fonts</span>
-  </a></li>
-  <li class="vf-menu-item"><a href="{{ site.baseurl }}/variable-font-resources">
-    <span class="mdc-list-item__text">Resources</span>
-  </a></li>
-</ul>
+<nav class="vf-menu">
+  <ul class="menu">
+    <li class="vf-menu-item"><a href="{{ site.baseurl }}/">
+      <span class="mdc-list-item__text">Home</span>
+    </a></li>
+    <li class="vf-menu-item"><a href="{{ site.baseurl }}/about-variable-fonts" 
+      class="{% if page.url contains '/about-variable-fonts' %}active{% endif %}"
+      {% if page.url contains '/about-variable-fonts' %} aria-current="page" {% endif %}
+      >
+      <span class="mdc-list-item__text">Designing with Variable Fonts</span>
+    </a></li>
+    <li class="vf-menu-item"><a href="{{ site.baseurl }}/implementing-variable-fonts"
+      class="{% if page.url contains '/implementing-variable-fonts' %}active{% endif %}"
+      {% if page.url contains '/implementing-variable-fonts' %} aria-current="page" {% endif %}
+      >
+      <span class="mdc-list-item__text">Implementing Variable Fonts</span>
+    </a></li>
+    <li class="vf-menu-item"><a href="{{ site.baseurl }}/variable-font-resources"
+      class="{% if page.url contains '/variable-font-resources' %}active{% endif %}"
+      {% if page.url contains '/variable-font-resources' %} aria-current="page" {% endif %}
+      >
+      <span class="mdc-list-item__text">Resources</span>
+    </a></li>
+  </ul>
+</nav>

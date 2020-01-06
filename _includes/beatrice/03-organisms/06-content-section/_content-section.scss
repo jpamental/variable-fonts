@@ -44,6 +44,9 @@
       font-size: 1rem;
       font-weight: 375;
       font-variant-caps: all-small-caps;
+      @supports (font-variation-settings: normal) {
+        font-family: $sans-serif;
+      }
     }
   }
   &.registered {
