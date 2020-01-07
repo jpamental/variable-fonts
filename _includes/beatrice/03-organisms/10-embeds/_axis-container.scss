@@ -1,4 +1,6 @@
 .embed-container {
+  border-radius: 0.25rem;
+  overflow: hidden;
   + .embed-container {
     margin-top: 2rem;
   }

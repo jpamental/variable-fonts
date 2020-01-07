@@ -26,6 +26,7 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
+    "@material/card": "^4.0.0",
     "@material/density": "^4.0.0",
     "@material/drawer": "^4.0.0",
     "@material/icon-button": "^4.0.0",

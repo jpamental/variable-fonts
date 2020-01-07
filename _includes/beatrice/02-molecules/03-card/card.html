@@ -1,0 +1,43 @@
+{% comment %}
+  include fields:
+  card_style: used to set outline style
+  title: title text
+  heading_level: heading tag (defaults to h2)
+  subheading: subhead text
+  subheading_level: subheading tag (defaults to h3)
+
+{% endcomment %}
+
+{% if include.card_style == 'outline' %}
+  {% assign card_style = 'mdc-card--outlined' %}
+{% endif %}
+{% if include.heading_level == 3 %}
+  {% assign heading_level = 'h3' %}
+  {% assign subheading_level = 'h4' %}
+{% else %}
+  {% assign heading_level = 'h2' %}
+  {% assign subheading_level = 'h3' %}
+{% endif %}
+
+<article class="mdc-card {{ card_style }}">
+  <div class="mdc-card__primary-action">
+    <div class="mdc-card__media mdc-card__media--square">
+      <{{ heading_level }} class="mdc-card__media-content">Title</{{ heading_level }}>
+    </div>
+    <!-- ... additional primary action content ... -->
+  </div>
+  <div class="mdc-card__actions">
+    <div class="mdc-card__action-buttons">
+      <button class="mdc-button mdc-card__action mdc-card__action--button">
+        <span class="mdc-button__label">Action 1</span>
+      </button>
+      <button class="mdc-button mdc-card__action mdc-card__action--button">
+        <span class="mdc-button__label">Action 2</span>
+      </button>
+    </div>
+    <div class="mdc-card__action-icons">
+      <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+      <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="More options">more_vert</button>
+    </div>
+  </div>
+</article>
