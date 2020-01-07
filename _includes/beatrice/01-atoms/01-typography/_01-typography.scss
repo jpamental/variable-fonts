@@ -179,6 +179,7 @@ th {
 
 em {
   @supports (font-variation-settings: normal) {
+    font-family: $sans-serif-slant;
     font-synthesis: none;
     --p-vf-slnt: -12;
   }

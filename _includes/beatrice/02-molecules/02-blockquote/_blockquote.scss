@@ -13,7 +13,8 @@ blockquote {
   }
 
   p {
-  	color: $color-gray;
+    color: $color-gray;
+    font-family: $sans-serif-slant;
   	font-style: italic;
     font-weight: 100;
     margin-left: 0;
@@ -35,6 +36,7 @@ blockquote {
       --text-opsz: calc( var(--p-font-size-min) * var(--text-size-base) );
       color: $color-gray;
       font-style: italic;
+      font-synthesis: none;
       font-weight: var(--p-vf-wght);
   
       @media (min-width: $bp--xxlarge) {

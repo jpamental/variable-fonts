@@ -41,6 +41,7 @@
       text-decoration: none;
       &.active {
         --color-text-link-visited: #{$color-blue-900};
+        font-weight: 525;
       }
     }
     &:hover,
