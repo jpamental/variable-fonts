@@ -1,0 +1,19 @@
+{% comment %}
+  include fields:
+  button_style: used to set outline style
+  label: button text
+
+{% endcomment %}
+
+{% if include.button_style == 'raised' %}
+  {% assign button_style = 'mdc-button--raised' %}
+{% elseif include.button_style == 'unelevated' %}
+  {% assign button_style = 'mdc-button--unelevated' %}
+{% elseif include.button_style == 'outline' %}
+  {% assign button_style = 'mdc-button--outlined' %}
+{% endif %}
+
+<button class="mdc-button {{ button_style }}">
+  <div class="mdc-button__ripple"></div>
+  <span class="mdc-button__label">{{ include.label }}</span>
+</button>
