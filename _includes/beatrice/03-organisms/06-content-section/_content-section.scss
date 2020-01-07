@@ -79,4 +79,36 @@
       padding-bottom: calc( var(--body-text-spacer) / 2 );
     }
   }
+  &--ital {
+    > h2 {
+      background-image: url(../img/hdr_bkgrnd_italic.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding-bottom: calc( var(--body-text-spacer) / 2 );
+    }
+  }
+  &--slnt {
+    > h2 {
+      background-image: url(../img/hdr_bkgrnd_slant.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding-bottom: calc( var(--body-text-spacer) / 2 );
+    }
+  }
+  &--opsz {
+    > h2 {
+      background-image: url(../img/hdr_bkgrnd_optical_sizing.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding-bottom: calc( var(--body-text-spacer) / 2 );
+    }
+  }
+  &--slnt-ital {
+    > h2 {
+      background-image: url(../img/hdr_bkgrnd_slant-italics.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding-bottom: calc( var(--body-text-spacer) / 2 );
+    }
+  }
 }
