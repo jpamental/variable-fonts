@@ -89,6 +89,13 @@
 /* Load Roboto Slab from GF API */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
+/* Load Roboto Extremo from GF API */
+//@import url('https://fonts.sandbox.google.com/css2?family=Roboto+Extremo:wdth,wght@75..125,100..900');
+
+/* Load Recursive from GF API */
+//@import url('https://fonts.sandbox.google.com/css2?family=Recursive:slnt,wght,CASL,MONO@-15..0,300..1000,0..1,0..1');
+
+
 @font-face{
   font-family: 'Roboto Variable';
   font-weight: 100 900; /* default: 400 */
@@ -97,13 +104,23 @@
   src: url('../fonts/Roboto-min-VF_hinted-subset.woff2') format('woff2 supports variations'), url('../fonts/Roboto-min-VF_hinted-subset.woff2') format('woff2-variations');
 }
 
-
 @font-face{
-  font-family: 'Roboto Delta Variable';
+  font-family: 'Roboto Extremo';
   font-weight: 100 900; /* default: 400 */
   font-style: normal;
-  font-stretch: 75% 125%; /* default: 100% */
-  src: url('../fonts/RobotoDelta_v2-VF.woff2') format('woff2 supports variations'), url('../fonts/RobotoDelta_v2-VF.woff2') format('woff2-variations');
+  font-stretch: 75% 150%; /* default: 100% */
+  src: url('../fonts/RobotoExtremo-VF.woff2') format('woff2 supports variations'), url('../fonts/RobotoExtremo-VF.woff2') format('woff2-variations');
   /* opsz: 8-144, 12 default */
   /* GRAD: -1 - 1, 0 default */
+}
+
+@font-face {
+  font-family: "Recursive";
+  src: url("../fonts/recursive-MONO_CASL_wght_slnt_ital--full_gsub--2019_12_21-21_07.woff2")
+    format("woff2 supports variations"), url("../fonts/recursive-MONO_CASL_wght_slnt_ital--full_gsub--2019_12_21-21_07.woff2")
+    format("woff2-variations");
+  font-display: swap;
+  font-weight: 300 900;
+  /* MONO: 0 1 */
+  /* CASL: 0 1 */
 }

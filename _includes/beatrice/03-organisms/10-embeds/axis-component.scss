@@ -1,17 +1,6 @@
 @import "../../00-global/_02-colors.scss";
 @import "../../01-atoms/02-forms/slider/_slider.scss";
 
-/* Plex Sans Variable Font */
-  @font-face {
-    font-family: "Plex Sans VF";
-    src: url("../../../../assets/fonts/embeds/IBMPlexSansVar-Roman.woff2")
-      format("woff2 supports variations"), url("../../../../assets/fonts/embeds/IBMPlexSansVar-Roman.woff2")
-      format("woff2-variations");
-    font-display: swap;
-    font-weight: 100 700;
-    font-stretch: 85% 100%;
-    font-style: normal;
-  }
   @font-face {
     font-family: "Jost VF";
     src: url("../../../../assets/fonts/embeds/jost-VF.woff2")
@@ -38,17 +27,6 @@
     font-weight: 100 900;
   }
   
-  @font-face {
-    font-family: "Recursive";
-    src: url("../../../../assets/fonts/recursive-MONO_CASL_wght_slnt_ital--full_gsub--2019_12_21-21_07.woff2")
-      format("woff2 supports variations"), url("../../../../assets/fonts/recursive-MONO_CASL_wght_slnt_ital--full_gsub--2019_12_21-21_07.woff2")
-      format("woff2-variations");
-    font-display: swap;
-    font-weight: 300 900;
-    /* MONO: 0 1 */
-    /* CASL: 0 1 */
-  }
-
   body {
     margin: 0;
     padding: 0;
@@ -69,7 +47,7 @@
   .range__axis .paragraph .text {
     background-color: $color-blue-200;
     background: radial-gradient(ellipse at top left, $color-blue-200 0%, $color-blue-100 70%);
-    font-family: "Plex Sans VF", Helvetica, sans-serif;
+    font-family: "Roboto Extremo", Helvetica, sans-serif;
     font-size: 5rem;
     font-weight: var(--text-vf-wght);
     font-stretch: calc( var(--text-vf-wdth) * 1% );
