@@ -19,6 +19,9 @@
   max-width: 96vw;
   @media screen and (min-width: $bp--medium) {
     max-width: 94vw;
+    .full-width & {
+      max-width: none;
+    }
   }
   @media screen and (min-width: $bp--large) {
     max-width: 90vw;
