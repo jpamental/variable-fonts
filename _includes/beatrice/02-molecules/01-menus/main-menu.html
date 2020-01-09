@@ -1,8 +1,8 @@
 <nav class="vf-menu">
   <ul class="menu">
     <li class="vf-menu-item"><a href="{{ site.baseurl }}/" 
-      class="{% if page.url == '/index' %}active{% endif %}"
-      {% if page.url contains '/index' %} aria-current="page" {% endif %}
+      class="{% if page.home == true %}active{% endif %}"
+      {% if page.url == true %} aria-current="page" {% endif %}
       >
       <span class="mdc-list-item__text">Home</span>
     </a></li>
