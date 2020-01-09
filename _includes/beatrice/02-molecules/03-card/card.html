@@ -5,6 +5,7 @@
   heading_level: heading tag (defaults to h2)
   subheading: subhead text
   subheading_level: subheading tag (defaults to h3)
+  body: body text
 
 {% endcomment %}
 
@@ -20,12 +21,16 @@
 {% endif %}
 
 <article class="mdc-card {{ card_style }}">
-  <div class="mdc-card__primary-action">
-    <div class="mdc-card__media mdc-card__media--square">
-      <{{ heading_level }} class="mdc-card__media-content">Title</{{ heading_level }}>
+  {% if include.primary_link_url %}<a href="{{ include.primary_link_url }}">{% endif %}<div class="mdc-card__primary-action">
+    <div class="mdc-card__media mdc-card__media--16-9">
+      <{{ heading_level }} class="mdc-card__media-content">{{ include.title }}</{{ heading_level }}>
     </div>
-    <!-- ... additional primary action content ... -->
-  </div>
+    {% if include.body %}
+      <div class="vf-mdc-card__body">
+        {{ include.body }}
+      </div>
+    {% endif %}
+    </div>{% if include.primary_link_url %}</a>{% endif %}
   <div class="mdc-card__actions">
     <div class="mdc-card__action-buttons">
       <button class="mdc-button mdc-card__action mdc-card__action--button">

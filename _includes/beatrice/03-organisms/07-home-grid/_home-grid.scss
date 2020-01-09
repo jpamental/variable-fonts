@@ -1,0 +1,53 @@
+.home-grid {
+  @media (min-width: $bp--medium) {
+    display: grid;
+    grid-template-columns: auto minmax(15em, 50%) minmax(15em, 50%) auto;
+  }
+  &__hero {
+    background-color: $color-gray-300;
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+    min-height: 10rem;
+    margin-bottom: calc( var(--body-text-spacer) * 2 );
+  }
+  &__title {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  &__intro {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+  }
+  &__cards {
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+    padding-top: calc( var(--body-text-spacer) * 2 );
+    @media (min-width: $bp--medium) {
+      display: flex;          
+    }
+    > * {
+      flex-grow: 1;
+      width: 100%;
+      @media (min-width: $bp--medium) {
+        width: 32%;
+        margin-left: 2%;          
+      }
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    a {
+      &:link,
+      &:visited {
+        --color-text-link: #{$color-gray-800};
+        --color-text-link-visited: #{$color-gray-800};
+        text-decoration: none;
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: none;
+      }
+      }
+  }
+}
