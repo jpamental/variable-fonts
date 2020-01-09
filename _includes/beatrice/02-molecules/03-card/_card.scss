@@ -1,1 +1,29 @@
 @import "@material/card/mdc-card";
+
+.mdc-card {
+  &__primary-action {
+    &::before,
+    &::after {
+      background-color: $color-blue-900;
+    }
+  }
+  .mdc-icon-button {
+    &::before,
+    &::after {
+      background-color: $color-blue-900;
+    }
+  }
+}
+
+
+.vf-mdc-card {
+  &__title {
+    margin: 1rem;
+
+  }
+  &__body {
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
