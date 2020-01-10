@@ -40,13 +40,13 @@
     --current-value: var(--text-vf-wght);
     --high-value: 100;
     background-color: $color-callout-highlight;
-    background: radial-gradient(ellipse at bottom right, $color-callout-highlight 0%, $color-callout-highlight-secondary 70%);
+    background: radial-gradient(ellipse at bottom right, var(--color-callout-highlight) 0%, var(--color-callout-highlight-secondary) 70%);
     margin-left: auto;
     margin-right: auto;
     .paragraph {
       .text {
         background-color: $color-blue-200;
-        background: radial-gradient(ellipse at top left, $color-blue-200 0%, $color-blue-100 70%);
+        background: radial-gradient(ellipse at top left, var(--color-callout-highlight-alt) 0%, var(--color-callout-highlight-alt-secondary) 70%);
         font-family: "Roboto Extremo", Helvetica, sans-serif;
         font-size: 5rem;
         font-weight: var(--text-vf-wght);

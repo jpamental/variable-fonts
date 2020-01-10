@@ -47,10 +47,15 @@
   }
   .controls {
     opacity: 0;
-    transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
     display: grid;
     grid-template-columns: 1fr;
     margin-top: 0.5rem;
+    font-family: $sans-serif-novf;
+    @supports (font-variation-settings: normal) {
+      font-family: $sans-serif;
+    }
+  
     @media (min-width: $bp--medium) {
       grid-template-columns: 1fr 1fr;
       margin-top: 0;
@@ -72,12 +77,15 @@
   --high-value2: 1;
 
   .slider-group {
+    border: solid 1px $color-gray-600;
+    border-radius: 0.25rem;
     display: grid;
     grid-template-columns: min-content 1fr min-content;
     margin: 0.5rem auto;
     text-align: center;
     max-width: 20rem;
-    padding: 0 0.5rem;
+    padding: 0.5rem 1rem;
+
     @media (min-width: $bp--medium) {
       margin: 0 auto;
     }
@@ -108,12 +116,10 @@
     .value-tag::before {
       counter-reset: tag var(--value-tag);
       content: "'" var(--value-tag) "' range";
-      font-family: sans-serif;
     }
     .value-tag2::before {
       counter-reset: tag var(--value-tag2);
       content: "'" var(--value-tag2) "' range";
-      font-family: sans-serif;
     }
     .low-value,
     .low-value2 {
@@ -124,12 +130,10 @@
     .low-value::before {
       counter-reset: tag var(--low-value);
       content: counter(tag);
-      font-family: sans-serif;
     }
     .low-value2::before {
       counter-reset: tag var(--low-value2);
       content: counter(tag);
-      font-family: sans-serif;
     }
     .high-value,
     .high-value2 {
@@ -140,12 +144,10 @@
     .high-value::before {
       counter-reset: tag var(--high-value);
       content: counter(tag);
-      font-family: sans-serif;
     }
     .high-value2::before {
       counter-reset: tag var(--high-value2);
       content: counter(tag);
-      font-family: sans-serif;
     }
     .current-value,
     .current-value2 {
@@ -153,10 +155,9 @@
     }
     .current-value::before {
       counter-reset: tag var(--current-value);
-      border: solid 1px black;
+      border: solid 1px $color-gray-600;
       content: counter(tag);
       display: inline-block;
-      font-family: sans-serif;
       min-width: 3rem;
       margin: 0.5rem auto 0 auto;
       padding: 0.25rem 0.25rem 0.2rem 0.25rem;
@@ -166,7 +167,6 @@
       border: solid 1px black;
       content: counter(tag);
       display: inline-block;
-      font-family: sans-serif;
       min-width: 3rem;
       margin: 0.5rem auto 0 auto;
       padding: 0.25rem 0.25rem 0.2rem 0.25rem;
@@ -189,6 +189,10 @@
 .play-pause {
   --text-wght: 450;
   --mdc-theme-primary: #{$color-blue-900};
+  align-self: center;
+  @media (prefers-color-scheme:dark) {
+    --mdc-theme-primary: #{$color-blue-400};
+  }
   &:hover {
 
   }

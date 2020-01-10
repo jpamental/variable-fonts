@@ -34,7 +34,7 @@ blockquote {
       --p-vf-slnt: -12;
       --p-vf-wght: 100;
       --text-opsz: calc( var(--p-font-size-min) * var(--text-size-base) );
-      color: $color-gray;
+      color: var(--color-text-callout);
       font-style: italic;
       font-synthesis: none;
       font-weight: var(--p-vf-wght);

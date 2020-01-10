@@ -36,7 +36,7 @@
     a {
       &:link,
       &:visited {
-        --color-text-link-visited: #{$color-gray-800};
+        --color-text-link-visited: var(--color-text);
         text-decoration: none;
       }
       &:hover,

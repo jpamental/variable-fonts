@@ -6,6 +6,7 @@
   }
   &__hero {
     background-color: $color-blue-50;
+    background: radial-gradient(ellipse at top left, var(--color-callout-highlight-alt) 0%, var(--color-callout-highlight-alt-secondary) 70%);
     grid-column: 1 / 5;
     grid-row: 1 / 2;
     min-height: 10rem;
@@ -20,13 +21,13 @@
     grid-row: 2 / 3;
     padding-right: 2rem;
     h2 {
-      color: $color-gray-600;
+      color: var(--color-text-callout);
     }
   }
   &__intro {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
-    color: $color-gray-700;
+    color: var(--color-text-callout);
   }
   &__cards {
     grid-column: 2 / 4;
@@ -52,8 +53,8 @@
       display: block;
       &:link,
       &:visited {
-        --color-text-link: #{$color-gray-800};
-        --color-text-link-visited: #{$color-gray-800};
+        --color-text-link: var(--color-text-callout);
+        --color-text-link-visited: var(--color-text-callout);
         text-decoration: none;
       }
       &:hover,

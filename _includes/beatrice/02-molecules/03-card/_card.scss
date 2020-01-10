@@ -1,11 +1,15 @@
 @import "@material/card/mdc-card";
 
 .mdc-card {
+  --mdc-theme-surface: var(--color-background);
   &__primary-action {
     &::before,
     &::after {
       background-color: $color-blue-900;
     }
+  }
+  &__action--icon:not(:disabled) {
+    color: var(--color-text);
   }
   .mdc-icon-button {
     &::before,

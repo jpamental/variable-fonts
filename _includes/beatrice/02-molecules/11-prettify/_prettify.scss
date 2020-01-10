@@ -29,7 +29,7 @@ pre.css {
   &::after {
     content: " ";
     background-color: $color-gray-800;
-    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, var(--color-background) 100%);
     position: absolute;
     top: 0;
     bottom: 0;
@@ -51,17 +51,21 @@ code.prettyprint {
 
 .prettyprint {
   .pln {
-    //color: #ffffff;
+    color: var(--color-text);
+    color: var(--color-prettify-pln);
   }
   .str {
     color: #060;
+    color: var(--color-prettify-str);
   }
   .lit {
     color: #055;
+    color: var(--color-prettify-lit);
   }
   .clo,
   .opn,
   .pun {
     color: #550;
+    color: var(--color-prettify-pun);
   }
 }

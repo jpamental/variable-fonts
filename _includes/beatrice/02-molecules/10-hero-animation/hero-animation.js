@@ -1,10 +1,12 @@
 // Text from the hero animation element ('Typography Revolution')
+  console.log('firing');
 const heroElement = document.querySelector('.hero-animation__text');
 const str = heroElement.innerHTML;
 
 const words = str.split(' ');
 const chars = str.split('');
 
+if (str) {
 // Remove the existing text so it can be replaced by the characters in spans
 heroElement.innerHTML = '';
 // Set up an aria-label so screen readers will still read out the whole string
@@ -70,4 +72,6 @@ inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
 
 function handleUpdate(e) {
   document.querySelector('.hero-animation').style.setProperty(`--${this.id}`, this.value);
+}
+
 }

@@ -38,11 +38,12 @@
     }
     &:link,
     &:visited {
-      --color-text-link: #{$color-gray-800};
-      --color-text-link-visited: #{$color-gray-800};
+      --color-text-link: var(--color-text);
+      --color-text-link-visited: var(--color-text);
       text-decoration: none;
       &.active {
-        --color-text-link-visited: #{$color-blue-900};
+        --color-text-link: var(--color-text-link-active-trail);
+        --color-text-link-visited: var(--color-text-link-active-trail);
         font-weight: 525;
       }
     }
