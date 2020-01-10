@@ -1,0 +1,69 @@
+.hero-animation {
+  padding: 3rem 1rem;
+  &__text {
+    --text-vf-MONO: 0;
+    --text-vf-CASL: 0;
+    --text-vf-slnt: 0;
+    --text-vf-ital: 0;
+    --text-vf-wght: 150;
+    --text-vf-MONO-max: 0;
+    --text-vf-CASL-max: 1;
+    --text-vf-slnt-max: 0;
+    --text-vf-ital-max: 0;
+    --text-vf-wght-max: 1000;
+    --p-font-size-min: 3;
+    --p-font-size-max: 7;
+    font-family: "Recursive", Helvetica, sans-serif;
+    font-weight: var(--text-vf-wght);
+    font-variation-settings: 'MONO' var(--text-vf-MONO), 'CASL' var(--text-vf-CASL), 'slnt' var(--text-vf-slnt), 'ital' var(--text-vf-ital);
+    max-width: none;
+    text-align: center;
+
+    span {
+      font-variation-settings: 'MONO' var(--text-vf-MONO), 'CASL' var(--text-vf-CASL), 'slnt' var(--text-vf-slnt), 'ital' var(--text-vf-ital);
+      transition: all .2s ease-in;
+      .play & {
+        animation: breath 1.5s alternate 6 ease-in-out;
+      }
+    }
+  }
+}
+
+/* breath behaves based on the
+CSS variables values that are inherited */
+@keyframes breath {
+  0% {
+    font-weight: var(--text-vf-wght);
+    font-variation-settings: 'MONO' var(--text-vf-MONO), 'CASL' var(--text-vf-CASL), 'slnt' var(--text-vf-slnt), 'ital' var(--text-vf-ital);
+  }
+  100% {
+    font-weight: var(--text-vf-wght-max);
+    font-variation-settings: 'MONO' var(--text-vf-MONO-max), 'CASL' var(--text-vf-CASL-max), 'slnt' var(--text-vf-slnt-max), 'ital' var(--text-vf-ital-max);
+  }
+}
+
+.play-pause {
+  --text-wght: 450;
+  --mdc-theme-primary: #{$color-blue-900};
+  &:hover {
+
+  }
+  &.pause::after {
+    content: "Play";
+    padding-left: 0.5em;
+  }
+  &.play::after {
+    content: "Pause";
+    padding-left: 0.5em;
+  }
+  &::after {
+    .play & {
+      content: "Pause";
+      padding-left: 0.5em;
+    }
+    .pause & {
+      content: "Play";
+      padding-left: 0.5em;
+    }
+  }
+}

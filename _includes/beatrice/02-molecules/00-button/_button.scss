@@ -1,1 +1,5 @@
 @import "@material/button/mdc-button";
+
+@supports (font-variation-settings: normal) {
+  font-family: $sans-serif;
+}

@@ -3,10 +3,10 @@
 
   @media (min-width: $bp--medium) {
     display: grid;
-    grid-template-columns: auto minmax(15em, 45%) minmax(15em, 45%) auto;
+    grid-template-columns: 1fr minmax(15em, 45%) minmax(15em, 45%) 1fr;
   }
   &__hero {
-    background-color: $color-gray-300;
+    background-color: $color-blue-50;
     grid-column: 1 / 5;
     grid-row: 1 / 2;
     min-height: 10rem;
