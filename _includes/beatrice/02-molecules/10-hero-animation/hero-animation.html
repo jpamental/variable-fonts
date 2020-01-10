@@ -1,4 +1,29 @@
-<div class="hero-animation play" id="hero_animation">
+<div class="hero-animation pause" id="hero_animation">
   <p class="hero-animation__text">Typography Revolution</p>
-  <button id="play-pause" name="play-pause" class="mdc-button mdc-button--raised play-pause play">Click to </button>
+  <div class="hero-animation__controls">
+    <button id="play_pause" name="play-pause" class="mdc-button mdc-button--raised play-pause pause">Click to </button>
+    <div id='demo-controls' class="controls">
+      <div class="slider-group">
+        <div class="value-tag"></div>
+        <div class="low-value"></div>
+        <div class="slider range-weight">
+          <input type="range" name="range-slider" value="150" id="text-vf-wght" class="controls--axis" min="100" max="1000"> 
+          <label for="range-slider">Weight</label>
+        </div>
+        <div class="high-value"></div>
+        <div class="current-value"></div>
+      </div>
+      <div class="slider-group">
+        <div class="value-tag2"></div>
+        <div class="low-value2"></div>
+        <div class="slider range-casual">
+          <input type="range" name="range-slider2" value="0" id="text-vf-CASL" class="controls--axis" min="0" max="1" step="0.01"> 
+          <label for="range-slider2">Casual</label>
+        </div>
+        <div class="high-value2"></div>
+        <div class="current-value2"></div>
+      </div>
+    </div>
+    
+  </div>
 </div>
