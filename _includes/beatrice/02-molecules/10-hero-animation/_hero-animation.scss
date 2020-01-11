@@ -162,10 +162,8 @@
       margin: 0.5rem auto 0 auto;
       padding: 0.25rem 0.25rem 0.2rem 0.25rem;
     }
-    .current-value2::before {
-      counter-reset: tag var(--current-value2);
-      border: solid 1px black;
-      content: counter(tag);
+    .current-value2 {
+      border: solid 1px $color-gray-600;
       display: inline-block;
       min-width: 3rem;
       margin: 0.5rem auto 0 auto;

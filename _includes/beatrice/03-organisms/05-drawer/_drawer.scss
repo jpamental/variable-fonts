@@ -4,7 +4,7 @@
 .mdc-drawer {
   background-color: #ffffff;
   background-color: var(--color-background);
-  width: 85vw;
+  width: 75vw;
   @media (min-width: $bp--large) {
     background-color: transparent;
     width: auto;
@@ -15,6 +15,7 @@
     }
   }
   &--modal {
+    top: 4rem;
     @media (min-width: $bp--large) {
       border: none;
       box-shadow: none;
@@ -22,7 +23,15 @@
       height: auto;
       left: auto;
       right: 0;
+      top: 0;
     }
   }
 }
 
+.mdc-list-item {
+  &__text {
+    text-overflow: inherit;
+    white-space: normal;
+    overflow: hidden;
+  }
+}

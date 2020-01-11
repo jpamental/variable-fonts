@@ -1,19 +1,19 @@
+try {
 // Text from the hero animation element ('Typography Revolution')
-  console.log('firing');
 const heroElement = document.querySelector('.hero-animation__text');
 const str = heroElement.innerHTML;
 
 const words = str.split(' ');
 const chars = str.split('');
 
-if (str) {
-// Remove the existing text so it can be replaced by the characters in spans
+
+  // Remove the existing text so it can .be replaced by the characters in spans
 heroElement.innerHTML = '';
 // Set up an aria-label so screen readers will still read out the whole string
 heroElement.setAttribute('aria-label', str);
 
 chars.forEach(function (item, index) {
-  //console.log(item, index);
+  console.log(item, index);
   var c = document.createElement('span');
   // and give it some content 
   var letter = document.createTextNode(item); 
@@ -72,6 +72,14 @@ inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
 
 function handleUpdate(e) {
   document.querySelector('.hero-animation').style.setProperty(`--${this.id}`, this.value);
+  if (this.id == 'text-vf-CASL') {
+    document.querySelector('.hero-animation .controls .current-value2').textContent=this.value;
+  }
 }
 
+}
+catch(error) {
+  console.error(error);
+  // expected output: ReferenceError: nonExistentFunction is not defined
+  // Note - error messages will vary depending on browser
 }
