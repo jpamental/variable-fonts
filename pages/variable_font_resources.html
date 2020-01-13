@@ -2,5 +2,30 @@
 layout: beatrice_page
 title: "Variable Fonts Resources" 
 permalink: /variable-font-resources/
+
+
+
 ---
 <h1>{{ page.title }}</h1>
+
+{% assign resourcesGrouped = site.resources | group_by: 'category' | sort: 'name' %}  
+
+{% for resources in resourcesGrouped %}
+  <h2>{{ resources.name }}</h2>
+  <div class="card-grid">
+  {% assign resourcesSorted = resources.items | sort: 'title' %}  
+  {% for resource in resourcesSorted %}
+    {% assign body = resource.content | markdownify %}
+    {% include beatrice/02-molecules/03-card/card.html 
+      card_style = 'outline'
+      primary_link_url = resource.link
+      heading_level = 3
+      label = resource.type
+      title = resource.title
+      subtitle = resource.author
+      body = body
+    %}
+  {% endfor %}
+  </div>
+{% endfor %}
+

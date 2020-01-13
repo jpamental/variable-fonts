@@ -54,3 +54,5 @@ exclude:
   - package.json
   - gulpfile.js
 
+collections:
+  - resources

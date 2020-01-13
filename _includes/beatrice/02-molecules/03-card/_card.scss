@@ -31,3 +31,18 @@
     margin-right: 1rem;
   }
 }
+
+a {
+  display: block;
+  &:link,
+  &:visited {
+    --color-text-link: var(--color-text-callout);
+    --color-text-link-visited: var(--color-text-callout);
+    text-decoration: none;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+}
