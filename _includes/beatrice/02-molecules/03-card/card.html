@@ -20,9 +20,12 @@
   {% assign subheading_level = 'h3' %}
 {% endif %}
 
-<article class="mdc-card {{ card_style }}">
+<article class="mdc-card vf-mdc-card {{ card_style }}">
   {% if include.primary_link_url %}<a href="{{ include.primary_link_url }}">{% endif %}<div class="mdc-card__primary-action">
-    {% if include.media %}
+    {% if include.label %}
+    <label class="vf-mdc-card__label">{{ include.label }}</label>
+  {% endif %}
+{% if include.media %}
       <div class="mdc-card__media mdc-card__media--16-9">
       <{{ heading_level }} class="mdc-card__media-content">{{ include.title }}</{{ heading_level }}>
     </div>

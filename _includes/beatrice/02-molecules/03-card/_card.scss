@@ -19,6 +19,7 @@
   }
   a {
     display: block;
+    height: 100%;
     &:link,
     &:visited {
       color: var(--color-text-callout);
@@ -34,6 +35,7 @@
 
 
 .vf-mdc-card {
+  overflow: hidden;
   &__title {
     margin: 1rem;
 
@@ -42,6 +44,16 @@
     margin-bottom: 1rem;
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+  &__label {
+    background-color: $color-blue-700;
+    color: $color-gray-100;
+    padding: 0.1rem 0.25rem;
+    font-family: $sans-serif-novf;
+    @supports (font-variation-settings: normal) {
+      font-family: $sans-serif;
+      font-stretch: 80%;
+    }
   }
 }
 
