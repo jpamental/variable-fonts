@@ -36,11 +36,12 @@
   &__controls {
     display: grid;
     grid-template-columns: 1fr;
+    justify-items: center;
     margin: 1rem auto 0 auto;
-    max-width: 80vw;
     @media (min-width: $bp--medium) {
       grid-template-columns: 1fr 2fr;
-    }
+      max-width: 80vw;
+  }
     > * {
       margin: 0 1rem;
     }
@@ -49,11 +50,12 @@
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     display: grid;
-    grid-template-columns: 1fr;
-    margin-top: 0.5rem;
+    grid-template-columns: 1fr 1fr;
+    margin: 0.5rem 0 0 0;
     font-family: $sans-serif-novf;
     @supports (font-variation-settings: normal) {
       font-family: $sans-serif;
+      font-stretch: 50%;
     }
   
     @media (min-width: $bp--medium) {
@@ -84,7 +86,14 @@
     margin: 0.5rem auto;
     text-align: center;
     max-width: 20rem;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
+
+    &:first-child {
+      margin-right: 0.25rem;
+    }
+    + .slider-group {
+      margin-left: 0.25rem;
+    }
 
     @media (min-width: $bp--medium) {
       margin: 0 auto;
@@ -108,7 +117,7 @@
     }
     .value-tag,
     .value-tag2 {
-      grid-column: span 3;
+      grid-column: span 4;
       font-weight: bold;
       margin-bottom: 0.5rem;
       text-align: left;
@@ -188,6 +197,8 @@
   --text-wght: 450;
   --mdc-theme-primary: #{$color-blue-900};
   align-self: center;
+  text-transform: none;
+  min-width: 15rem;
   @media (prefers-color-scheme:dark) {
     --mdc-theme-primary: #{$color-blue-400};
   }
