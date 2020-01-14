@@ -21,8 +21,7 @@
     display: block;
     &:link,
     &:visited {
-      --color-text-link: var(--color-text-callout);
-      --color-text-link-visited: var(--color-text-callout);
+      color: var(--color-text-callout);
       text-decoration: none;
     }
     &:hover,

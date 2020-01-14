@@ -31,6 +31,9 @@
     {% endif %}
     {% if include.body %}
       <div class="vf-mdc-card__body">
+        {% if include.subtitle %}
+          <{{ subheading_level }} class="vf-mdc-card__subtitle">by {{ include.subtitle }}</{{ subheading_level }}>
+        {% endif %}
         <p>{{ include.body }}</p>
       </div>
     {% endif %}
