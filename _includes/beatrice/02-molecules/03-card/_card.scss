@@ -50,6 +50,9 @@
     color: $color-gray-100;
     padding: 0.1rem 0.25rem;
     font-family: $sans-serif-novf;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     @supports (font-variation-settings: normal) {
       font-family: $sans-serif;
       font-stretch: 80%;
