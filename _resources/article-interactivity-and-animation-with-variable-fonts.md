@@ -1,7 +1,7 @@
 ---
 category: Articles
 type: article
-title: Interactivity and Animatin with Variable Fonts
+title: Interactivity and Animation with Variable Fonts
 author: Mandy Michael
 link: https://24ways.org/2019/interactivity-and-animation-with-variable-fonts/
 ---
