@@ -17,6 +17,7 @@
     --h1-font-size-max: 7;
     --h2-vf-wdth: 30;
     --h2-font-size-max: 4;
+    align-self: center;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     @media (min-width: $bp--medium) {

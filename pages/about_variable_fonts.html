@@ -13,13 +13,17 @@ permalink: /about-variable-fonts/
     <figcaption>Overlaid letterforms showing width and weight ranges</figcaption>
     </figure>
   <p class="lede">Variable fonts are an evolution of the <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/">OpenType specification</a>. They let you use CSS to access all the styles contained in a single font file without worrying about <a href="https://alistapart.com/article/say-no-to-faux-bold/">browser distortions</a> like fake <strong>bolds</strong> or <em>italics</em>.</p> 
-  <p class="lede">Previously, using multiple styles meant loading multiple files—one for every width, weight, or italic. This created tension between design expressiveness (the number of fonts used) and website performance (the amount of data to download).</p> 
+  <p class="lede">Previously, using multiple styles meant loading multiple files—one for every width, weight, or italic. This created tension between design expressiveness (the number of fonts used) and website performance (the amount of data to download). With variable fonts, that whole equation changes.</p> 
           
   <blockquote>
     <p>Now you can use as many variations of a font as you like without slowing down your site</p>
   </blockquote>
 
-  <p>With variable fonts, that whole equation changes. <em>Variation axes</em> can include:</p>
+  <hr />
+
+  <h3>What’s an axis?</h3>
+  <aside class="aside aside--right">
+    <h4>Variation axes can include:</h4>
   <ul>
     <li><a href="#wght" class="medium">Weight</a></li>
     <li><a href="#wdth" class="medium">Width</a></li>
@@ -28,11 +32,10 @@ permalink: /about-variable-fonts/
     <li><a href="#opsz" class="medium">Optical size</a></li>
     <li><a href="#custom" class="medium">And any other variation the typeface designer comes up with</a></li>
   </ul>
-  <h3>What’s an axis?</h3>
-  <aside class="aside aside--right">
-    <h4>A variation axis is the expression of a single aspect of a typeface’s design</h4> 
-    <p>The weight axis, for example, defines how light or bold a font looks. With standard fonts, the terms “normal” and “bold” refer to specific files that are called to serve those styles. With variable fonts, weight is conveyed through minimum and maximum numeric values, and designers or developers can choose any value in between.</p>
-  </aside>
+</aside>
+
+<h4>A variation axis is the expression of a single aspect of a typeface’s design</h4>
+<p>The weight axis, for example, defines how light or bold a font looks. With standard fonts, the terms “normal” and “bold” refer to specific files that are called to serve those styles. With variable fonts, weight is conveyed through minimum and maximum numeric values, and designers or developers can choose any value in between.</p>
 
   <p>Not every variable font will have every possible axis (weight will likely be the most popular), but the format, browser implementation, and operating systems guarantee they’ll all work as intended.</p>
 

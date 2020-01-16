@@ -198,7 +198,7 @@
   --mdc-theme-primary: #{$color-blue-900};
   align-self: center;
   text-transform: none;
-  min-width: 15rem;
+  //min-width: 15rem;
   @media (prefers-color-scheme:dark) {
     --mdc-theme-primary: #{$color-blue-400};
   }
