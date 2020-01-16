@@ -5,4 +5,4 @@ title: V-Fonts
 author: Nick Sherman
 link: https://v-fonts.com
 ---
-Nick Sherman’s “simple resource for finding and trying variable fonts.”
+A “simple resource for finding and trying variable fonts.”
