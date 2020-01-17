@@ -35,13 +35,13 @@
   a {
     display: block;
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 450;
     font-stretch: 60%;
     line-height: 1.25;
     padding: 0.15rem 0.5rem 0.2rem;
     @media (min-width: $bp--large) {
       display: flex;
-      font-size: 1.25rem;
+      font-size: 1rem;
       line-height: 2rem;
       height: 100%;
       align-items: center;
