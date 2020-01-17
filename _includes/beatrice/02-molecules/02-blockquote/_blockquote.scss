@@ -14,7 +14,7 @@ blockquote {
 
   p {
     color: $color-gray;
-    font-family: $sans-serif-slant;
+    font-family: $sans-serif;
   	font-style: italic;
     font-weight: 100;
     margin-left: 0;
@@ -31,7 +31,7 @@ blockquote {
       --p-line-height-max: 1.4;
       --p-font-size-min: 2;
       --p-font-size-max: 3;
-      --p-vf-slnt: -12;
+      --p-vf-slnt: -10;
       --p-vf-wght: 100;
       --text-opsz: calc( var(--p-font-size-min) * var(--text-size-base) );
       color: var(--color-text-callout);
@@ -57,12 +57,12 @@ blockquote {
     @media screen and (min-width: $bp--medium) {
       clear: right;
       float: right;
-      margin-left: 2rem;
+      margin-left: 4rem;
       margin-right: 0;
       margin-top: 0;
       min-width: 15rem;
       padding-right: 1rem;
-      width: calc( 100% - (var(--content-width) + 2rem) );
+      width: calc( 100% - (var(--content-width) + 4rem) );
     }
   }
   img {

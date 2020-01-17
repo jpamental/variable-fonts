@@ -89,7 +89,7 @@ li {
   @supports (font-variation-settings: normal) {
     font-family: $sans-serif;
   	font-weight: var(--p-vf-wght);
-    font-variation-settings: 'opsz' var(--text-opsz), 'slnt' var(--p-vf-slnt), 'GRAD' var(--p-vf-GRAD);
+    font-variation-settings: 'opsz' var(--text-opsz), 'SLNT' var(--p-vf-slnt), 'GRAD' var(--p-vf-GRAD);
   }
 }
 
@@ -199,9 +199,9 @@ th {
 
 em {
   @supports (font-variation-settings: normal) {
-    font-family: $sans-serif-slant;
+    font-family: $sans-serif;
     font-synthesis: none;
-    --p-vf-slnt: -12;
+    --p-vf-slnt: -10;
   }
 }
 
@@ -517,8 +517,8 @@ code {
 }
 
 .manicule {
-  font-family: $sans-serif-slant;
-  font-variation-settings: 'slnt' -12;
+  font-family: $sans-serif;
+  font-variation-settings: 'SLNT' -10;
   &::before {
     content:"\0261E";
     color: $color-blue-700;

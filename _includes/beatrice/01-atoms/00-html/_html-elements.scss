@@ -24,10 +24,10 @@ figure {
   width: calc( 49% + 2rem );
   &.figure--right {
     float: right;
-    margin-left: 2rem;
+    margin-left: 4rem;
     @media (min-width: $bp--large) {
       min-width: 15rem;
-      width: calc( 100% - (var(--content-width) + 2rem) );
+      width: calc( 100% - (var(--content-width) + 4rem) );
     }
   }
   img {
@@ -45,9 +45,10 @@ figure {
 
 figcaption {
   font-weight: 350;
-  font-size: 0.875rem;
+  font-size: 0.925rem;
   margin-bottom: 1rem;
   margin-top: 0.25rem;
+  font-variation-settings: 'SLNT' -10;
 }
 
 img {
@@ -105,9 +106,9 @@ hr::after {
     @media (min-width: $bp--large) {
       clear: right;
       float: right;
-      margin-left: 2rem;
+      margin-left: 4rem;
       min-width: 15rem;
-      width: calc( 100% - (var(--content-width) + 2rem) );
+      width: calc( 100% - (var(--content-width) + 4rem) );
     }
   }
   h3 {
