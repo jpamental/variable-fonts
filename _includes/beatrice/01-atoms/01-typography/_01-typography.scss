@@ -89,7 +89,7 @@ li {
   @supports (font-variation-settings: normal) {
     font-family: $sans-serif;
   	font-weight: var(--p-vf-wght);
-    font-variation-settings: 'opsz' var(--text-opsz), 'SLNT' var(--p-vf-slnt), 'GRAD' var(--p-vf-GRAD);
+    font-variation-settings: 'opsz' var(--text-opsz), 'slnt' var(--p-vf-slnt), 'GRAD' var(--p-vf-GRAD);
   }
 }
 
@@ -518,7 +518,7 @@ code {
 
 .manicule {
   font-family: $sans-serif;
-  font-variation-settings: 'SLNT' -10;
+  font-variation-settings: 'slnt' -10;
   &::before {
     content:"\0261E";
     color: $color-blue-700;
