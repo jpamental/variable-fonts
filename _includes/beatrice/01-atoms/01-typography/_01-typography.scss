@@ -177,7 +177,7 @@ td {
 strong {
   @supports (font-variation-settings: normal) {
     font-synthesis: none;
-    font-weight: calc(var(--p-vf-wght) * 2.125);
+    font-weight: calc(var(--p-vf-wght) * 1.85);
   }
 }
 
