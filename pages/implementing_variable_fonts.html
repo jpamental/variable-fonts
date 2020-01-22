@@ -4,3 +4,118 @@ title: "Implementing Variable Fonts"
 permalink: /implementing-variable-fonts/
 ---
 <h1>{{ page.title }}</h1>
+
+<p>There are several ways you can start using variable fonts today. The Google Fonts API v2 supports them, you can host them yourself if you have the font files, and soon you’ll be able to add them to your site through the regular Google Fonts user interface.</p>
+<h2>Google Fonts API</h2>
+
+<p>The <a href="https://developers.google.com/fonts/docs/css2">new API for requesting fonts</a> lets you request any of a <a href="https://developers.google.com/fonts/docs/css2#list_of_variable_fonts">growing number of variable fonts</a> in their catalog. The syntax is quite flexible, and allows for requesting a specific combination of axes, static values, and ranges. There is already a comprehensive page on the Google Fonts developer documentation site (linked above), so here the focus will be specifically on working with variable font axis and range combinations in order to have the greatest flexibility available in your design.</p>
+
+<h2>Making the request</h2>
+
+<p>The first thing to note after selecting a variable font to use via the API is the differences in syntax. Here is an example of requesting Yanone Kaffeesatz as a variable font with a weight axis range of 200-700:</p>
+
+<p><code>https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700</code></p>
+
+<p>And here are the parts of the request explained:</p>
+
+<p><code>css2?family=[font name]:[axis keyword]@[range (low)]..[range (high)]</code></p>
+
+<p>First, note that while the address endpoint is ‘css2’, specifying the font name is relatively unchanged. It’s after the colon that things change more dramatically. This is where the axis (or axes) are listed, followed by an ‘@’ symbol, followed in turn by values indicating the ranges requested. The API allows for individual values to be specified, but here the request used the ‘[range (low)]..[range (high)]’ syntax to request the full weight range of 200 to 700. Should you only require the weight to cover part of the available range, you can adjust the values accordingly and end up with a slightly smaller download.</p>
+
+<p>Once requested, you can now specify any value within that range in your CSS. In the case of the weight axis, that corresponds to the standard ‘font-weight’ attribute.</p>
+
+<pre class="css"><code class="prettyprint">
+  p {
+    font-weight: 350;
+  }
+  strong {
+    font-weight: 575;
+  }
+</code></pre>
+
+<p>In the case of italics, they can be requested separately with the corresponding weight axis range, or in combination (if available) with both upright and italic in the full requested range.</p>
+
+<p>Just italics with a weight range of 200-900</p>
+<p><code>https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@1,200..900</code></p>
+
+<p>Or both upright and italics in the same range</p>
+<p><code>https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900</code></p>
+
+<p>There are detailed notes on the syntax <a href="https://developers.google.com/fonts/docs/css2#forming_api_urls">in the documentation</a>, but the quick notes to remember are:</p>
+<ul>
+  <li>Keep the axes listed in alphabetical order</li>
+  <li>Corresponding value sets in numerical order</li>
+</ul>
+
+<p>Looking at the example above, you can see that <code>ital</code> is listed before <code>wght</code> and the value set for upright (<code>0,200..900</code>) lists before italic (<code>1,200..900</code>). </p>
+
+<h2>Range versus static point</h2>
+
+<p>This version of the API can serve both static fonts and variable ones—and indeed static instances of variable ones. This means the same URL structure can retrieve the static fonts, a variable font range, or a variable font instance at a single specific value. While in some cases it may be useful to request only the 575 weight of a given typeface, the real benefits of using variable fonts are often found in using more of the available range, which is why that is the focus of most of the demos on this site.</p>
+
+<p>Crimson Pro, static, normal weight</p>
+<p><code>https://fonts.googleapis.com/css2?family=Crimson+Pro:400</code></p>
+
+<p>Crimson Pro, variable, specific weight:</p>
+<p><code>https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@450</code></p>
+
+<p>Crimson Pro, variable, full weight range</p>
+<p><code>https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200..900</code></p>
+
+<p>The first example above is closest to the syntax previously supported in the API. The second example includes the <code>wght</code> keyword with a specific weight listed after the ‘@’ sign, indicating a static instance from the variable font. The third example is a request for the full weight range of the variable font.</p>
+
+<h2>Progressive enhancement and legacy browser support</h2>
+
+<p>In order to support the broadest set of browsers and devices, it’s important to set up your CSS with standard values first, and the variable styles within an ‘@supports’ block. The API is smart enough to supply the static font files if the browser doesn’t support variable ones—so all you have to do is manage the CSS side of the equation. It might look something like this:</p>
+
+<pre class="css"><code class="prettyprint">
+  p {
+    font-synthesis: none;
+    font-weight: normal;
+  }
+  strong {
+    font-synthesis: none;
+    font-weight: bold;
+  }
+  @supports (font-variation-settings: normal) {
+    p {
+      font-weight: 350;
+    }
+    strong {
+      font-weight: 575;
+    }
+  }
+</code></pre>
+
+<p>By adding in the <code>font-synthesis: none</code> declaration, you ensure that browsers like Safari or Firefox won’t artificially bold or italicize the typeface, which can lead to unexpected and less-than-ideal results.</p>
+
+<h2>Performance</h2>
+
+<p>Whether serving the fonts yourself or using the Google Fonts service, there are steps you can take to ensure the best possible performance on your site. It helps to understand a bit about the loading and rendering process. It’s beyond the scope of this site to dive too deeply, but the basic flow goes something like this:</p>
+
+<ol>
+  <li>Browser requests a page</li>
+  <li>Browser downloads HTML & linked CSS</li>
+  <li>Browser parses HTML and CSS</li>
+  <li>Browser initiates download of any linked CSS assets like fonts</li>
+  <li>Browser now waits up to 3 seconds before starting to render the page while waiting for web fonts to download
+    <ol>
+      <li>If the fonts arrive within 3 seconds, the page is rendered as it should be</li>
+      <li>If the fonts have not fully loaded, the browser renders the page using fallback system fonts, re-rendering the page once the web fonts arrive</li>
+    </ol>
+  </li>
+</ol>
+
+<p>Ideally the fonts load quickly and the page is rendered correctly the first time—but that is often not the case, and this brings us to the next scenario. The phenomenon of text being rendered in the fallback fonts and then re-rendering with the proper ones is known as Flash of Unstyled Text (or FOUT for short). </p>
+
+<p>Given that the purpose of the site is generally to deliver the content, this behavior should be preferred, and indeed hastened if possible. Introducing a delay of at least 3 seconds greatly increases the chances of users abandoning the process altogether and going elsewhere. The W3C actually introduced the ability to tell the browser how to behave in this scenario, and the Google Fonts service and API now support it as well.</p> 
+
+<p>This comes in the form of an attribute called <code>font-display</code>. By providing a value of <code>swap</code>, we tell the browser to render the page right away with fallback fonts, and then redraw the page once the fonts have loaded. However, this is only part of the solution. The next step is to include a web font loader that will help provide the ability to style the fallback fonts during the loading process, thereby minimizing any reflow of content once the browser re-renders the page when the web fonts arrive. This does require some Javascript, but is a really worthwhile enhancement to the user experience.</p>
+
+<p>The first part of this solution is easy: simply append <code>&display=swap</code> to the API request. One of the requests above for Crimson Pro would then look like this:</p>
+
+<p><code>https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200..900&display=swap</code></p>
+
+<p>You can learn more about what <code>font-display</code> does and what options it affords on the <a href="https://www.w3.org/TR/css-fonts-4/#font-display-desc">W3C specifications page</a> and on the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display">MDN site</a>.</p>
+
+<p>To take your solution further, take a look at <a href="https://fontfaceobserver.com/">FontFaceObserver from Bram Stein</a>, or read more about font loading performance in general in this post from Zach Leatherman.</p>
