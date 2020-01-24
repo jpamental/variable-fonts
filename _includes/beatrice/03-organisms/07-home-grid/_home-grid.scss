@@ -12,7 +12,7 @@
     grid-column: 1 / 5;
     grid-row: 1 / 2;
     min-height: 10rem;
-    margin-bottom: calc( var(--body-text-spacer) * 3 );
+    margin-bottom: calc( var(--body-text-spacer) * 5 );
     &__more {
       font-weight: 350;
       font-size: 0.925rem;
@@ -39,12 +39,11 @@
   &__intro {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
-    color: var(--color-text-callout);
   }
   &__cards {
     grid-column: 2 / 4;
     grid-row: 3 / 4;
-    padding-top: calc( var(--body-text-spacer) * 3 );
+    padding-top: calc( var(--body-text-spacer) * 5 );
     @media (min-width: $bp--medium) {
       display: flex;          
     }

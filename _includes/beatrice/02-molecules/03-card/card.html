@@ -23,15 +23,12 @@
 <article class="mdc-card vf-mdc-card {{ card_style }}">
   {% if include.primary_link_url %}<a href="{{ include.primary_link_url }}">{% endif %}<div class="mdc-card__primary-action">
     {% if include.label %}
-    <label class="vf-mdc-card__label">{{ include.label }}</label>
-  {% endif %}
-{% if include.media %}
-      <div class="mdc-card__media mdc-card__media--16-9">
-      <{{ heading_level }} class="mdc-card__media-content">{{ include.title }}</{{ heading_level }}>
-    </div>
-    {% else %}
-      <{{ heading_level }} class="vf-mdc-card__title">{{ include.title }}</{{ heading_level }}>
+      <label class="vf-mdc-card__label">{{ include.label }}</label>
     {% endif %}
+    {% if include.media %}
+      <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('{{ site.baseurl }}{{ include.media }}');"></div>
+    {% endif %}
+    <{{ heading_level }} class="vf-mdc-card__title">{{ include.title }}</{{ heading_level }}>
     {% if include.body %}
       <div class="vf-mdc-card__body">
         {% if include.subtitle %}

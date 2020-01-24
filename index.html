@@ -23,8 +23,10 @@ design-classes:
   <div class="home-grid__cards">
       {% assign cardlink1 = site.baseurl | append: '/about-variable-fonts' %}
       {% include beatrice/02-molecules/03-card/card.html 
+        
         card_style = 'outline'
         primary_link_url = cardlink1
+        media = '/assets/img/card-design.png'
         heading_level = 3
         title = 'Designing with Variable Fonts'
         body = 'Learn about the variable font format, how it works, and how to design with this flexible new technology'
@@ -33,6 +35,7 @@ design-classes:
       {% include beatrice/02-molecules/03-card/card.html 
         card_style = 'outline'
         primary_link_url = cardlink2
+        media = '/assets/img/card-implement.png'
         heading_level = 3
         title = 'Implementing Variable Fonts'
         body = 'Learn how to incorporate variable fonts into your project, either by using the Google Fonts platform or by hosting them yourself'
@@ -41,6 +44,7 @@ design-classes:
       {% include beatrice/02-molecules/03-card/card.html 
         card_style = 'outline'
         primary_link_url = cardlink3
+        media = '/assets/img/card-resources.png'
         heading_level = 3
         title = 'Variable Font Resources'
         body = 'Links to articles, videos, demos, and sources'

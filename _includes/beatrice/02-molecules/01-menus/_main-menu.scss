@@ -48,8 +48,8 @@
     }
     &:link,
     &:visited {
-      --color-text-link: var(--color-text);
-      --color-text-link-visited: var(--color-text);
+      --color-text-link: var(--color-text-menu-link);
+      --color-text-link-visited: var(--color-text-menu-link);
       text-decoration: none;
       &.active {
         --color-text-link: var(--color-text-link-active-trail);

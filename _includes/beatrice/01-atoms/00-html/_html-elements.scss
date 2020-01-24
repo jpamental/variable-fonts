@@ -99,7 +99,7 @@ hr::after {
 .aside {
   background-color: var(--color-text-highlight);
   background: radial-gradient(ellipse at bottom right, var(--color-text-highlight) 0%, var(--color-text-highlight-secondary) 70%);
-  border-top: solid 1px $color-gray-lighter;
+  border-top: solid 1px $color-gray-200;
   padding: 0.75rem;
   &--right {
     min-width: 15rem;

@@ -79,7 +79,7 @@
   --high-value2: 1;
 
   .slider-group {
-    border: solid 1px $color-gray-600;
+    border: solid 1px $color-blue-200;
     border-radius: 0.25rem;
     display: grid;
     grid-template-columns: min-content 1fr min-content;
@@ -199,29 +199,26 @@
   --mdc-theme-primary: #{$color-blue-900};
   align-self: center;
   text-transform: none;
-  //min-width: 15rem;
-  @media (prefers-color-scheme:dark) {
-    --mdc-theme-primary: #{$color-blue-400};
-  }
+  //min-width: 10rem;
   &:hover {
 
   }
   &.pause::after {
     content: "Play";
-    padding-left: 0.5em;
+    padding-left: 0.25em;
   }
   &.play::after {
     content: "Pause";
-    padding-left: 0.5em;
+    padding-left: 0.25em;
   }
   &::after {
     .play & {
       content: "Pause";
-      padding-left: 0.5em;
+      padding-left: 0.25em;
     }
     .pause & {
       content: "Play";
-      padding-left: 0.5em;
+      padding-left: 0.25em;
     }
   }
 }

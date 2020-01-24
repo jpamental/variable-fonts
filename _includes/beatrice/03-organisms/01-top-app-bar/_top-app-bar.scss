@@ -8,11 +8,11 @@
 .mdc-top-app-bar {
   --mdc-theme-primary: var(--color-background);
   --mdc-theme-on-primary: var(--color-text);
-  border-bottom: solid 1px $color-gray-lighter;
-  color: $color-gray;
+  border-bottom: solid 1px $color-gray-300;
+  color: $color-gray-800;
   color: var(--color-text);
   @media (prefers-color-scheme:dark) {
-    border-bottom-color: $color-gray;
+    border-bottom-color: $color-gray-700;
   }
   &__row {
     height: 4rem;
@@ -36,7 +36,7 @@
     a {
       &:link,
       &:visited {
-        --color-text-link-visited: var(--color-text);
+        --color-text-link-visited: var(--color-text-menu-link);
         text-decoration: none;
       }
       &:hover,

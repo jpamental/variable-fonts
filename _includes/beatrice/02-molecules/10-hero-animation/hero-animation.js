@@ -33,6 +33,7 @@ chars.forEach(function (item, index) {
 
 var container = document.getElementById('hero_animation');
 var controls = document.getElementById('play_pause');
+var controlsIcon = document.querySelector('.play-pause .mdc-button__icon');
 
 document.addEventListener('DOMContentLoaded', toggleEvent, false);
 controls.addEventListener('click', toggleEvent, false);
@@ -45,6 +46,7 @@ function toggleEvent() {
     container.classList.add('pause');
     controls.classList.remove('play');
     controls.classList.add('pause');
+    controlsIcon.innerHTML = 'play_arrow';
   } else {
     document.querySelector('.hero-animation').style.setProperty(`--text-vf-wght`, 150);
     document.querySelector('.hero-animation').style.setProperty(`--text-vf-CASL`, 0);
@@ -52,6 +54,7 @@ function toggleEvent() {
     container.classList.remove('pause');
     controls.classList.add('play');
     controls.classList.remove('pause');
+    controlsIcon.innerHTML = 'pause';
     var delayInMilliseconds = 15000; 
     
     setTimeout(function() {
@@ -59,6 +62,8 @@ function toggleEvent() {
         container.classList.add('pause');
         controls.classList.remove('play');
         controls.classList.add('pause');
+        controlsIcon.innerHTML = 'play_arrow';
+
     }, delayInMilliseconds);
   }
 };

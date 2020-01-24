@@ -27,16 +27,17 @@
   --color-callout-highlight-secondary: #{lighten($color-blue-50, 2.5%)};
   --color-callout-highlight-alt: #{darken($color-blue-100, 2.5%)};
   --color-callout-highlight-alt-secondary: #{lighten($color-blue-100, 2.5%)};
+  --color-text-menu-link: #{$color-gray-800};
   --color-text-link: #{$color-text-link};
   --color-text-link-visited: #{$color-text-link-visited};
   --color-text-link-hover: #{$color-text-link-hover};
   --color-text-link-active: #{$color-text-link-active};
   --color-text-link-focus: #{$color-text-link-focus};
   --color-text-link-active-trail: #{$color-text-link-active-trail};
-  --color-prettify-lit: #{$color-blue-600};
+  --color-prettify-lit: #{$color-blue-900};
   --color-prettify-pln: #{$color-text};
-  --color-prettify-pun: #{$color-gray-600};
-  --color-prettify-str: #{$color-blue-800};
+  --color-prettify-pun: #{$color-gray-900};
+  --color-prettify-str: #{$color-blue-900};
   @media (prefers-color-scheme:dark) {
     --color-background: #{$color-gray-900};
     --color-text: #ffffff;
@@ -47,6 +48,7 @@
     --color-callout-highlight-secondary: #{lighten($color-gray-700, 2.5%)};
     --color-callout-highlight-alt: #{darken($color-gray-800, 5%)};
     --color-callout-highlight-alt-secondary: #{lighten($color-gray-800, 2.5%)};
+    --color-text-menu-link: #{$color-gray-100};
     --color-text-link: #{$color-blue-100};
     --color-text-link-visited: #{$color-blue-200};
     --color-text-link-hover: #{$color-text-link-hover};
