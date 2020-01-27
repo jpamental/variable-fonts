@@ -15,7 +15,7 @@ permalink: /implementing-variable-fonts/
 
   <p>There is already a comprehensive page on the Google Fonts developer documentation site (linked above), so here the focus will be specifically on working with variable font axis and range combinations in order to have the greatest flexibility available in your design.  The new API for requesting fonts lets you request any of a <a href="https://developers.google.com/fonts/docs/css2#list_of_variable_fonts">growing number of variable fonts</a> in their catalog. The syntax is pretty flexible, and allows you to request a specific combination of axes, static values, and ranges. Because the Google Fonts developer documentation site is so comprehensive, here the focus will specifically be on working with variable font axis and range combinations so you have the greatest flexibility available when designing your project.</p>
 
-  <h2>Making the request</h2>
+  <h3>Making the request</h3>
 
   <p>After selecting a variable font to use via the API, the first thing you need to pay attention to is the changes in syntax from v1 to v2. Requesting Yanone Kaffeesatz as a variable font with a weight axis range of 200–700 looks like this:</p>
 
@@ -52,7 +52,7 @@ permalink: /implementing-variable-fonts/
     <li>Keep corresponding value sets in numerical order</li>
   </ul>
 
-  <h2>Range versus static point</h2>
+  <h3>Range versus static point</h3>
 
   <p>This version of the API can serve both static and variable fonts—and indeed static instances of variable fonts. In other words, the same URL structure can retrieve the static fonts, a variable font range, or a variable font instance at a single specific value. Although in some cases it may be useful to request, say, only the 575 weight of a given typeface, the real benefits of using variable fonts often lie in using more of the available range, which is why that’s the focus of most of the demos on this site.</p>
 

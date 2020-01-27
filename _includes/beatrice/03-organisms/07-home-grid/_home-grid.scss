@@ -48,6 +48,8 @@
       display: flex;          
     }
     > * {
+      --h3-font-size-max: 2;
+      --h3-vf-wdth: 45;
       flex-grow: 1;
       justify-content: space-between;
       margin-bottom: calc( var(--body-text-spacer) * 2 );
