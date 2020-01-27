@@ -70,7 +70,7 @@ hr::after {
   font-size: 1.5em;
   font-weight: bold;
   line-height: 1;
-  margin: 1em auto;
+  margin: calc( var(--body-text-spacer) * 3 ) auto 1em auto;
   padding-top: 0.1em;
   text-align: center;
   background: radial-gradient(0.801em at 50%, var(--color-background) 0.8em, transparent),
