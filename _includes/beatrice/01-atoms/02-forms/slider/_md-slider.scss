@@ -1,0 +1,8 @@
+@import "@material/slider/mdc-slider";
+
+.mdc-slider {
+  --mdc-theme-secondary: #{$color-blue-700};
+  &:not(.mdc-slider--disabled) .mdc-slider__track-container {
+    background-color: rgba($color-blue-700,.26);
+  }
+}

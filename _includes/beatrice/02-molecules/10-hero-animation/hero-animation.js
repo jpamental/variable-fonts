@@ -48,8 +48,8 @@ function toggleEvent() {
     controls.classList.add('pause');
     controlsIcon.innerHTML = 'play_arrow';
   } else {
-    document.querySelector('.hero-animation').style.setProperty(`--text-vf-wght`, 150);
-    document.querySelector('.hero-animation').style.setProperty(`--text-vf-CASL`, 0);
+    document.querySelector(':root').style.setProperty(`--text-vf-wght`, 150);
+    document.querySelector(':root').style.setProperty(`--text-vf-CASL`, 0);
     container.classList.add('play');
     container.classList.remove('pause');
     controls.classList.add('play');
@@ -68,19 +68,6 @@ function toggleEvent() {
   }
 };
 
-var inputs = [].slice.call(document.querySelectorAll('.hero-animation .controls input'));
-
-// listen for changes
-inputs.forEach(input => input.addEventListener('change', handleUpdate));
-inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
-
-
-function handleUpdate(e) {
-  document.querySelector('.hero-animation').style.setProperty(`--${this.id}`, this.value);
-  if (this.id == 'text-vf-CASL') {
-    document.querySelector('.hero-animation .controls .current-value2').textContent=this.value;
-  }
-}
 
 }
 catch(error) {

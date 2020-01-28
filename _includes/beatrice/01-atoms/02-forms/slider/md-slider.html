@@ -1,0 +1,36 @@
+{% if include.min %}
+  {% assign min = include.min %}
+{% else %}
+  {% assign min = 0 %}
+{% endif %}
+{% if include.max %}
+  {% assign max = include.max %}
+{% else %}
+  {% assign max = 1 %}
+{% endif %}
+{% if include.now %}
+  {% assign now = include.now %}
+{% else %}
+  {% assign now = 0.5 %}
+{% endif %}
+{% if include.step %}
+  {% assign step = include.step %}
+{% else %}
+  {% assign step = 1 %}
+{% endif %}
+
+
+
+<div class="mdc-slider" id="{{ include.id }}" tabindex="0" role="slider"
+     aria-valuemin="{{ min }}" aria-valuemax="{{ max }}" aria-valuenow="{{ now }}"
+     aria-label="Select Value" data-step="{{ step }}">
+  <div class="mdc-slider__track-container">
+    <div class="mdc-slider__track"></div>
+  </div>
+  <div class="mdc-slider__thumb-container">
+    <svg class="mdc-slider__thumb" width="21" height="21">
+      <circle cx="10.5" cy="10.5" r="7.875"></circle>
+    </svg>
+    <div class="mdc-slider__focus-ring"></div>
+  </div>
+</div>

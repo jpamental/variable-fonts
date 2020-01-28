@@ -1,0 +1,34 @@
+{% comment %}
+  include fields:
+    style: wide (defaults to stacked)
+    keyword: keyword 'tag' (i.e. 'wght' or 'GRAD')
+    id: unique id string
+    min: minimum slider value
+    max: maximum slider value
+    now: starting value
+    step: step increment (1, 0.1, 0.001, etc)
+
+{% endcomment %}
+
+<style>
+  :root {
+    --{{ include.id }}: {{ include.now }};
+  }
+</style>
+
+
+<div class="md-slider-group {{ include.keyword }} {{ include.style }}" style="counter-reset: counter-{{ include.id }} var(--{{ include.id }});">
+  <div class="value-tag">'{{ include.keyword }}' range</div>
+  <div class="md-slider-group__slider-unit">
+    <div class="low-value">{{ include.min }}</div>
+    {% include beatrice/01-atoms/02-forms/slider/md-slider.html 
+      id = include.id
+      min = include.min
+      max = include.max
+      now = include.now
+      step = include.step
+    %}
+    <div class="high-value">{{ include.max }}</div>
+    <div class="current-value">{{ include.now }}</div>
+  </div>
+</div>

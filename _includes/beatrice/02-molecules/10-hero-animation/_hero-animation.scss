@@ -1,9 +1,7 @@
 .hero-animation {
   --text-vf-MONO: 0;
-  --text-vf-CASL: 0;
   --text-vf-slnt: 0;
   --text-vf-ital: 0;
-  --text-vf-wght: 150;
   --text-vf-MONO-max: 0;
   --text-vf-CASL-max: 1;
   --text-vf-slnt-max: 0;
@@ -37,9 +35,9 @@
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
-    margin: 1rem auto 0 auto;
+    margin: 1rem auto;
     @media (min-width: $bp--medium) {
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: max-content 1fr;
       max-width: 80vw;
   }
     > * {
@@ -53,6 +51,7 @@
     grid-template-columns: 1fr 1fr;
     margin: 0.5rem 0 0 0;
     font-family: $sans-serif-novf;
+    width: 100%;
     @supports (font-variation-settings: normal) {
       font-family: $sans-serif;
       font-stretch: 50%;
@@ -63,141 +62,19 @@
       margin-top: 0;
     }
     > * {
-      //margin: 1rem;
+      margin: 0 1rem;
     }
   }
   .pause + .controls {
     opacity: 1;
   }
-  --value-tag: 'wght';
-  --value-tag2: 'CASL';
-  --low-value: 100;
-  --current-value: var(--text-vf-wght);
-  --high-value: 1000;
-  --low-value2: 0;
-  --current-value2: var(--text-vf-CASL);
-  --high-value2: 1;
 
-  .slider-group {
-    border: solid 1px $color-blue-200;
-    border-radius: 0.25rem;
-    display: grid;
-    grid-template-columns: min-content 1fr min-content;
-    margin: 0.5rem auto;
-    text-align: center;
-    max-width: 20rem;
-    padding: 0.5rem 0.5rem;
-
-    &:first-child {
-      margin-right: 0.25rem;
-    }
-    + .slider-group {
-      margin-left: 0.25rem;
-    }
-
-    @media (min-width: $bp--medium) {
-      margin: 0 auto;
-    }
-    h3 {
-      display: inline;
-      font-weight: normal;
-      font-family: monospace;
-    }
-    label {
-      float: left;
-      height: 1px;
-      text-indent: -999em;
-      visibility: hidden;
-    }
-    .slider {
-      grid-column: 2/4;
-      input {
-        width: 100%;
-      }
-    }
-    .value-tag,
-    .value-tag2 {
-      grid-column: span 4;
-      font-stretch: 100%;
-      font-weight: 525;
-      margin-bottom: 0.5rem;
-      text-align: left;
-    }
-    .value-tag::before {
-      counter-reset: tag var(--value-tag);
-      content: "'" var(--value-tag) "' range";
-    }
-    .value-tag2::before {
-      counter-reset: tag var(--value-tag2);
-      content: "'" var(--value-tag2) "' range";
-    }
-    .low-value,
-    .low-value2 {
-      grid-column: 1/2;
-      text-align: left;
-      width: 2.5rem;
-    }
-    .low-value::before {
-      counter-reset: tag var(--low-value);
-      content: counter(tag);
-    }
-    .low-value2::before {
-      counter-reset: tag var(--low-value2);
-      content: counter(tag);
-    }
-    .high-value,
-    .high-value2 {
-      grid-column: 4/5;
-      text-align: right;
-      width: 2.5rem;
-    }
-    .high-value::before {
-      counter-reset: tag var(--high-value);
-      content: counter(tag);
-    }
-    .high-value2::before {
-      counter-reset: tag var(--high-value2);
-      content: counter(tag);
-    }
-    .current-value,
-    .current-value2 {
-      grid-column: 2/3;
-    }
-    .current-value::before {
-      counter-reset: tag var(--current-value);
-      border: solid 1px $color-gray-600;
-      content: counter(tag);
-      display: inline-block;
-      min-width: 3rem;
-      margin: 0.5rem auto 0 auto;
-      padding: 0.25rem 0.25rem 0.2rem 0.25rem;
-    }
-    .current-value2 {
-      border: solid 1px $color-gray-600;
-      display: inline-block;
-      min-width: 3rem;
-      margin: 0.5rem auto 0 auto;
-      padding: 0.25rem 0.25rem 0.2rem 0.25rem;
-    }
-  }
-
-}
-
-@keyframes breath {
-  0% {
-    font-weight: var(--text-vf-wght);
-    font-variation-settings: 'MONO' var(--text-vf-MONO), 'CASL' var(--text-vf-CASL), 'slnt' var(--text-vf-slnt), 'ital' var(--text-vf-ital);
-  }
-  100% {
-    font-weight: var(--text-vf-wght-max);
-    font-variation-settings: 'MONO' var(--text-vf-MONO-max), 'CASL' var(--text-vf-CASL-max), 'slnt' var(--text-vf-slnt-max), 'ital' var(--text-vf-ital-max);
-  }
 }
 
 .play-pause {
   --text-wght: 450;
   --mdc-theme-primary: #{$color-blue-900};
-  align-self: center;
+  margin-top: 0.25rem;
   text-transform: none;
   //min-width: 10rem;
   &:hover {
@@ -220,5 +97,16 @@
       content: "Play";
       padding-left: 0.25em;
     }
+  }
+}
+
+@keyframes breath {
+  0% {
+    font-weight: var(--text-vf-wght);
+    font-variation-settings: 'MONO' var(--text-vf-MONO), 'CASL' var(--text-vf-CASL), 'slnt' var(--text-vf-slnt), 'ital' var(--text-vf-ital);
+  }
+  100% {
+    font-weight: var(--text-vf-wght-max);
+    font-variation-settings: 'MONO' var(--text-vf-MONO-max), 'CASL' var(--text-vf-CASL-max), 'slnt' var(--text-vf-slnt-max), 'ital' var(--text-vf-ital-max);
   }
 }
