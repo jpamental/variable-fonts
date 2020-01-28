@@ -3,9 +3,11 @@
   --text-vf-slnt: 0;
   --text-vf-ital: 0;
   --text-vf-MONO-max: 0;
+  --text-vf-CASL-min: 0;
   --text-vf-CASL-max: 1;
   --text-vf-slnt-max: 0;
   --text-vf-ital-max: 0;
+  --text-vf-wght-min: 100;
   --text-vf-wght-max: 1000;
   --h1-font-size-min: 3;
   --h1-font-size-max: 6.5;
@@ -50,12 +52,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 0.5rem 0 0 0;
-    font-family: $sans-serif-novf;
     width: 100%;
-    @supports (font-variation-settings: normal) {
-      font-family: $sans-serif;
-      font-stretch: 50%;
-    }
   
     @media (min-width: $bp--medium) {
       grid-template-columns: 1fr 1fr;
@@ -76,7 +73,7 @@
   --mdc-theme-primary: #{$color-blue-900};
   margin-top: 0.25rem;
   text-transform: none;
-  //min-width: 10rem;
+  min-width: 10rem;
   &:hover {
 
   }
@@ -102,8 +99,8 @@
 
 @keyframes breath {
   0% {
-    font-weight: var(--text-vf-wght);
-    font-variation-settings: 'MONO' var(--text-vf-MONO), 'CASL' var(--text-vf-CASL), 'slnt' var(--text-vf-slnt), 'ital' var(--text-vf-ital);
+    font-weight: var(--text-vf-wght-min);
+    font-variation-settings: 'MONO' var(--text-vf-MONO), 'CASL' var(--text-vf-CASL-min), 'slnt' var(--text-vf-slnt), 'ital' var(--text-vf-ital);
   }
   100% {
     font-weight: var(--text-vf-wght-max);

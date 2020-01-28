@@ -48,8 +48,12 @@ function toggleEvent() {
     controls.classList.add('pause');
     controlsIcon.innerHTML = 'play_arrow';
   } else {
-    document.querySelector(':root').style.setProperty(`--text-vf-wght`, 150);
-    document.querySelector(':root').style.setProperty(`--text-vf-CASL`, 0);
+    //document.querySelector(':root').style.setProperty(`--text-vf-wght`, 150);
+    //document.getElementById('text-vf-wght').parentElement.querySelector('.value-current').textContent = '150';
+    //document.getElementById('text-vf-wght').setAttribute('aria-valuenow', '150');
+    //document.querySelector(':root').style.setProperty(`--text-vf-CASL`, 0);
+    //document.getElementById('text-vf-CASL').parentElement.querySelector('.value-current').textContent = '0';
+    //document.getElementById('text-vf-CASL').setAttribute('aria-valuenow', '0');
     container.classList.add('play');
     container.classList.remove('pause');
     controls.classList.add('play');

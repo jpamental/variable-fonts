@@ -10,6 +10,6 @@ sliders.forEach(function (slider) {
   const thisSlider = new MDCSlider(slider);
 
   thisSlider.listen('MDCSlider:input', () => document.querySelector(':root').style.setProperty(`--${slider.id}`, thisSlider.value));
-  thisSlider.listen('MDCSlider:input', () => document.getElementById(slider.id).parentElement.querySelector('.current-value').textContent=thisSlider.value.toFixed(2) );
+  thisSlider.listen('MDCSlider:input', () => document.getElementById(slider.id).parentElement.querySelector('.value-current').textContent=thisSlider.value.toFixed(2) );
 
 });

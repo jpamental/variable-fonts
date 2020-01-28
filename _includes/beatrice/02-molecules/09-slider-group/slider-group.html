@@ -20,7 +20,7 @@
 <div class="md-slider-group {{ include.keyword }} {{ include.style }}" style="counter-reset: counter-{{ include.id }} var(--{{ include.id }});">
   <div class="value-tag">'{{ include.keyword }}' range</div>
   <div class="md-slider-group__slider-unit">
-    <div class="low-value">{{ include.min }}</div>
+    <div class="value-low">{{ include.min }}</div>
     {% include beatrice/01-atoms/02-forms/slider/md-slider.html 
       id = include.id
       min = include.min
@@ -28,7 +28,7 @@
       now = include.now
       step = include.step
     %}
-    <div class="high-value">{{ include.max }}</div>
-    <div class="current-value">{{ include.now }}</div>
+    <div class="value-high">{{ include.max }}</div>
+    <div class="value-current">{{ include.now }}</div>
   </div>
 </div>

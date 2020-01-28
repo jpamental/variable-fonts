@@ -5,16 +5,23 @@
     display: grid;
     grid-template-columns: max-content 1fr max-content;
   }
+  [class*="value-"] {
+    font-family: $sans-serif-novf;
+    @supports (font-variation-settings: normal) {
+      font-family: $sans-serif;
+      font-stretch: 50%;
+    }
+  }
   .value-tag {
     font-weight: 525;
   }
-  .low-value {
+  .value-low {
     padding-right: 0.5rem;
   }
-  .high-value {
+  .value-high {
     padding-left: 0.5rem;
   }
-  .current-value {
+  .value-current {
     border: solid 1px $color-gray-600;
     display: inline-block;
     grid-column: 2/3;
