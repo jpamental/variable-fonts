@@ -13,7 +13,7 @@ heroElement.innerHTML = '';
 heroElement.setAttribute('aria-label', str);
 
 chars.forEach(function (item, index) {
-  console.log(item, index);
+  //console.log(item, index);
   var c = document.createElement('span');
   // and give it some content 
   var letter = document.createTextNode(item); 

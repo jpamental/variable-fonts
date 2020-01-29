@@ -3,16 +3,8 @@
   .range__axis.range__axis--slant-italics {
     --text-vf-wght: 400;
     --text-vf-wdth: 95;
-    --text-vf-slnt: 7;
-    --text-vf-ital: 0;
-    --value-tag: 'slnt';
-    --value-tag2: 'ital';
-    --low-value: 0;
-    --current-value: var(--text-vf-slnt);
-    --high-value: 15;
-    --low-value2: 0;
-    --current-value2: var(--text-vf-ital);
-    --high-value2: 1;
+    --current-value: var(--slant-ital-text-vf-slnt);
+    --current-value2: var(--slant-ital-text-vf-ital);
   }
   .range__axis.range__axis--slant-italics .paragraph .text {
     font-family: "Recursive", sans-serif;
@@ -35,26 +27,22 @@
     <div class="text">Slant & Italics</div>
 
   </div>
-  <div id='demo-controls' class="controls">
-    <div class="value-tag"></div>
-    <div class="low-value"></div>
-    <div class="slider range-slant">
-      <input type="range" name="range-slider" value="7" id="text-vf-slnt" class="controls--axis" min="0" max="15"> 
-      <label for="range-slider">Slant</label>
-    </div>
-    <div class="high-value"></div>
-    <div class="current-value"></div>
-
-    <div class="value-tag2"></div>
-    <div class="low-value2"></div>
-    <div class="slider range-italic">
-      <input type="range" name="range-slider2" value="0" id="text-vf-ital" class="controls--axis" min="0" max="1"> 
-      <label for="range-slider2">Italic</label>
-    </div>
-    <div class="high-value2"></div>
-    <div class="current-value2"></div>
-
-  </div>
+  {% include beatrice/02-molecules/09-slider-group/slider-group.html 
+    keyword = 'slnt'
+    id = 'slant-ital-text-vf-slnt'
+    min = '0'
+    max = '10'
+    now = '7'
+    step = '1'
+  %}
+  {% include beatrice/02-molecules/09-slider-group/slider-group.html 
+    keyword = 'ital'
+    id = 'slant-ital-text-vf-ital'
+    min = '0'
+    max = '1'
+    now = '0'
+    step = '1'
+  %}
   <div class="code">
     <code class="prettyprint">
       .text { <br />
@@ -63,20 +51,6 @@
     </code>
   </div>
 </div>
-
-<script>
-    // get the inputs
-  var inputs = [].slice.call(document.querySelectorAll('.range__axis--slant-italics .controls input'));
-
-  // listen for changes
-  inputs.forEach(input => input.addEventListener('change', handleUpdate));
-  inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
-
-
-  function handleUpdate(e) {
-    document.querySelector('.range__axis--slant-italics').style.setProperty(`--${this.id}`, this.value);
-  }
-</script>
 
 <figcaption>
   Featuring <a href="https://recursive.design">Recursive</a>

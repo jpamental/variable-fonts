@@ -3,19 +3,15 @@
   .range__axis.range__axis--italic {
     --text-vf-wght: 400;
     --text-vf-wdth: 95;
-    --text-vf-ital: 1;
-    --value-tag: 'ital';
-    --low-value: 0;
-    --current-value: var(--text-vf-ital);
-    --high-value: 1;
-  }
+    --current-value: var(--ital-text-vf-ital);
+}
   .range__axis.range__axis--italic .paragraph .text {
     font-family: "Jost VF", sans-serif;
-    font-variation-settings: 'ital' var(--text-vf-ital);
+    font-variation-settings: 'ital' var(--ital-text-vf-ital);
   }
   .range__axis.range__axis--italic code.prettyprint {
     font-size: 1rem;
-    max-width: 24rem;
+    max-width: 25rem;
     padding-left: 0.75rem !important;
     padding-right: 0.75rem !important;
   }
@@ -29,23 +25,15 @@
       <div class="text">Italic</div>
 
     </div>
-    <div id='demo-controls' class="controls">
-      <div class="value-tag"></div>
-      <div class="low-value"></div>
-      <div class="slider range-italic">
-        {% include beatrice/01-atoms/02-forms/slider/slider.html 
-          label = 'Italic'
-          id = 'text-vf-ital'
-          min = '0'
-          max = '1'
-          now = '1'
-        %}
-      </div>
-      <div class="high-value"></div>
-      <div class="current-value"></div>
-
-    </div>
-    <div class="code">
+    {% include beatrice/02-molecules/09-slider-group/slider-group.html 
+      keyword = 'ital'
+      id = 'ital-text-vf-ital'
+      min = '0'
+      max = '1'
+      now = '1'
+      step = '1'
+    %}
+      <div class="code">
       <code class="prettyprint">
         .text { <br />
         &nbsp;&nbsp;  font-variation-settings: 'ital' <span class="current-value"></span>; <br />
@@ -53,20 +41,6 @@
       </code>
     </div>
   </div>
-
-<script>
-  // get the inputs
-  var inputs = [].slice.call(document.querySelectorAll('.range__axis--italic .controls input'));
-
-  // listen for changes
-  inputs.forEach(input => input.addEventListener('change', handleUpdate));
-  inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
-
-
-  function handleUpdate(e) {
-    document.querySelector('.range__axis--italic').style.setProperty(`--${this.id}`, this.value);
-  }
-</script>
 
 <figcaption>
   Featuring <a href="https://v-fonts.com/fonts/jost">Jost</a>

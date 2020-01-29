@@ -3,11 +3,7 @@
   .range__axis.range__axis--opsz {
     --text-vf-wght: 400;
     --text-vf-wdth: 95;
-    --text-vf-opsz: 80;
-    --value-tag: 'opsz';
-    --low-value: 8;
     --current-value: var(--text-vf-opsz);
-    --high-value: 144;
   }
   .range__axis.range__axis--opsz .paragraph .text {
     font-family: "Amstelvar VF", serif;
@@ -28,17 +24,14 @@
     <div class="text">Optical Size</div>
 
   </div>
-  <div id='demo-controls' class="controls">
-    <div class="value-tag"></div>
-    <div class="low-value"></div>
-    <div class="slider range-opsz">
-      <input type="range" name="range-slider" value="80" id="text-vf-opsz" class="controls--axis" min="8" max="144"> 
-      <label for="range-slider">Optical Size</label>
-    </div>
-    <div class="high-value"></div>
-    <div class="current-value"></div>
-
-  </div>
+  {% include beatrice/02-molecules/09-slider-group/slider-group.html 
+    keyword = 'opsz'
+    id = 'text-vf-opsz'
+    min = '8'
+    max = '144'
+    now = '80'
+    step = '1'
+  %}
   <div class="code">
     <code class="prettyprint">
       .text { <br />
@@ -48,19 +41,6 @@
   </div>
 </div>
 
-<script>
-    // get the inputs
-  var inputs = [].slice.call(document.querySelectorAll('.range__axis--opsz .controls input'));
-
-  // listen for changes
-  inputs.forEach(input => input.addEventListener('change', handleUpdate));
-  inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
-
-
-  function handleUpdate(e) {
-    document.querySelector('.range__axis--opsz').style.setProperty(`--${this.id}`, this.value);
-  }
-</script>
 
 <figcaption>
   Featuring <a href="https://github.com/TypeNetwork/Amstelvar">Amstelvar</a>

@@ -22,11 +22,13 @@
     padding-left: 0.5rem;
   }
   .value-current {
+    background: transparent;
     border: solid 1px $color-gray-600;
     display: inline-block;
+    font-size: 1rem;
     grid-column: 2/3;
     justify-self: center;
-    min-width: 3rem;
+    width: 4rem;
     margin: 0 auto;
     padding: 0.25rem 0.25rem 0.2rem 0.25rem;
     text-align: center;

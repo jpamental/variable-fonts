@@ -1,13 +1,10 @@
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/03-organisms/10-embeds/axis-component.css" />
 <style>
   .range__axis.range__axis--weight {
-    --text-vf-wght: 400;
     --text-vf-wdth: 95;
-    --value-tag: 'wght';
-    --low-value: 100;
+    --text-vf-wght: var(--wght-text-vf-wght);
     --current-value: var(--text-vf-wght);
-    --high-value: 900;
-  }
+}
 </style>
   
 <div class="container range__axis range__axis--weight">
@@ -17,17 +14,16 @@
     <div class="text">Weight</div>
 
   </div>
-  <div id='demo-controls' class="controls">
-    <div class="value-tag"></div>
-    <div class="low-value"></div>
-    <div class="slider range-width">
-      <input type="range" name="range-slider" value="400" id="text-vf-wght" class="controls--axis" min="100" max="900"> 
-      <label for="range-slider">Weight</label>
-    </div>
-    <div class="high-value"></div>
-    <div class="current-value"></div>
 
-  </div>
+  {% include beatrice/02-molecules/09-slider-group/slider-group.html 
+    keyword = 'wght'
+    id = 'wght-text-vf-wght'
+    min = '100'
+    max = '900'
+    now = '400'
+    step = '1'
+  %}
+
   <div class="code">
     <code class="prettyprint">
       .text { <br />
@@ -37,19 +33,6 @@
   </div>
 </div>
 
-<script>
-  // get the inputs
-  var inputs = [].slice.call(document.querySelectorAll('.range__axis--weight .controls input'));
-
-  // listen for changes
-  inputs.forEach(input => input.addEventListener('change', handleUpdate));
-  inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
-
-
-  function handleUpdate(e) {
-    document.querySelector('.range__axis--weight').style.setProperty(`--${this.id}`, this.value);
-  }
-</script>
 
 <figcaption>
   Featuring <a href="https://github.com/TypeNetwork/Roboto-Extremo">Roboto Extremo</a>
