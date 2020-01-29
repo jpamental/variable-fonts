@@ -1,9 +1,12 @@
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/03-organisms/10-embeds/axis-component.css" />
 <style>
   .range__axis.range__axis--width {
-    --text-vf-wght: 400;
+    --text-vf-wght: 300;
     --text-vf-wdth: var(--wdth-text-vf-wdth);
     --current-value: var(--text-vf-wdth);
+  }
+  .range__axis.range__axis--width .paragraph .text {
+    font-variation-settings: 'opsz' 144;
   }
 
 </style>
@@ -18,7 +21,7 @@
   {% include beatrice/02-molecules/09-slider-group/slider-group.html 
     keyword = 'wdth'
     id = 'wdth-text-vf-wdth'
-    min = '75'
+    min = '25'
     max = '150'
     now = '95'
     step = '1'
