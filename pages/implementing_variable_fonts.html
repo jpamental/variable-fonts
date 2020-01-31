@@ -9,11 +9,11 @@ permalink: /implementing-variable-fonts/
   <blockquote class="right">
     <p>Variable fonts are well supported and ready to use in production today</p>
   </blockquote>
-  <p>The best way to understand variable fonts is to jump in and start playing with them. And there’s no need to wait—there are lots of ways you can put variable fonts to work in your projects today and <a href="https://caniuse.com/#feat=variable-fonts">browser support is very high</a>. The <a href="https://developers.google.com/fonts/docs/css2">Google Fonts API</a> supports them as of v2, you can host them yourself if you have the font files, and soon you’ll be able to add them to your site through the regular Google Fonts user interface.</p>
+  <p>The best way to understand variable fonts is to jump in and start playing with them. And there’s no need to wait—<a href="https://caniuse.com/#feat=variable-fonts">browser support is very high</a> and there are lots of ways you can put variable fonts to work in your projects today. The <a href="https://developers.google.com/fonts/docs/css2">Google Fonts API</a> supports them as of v2, you can host them yourself if you have the font files, and soon you’ll be able to add them to your site through the regular Google Fonts user interface.</p>
 
   <h2>Google Fonts API</h2>
 
-  <p>The new API for requesting fonts lets you request any of a <a href="https://developers.google.com/fonts/docs/css2#list_of_variable_fonts">growing number of variable fonts</a> in their catalog. The syntax is pretty flexible, and allows you to request a specific combination of axes, static values, and ranges. Because the Google Fonts developer documentation site is so comprehensive, here the focus will specifically be on working with variable font axis and range combinations so you have the greatest flexibility available when designing your project.</p>
+  <p>The new API for requesting fonts lets you select any of a <a href="https://developers.google.com/fonts/docs/css2#list_of_variable_fonts">growing number of variable fonts</a> in their catalog. The syntax is pretty flexible, and allows you to call for a specific combination of axes, static values, and ranges. Because the Google Fonts developer documentation site is so comprehensive, here the focus will specifically be on working with variable font axis and range combinations so you have the greatest flexibility available when designing your project.</p>
 
   <h3>Making the request</h3>
 
@@ -27,7 +27,7 @@ permalink: /implementing-variable-fonts/
 
   <p>First, note that while the address endpoint is css2, specifying the font name is relatively unchanged from the previous version of the API. It’s after the colon that things change more dramatically. This is where the axis (or axes) are listed, followed by an “@” symbol, followed by values indicating the ranges requested. The API allows for individual values to be specified, but here the request uses the ‘[range (low)]..[range (high)]’ syntax to request the full weight range of 200 to 700. If you only require the weight to cover part of the available range, you can adjust the values accordingly and end up with a slightly smaller download.</p>
 
-  <p>Once requested, you can specify any value within that range in your CSS. In the case of the weight axis, that corresponds to the standard <code>font-weight</code> attribute.</p>
+  <p>Once requested, you can specify any value within that range in your CSS. In the case of the <span class="medium">weight</span> axis, that corresponds to the standard <code>font-weight</code> attribute.</p>
 
   <pre class="css"><code class="prettyprint">
     p {
@@ -66,6 +66,59 @@ permalink: /implementing-variable-fonts/
   <p><code>https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200..900</code></p>
 
   <p>The first example above is closest to the syntax previously supported in the API. The second example includes the <code>wght</code> keyword with a specific weight listed after the “@” sign, indicating a static instance from the variable font. The third example is a request for the full weight range of the variable font.</p>
+
+  <hr />
+
+  <h2>Self-hosting variable fonts</h2>
+
+  <p>Hosting variable fonts on your site is not much different than hosting standard ones, but there are a few key parts that must be included in order for them to work best. While there have been several iterations of the specification, these examples will show the most current and complete implementation to ensure the broadest compatibility.</p>
+  <p>Adding the @font-face rules to your CSS looks like this:</p>
+
+<pre class="css"><code class="prettyprint">
+  @font-face {
+    font-family: Roboto Extremo;
+    src: 
+      url('..path/to/fonts/roboto_extremo.woff2') 
+      format(‘woff2 supports variations’),
+      url('..path/to/fonts/roboto_extremo.woff2') 
+      format('woff2-variations');
+    font-stretch: 25% 150%;
+    font-style: oblique 0deg 10deg;
+    font-weight: 100 900;
+    font-display: swap;
+  }
+</code></pre>
+
+  <p>So the first part you’ll notice is the source. Because the CSS specification is evolving, including both format hints ensures that it will work now and in the future once the full specification is supported in browsers. The first syntax (woff2 supports variations) is the more modern, as there will also be color fonts so there needs to be a way to indicate combinations of features. The second (woff2-variations) is the currently-supported syntax in all supporting browsers. As support evolves, the newer syntax will take over without compromising support for older browsers.</p>
+
+  <p>Next you’ll notice that there are lines that show ranges for font-stretch, font-style, and font-weight. These help inform the browser how the font should behave and provides some indication about what CSS values are valid for that font.</p>
+  
+  <h3>Font-stretch</h3>
+  <p>This is supplied as two percentage values: first low, then high. There will be some fonts that have ranges that don’t conform to the specification (which calls for 100% to be the ‘normal’ width), but even if the range is 3-5 or 60-220, they still have to be expressed as percentages here.</p>
+  <p><code>font-stretch: [low]% [high]%;</code></p>
+
+  <h3>Font-style</h3>
+
+  <p>At this time, for variable fonts this should only be specified in two scenarios: if you are loading a font file that only contains italics (such as when loading upright and italic font files and grouping them with the same family name), or if your variable font contains a slant axis but no italic one.</p>
+  <p>If you are loading an italic-only font file:</p>
+  <p><code>font-style: italic;</code></p>
+
+  <p>If you’re loading a font file with a slant axis, you have to specify the low and high degree values:</p>
+
+  <p><code>font-style: oblique 0deg 10deg;</code></p>
+
+  <p>Note: Due to some inconsistencies with how browsers handle variable font files that contain both italic and upright variants (and also ones that contain both italic and slant axes), in these scenarios it’s best to omit the font-style line completely.</p>
+
+  <h3>Font-weight</h3>
+  <p>This is also supplied as low and high values:</p>
+  <p><code>font-weight: 100 1000;</code></p>
+
+  <p>Font-display is not required, but is good practice to supply in order to get content on screen as fast as possible.</p>
+
+  <h3 class="manicule">Why this matters</h3 class="manicule">
+  <p>It’s important to supply these values so the browser can make more intelligent decisions about how to render the font when the CSS values fall outside the range or are omitted entirely. Should the low-end value for font-weight be 300 but the CSS calls for font-weight: 100, the browser will know to clamp to the lowest valid number (in this case 300), avoiding a synthesized result.</p>
+
+  <p>Once you have the @font-face rules declared, you can go about specifying the font-family and attributes just as you would if you were using the API or any other method of loading the fonts.</p>
 
   <hr />
 
