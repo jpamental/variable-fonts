@@ -21,8 +21,7 @@
 title: A Variable Fonts Primer
 email: jason@rwt.io
 description: >- # this means to ignore newlines until "baseurl:"
-  A site devoted to teaching about variable fonts, what they are, why to 
-  use them, and how to implement them.
+  Welcome to a paradigm shift in type! Learn how to use variable fonts in your projects for improved UI design, long-form reading, and accessibility.
 baseurl: "/typography" # the subpath of your site, e.g. /blog
 url: "https://googlefonts.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: googlefonts
