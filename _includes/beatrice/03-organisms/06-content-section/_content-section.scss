@@ -8,6 +8,9 @@
       display: grid;
       grid-template-columns: minmax(22rem, 45rem) minmax(22rem, 1fr);
     }
+    h2 + & {
+      margin-top: calc( var(--body-text-spacer) * 2 );
+    }
   }
   &--main {
     .content-section--aside + & {
