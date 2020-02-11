@@ -131,7 +131,7 @@ table {
   border-spacing: 1rem;
   padding: 0.5rem;
   * + & {
-    margin-top: var(--body-text-spacer);
+    margin-top: calc( var(--body-text-spacer) * 2 );
   }
 }
 th {

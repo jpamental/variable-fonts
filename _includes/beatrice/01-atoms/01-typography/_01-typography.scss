@@ -185,13 +185,20 @@ td {
     letter-spacing: 0.025em;
   }
   p + &, 
-  aside + &,
-  h3 + &,
-  h4 + & {
+  aside + & {
     margin-top: var(--body-text-spacer);
+  }
+  h3 + &,
+  h4 + &,
+  h2 + &,
+  h2 + figure + & {
+    margin-top: calc( var(--body-text-spacer) * 1 );
   }
 }
 
+ul {
+  margin: var(--body-text-spacer) 0 0 0;
+}
 .lede {
   --p-font-size-min: 1.33;
   --p-font-size-max: 1.5;
@@ -301,7 +308,7 @@ h2 {
 	font-family: $sans-serif-novf;
 	font-weight: 300;
   margin-top: 1.5rem;
-  margin-bottom: var(--body-text-spacer);
+  margin-bottom: 0;
   max-width: var(--content-width);
   .wf-inactive & {
 	  font-family: $sans-serif-fallback;
@@ -319,7 +326,7 @@ h2 {
     }
   }
   * + & {
-    margin-top: calc( var(--body-text-spacer) * 2.5 );
+    margin-top: calc( var(--body-text-spacer) * 2 );
   }
   @supports (font-variation-settings: normal) {
   	font-family: $sans-serif;
@@ -359,7 +366,7 @@ h3 {
 	font-family: $sans-serif-novf;
 	font-weight: 400;
   margin-top: 0;
-  margin-bottom: calc( var(--body-text-spacer) / 2 );
+  margin-bottom: calc( var(--body-text-spacer) * 1 );
   .wf-inactive & {
 	  font-family: $sans-serif-fallback;
 	  letter-spacing: -.75px;
@@ -536,11 +543,20 @@ h5 {
 
 
 code {
+  @include text-body;
   background-color: var(--color-text-highlight);
   display: inline;
   font-family: monospace;
-  font-size: inherit;
   padding: 0.15em;
+  @supports (font-variation-settings: normal) {
+    font-size: calc( var(--p-font-size-min) * 1rem );
+    @media (min-width: $bp--large) {
+      font-size: calc(( var(--p-font-size-min) * 1em ) + ( var(--p-font-size-max) - var(--p-font-size-min) ) * ((100vw - ( var(--bp-large) * 1em )) / ( var(--bp-xxlarge) - var(--bp-large) )));
+    }
+    @media (min-width: $bp--xxlarge) {
+      font-size: calc( var(--p-font-size-max) * 1em );
+    }    
+  }
 }
 
 .manicule {
