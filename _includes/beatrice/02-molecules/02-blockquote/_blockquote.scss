@@ -9,7 +9,7 @@ blockquote {
   margin-bottom: var(--body-text-spacer);
 
   * + & {
-    margin-top: var(--body-text-spacer);
+    margin-top: calc( var(--body-text-spacer) * 2 );
   }
 
   p {
