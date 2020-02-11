@@ -31,7 +31,9 @@
       }
     }
   }
-  + .content-section, 
+  + .content-section {
+    margin-top: calc( var(--body-text-spacer) * 2 );
+  }
   .color + & {
     margin-top: calc( var(--body-text-spacer) * 3 );
   }
