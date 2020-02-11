@@ -244,8 +244,8 @@ h1 {
   @include section-width();
 	font-family: $sans-serif-novf;
   font-weight: 300;
-  margin-bottom: calc( var(--body-text-spacer) * 1.5 );
-  padding-top: calc( var(--body-text-spacer) * 2 );
+  margin-bottom: calc( var(--body-text-spacer) * 2 );
+  padding-top: calc( var(--body-text-spacer) * 3 );
   .wf-inactive & {
 	  font-family: $sans-serif-fallback;
 	  letter-spacing: -.5px;

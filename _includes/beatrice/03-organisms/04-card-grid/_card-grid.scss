@@ -3,6 +3,7 @@
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   margin-left: -1rem;
   margin-right: -1rem;
+  margin-top: calc( var(--body-text-spacer) * 2 );
   > * {
     --h3-font-size-min: 1.25;
     --h3-font-size-max: 2;
