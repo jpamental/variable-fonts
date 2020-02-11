@@ -5,10 +5,7 @@
     grid-template-columns: 1fr minmax(15em, 45%) minmax(15em, 45%) 1fr;
   }
   &__hero {
-    background-color: $color-blue-50;
-    //background: 
-    //linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.1) 2%, rgba(0,0,0,0) 10%, rgba(0,0,0,0) 85%, rgba(0,0,0,0.05) 99%, rgba(0,0,0,0.15) 100%),
-    //radial-gradient(ellipse at top left, var(--color-callout-highlight-alt) 0%, var(--color-callout-highlight-alt-secondary) 70%);
+    background-color: var(--color-callout-highlight);
     grid-column: 1 / 5;
     grid-row: 1 / 2;
     min-height: 10rem;

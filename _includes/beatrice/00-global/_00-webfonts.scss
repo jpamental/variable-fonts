@@ -93,7 +93,14 @@
 //@import url('https://fonts.sandbox.google.com/css2?family=Roboto+Extremo:opsz,wdth,wght@8..144,75..125,100..900');
 
 /* Load Recursive from GF API */
-@import url('https://fonts.sandbox.google.com/css2?family=Recursive:ital,slnt,wght,CASL,MONO@0..1,-15..0,300..1000,0..1,0..1');
+//@import url('https://fonts.sandbox.google.com/css2?family=Recursive:ital,slnt,wght,CASL,MONO@0..1,-15..0,300..1000,0..1,0..1');
+
+@font-face{
+  font-family: 'Recursive';
+  font-weight: 300 1000; /* default: 400 */
+  font-style: oblique 0deg 15deg;
+  src: url('../fonts/recursive-MONO_CASL_wght_slnt_ital--full_gsub--2019_12_21-21_07.woff2') format('woff2 supports variations'), url('../fonts/recursive-MONO_CASL_wght_slnt_ital--full_gsub--2019_12_21-21_07.woff2') format('woff2-variations');
+}
 
 
 @font-face{

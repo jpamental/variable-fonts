@@ -33,14 +33,11 @@ body {
 }
 
 .range__axis {
-  //--text-vf-wght: 400;
-  //--text-vf-wdth: 95;
   --value-tag: 'wght';
   --low-value: 85;
   --current-value: var(--text-vf-wght);
   --high-value: 100;
   background-color: var(--color-callout-highlight);
-  //background: radial-gradient(ellipse at bottom right, var(--color-callout-highlight) 0%, var(--color-callout-highlight-secondary) 70%);
   margin-left: auto;
   margin-right: auto;
   .paragraph {
@@ -50,8 +47,6 @@ body {
 
     .text {
       align-self: center;
-      //background-color: $color-blue-200;
-      //background: radial-gradient(ellipse at top left, var(--color-callout-highlight-alt) 0%, var(--color-callout-highlight-alt-secondary) 70%);
       font-family: "Roboto Extremo", Helvetica, sans-serif;
       font-size: 5rem;
       font-weight: var(--text-vf-wght);
