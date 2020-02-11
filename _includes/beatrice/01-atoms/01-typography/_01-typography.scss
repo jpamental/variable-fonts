@@ -328,6 +328,13 @@ h2 {
   * + & {
     margin-top: calc( var(--body-text-spacer) * 2 );
   }
+  + blockquote.right {
+    &,
+    & + p {
+      margin-top: calc( var(--body-text-spacer) * 2 );
+    }
+  }
+
   @supports (font-variation-settings: normal) {
   	font-family: $sans-serif;
     font-size: calc( var(--h2-font-size-min) * 1em );
