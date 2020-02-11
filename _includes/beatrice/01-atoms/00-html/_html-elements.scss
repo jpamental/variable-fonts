@@ -123,19 +123,17 @@ hr::after {
 
 table {
   @include content-min-width;
-  border: solid 1px $color-gray-300;
-  padding: 0;
+  background: $color-gray-50;
+  border-radius: 0.5rem;
+  border-spacing: 1rem;
+  padding: 0.5rem;
   * + & {
     margin-top: var(--body-text-spacer);
   }
 }
-tbody {
-  border-collapse: collapse;
-}
 th {
-  background-color: $color-blue-100;
-  color: $color-gray-900;
-  padding: 0.15rem 0.25rem;
+  border-bottom: solid 1px $color-gray-300;
+  padding: 0.25rem;
   text-align: left;
 }
 td {

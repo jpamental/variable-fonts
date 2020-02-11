@@ -18,21 +18,22 @@
 </style>
 
 <div class="container range__axis range__axis--slant">
-
+  <div class="range__axis__label">
+    <p>Slant</p>
+  </div>
   <div class="paragraph">
-
-    <div class="text">Slant</div>
-
+    <div class="text">Great</div>
   </div>
   {% include beatrice/02-molecules/09-slider-group/slider-group.html 
     keyword = 'slnt'
+    style = 'wide'
     id = 'slnt-text-vf-slnt'
     min = '0'
     max = '10'
     now = '7'
     step = '1'
   %}
-  <div class="code">
+  <div class="code dark">
     <code class="prettyprint">
       .text { <br />
       &nbsp;&nbsp;  font-style: oblique <span class="current-value"></span>deg; <br />

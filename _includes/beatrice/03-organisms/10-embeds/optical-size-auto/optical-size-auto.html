@@ -16,10 +16,12 @@
   }
   .range__axis.range__axis-opsz-auto code.prettyprint {
     font-size: 1rem;
-    max-width: 24rem;
-    padding-left: 0.75rem !important;
-    padding-right: 0.75rem !important;
   }
+
+  .range__axis.range__axis-opsz-auto .controls .value-tag {
+    grid-column: 1/2;
+  }
+  
   .range__axis.range__axis-opsz-auto .controls .value-tag::before {
     counter-reset: tag var(--value-tag);
     content: "'" var(--value-tag) "'";
@@ -30,18 +32,17 @@
   .range__axis-opsz-auto .opsz-toggle {
     font-family: sans-serif;
     grid-column: 2/3;
-    margin-top: 1rem;
   }
 </style>
 
 <div class="container range__axis range__axis-opsz-auto">
-
-  <div class="paragraph">
-
-    <div class="text">Optical Size</div>
-
+  <div class="range__axis__label">
+    <p>Optical Size</p>
   </div>
-  <div id='demo-controls' class="controls">
+  <div class="paragraph">
+    <div class="text">Optical Size</div>
+  </div>
+  <div id='demo-controls' class="controls md-slider-group">
     <div class="value-tag"></div>
     <div class="opsz-toggle">
         <input type="radio" id="opsz-toggle" name="opsz-toggle" value="auto" checked>Auto
@@ -52,7 +53,7 @@
     </div>
   
   </div>
-  <div class="code">
+  <div class="code dark">
     <code class="prettyprint">
       .text { <br />
       &nbsp;&nbsp;  font-optical-sizing: <span class="current-value"></span>; <br />

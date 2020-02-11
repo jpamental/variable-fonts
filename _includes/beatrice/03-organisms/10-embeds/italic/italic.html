@@ -11,29 +11,26 @@
   }
   .range__axis.range__axis--italic code.prettyprint {
     font-size: 1rem;
-    max-width: 25rem;
-    padding-left: 0.75rem !important;
-    padding-right: 0.75rem !important;
   }
 </style>
 
 <div class="container range__axis range__axis--italic">
-
-
+  <div class="range__axis__label">
+    <p>Italic</p>
+  </div>
     <div class="paragraph">
-
-      <div class="text">Italic</div>
-
+      <div class="text">Good</div>
     </div>
     {% include beatrice/02-molecules/09-slider-group/slider-group.html 
       keyword = 'ital'
+      style = 'wide'
       id = 'ital-text-vf-ital'
       min = '0'
       max = '1'
       now = '1'
       step = '1'
     %}
-      <div class="code">
+      <div class="code dark">
       <code class="prettyprint">
         .text { <br />
         &nbsp;&nbsp;  font-variation-settings: 'ital' <span class="current-value"></span>; <br />

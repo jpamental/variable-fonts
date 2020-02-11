@@ -36,21 +36,25 @@
 </style>
 
 <div class="container range__axis range__axis--grade">
+  <div class="range__axis__label">
+    <p>Grade</p>
+  </div>
 
   <div class="paragraph">
 
-    <div class="text">Grade</div>
+    <div class="text">Presence</div>
 
   </div>
   {% include beatrice/02-molecules/09-slider-group/slider-group.html 
     keyword = 'GRAD'
+    style = 'wide'
     id = 'grad-text-vf-GRAD'
     min = '-1'
     max = '1'
     now = '0'
     step = '0.01'
   %}
-  <div class="code">
+  <div class="code dark">
     <code class="prettyprint">
       .text { <br />
       &nbsp;&nbsp;  font-variation-settings: 'GRAD' <span class="current-value">0</span>; <br />

@@ -92,46 +92,4 @@
       }
     }
   }
-  &--wght {
-    > h2 {
-      &::after {
-        background-image: url(../img/hdr_bkgrnd_weight.png);
-      }
-    }
-  }
-  &--wdth {
-    > h2 {
-      &::after {
-        background-image: url(../img/hdr_bkgrnd_width.png);
-      }
-    }
-  }
-  &--ital {
-    > h2 {
-      &::after {
-        background-image: url(../img/hdr_bkgrnd_italic.png);
-      }
-    }
-  }
-  &--slnt {
-    > h2 {
-      &::after {
-        background-image: url(../img/hdr_bkgrnd_slant.png);
-      }
-    }
-  }
-  &--opsz {
-    > h2 {
-      &::after {
-        background-image: url(../img/hdr_bkgrnd_optical_sizing.png);
-      }
-    }
-  }
-  &--slnt-ital {
-    > h2 {
-      &::after {
-        background-image: url(../img/hdr_bkgrnd_slant-italics.png);
-      }
-    }
-  }
 }

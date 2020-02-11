@@ -32,6 +32,8 @@
     margin: 0 auto;
     padding: 0.25rem 0.25rem 0.2rem 0.25rem;
     text-align: center;
+    /* Using the 'Discrete Slider' so don't need this to display but still need its value */
+    display: none;
   }
   &.wide {
     display: grid;

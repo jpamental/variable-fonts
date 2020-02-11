@@ -13,22 +13,19 @@
   }
   .range__axis.range__axis--slant-italics code.prettyprint {
     font-size: 0.825rem;
-    max-width: 26rem;
-    padding-left: 0.75rem !important;
-    padding-right: 0.75rem !important;
   }
 </style>
 
 <div class="container range__axis range__axis--slant-italics">
-
-
+  <div class="range__axis__label">
+    <p>Slant & Italic</p>
+  </div>
   <div class="paragraph">
-
     <div class="text">Slant & Italics</div>
-
   </div>
   {% include beatrice/02-molecules/09-slider-group/slider-group.html 
     keyword = 'slnt'
+    style = 'wide'
     id = 'slant-ital-text-vf-slnt'
     min = '0'
     max = '10'
@@ -37,13 +34,14 @@
   %}
   {% include beatrice/02-molecules/09-slider-group/slider-group.html 
     keyword = 'ital'
+    style = 'wide'
     id = 'slant-ital-text-vf-ital'
     min = '0'
     max = '1'
     now = '0'
     step = '1'
   %}
-  <div class="code">
+  <div class="code dark">
     <code class="prettyprint">
       .text { <br />
       &nbsp;&nbsp;  font-variation-settings: 'slnt' <span class="current-value"></span>, 'ital' <span class="current-value2"></span>; <br />

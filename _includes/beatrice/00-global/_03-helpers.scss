@@ -13,14 +13,14 @@ $sans-serif: "Roboto Extremo", $sans-serif-fallback;
 $sans-serif-slant: "Roboto Variable", $sans-serif-fallback;
 
 @mixin content-width() {
-  max-width: 40rem;
+  max-width: 39rem;
 
   @media screen and (min-width: $bp--large) {
-    max-width: 42rem;
+    max-width: 40rem;
   }
 
   @media screen and (min-width: $bp--xlarge) {
-    max-width: 44rem;
+    max-width: 41rem;
   }
 }
 @mixin content-min-width() {
@@ -28,23 +28,23 @@ $sans-serif-slant: "Roboto Variable", $sans-serif-fallback;
   max-width: 100%;
 
   @media screen and (min-width: $bp--large) {
-    min-width: 42rem;
+    min-width: 40rem;
     width: auto;
   }
 
   @media screen and (min-width: $bp--xlarge) {
-    min-width: 44rem;
+    min-width: 41rem;
   }
 }
 :root {
-  --content-width: 40rem;
+  --content-width: 39rem;
 
   @media screen and (min-width: $bp--large) {
-    --content-width: 42rem;
+    --content-width: 40rem;
   }
 
   @media screen and (min-width: $bp--xlarge) {
-    --content-width: 44rem;
+    --content-width: 41rem;
   }
 }
 
