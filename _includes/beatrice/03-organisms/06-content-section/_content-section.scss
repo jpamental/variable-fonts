@@ -1,6 +1,8 @@
 .content-section {
   padding-left: 1vw;
   padding-right: 1vw;
+  @include section-width();
+
   &--grid {
     @media (min-width: $bp--medium) {
       display: grid;
@@ -29,7 +31,8 @@
       }
     }
   }
-  + .content-section {
+  + .content-section, 
+  .color + & {
     margin-top: calc( var(--body-text-spacer) * 3 );
   }
 }
@@ -92,4 +95,13 @@
       }
     }
   }
+}
+.color {
+  &.light-blue {
+    background-color: $color-blue-50;
+  }
+}
+
+.padded-bottom {
+  padding-bottom: calc( var(--body-text-spacer) * 2 );
 }

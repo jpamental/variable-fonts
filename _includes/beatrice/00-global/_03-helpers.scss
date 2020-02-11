@@ -48,6 +48,23 @@ $sans-serif-slant: "Roboto Variable", $sans-serif-fallback;
   }
 }
 
+@mixin section-width() {
+  margin: 0 auto;
+  max-width: 96vw;
+  @media screen and (min-width: $bp--medium) {
+    max-width: 94vw;
+    .full-width & {
+      max-width: none;
+    }
+  }
+  @media screen and (min-width: $bp--large) {
+    max-width: 90vw;
+  }
+  @media screen and (min-width: $bp--xxxlarge) {
+    max-width: 90rem;
+  }
+}
+
 .visually-hidden:not(:focus):not(:active) { 
   position: absolute !important;
   height: 1px; 
