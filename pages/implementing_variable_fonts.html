@@ -33,40 +33,49 @@ permalink: /implementing-variable-fonts/
 
   <h3>Making the request</h3>
 
-  <p>After selecting a variable font to use via the API, the first thing you need to pay attention to is the changes in syntax from v1 to v2. Requesting Yanone Kaffeesatz as a variable font with a weight axis range of 200–700 looks like this:</p>
+  <div class="content-section--grid padded-bottom">
+    <div class="content-section--main">
+      <p>After selecting a variable font to use via the API, the first thing you need to pay attention to is the changes in syntax from v1 to v2. Requesting Yanone Kaffeesatz as a variable font with a weight axis range of 200–700 looks like this:</p>
 
-  <p><code>https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700</code></p>
+      <p><code>https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700</code></p>
 
-  <p>Let’s break down the parts of the request:</p>
+      <p>Let’s break down the parts of the request:</p>
 
-  <p><code>css2?family=[font name]:[axis keyword]@[range (low)]..[range (high)]</code></p>
+      <p><code>css2?family=[font name]:[axis keyword]@[range (low)]..[range (high)]</code></p>
 
-  <p>First, note that while the address endpoint is <code>css2</code>, specifying the font name is relatively unchanged from the previous version of the API. It’s after the colon that things change more dramatically. This is where the axis (or axes) are listed, followed by an “@” symbol, followed by values indicating the ranges requested. The API allows for individual values to be specified, but here the request uses the ‘[range (low)]..[range (high)]’ syntax to request the full weight range of 200 to 700. If you only require the weight to cover part of the available range, you can adjust the values accordingly and end up with a slightly smaller download.</p>
+      <p>First, note that while the address endpoint is <code>css2</code>, specifying the font name is relatively unchanged from the previous version of the API. It’s after the colon that things change more dramatically. This is where the axis (or axes) are listed, followed by an “@” symbol, followed by values indicating the ranges requested. The API allows for individual values to be specified, but here the request uses the ‘[range (low)]..[range (high)]’ syntax to request the full weight range of 200 to 700. If you only require the weight to cover part of the available range, you can adjust the values accordingly and end up with a slightly smaller download.</p>
+    </div>
+  </div>
+  <div class="content-section--grid">
+    <div class="content-section--main">
+      <p>Once requested, you can specify any value within that range in your CSS. In the case of the <span class="medium">weight</span> axis, that corresponds to the standard <code>font-weight</code> attribute.</p>
 
-  <p>Once requested, you can specify any value within that range in your CSS. In the case of the <span class="medium">weight</span> axis, that corresponds to the standard <code>font-weight</code> attribute.</p>
-
-  <pre class="css"><code class="prettyprint">
-    p {
-      font-weight: 350;
-    }
-    strong {
-      font-weight: 575;
-    }
-  </code></pre>
-
-  <p>Italics can be requested separately with the corresponding weight axis range, or as a combination (if available) of both upright and italic in the full requested range.</p>
-
-  <p>Just italics with a weight range of 200-900</p>
-  <p><code>https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@1,200..900</code></p>
-
-  <p>Or both upright and italics in the same range</p>
-  <p><code>https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900</code></p>
-
-  <p>There are detailed notes on the syntax <a href="https://developers.google.com/fonts/docs/css2#forming_api_urls">in the documentation</a>, but here are a couple of points to remember:</p>
-  <ul>
-    <li>Keep the axes listed in alphabetical order</li>
-    <li>Keep corresponding value sets in numerical order</li>
-  </ul>
+      <p>Italics can be requested separately with the corresponding weight axis range, or as a combination (if available) of both upright and italic in the full requested range.</p>
+    
+      <p>Just italics with a weight range of 200-900</p>
+      <p><code>https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@1,200..900</code></p>
+    
+      <p>Or both upright and italics in the same range</p>
+      <p><code>https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900</code></p>
+    
+      <p>There are detailed notes on the syntax <a href="https://developers.google.com/fonts/docs/css2#forming_api_urls">in the documentation</a>, but here are a couple of points to remember:</p>
+      <ul>
+        <li>Keep the axes listed in alphabetical order</li>
+        <li>Keep corresponding value sets in numerical order</li>
+      </ul>
+    
+    </div>
+    <div class="content-section--aside sticky">
+<pre class="css"><code class="prettyprint">
+  p {
+    font-weight: 350;
+  }
+  strong {
+    font-weight: 575;
+  }
+</code></pre>
+    </div>
+  </div>
 
   <h3>Range versus static point</h3>
 
@@ -89,9 +98,16 @@ permalink: /implementing-variable-fonts/
 
   <h2>Self-hosting variable fonts</h2>
 
+  <div class="content-section--grid">
+    <div class="content-section--main">
   <p>Hosting variable fonts on your site is not much different than hosting standard ones, but there are a few key parts that must be included in order for them to work best. While there have been several iterations of the specification, these examples will show the most current and complete implementation to ensure the broadest compatibility.</p>
-  <p>Adding the <code>@font-face</code> rules to your CSS looks like this:</p>
+  <p>The code example shows how the <code>@font-face</code> rules would look in your CSS.</p>
 
+  <p>So the first part you’ll notice is the source. Because the <a href="https://www.w3.org/TR/css-fonts-4/#font-face-src-requirement-types">CSS specification is evolving</a>, including both format hints ensures that it will work now and in the future once the full specification is supported in browsers. The first syntax (<code>woff2 supports variations</code>) is the more modern, as there will also be color fonts so there needs to be a way to indicate combinations of features. The second (<code>woff2-variations</code>) is the currently-supported syntax in all supporting browsers. As support evolves, the newer syntax will take over without compromising support for older browsers.</p>
+
+  <p>Next you’ll notice that there are lines that show ranges for font-stretch, font-style, and font-weight. These help inform the browser how the font should behave and provides some indication about what CSS values are valid for that font.</p>
+    </div>
+    <div class="content-section--aside sticky">
 <pre class="css"><code class="prettyprint">
   @font-face {
     font-family: Roboto Extremo;
@@ -105,12 +121,9 @@ permalink: /implementing-variable-fonts/
     font-weight: 100 900;
     font-display: swap;
   }
-</code></pre>
-
-  <p>So the first part you’ll notice is the source. Because the <a href="https://www.w3.org/TR/css-fonts-4/#font-face-src-requirement-types">CSS specification is evolving</a>, including both format hints ensures that it will work now and in the future once the full specification is supported in browsers. The first syntax (<code>woff2 supports variations</code>) is the more modern, as there will also be color fonts so there needs to be a way to indicate combinations of features. The second (<code>woff2-variations</code>) is the currently-supported syntax in all supporting browsers. As support evolves, the newer syntax will take over without compromising support for older browsers.</p>
-
-  <p>Next you’ll notice that there are lines that show ranges for font-stretch, font-style, and font-weight. These help inform the browser how the font should behave and provides some indication about what CSS values are valid for that font.</p>
-  
+</code></pre> 
+    </div>
+  </div>
   <h3>Font-stretch</h3>
   <p>This is supplied as two percentage values: first low, then high. There will be some fonts that have ranges that don’t conform to the specification (which calls for 100% to be the ‘normal’ width), but even if the range is 3-5 or 60-220, they still have to be expressed as percentages here.</p>
   <p><code>font-stretch: [low]% [high]%;</code></p>
@@ -153,29 +166,33 @@ permalink: /implementing-variable-fonts/
   <hr />
   <h2>Progressive enhancement and legacy browser support</h2>
 
-  <p>To support the broadest set of browsers and devices, it’s important to set up your CSS with standard values first, and the variable styles within an <code>@supports</code> block. If you’re using the Google Fonts API, good news—the API is smart enough to <a href="https://developers.google.com/fonts/docs/css2#legacy_browser_support">supply the static font files if the browser doesn’t support variable ones</a>, so all you have to do is manage the CSS side of the equation. If you’re hosting the fonts yourself, you just need to add a reference to the variable font family inside the @supports block. It might look something like this:</p>
-
-  <pre class="css"><code class="prettyprint">
+  <div class="content-section--grid">
+    <div class="content-section--main">
+      <p>To support the broadest set of browsers and devices, it’s important to set up your CSS with standard values first, and the variable styles within an <code>@supports</code> block. If you’re using the Google Fonts API, good news—the API is smart enough to <a href="https://developers.google.com/fonts/docs/css2#legacy_browser_support">supply the static font files if the browser doesn’t support variable ones</a>, so all you have to do is manage the CSS side of the equation. If you’re hosting the fonts yourself, you just need to add a reference to the variable font family inside the @supports block.</p>
+      <p>Adding in the <code>font-synthesis: none</code> declaration prevents browsers like Safari or Firefox from artificially bolding or italicizing the font, which can lead to unexpected and less-than-ideal results.
+      </p>
+    </div>
+    <div class="content-section--aside sticky">
+<pre class="css"><code class="prettyprint">
+  p {
+    font-synthesis: none;
+    font-weight: normal;
+  }
+  strong {
+    font-synthesis: none;
+    font-weight: bold;
+  }
+  @supports (font-variation-settings: normal) {
     p {
-      font-synthesis: none;
-      font-weight: normal;
+      font-weight: 350;
     }
     strong {
-      font-synthesis: none;
-      font-weight: bold;
+      font-weight: 575;
     }
-    @supports (font-variation-settings: normal) {
-      p {
-        font-weight: 350;
-      }
-      strong {
-        font-weight: 575;
-      }
-    }
-  </code></pre>
-
-  <p>Adding in the <code>font-synthesis: none</code> declaration prevents browsers like Safari or Firefox from artificially bolding or italicizing the font, which can lead to unexpected and less-than-ideal results.
-  </p>
+  }
+</code></pre>
+    </div>
+  </div>
 
 </section>
 <section class="content-section" id="performance">
