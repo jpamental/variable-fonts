@@ -6,33 +6,42 @@ a {
   &:link {
     color: $color-text-link;
     color: var(--color-text-link);
-    text-decoration: underline;
+    font-weight: 525;
+    text-decoration-line: underline;
     text-decoration-skip-ink: auto;
-
+    text-decoration-thickness: 0.05em;
+    text-underline-offset: .075em;
+    transition: all .2s ease; 
   }
   &:visited,
   &.visited {
     color: $color-text-link-visited;
     color: var(--color-text-link-visited);
-    text-decoration: underline;
+    font-weight: 525;
+    text-decoration-line: underline;
     text-decoration-skip-ink: auto;
-  }
+    text-decoration-style: dotted;
+    text-decoration-color: $color-gray-500;
+}
   &:hover {
     color: $color-text-link-hover;
     color: var(--color-text-link-hover);
-    text-decoration: underline;
+    text-decoration-line: underline;
     text-decoration-skip-ink: auto;
+    text-decoration-thickness: 0.1em;
+    text-decoration-color: var(--color-text-link-hover);
   }
   &:focus {
     color: $color-text-link-focus;
     color: var(--color-text-link-focus);
-    text-decoration: underline;
+    text-decoration-line: underline;
     text-decoration-skip-ink: auto;
+    text-decoration-thickness: 0.1em;
   }
   &:active {
     color: $color-text-link-active;
     color: var(--color-text-link-active);
-    text-decoration: underline;
+    text-decoration-line: underline;
     text-decoration-skip-ink: auto;
   }
 }
@@ -41,18 +50,11 @@ a {
   a {
     &:link,
     &:visited {
-      background-image: none;
-      text-decoration: underline;
-      text-shadow: none;
       /* this below is so new it's not even in the editor's draft of the spec yet */
-      text-decoration-thickness: 0.05em;
-      text-underline-offset: .075em;
-      transition: all .2s ease; 
       /* just to smooth the effect on hover */
     }
     &:hover,
     &:focus {
-      text-decoration-thickness: 0.1em;
     }
   }
 }
