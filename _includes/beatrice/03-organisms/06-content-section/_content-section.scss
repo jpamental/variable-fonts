@@ -44,6 +44,9 @@
 
 .axis {
   padding-top: calc( var(--body-text-spacer) * 2 );
+  hr + h2 {
+    margin-top: calc( var(--body-text-spacer) * 2 );
+  }
   > h2 {
     
     margin-top: 0;
@@ -103,7 +106,7 @@
 }
 .color {
   &.light-blue {
-    background-color: $color-blue-50;
+    background-color: var(--color-callout-highlight);
   }
 }
 

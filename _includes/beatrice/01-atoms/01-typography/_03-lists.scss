@@ -3,7 +3,7 @@
   display: flex;
   flex-flow: row wrap;
   list-style: none;
-  margin: calc( var(--body-text-spacer) * 2 )  0;
+  margin: calc( var(--body-text-spacer) * 1 )  0;
   padding: 0;
   > * {
     flex-basis: 40%;

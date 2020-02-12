@@ -3,7 +3,7 @@
 
 blockquote {
   @include content-width;
-  border-left: solid 0.5em $color-blue-300;
+  //border-left: solid 0.5em $color-blue-300;
   margin-left: 0;
   margin-top: 0;
   margin-bottom: var(--body-text-spacer);
@@ -16,23 +16,36 @@ blockquote {
     color: $color-gray-700;
     font-family: $sans-serif;
   	font-style: italic;
-    font-weight: 100;
+    font-weight: 200;
     margin-left: 0;
     margin-bottom: 0;
     padding-left: 0.75em;
+    position: relative;
+    z-index: 1;
     + p {
       margin-top : var(--body-text-spacer);
     }
-
+    &:after {
+      content: '“';
+      color: rgba($color-gray-500, .25);
+      float: left;
+      font-family: $serif-fallback;
+      font-size: 5em;
+      line-height: 1;
+      position: absolute;
+      left: -0.2em;
+      top: -0.15em;
+      z-index: 0;
+    }
 	}
   @supports (font-variation-settings: normal) {
     p {
-      --p-line-height-min: 1.25;
-      --p-line-height-max: 1.4;
-      --p-font-size-min: 2;
-      --p-font-size-max: 3;
+      --p-line-height-min: 1.2;
+      --p-line-height-max: 1.3;
+      --p-font-size-min: 1.25;
+      --p-font-size-max: 1.5;
       --p-vf-slnt: -10;
-      --p-vf-wght: 100;
+      --p-vf-wght: 200;
       --text-opsz: calc( var(--p-font-size-min) * var(--text-size-base) );
       color: var(--color-text-callout);
       font-style: italic;

@@ -8,13 +8,8 @@ permalink: /about-variable-fonts/
 <h1>{{ page.title }}</h1>
 <section class="content-section">
   <h2>A new kind of font</h2>
-  <figure class="figure--right">
-    {% include beatrice/03-organisms/10-embeds/a-overlays/a-overlays.html 
-    %}
-    <figcaption>Overlaid letterforms showing width and weight ranges</figcaption>
-    </figure>
-  <p class="lede">Variable fonts are an evolution of the <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/">OpenType specification</a>. They let you use CSS to access all the styles contained in a single font file without worrying about <a href="https://alistapart.com/article/say-no-to-faux-bold/">browser distortions</a> like fake <strong>bolds</strong> or <em>italics</em>.</p> 
-  <p class="lede">Previously, using multiple styles meant loading multiple files—one for every width, weight, or italic. This created tension between design expressiveness (the number of fonts used) and website performance (the amount of data to download). With variable fonts, that whole equation changes.</p> 
+  <p >Variable fonts are an evolution of the <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/">OpenType specification</a>. They let you use CSS to access all the styles contained in a single font file without worrying about <a href="https://alistapart.com/article/say-no-to-faux-bold/">browser distortions</a> like fake <strong>bolds</strong> or <em>italics</em>.</p> 
+  <p >Previously, using multiple styles meant loading multiple files—one for every width, weight, or italic. This created tension between design expressiveness (the number of fonts used) and website performance (the amount of data to download). With variable fonts, that whole equation changes.</p> 
           
   <blockquote>
     <p>Now you can use as many variations of a font as you like without slowing down your site</p>
@@ -23,8 +18,9 @@ permalink: /about-variable-fonts/
   </div>
   <section class="content-section">
   <h3>What’s an axis?</h3>
+  <h4>A variation axis is the expression of a single aspect of a typeface’s design</h4>
   <aside class="aside aside--right">
-    <h4>Variation axes can include:</h4>
+    <h5>Explore each standard variation axis and a few custom ones below</h5>
   <ul class="pill-buttons down-arrow">
     <li><a href="#wght">Weight <i class="material-icons right">arrow_downward</i></a></li>
     <li><a href="#wdth">Width <i class="material-icons right">arrow_downward</i></a></a></li>
@@ -35,7 +31,6 @@ permalink: /about-variable-fonts/
   </ul>
 </aside>
 
-<h4>A variation axis is the expression of a single aspect of a typeface’s design</h4>
 <p>The weight axis, for example, defines how light or bold a font looks. With standard fonts, the terms “normal” and “bold” refer to specific files that are called to serve those styles. With variable fonts, weight is conveyed through minimum and maximum numeric values, and designers or developers can choose any value in between.</p>
 
   <p>Not every variable font will have every possible axis (weight will likely be the most popular), but the format, browser implementation, and operating systems guarantee they’ll all work as intended.</p>
@@ -75,19 +70,17 @@ permalink: /about-variable-fonts/
   
   <h3 class="manicule">Why this matters</h3 class="manicule">
   
-  <blockquote class="right">
-    <p>Variable fonts are better for web and mobile apps</p>
-  </blockquote>
 
   <p>Downloading a single file instead of multiple individual fonts can yield a significant performance gain in reduced file size and fewer file requests. </p>
+  <blockquote>
+    <p>Variable fonts are better for web and mobile apps</p>
+  </blockquote>
   <p>Since that single file includes the entire design space instead of a few very specific weights or other variants, the design vocabulary is much greater. Instead of only 1 or 2 weights, the entire available range can be referenced directly via CSS—from extra-light to extra-heavy, narrow to wide, upright to italic. </p>
   <p>Effective use of type generates greater clarity and hierarchy, which benefits both design and user experience. There are accessibility benefits, too, like providing a way for users to increase font weight and color contrast to help with low vision, or making subtle adjustments to the typography for a dark-mode implementation for people who are sensitive to light.</p>
 
-  <hr />
-  <h2>Axes</h2>
-
 </section>
 <section class="content-section axis registered axis--wght" id="wght">
+  <hr />
   <h2>Weight</h2>
   <div class="content-section--grid">
     <div class="content-section--main">
