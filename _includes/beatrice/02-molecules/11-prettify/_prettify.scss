@@ -51,6 +51,10 @@ code.prettyprint {
     color: #060;
     color: var(--color-prettify-str);
   }
+  .typ {
+    color: #606;
+    color: var(--color-prettify-typ);
+  }
   .lit {
     color: #055;
     color: var(--color-prettify-lit);

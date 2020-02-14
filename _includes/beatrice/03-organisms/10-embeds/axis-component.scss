@@ -157,3 +157,23 @@ body {
 .range__axis.range__axis--slant {
   --color-callout-highlight: #{$color-green-light};
 }
+  
+.range__axis.range__axis--opsz-auto {
+  --color-callout-highlight: #{$color-blue-100};
+}
+  
+.range__axis.range__axis--opsz {
+  --color-callout-highlight: #{$color-lavender-light};
+}
+  
+.range__axis.range__axis--grade {
+  --color-callout-highlight: #{$color-yellow-light};
+}
+  
+.range__axis.range__axis--casual {
+  --color-callout-highlight: #{$color-green-light};
+}
+  
+.range__axis.range__axis--ascender-descender {
+  --color-callout-highlight: #{$color-lavender-light};
+}

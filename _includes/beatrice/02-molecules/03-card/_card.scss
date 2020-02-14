@@ -12,6 +12,10 @@
   &__action--icon:not(:disabled) {
     color: var(--color-text);
   }
+  &--outlined {
+    border-color: $color-card-border;
+    border-color: var(--color-card-border);
+  }
   .mdc-icon-button {
     &::before,
     &::after {

@@ -27,6 +27,7 @@
   --color-callout-highlight-secondary: #{lighten($color-blue-50, 2.5%)};
   --color-callout-highlight-alt: #{darken($color-blue-100, 2.5%)};
   --color-callout-highlight-alt-secondary: #{lighten($color-blue-100, 2.5%)};
+  --color-card-border: #{$color-card-border};
   --color-text-menu-link: #{$color-gray-750};
   --color-text-link: #{$color-text-link};
   --color-text-link-visited: #{$color-text-link-visited};
@@ -38,6 +39,7 @@
   --color-prettify-pln: #{$color-text};
   --color-prettify-pun: #{$color-gray-900};
   --color-prettify-str: #{$color-blue-900};
+  --color-prettify-typ: #{$color-blue-900};
   @media (prefers-color-scheme:dark) {
     --color-background: #{$color-gray-900};
     --color-text: #ffffff;
@@ -48,6 +50,7 @@
     --color-callout-highlight-secondary: #{lighten($color-gray-700, 2.5%)};
     --color-callout-highlight-alt: #{darken($color-gray-800, 5%)};
     --color-callout-highlight-alt-secondary: #{lighten($color-gray-800, 2.5%)};
+    --color-card-border: #{$color-gray-600};
     --color-text-menu-link: #{$color-gray-200};
     --color-text-link: #{$color-blue-100};
     --color-text-link-visited: #{$color-blue-100};
@@ -59,6 +62,50 @@
     --color-prettify-pln: var(--color-text);
     --color-prettify-pun: #{$color-gray-200};
     --color-prettify-str: #{$color-blue-100};
+    --color-prettify-typ: #{$color-blue-100};
+    .aside {
+      --color-text-highlight: #{$color-gray-700};
+    }
+    .range__axis.range__axis--width {
+      --color-callout-highlight: #{darken($color-lavender-light,80%)};
+    }
+    .range__axis.range__axis--italic {
+      --color-callout-highlight: #{darken($color-yellow-light,70%)};
+    }
+    .range__axis.range__axis--slant {
+      --color-callout-highlight: #{darken($color-green-light,80%)};
+    }
+    .range__axis.range__axis--width {
+      --color-callout-highlight: #{darken($color-lavender-light,80%)};
+    }
+      
+    .range__axis.range__axis--italic {
+      --color-callout-highlight: #{darken($color-yellow-light,70%)};
+    }
+      
+    .range__axis.range__axis--slant {
+      --color-callout-highlight: #{darken($color-green-light,80%)};
+    }
+      
+    .range__axis.range__axis--opsz-auto {
+      --color-callout-highlight: #{darken($color-gray-700, 2.5%)};
+    }
+      
+    .range__axis.range__axis--opsz {
+      --color-callout-highlight: #{darken($color-lavender-light,80%)};
+    }
+      
+    .range__axis.range__axis--grade {
+      --color-callout-highlight: #{darken($color-yellow-light,70%)};
+    }
+      
+    .range__axis.range__axis--casual {
+      --color-callout-highlight: #{darken($color-green-light,80%)};
+    }
+      
+    .range__axis.range__axis--ascender-descender {
+      --color-callout-highlight: #{darken($color-lavender-light,80%)};
+    }
   }
 }
 .dark {
@@ -71,6 +118,7 @@
     --color-callout-highlight-secondary: #{lighten($color-gray-700, 2.5%)};
     --color-callout-highlight-alt: #{darken($color-gray-800, 5%)};
     --color-callout-highlight-alt-secondary: #{lighten($color-gray-800, 2.5%)};
+    --color-card-border: #{$color-gray-600};
     --color-text-menu-link: #{$color-gray-200};
     --color-text-link: #{$color-blue-100};
     --color-text-link-visited: #{$color-blue-200};
@@ -82,6 +130,7 @@
     --color-prettify-pln: var(--color-text);
     --color-prettify-pun: #{$color-gray-200};
     --color-prettify-str: #{$color-blue-100};
+    --color-prettify-typ: #{$color-blue-100};
 }
 
 html {
