@@ -36,7 +36,7 @@
     a {
       &:link,
       &:visited {
-        --color-text-link-visited: var(--color-text-menu-link);
+        --color-text-link-visited: var(--color-text-link-active-trail);
         text-decoration: none;
       }
       &:hover,

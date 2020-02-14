@@ -48,12 +48,12 @@
     --color-callout-highlight-secondary: #{lighten($color-gray-700, 2.5%)};
     --color-callout-highlight-alt: #{darken($color-gray-800, 5%)};
     --color-callout-highlight-alt-secondary: #{lighten($color-gray-800, 2.5%)};
-    --color-text-menu-link: #{$color-gray-100};
+    --color-text-menu-link: #{$color-gray-200};
     --color-text-link: #{$color-blue-100};
-    --color-text-link-visited: #{$color-blue-200};
-    --color-text-link-hover: #{$color-text-link-hover};
+    --color-text-link-visited: #{$color-blue-100};
+    --color-text-link-hover: #{lighten($color-text-link-hover, 10%)};
     --color-text-link-active: #{$color-text-link-active};
-    --color-text-link-active-trail: #{$color-blue-200};
+    --color-text-link-active-trail: #ffffff;
     --color-text-link-focus: #{$color-text-link-focus};
     --color-prettify-lit: #{$color-blue-200};
     --color-prettify-pln: var(--color-text);
@@ -71,12 +71,12 @@
     --color-callout-highlight-secondary: #{lighten($color-gray-700, 2.5%)};
     --color-callout-highlight-alt: #{darken($color-gray-800, 5%)};
     --color-callout-highlight-alt-secondary: #{lighten($color-gray-800, 2.5%)};
-    --color-text-menu-link: #{$color-gray-100};
+    --color-text-menu-link: #{$color-gray-200};
     --color-text-link: #{$color-blue-100};
     --color-text-link-visited: #{$color-blue-200};
-    --color-text-link-hover: #{$color-text-link-hover};
+    --color-text-link-hover: #{lighten($color-text-link-hover, 10%)};
     --color-text-link-active: #{$color-text-link-active};
-    --color-text-link-active-trail: #{$color-blue-200};
+    --color-text-link-active-trail: #ffffff;
     --color-text-link-focus: #{$color-text-link-focus};
     --color-prettify-lit: #{$color-blue-200};
     --color-prettify-pln: var(--color-text);
@@ -185,6 +185,7 @@ td {
     letter-spacing: 0.025em;
   }
   p + &, 
+  ul + &,
   aside + & {
     margin-top: var(--body-text-spacer);
   }
@@ -550,18 +551,24 @@ h5 {
 
 
 code {
+  --p-font-size-min: 0.925;
+  --p-font-size-max: 1;
+  --p-vf-wght: 450;
   @include text-body;
   background-color: var(--color-text-highlight);
   display: inline;
   font-family: monospace;
   padding: 0.15em;
   @supports (font-variation-settings: normal) {
+    font-family: "Recursive", monospace;
+    font-variation-settings: "MONO" 1;
+    font-weight: 500;
     font-size: calc( var(--p-font-size-min) * 1rem );
     @media (min-width: $bp--large) {
-      font-size: calc(( var(--p-font-size-min) * 1em ) + ( var(--p-font-size-max) - var(--p-font-size-min) ) * ((100vw - ( var(--bp-large) * 1em )) / ( var(--bp-xxlarge) - var(--bp-large) )));
+      font-size: calc(( var(--p-font-size-min) * 1rem ) + ( var(--p-font-size-max) - var(--p-font-size-min) ) * ((100vw - ( var(--bp-large) * 1rem )) / ( var(--bp-xxlarge) - var(--bp-large) )));
     }
     @media (min-width: $bp--xxlarge) {
-      font-size: calc( var(--p-font-size-max) * 1em );
+      font-size: calc( var(--p-font-size-max) * 1rem );
     }    
   }
 }

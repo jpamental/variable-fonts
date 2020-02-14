@@ -126,7 +126,7 @@ hr::after {
 
 table {
   @include content-min-width;
-  background: $color-gray-50;
+  background: var(--color-text-highlight-secondary);
   border-radius: 0.5rem;
   border-spacing: 1rem;
   padding: 0.5rem;

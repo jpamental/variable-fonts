@@ -54,7 +54,6 @@
     position: relative;
     z-index: 1;
     @media (prefers-color-scheme:dark) {
-      background-color: rgba(0,0,0,0.75);
       padding-bottom: 0;
     }
    &::before {
@@ -112,4 +111,30 @@
 
 .padded-bottom {
   padding-bottom: calc( var(--body-text-spacer) * 2 );
+}
+
+.designing-with-vf-header {
+  background-image: url(../img/a_texture.svg);
+  background-size: 45%;
+  background-repeat: no-repeat;
+  background-position: top right;
+  @media (min-width: $bp--medium) {
+    background-position: center right;
+  }
+h1 {
+    padding-top: 12.5vw;
+  }
+}
+
+.implementing-vf-header {
+  background-image: url(../img/code.svg);
+  background-size: 45%;
+  background-repeat: no-repeat;
+  background-position: top right;
+  @media (min-width: $bp--medium) {
+    background-position: center right;
+  }
+h1 {
+    padding-top: 12.5vw;
+  }
 }

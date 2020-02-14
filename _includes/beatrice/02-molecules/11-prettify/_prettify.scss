@@ -22,6 +22,9 @@ pre.css {
     padding: 0.5em 1.5rem;
     text-align: left;
     width: 100%;
+    @media (prefers-color-scheme:dark) {
+      background: $color-gray-700;
+    }
     @supports (font-variation-settings: normal) {
       font-family: $sans-serif;
     }

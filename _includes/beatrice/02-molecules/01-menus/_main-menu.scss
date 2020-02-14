@@ -23,6 +23,8 @@
     display: block;
     margin-bottom: 0.75rem;
     padding-bottom: 0.75rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     @media (min-width: $bp--large) {
       border-bottom: none;
       display: inline-block;
@@ -38,7 +40,7 @@
     font-weight: 450;
     font-stretch: 60%;
     line-height: 1.25;
-    padding: 0.15rem 0.5rem 0.2rem;
+    padding: 0.15rem 0 0.2rem;
     @media (min-width: $bp--large) {
       display: flex;
       font-size: 1rem;
@@ -55,6 +57,9 @@
         --color-text-link: var(--color-text-link-active-trail);
         --color-text-link-visited: var(--color-text-link-active-trail);
         font-weight: 575;
+        @media (min-width: $bp--large) {
+          border-bottom: solid 0.5rem var(--color-text-link-active-trail);
+        }
       }
     }
     &:hover,
