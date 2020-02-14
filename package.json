@@ -26,6 +26,7 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
+    "@googlefonts/badge": "git+https://github.com/googlefonts/friends-badge.git",
     "@material/button": "^4.0.0",
     "@material/card": "^4.0.0",
     "@material/density": "^4.0.0",
