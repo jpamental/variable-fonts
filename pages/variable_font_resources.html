@@ -16,7 +16,7 @@ permalink: /variable-font-resources/
   <div class="card-grid">
   {% assign resourcesSorted = resources.items | sort: 'title' %}  
   {% for resource in resourcesSorted %}
-    {% assign body = resource.content | markdownify %}
+    {% assign body = resource.content | markdownify | strip_html %}
     {% include beatrice/02-molecules/03-card/card.html 
       card_style = 'outline'
       primary_link_url = resource.link
