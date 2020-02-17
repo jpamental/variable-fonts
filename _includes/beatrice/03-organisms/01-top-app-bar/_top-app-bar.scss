@@ -14,38 +14,49 @@
   @media (prefers-color-scheme:dark) {
     border-bottom-color: $color-gray-700;
   }
-  &__row {
-    height: 4rem;
-  }
-  &__section {
-    padding: 0.5rem 0.75rem;
-  }
+  // &__row {
+  //   // This was already here, matches the margin
+  //   // in drawer, but might not be necessary?
+  //   height: 4rem;
+  // }
+  // &__section {
+  //   padding: 0.5rem 0.75rem;
+  // }
   &__navigation-icon.material-icons {
     @media (min-width: $bp--large) {
       display: none;
+      visibility: hidden;
     }
   }
-  &__title {
-    font-family: $sans-serif-novf;
-    padding-left: 1rem;
-    @supports (font-variation-settings: normal) {
-      font-family: $sans-serif;
-      font-weight: 725;
-      font-stretch: 85%;
-    }
-    a {
-      &:link,
-      &:visited {
-        --color-text-link-visited: var(--color-text-link-active-trail);
-        text-decoration: none;
-      }
-      &:hover,
-      &:focus,
-      &:active {
-        text-decoration: underline;
-      }
-  
-    }
-  }
+  // &__title {
+  //   font-family: $sans-serif-novf;
+  //   padding-left: 1rem;
+  //   @supports (font-variation-settings: normal) {
+  //     font-family: $sans-serif;
+  //     font-weight: 725;
+  //     font-stretch: 85%;
+  //   }
+  //   a {
+  //     &:link,
+  //     &:visited {
+  //       --color-text-link-visited: var(--color-text-link-active-trail);
+  //       text-decoration: none;
+  //     }
+  //     &:hover,
+  //     &:focus,
+  //     &:active {
+  //       text-decoration: underline;
+  //     }
+  // 
+  //   }
+  // }
 }
 
+.top-app-bar-tabs {
+  display: none;
+  visibility: hidden;
+  @media (min-width: $bp--large) {
+    display: flex;
+    visibility: visible;
+  }
+}

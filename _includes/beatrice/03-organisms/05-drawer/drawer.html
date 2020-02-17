@@ -1,7 +1,31 @@
+{% if site.data.navigation and site.data.navigation|size >= 1 %}
+
 <aside class="mdc-drawer mdc-drawer--modal">
+  <div class="mdc-drawer__header">
+    <h3 class="mdc-drawer__title">{{ site.title }}</h3>
+    {% comment %}
+    <h6 class="mdc-drawer__subtitle">Subtitle</h6>
+    {% endcomment %}
+  </div>
   <div class="mdc-drawer__content">
-    {% include /beatrice/02-molecules/01-menus/main-menu.html %}
+    <nav class="mdc-list">
+      {% for item in site.data.navigation %}
+        {% if item and item.path and item.label %}
+          {% assign active = false %}
+          {% if page.url == item.path %}
+            {% assign active = true %}
+          {% endif %}
+          <a href="{{ site.baseurl }}{{ item.path }}"
+             class="mdc-list-item {% if active %}mdc-list-item--activated{% endif %}"
+             {% if active %} aria-current="page" {% endif %}>
+            <span class="mdc-list-item__text">{{ item.label }}</span>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </nav>
   </div>
 </aside>
 
 <div class="mdc-drawer-scrim"></div>
+
+{% endif %}
