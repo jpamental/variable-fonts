@@ -1,7 +1,8 @@
 {% assign classNameBase = include.classNameBase | default: 'mdc-list' %}
+{% assign ariaHidden = include.ariaHidden | default: false %}
 
 {% if site.data.navigation and site.data.navigation|size >= 1 %}
-<nav class="{{ classNameBase }}">
+<nav class="{{ classNameBase }}" {% if ariaHidden %}aria-hidden{% endif %}>
   {% for item in site.data.navigation %}
     {% if item and item.path and item.label %}
       {% assign active = false %}
