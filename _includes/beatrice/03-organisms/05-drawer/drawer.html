@@ -1,7 +1,17 @@
+{% if site.data.navigation and site.data.navigation|size >= 1 %}
+
 <aside class="mdc-drawer mdc-drawer--modal">
+  <div class="mdc-drawer__header">
+    <h3 class="mdc-drawer__title">{{ site.title }}</h3>
+    {% comment %}
+    <h6 class="mdc-drawer__subtitle">Subtitle</h6>
+    {% endcomment %}
+  </div>
   <div class="mdc-drawer__content">
-    {% include /beatrice/02-molecules/01-menus/main-menu.html %}
+    {% include beatrice/02-molecules/01-menus/main-menu.html %}
   </div>
 </aside>
 
 <div class="mdc-drawer-scrim"></div>
+
+{% endif %}

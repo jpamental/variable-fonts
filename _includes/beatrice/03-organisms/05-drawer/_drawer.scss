@@ -2,30 +2,33 @@
 @import "@material/list/mdc-list";
 
 .mdc-drawer {
+  @include mdc-drawer-item-activated-text-ink-color(darken($color-blue, 20%));
+  @include mdc-drawer-activated-overlay-color($color-blue);
   background-color: #ffffff;
   background-color: var(--color-background);
   width: 75vw;
-  @media (min-width: $bp--large) {
-    background-color: transparent;
-    width: auto;
-  }
+  // @media (min-width: $bp--large) {
+  //   background-color: transparent;
+  //   width: auto;
+  // }
   &__content {
     @media (min-width: $bp--large) {
+      // This was already here, matches the fixed navbar height
+      // in top-app-bar, but might not be necessary?
       height: 4rem;
     }
   }
-  &--modal {
-    top: 4rem;
-    @media (min-width: $bp--large) {
-      border: none;
-      box-shadow: none;
-      display: block;
-      height: auto;
-      left: auto;
-      right: 0;
-      top: 0;
-    }
-  }
+  // &--modal {
+  //   @media (min-width: $bp--large) {
+  //     border: none;
+  //     box-shadow: none;
+  //     display: block;
+  //     height: auto;
+  //     left: auto;
+  //     right: 0;
+  //     top: 0;
+  //   }
+  // }
 }
 
 .mdc-list-item {

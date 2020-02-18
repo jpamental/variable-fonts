@@ -4,7 +4,8 @@
   "description": "Variable Fonts educational site",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp"
   },
   "repository": {
     "type": "git",
@@ -37,8 +38,5 @@
     "@material/tab-bar": "^4.0.0",
     "@material/top-app-bar": "^4.0.0",
     "lodash.template": "^4.5.0"
-  },
-  "scripts": {
-    "start": "gulp"
   }
 }

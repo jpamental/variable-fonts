@@ -284,7 +284,7 @@ ul {
   --p-font-size-max: 1.5;
   --p-vf-wght: 200;
   &:first-of-type::first-line {
-    font-weight: 525;
+    font-weight: var(--link-font-weight, 525);
   }
 }
 strong {

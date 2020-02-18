@@ -13,7 +13,7 @@
     }
   }
   .value-tag {
-    font-weight: 525;
+    font-weight: var(--link-font-weight);
   }
   .value-low {
     padding-right: 0.5rem;
