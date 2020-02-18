@@ -8,21 +8,11 @@
     {% endcomment %}
   </div>
   <div class="mdc-drawer__content">
-    <nav class="mdc-list">
-      {% for item in site.data.navigation %}
-        {% if item and item.path and item.label %}
-          {% assign active = false %}
-          {% if page.url == item.path %}
-            {% assign active = true %}
-          {% endif %}
-          <a href="{{ site.baseurl }}{{ item.path }}"
-             class="mdc-list-item {% if active %}mdc-list-item--activated{% endif %}"
-             {% if active %} aria-current="page" {% endif %}>
-            <span class="mdc-list-item__text">{{ item.label }}</span>
-          </a>
-        {% endif %}
-      {% endfor %}
-    </nav>
+    {% if site.data.navigation %}
+      <nav class="mdc-list" aria-hidden>
+        {% include beatrice/02-molecules/01-menus/main-menu.html %}
+      </nav>
+    {% endif %}
   </div>
 </aside>
 
