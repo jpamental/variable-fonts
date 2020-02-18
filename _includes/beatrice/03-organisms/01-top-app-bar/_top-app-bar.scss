@@ -57,6 +57,21 @@
   visibility: hidden;
   @media (min-width: $bp--large) {
     display: flex;
+    align-items: stretch;
     visibility: visible;
   }
+}
+
+.top-app-bar-tabs-item,
+a.top-app-bar-tabs-item {
+  height: 100%;
+  font-weight: 400;
+
+  /* TODO These should use MDC variables */
+  padding: 8px 12px;
+}
+
+.top-app-bar-tabs-item--activated,
+a.top-app-bar-tabs-item--activated {
+  font-weight: var(--link-font-weight);
 }
