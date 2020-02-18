@@ -1,12 +1,16 @@
 // Links
 // =============================================================================
 
+:root {
+  --link-font-weight: 525;
+}
+
 a {
   text-decoration-skip-ink: auto;
   &:link {
     color: $color-text-link;
     color: var(--color-text-link);
-    font-weight: 525;
+    font-weight: var(--link-font-weight, 525);
     text-decoration-line: underline;
     text-decoration-skip-ink: auto;
     text-decoration-thickness: 0.05em;
@@ -17,7 +21,7 @@ a {
   &.visited {
     color: $color-text-link-visited;
     color: var(--color-text-link-visited);
-    font-weight: 525;
+    font-weight: var(--link-font-weight, 525);
     text-decoration-line: underline;
     text-decoration-skip-ink: auto;
     text-decoration-style: dotted;

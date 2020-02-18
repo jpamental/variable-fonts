@@ -1,28 +1,20 @@
-<nav class="vf-menu dark">
-  <ul class="menu">
-    <li class="vf-menu-item"><a href="{{ site.baseurl }}/" 
-      class="{% if page.home == true %}active{% endif %}"
-      {% if page.url == true %} aria-current="page" {% endif %}
-      >
-      <span class="mdc-list-item__text">Home</span>
-    </a></li>
-    <li class="vf-menu-item"><a href="{{ site.baseurl }}/about-variable-fonts" 
-      class="{% if page.url contains '/about-variable-fonts' %}active{% endif %}"
-      {% if page.url contains '/about-variable-fonts' %} aria-current="page" {% endif %}
-      >
-      <span class="mdc-list-item__text">Designing with Variable Fonts</span>
-    </a></li>
-    <li class="vf-menu-item"><a href="{{ site.baseurl }}/implementing-variable-fonts"
-      class="{% if page.url contains '/implementing-variable-fonts' %}active{% endif %}"
-      {% if page.url contains '/implementing-variable-fonts' %} aria-current="page" {% endif %}
-      >
-      <span class="mdc-list-item__text">Implementation</span>
-    </a></li>
-    <li class="vf-menu-item"><a href="{{ site.baseurl }}/variable-font-resources"
-      class="{% if page.url contains '/variable-font-resources' %}active{% endif %}"
-      {% if page.url contains '/variable-font-resources' %} aria-current="page" {% endif %}
-      >
-      <span class="mdc-list-item__text">Resources</span>
-    </a></li>
-  </ul>
+{% assign classNameBase = include.classNameBase | default: 'mdc-list' %}
+{% assign ariaHidden = include.ariaHidden | default: false %}
+
+{% if site.data.navigation and site.data.navigation|size >= 1 %}
+<nav class="{{ classNameBase }}" {% if ariaHidden %}aria-hidden{% endif %}>
+  {% for item in site.data.navigation %}
+    {% if item and item.path and item.label %}
+      {% assign active = false %}
+      {% if page.url == item.path %}
+        {% assign active = true %}
+      {% endif %}
+      <a href="{{ site.baseurl }}{{ item.path }}"
+         class="{{ classNameBase }}-item {% if active %}{{ classNameBase }}-item--activated{% endif %}"
+         {% if active %} aria-current="page" {% endif %}>
+        <span>{{ item.label }}</span>
+      </a>
+    {% endif %}
+  {% endfor %}
 </nav>
+{% endif %}
