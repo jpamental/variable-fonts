@@ -28,28 +28,28 @@
       visibility: hidden;
     }
   }
-  // &__title {
-  //   font-family: $sans-serif-novf;
-  //   padding-left: 1rem;
-  //   @supports (font-variation-settings: normal) {
-  //     font-family: $sans-serif;
-  //     font-weight: 725;
-  //     font-stretch: 85%;
-  //   }
-  //   a {
-  //     &:link,
-  //     &:visited {
-  //       --color-text-link-visited: var(--color-text-link-active-trail);
-  //       text-decoration: none;
-  //     }
-  //     &:hover,
-  //     &:focus,
-  //     &:active {
-  //       text-decoration: underline;
-  //     }
-  // 
-  //   }
-  // }
+  &__title {
+    font-family: $sans-serif-novf;
+    padding-left: 1rem;
+    @supports (font-variation-settings: normal) {
+      font-family: $sans-serif;
+      font-weight: 725;
+      font-stretch: 85%;
+    }
+  }
+  a {
+    &:link,
+    &:visited {
+      --color-text-link-visited: var(--color-text-link-active-trail);
+      text-decoration: none;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+    }
+
+  }
 }
 
 .top-app-bar-tabs {
