@@ -1,6 +1,10 @@
 try {
 // Text from the hero animation element ('Typography Revolution')
 const heroElement = document.querySelector('.hero-animation__text');
+if (!heroElement) {
+  return false
+}
+
 const str = heroElement.innerHTML;
 
 const words = str.split(' ');
