@@ -42,6 +42,13 @@
   }
 }
 
+.content-section-image {
+}
+
+.content-section-image--constrained {
+  @include content-width();
+}
+
 .axis {
   padding-top: calc( var(--body-text-spacer) * 2 );
   hr + h2 {

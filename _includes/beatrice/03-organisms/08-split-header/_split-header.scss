@@ -1,0 +1,45 @@
+:root {
+  --top-bar-nav-height-desktop: 64px; // mdc-top-app-bar__row
+}
+
+.split-header {
+  background: $color-silver;
+  position: relative;
+  margin-top: #{"calc(-1 * var(--top-bar-nav-height-desktop, 64px))"};
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+.split-header-half {
+  // width: 100%;
+}
+
+.split-header-half:nth-child(1) {
+  @media (min-width: $bp--large) {
+    margin-top: #{"calc(var(--top-bar-nav-height-desktop, 64px) * 1.5)"};
+    // width: 60%;
+  }
+}
+
+.split-header-half:nth-child(2) {
+  @media (min-width: $bp--large) {
+    position: sticky;
+    top: 0;
+    width: 40%;
+    height: 100vh;
+  }
+}
+
+.split-header-half:nth-child(2) img {
+  width: 100%;
+}
+
+.split-header-image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  width: auto;
+  height: #{"calc(100% - (var(--top-bar-nav-height-desktop, 64px) * 1.5))"};
+  margin-top: #{"calc(var(--top-bar-nav-height-desktop, 64px) * 1.5)"};
+}
