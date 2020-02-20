@@ -1,0 +1,17 @@
+[
+  {
+    name: "Jason Pamental",
+    description: "Web design & development, Content",
+    "url": "https://rwt.io/"
+  },
+  {
+    name: "Caren Litherland",
+    description: "Content",
+    url: "https://carenlitherland.com/"
+  },
+  {
+    name: "Kenneth Ormandy",
+    description: "Additional development",
+    url: "https://kennethormandy.com"    
+  }
+]

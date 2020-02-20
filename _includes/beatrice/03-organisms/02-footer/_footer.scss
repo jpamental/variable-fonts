@@ -1,8 +1,30 @@
-footer {
+.footer {
+  margin-top: 3rem;
   p {
     --p-font-size-min: 0.875;
     --p-font-size-max: 0.925;
     max-width: none;
-    text-align: center;
+  }
+}
+
+.footer-col {
+  padding: 1rem;
+}
+
+.footer-col--badge {
+  padding: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    div {
+      width: 100%;
+    }
+  }
+  
+  .footer-col--badge {
+    max-width: 250px;
   }
 }
