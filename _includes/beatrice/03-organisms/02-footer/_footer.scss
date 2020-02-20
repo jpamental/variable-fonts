@@ -1,14 +1,15 @@
 .footer {
-  margin-top: 3rem;
+  margin-top: 4rem;
   margin-bottom: 2rem;
   p {
     --p-font-size-min: 0.875;
     --p-font-size-max: 0.925;
     max-width: none;
   }
-  .footer-col {
-    margin-bottom: 3rem;
-  }
+}
+
+.footer-col {
+  margin-bottom: 3rem;
 }
 
 /* We use 1024px here to match when the Friends of Google Fonts
@@ -17,7 +18,6 @@
   .footer {
     display: flex;
     flex-direction: row-reverse;
-    padding-bottom: 4rem;
     margin-left: -1rem; 
     margin-right: -1rem;
     div {
