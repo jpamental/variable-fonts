@@ -6,15 +6,6 @@ permalink: /about-variable-fonts/
 ---
 
 {% capture content %}
-  <img
-    style="max-width: 500px"
-    src="{{ site.baseurl }}/assets/img/Group%2082.png"
-    alt=""
-    role="presentation"
-    class="content-section-image"
-  />
-  <h1>{{ page.title }}</h1>
-  <h2>A new kind of font</h2>
   <p>
     Variable fonts are an evolution of the
     <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/"
@@ -41,11 +32,14 @@ permalink: /about-variable-fonts/
   </blockquote>
 {% endcapture %}
 
-<header>
+<header class="header-backgorund-gray-light">
   {% include
        beatrice/03-organisms/08-split-header/_split-header.html
+       title=page.title
+       subtitle="A new kind of font"
        content=content
-       image="/assets/img/Component%201.png" %}
+       firstImage="assets/img/Group%2082.png"
+       featureImage="assets/img/Component%201.png" %}
 </header>
 
 <section class="content-section">
