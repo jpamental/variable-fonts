@@ -19,6 +19,17 @@ npm start
 # Now serving locally at localhost:4000/typography
 ```
 
+## Build
+
+
+To manually compile the site down to static HTML, CSS, and JavaScript, run:
+
+```sh
+npm run build
+```
+
+Assets are currently built to the `assets` folder, which are kept as part of the git history for now for the sake of deployment. Then, the Jekyll static site generator builds the final site to the `_site` folder.
+
 ## Deployment
 
 The link to view the deployed site is [googlefonts.github.io/typography](https://googlefonts.github.io/typography).
