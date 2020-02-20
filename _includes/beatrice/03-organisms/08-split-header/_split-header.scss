@@ -3,7 +3,6 @@
 }
 
 .split-header {
-  background: $color-silver;
   position: relative;
   margin-top: #{"calc(-1 * var(--top-bar-nav-height-desktop, 64px))"};
   display: flex;
@@ -11,8 +10,20 @@
   min-height: 100vh;
 }
 
-.split-header-half {
-  // width: 100%;
+/**
+ * Makes it possible to have the h1 to break outside 
+ * content-width “line lenght” or max width, which is
+ * dynamic and positioned with `margin: 0 auto`, so
+ * setting it with a fixed value wouldn’t work.
+ */
+.split-header--breakout {
+  @include content-width;
+  @media (min-width: $bp--xlarge) {
+    h1 {
+      width: 133%;
+      margin-right: -33%;
+    }
+  }
 }
 
 .split-header-half:nth-child(1) {
@@ -56,9 +67,5 @@
     width: auto;
     height: #{"calc(100% - (var(--top-bar-nav-height-desktop, 64px) * 1.5))"};
     margin-top: #{"calc(var(--top-bar-nav-height-desktop, 64px) * 1.5)"};
-    @media (min-width: $bp--xlarge) {
-      display: block;
-      visibility: visible;
-    }
   }
 }

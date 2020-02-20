@@ -1,19 +1,36 @@
-<div class="split-header">
-  <div class="split-header-half content-section padded-bottom">
-    {{ include.content }}
-  </div>
-  <div class="split-header-half">
-    {% if include.image %}
-    <div
-      class="split-header-image-wrapper"
-      style="background-image: url('{{ site.baseurl }}/{{ include.image }}')"
-    >
-      <img
-        src="{{ site.baseurl }}/{{ include.image }}"
-        alt=""
-        role="presentation"
-      />
+<div>
+  <div class="split-header">
+    <div class="split-header-half content-section padded-bottom">
+      {% if include.firstImage %}
+        <img
+          style="max-width: 500px"
+          src="{{ site.baseurl }}/{{ include.firstImage }}"
+          alt=""
+          role="presentation"
+          class="content-section-image"
+        />
+      {% endif %}
+      <div class="split-header--breakout">
+        <h1>{{ include.title | default: page.title | default: "" }}</h1>
+        {% if include.subtitle %}
+          <h2>A new kind of font</h2>
+        {% endif %}
+      </div>
+      {{ include.content }}
     </div>
-    {% endif %}
+    <div class="split-header-half">
+      {% if include.featureImage %}
+      <div
+        class="split-header-image-wrapper"
+        style="background-image: url('{{ site.baseurl }}/{{ include.featureImage }}')"
+      >
+        <img
+          src="{{ site.baseurl }}/{{ include.image }}"
+          alt=""
+          role="presentation"
+        />
+      </div>
+      {% endif %}
+    </div>
   </div>
 </div>
