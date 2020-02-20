@@ -1,28 +1,30 @@
-<footer class="footer" role="contentinfo">
-  <div class="footer-col">
-    {% if site.data.credits and site.data.credits|size >= 1 %}
-      {% for credit in site.data.credits %}
-        <p>
-          {% if credit.url %}
-            <a href="{{ credit.url }}" target="_blank" rel="noopener nofollow">
-          {% endif %}
-          <strong>{{ credit.name }}</strong><br/>
-          {% if credit.url %}
-            </a>
-          {% endif %}
-          {{ credit.description }}
-        </p>
-      {% endfor %}
-    {% endif %}
-  </div>
-  <div class="footer-col">
-    <p>Contribute to this site’s source code <a href="https://github.com/googlefonts/typography">on Github</a>.</p>
-    <p>
-      <a rel="noopener" target="_blank" href="https://policies.google.com/privacy">Privacy Policy</a><br/>
-      <a rel="noopener" target="_blank" href="https://policies.google.com/terms">Terms of Service</a>
-    </p>
-  </div>
-  <div class="footer-col--badge">
-    {% include /beatrice/02-molecules/12-gf-friends-badge/gf-friends-badge.html %}
-  </div>
-</footer>
+<div class="content-section">
+  <footer class="footer" role="contentinfo">
+    <div class="footer-col">
+      {% if site.data.credits and site.data.credits|size >= 1 %}
+        {% for credit in site.data.credits %}
+          <p>
+            {% if credit.url %}
+              <a href="{{ credit.url }}" target="_blank" rel="noopener nofollow">
+            {% endif %}
+            <strong>{{ credit.name }}</strong><br/>
+            {% if credit.url %}
+              </a>
+            {% endif %}
+            {{ credit.description }}
+          </p>
+        {% endfor %}
+      {% endif %}
+    </div>
+    <div class="footer-col">
+      <p>Contribute to this site’s source code <a href="https://github.com/googlefonts/typography">on Github</a>.</p>
+      <p>
+        <a rel="noopener" target="_blank" href="https://policies.google.com/privacy">Privacy Policy</a><br/>
+        <a rel="noopener" target="_blank" href="https://policies.google.com/terms">Terms of Service</a>
+      </p>
+    </div>
+    <div class="footer-col--badge">
+      {% include /beatrice/02-molecules/12-gf-friends-badge/gf-friends-badge.html %}
+    </div>
+  </footer>
+</div>

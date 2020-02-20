@@ -1,27 +1,33 @@
 .footer {
   margin-top: 3rem;
+  margin-bottom: 2rem;
   p {
     --p-font-size-min: 0.875;
     --p-font-size-max: 0.925;
     max-width: none;
   }
+  .footer-col {
+    margin-bottom: 3rem;
+  }
 }
 
-.footer-col {
-  padding: 1rem;
-}
-
-.footer-col--badge {
-  padding: 0;
-}
-
+/* We use 1024px here to match when the Friends of Google Fonts
+ * badge layout changes. */
 @media screen and (min-width: 1024px) {
   .footer {
     display: flex;
     flex-direction: row-reverse;
+    padding-bottom: 4rem;
+    margin-left: -1rem; 
+    margin-right: -1rem;
     div {
       width: 100%;
     }
+  }
+  
+  .footer-col {
+    padding: 1rem;
+    margin-bottom: 0;
   }
   
   .footer-col--badge {
