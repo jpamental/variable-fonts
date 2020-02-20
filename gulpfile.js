@@ -35,6 +35,26 @@ function scssTask(){
     .pipe(gulp.dest('assets/css')); // put final CSS in assets folder
 }
 
+function scssTaskToSiteFolder(){    
+  return gulp.src(files.scssPath)
+    .pipe(sourcemaps.init()) // initialize sourcemaps first
+    .pipe(sassGlob())
+    .pipe(sass({
+      includePaths: ['node_modules'],
+      outputStyle: 'compressed'
+    }))
+    .pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
+    .pipe(gulp.dest('_site/assets/css')); // put final CSS in assets folder
+}
+
+// JS task: compiles JS files into main.js
+function jsTaskToSiteFolder(){    
+  return gulp.src(files.jsPath)
+      .pipe(webpack())
+      .pipe(concat('main.js'))
+      .pipe(gulp.dest('_site/assets/js')); // put final JS in assets folder
+}
+
 // JS task: compiles JS files into main.js
 function jsTask(){    
   return gulp.src(files.jsPath)
@@ -59,17 +79,22 @@ function watchTask(){
     ], gulp.series(jekyllBuild))
 }
 
+function watchTaskLite(done) {
+  gulp.watch([files.scssPath, files.jsPath], gulp.series(scssTaskToSiteFolder, jsTaskToSiteFolder));
+  done()
+}
+
+const jekyllLogger = (buffer) => {
+  buffer.toString()
+    .split(/\n/)
+    .forEach((message) => gutil.log('Jekyll: ' + message));
+};
+
 function jekyll(done) {
   const jekyll = child.spawn('bundle', ['exec',
     'jekyll',
     'serve'
   ]);
-
-  const jekyllLogger = (buffer) => {
-    buffer.toString()
-      .split(/\n/)
-      .forEach((message) => gutil.log('Jekyll: ' + message));
-  };
 
   jekyll.stdout.on('data', jekyllLogger);
   jekyll.stderr.on('data', jekyllLogger);
@@ -79,19 +104,29 @@ function jekyll(done) {
 function jekyllBuild(done) {
   const jekyll = child.spawn('bundle', ['exec',
     'jekyll',
-    'build'
+    'build',
   ]);
-
-  const jekyllLogger = (buffer) => {
-    buffer.toString()
-      .split(/\n/)
-      .forEach((message) => gutil.log('Jekyll: ' + message));
-  };
 
   jekyll.stdout.on('data', jekyllLogger);
   jekyll.stderr.on('data', jekyllLogger);
   done();
 };
+
+
+
+function jekyllWatch(done) {
+  const jekyll = child.spawn('bundle', ['exec',
+    'jekyll',
+    'serve',
+    '--incremental',
+    '--watch'
+  ]);
+
+  jekyll.stdout.on('data', jekyllLogger);
+  jekyll.stderr.on('data', jekyllLogger);
+  done();
+};
+
 
 // Export the default Gulp task so it can be run
 // Runs the scss and js tasks simultaneously
@@ -103,3 +138,18 @@ exports.default = gulp.series(
     jekyll,
     watchTask
 );
+
+exports.build = gulp.series(
+  scssTask,
+  jsTask, 
+  js3rdPartyTask,
+  jekyllBuild
+)
+
+exports.develop = gulp.series(
+  scssTask,
+  jsTask, 
+  js3rdPartyTask, 
+  watchTaskLite,
+  jekyllWatch,
+)
