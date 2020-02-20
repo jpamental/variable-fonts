@@ -1,0 +1,19 @@
+<div class="split-header">
+  <div class="split-header-half content-section padded-bottom">
+    {{ include.content }}
+  </div>
+  <div class="split-header-half">
+    {% if include.image %}
+    <div
+      class="split-header-image-wrapper"
+      style="background-image: url('{{ site.baseurl }}/{{ include.image }}')"
+    >
+      <img
+        src="{{ site.baseurl }}/{{ include.image }}"
+        alt=""
+        role="presentation"
+      />
+    </div>
+    {% endif %}
+  </div>
+</div>
