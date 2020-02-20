@@ -10,13 +10,6 @@
 
 {% endcomment %}
 
-<style>
-  :root {
-    --{{ include.id }}: {{ include.now }};
-  }
-</style>
-
-
 <div class="md-slider-group {{ include.keyword }} {{ include.style }}" style="counter-reset: counter-{{ include.id }} var(--{{ include.id }});">
   <div class="value-tag">'{{ include.keyword }}' range</div>
   <div class="md-slider-group__slider-unit">
@@ -31,4 +24,9 @@
     <div class="value-high">{{ include.max }}</div>
     <input type="text" class="value-current" value="{{ include.now }}" />
   </div>
+  <style>
+    :root {
+      --{{ include.id }}: {{ include.now }};
+    }
+  </style>
 </div>

@@ -94,6 +94,9 @@ body {
     background-color: $color-slider-group-background;
     padding: 1rem;
     width: 100%;
+    & + .md-slider-group {
+      border-top: none;
+    }
   }
 
   .controls {
