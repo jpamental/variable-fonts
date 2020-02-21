@@ -58,9 +58,11 @@
 
 .mdc-top-app-bar--blur,
 .mdc-top-app-bar.mdc-top-app-bar--blur {
-  background-color: rgba(0, 0, 0, 0);
-  backdrop-filter: blur(20px) opacity(95%);
-  // background-color: var(--color-background);
+  background-color: var(--color-background);
+  @supports (backdrop-filter: blur(20px)) {
+    backdrop-filter: blur(20px);
+    background-color: rgba(0, 0, 0, 0);
+  }
 }
 
 .top-app-bar-tabs {
