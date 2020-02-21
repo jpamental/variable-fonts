@@ -183,14 +183,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
-  <body class="{{
-    page.layout
-  }}
-  {% for class in page.design-classes %}
-    {{ class }} 
-  {% endfor %}
-  post{{ page.id | replace:"/","-"
-  
-  }}">
+  <body class="{{ page.layout }} post{{ page.id | replace:"/","-" }}">
   <div class="page-wrapper">
   
