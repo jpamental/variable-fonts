@@ -3,6 +3,8 @@
 .mdc-card {
   --mdc-theme-surface: var(--color-background);
 
+  
+
   &__primary-action {
     height: 100%;
     &::before,
@@ -40,20 +42,52 @@
 }
 
 
+a.vf-mdc-card {
+  text-decoration: none;
+}
+
 .vf-mdc-card {
+  width: 100%;
+  border-radius: 2px;
   overflow: hidden;
+  border-color: transparent;
+  display: block;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition: box-shadow 0.2s ease-in-out !important;
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.2),
+                0px 3px 4px rgba(0, 0, 0, 0.12),
+                0px 3px 3px rgba(0, 0, 0, 0.14);
+  }
+
+  // These need to be nested for specificity
   .vf-mdc-card__title {
-    margin-top: 1em;   
+    margin-top: calc( var(--body-text-spacer) * 1 );
+    margin-bottom: calc( var(--body-text-spacer) * 0.2 );
+  }
+
+  .vf-mdc-card__subtitle {
+    margin-top: 0;
+  }
+
+  .mdc-card__action--icon {
+    margin-top: 0.25rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 100%;
+    width: 48px;
+    height: 48px;
   }
 }
 
-.vf-mdc-card__title {
-  font-size: 2em;
-  line-height: 1.3;
+.vf-mdc-card__description {
+  margin-top: calc( var(--body-text-spacer) * 1 );
 }
 
 .vf-mdc-card__body {
-  padding: 1rem;
+  padding: calc( var(--body-text-spacer) * 1 );
+  padding-bottom: calc( var(--body-text-spacer) * 1.2 );
   .mdc-card__action--icon {
     background: $color-gray-100;
     border-radius: 100%;
