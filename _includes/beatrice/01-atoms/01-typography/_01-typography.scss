@@ -383,7 +383,8 @@ h1 {
   }
 }
 
-h2 {
+h2,
+.subtitle {
 	@include text-large;
 	font-family: $sans-serif-novf;
 	font-weight: 300;
