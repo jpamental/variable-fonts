@@ -284,7 +284,7 @@ ul {
   --p-font-size-max: 1.5;
   --p-vf-wght: 200;
   &:first-of-type::first-line {
-    font-weight: 525;
+    font-weight: var(--link-font-weight, 525);
   }
 }
 strong {
@@ -628,7 +628,6 @@ h5 {
   }
 }
 
-
 code {
   --p-font-size-min: 0.925;
   --p-font-size-max: 1;
@@ -642,13 +641,7 @@ code {
     font-family: "Recursive", monospace;
     font-variation-settings: "MONO" 1;
     font-weight: 500;
-    font-size: calc( var(--p-font-size-min) * 1rem );
-    @media (min-width: $bp--large) {
-      font-size: calc(( var(--p-font-size-min) * 1rem ) + ( var(--p-font-size-max) - var(--p-font-size-min) ) * ((100vw - ( var(--bp-large) * 1rem )) / ( var(--bp-xxlarge) - var(--bp-large) )));
-    }
-    @media (min-width: $bp--xxlarge) {
-      font-size: calc( var(--p-font-size-max) * 1rem );
-    }    
+    font-size: 0.875em;
   }
 }
 

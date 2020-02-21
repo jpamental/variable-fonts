@@ -1,5 +1,6 @@
 .embed-container {
-  overflow: hidden;
+  // Removed to preserve MDC Card box shadow
+  // overflow: hidden
   width: 100%;
   + .embed-container {
     margin-top: 2rem;

@@ -8,16 +8,16 @@ $color-coral: #ff5252;
 $color-blue: #0662ed;
 
 // Google colors
-$color-gray-900: #202124;
-$color-gray-800: #3c4043;
-$color-gray-700: #5f6368;
-$color-gray-600: #80868b;
-$color-gray-500: #9aa0a6;
-$color-gray-400: #bdc1c6;
-$color-gray-300: #dadce0;
-$color-gray-200: #e8eaed;
-$color-gray-100: #f1f3f4;
-$color-gray-50: #f8f9fa;
+$color-gray-900: #212121;
+$color-gray-800: #424242;
+$color-gray-700: #616161;
+$color-gray-600: #757575;
+$color-gray-500: #9E9E9E;
+$color-gray-400: #BDBDBD;
+$color-gray-300: #E0E0E0;
+$color-gray-200: #EEEEEE;
+$color-gray-100: #F5F5F5;
+$color-gray-50:  #FAFAFA;
 
 $color-blue-900: #2838c4;
 $color-blue-800: #295ce4;
@@ -33,6 +33,9 @@ $color-blue-50: #e4f2fe;
 $color-purple-900: #4f14c4;
 $color-gray-750: #4f5358;
 
+$color-black: #000;
+$color-white: #FFF;
+
 /* Demo colors */
 
 $color-lavender-light: #f6e8ff;
@@ -40,6 +43,7 @@ $color-yellow-light: #ecec96;
 $color-green-light: #caf8ea;
 $color-peach-light: #fff6e9;
 $color-peach: #eedbbf;
+$color-silver: #E5E5E5;
 
 /* functional assignments */
 
@@ -56,3 +60,4 @@ $color-text-link-hover: $color-coral;
 $color-text-link-focus: $color-coral;
 $color-text-link-active: $color-coral;
 $color-text-link-active-trail: $color-gray-900;
+$color-slider-group-background: #F4EFF6;

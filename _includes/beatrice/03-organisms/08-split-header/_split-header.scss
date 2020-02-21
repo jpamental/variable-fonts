@@ -1,0 +1,91 @@
+:root {
+  --top-bar-nav-height-desktop: 64px; // mdc-top-app-bar__row
+}
+
+.split-header {
+  position: relative;
+  margin-bottom: calc( var(--body-text-spacer) * 2 );
+  min-height: 100vh;
+  @media (min-width: $bp--xlarge) {
+    padding-bottom: calc( var(--body-text-spacer) * 2 );
+  }
+}
+
+/**
+ * Makes it possible to have the h1 to break outside 
+ * content-width “line length” or max width, which is
+ * dynamic and positioned with `margin: 0 auto`, so
+ * setting it with a fixed value wouldn’t work.
+ */
+.split-header--breakout {
+  @include content-width;
+  @media (min-width: $bp--xlarge) {
+    h1 {
+      width: 133%;
+      margin-right: -33%;
+    }
+  }
+}
+
+.split-header-content {
+  padding-top: calc(var(--top-bar-nav-height-desktop, 64px) + 1rem);
+  width: 100%;
+}
+
+.split-header-image {
+  width: 100%;
+  @media (min-width: $bp--large) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 30%;
+  }
+  @media (min-width: $bp--xlarge) {
+    width: 50%;
+  }
+}
+
+.split-header-sticky-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.split-header-image-wrapper {
+  position: sticky;
+  top: calc(var(--top-bar-nav-height-desktop, 64px) + 1rem);
+  width: 100%;
+}
+
+.split-header-image img {
+  width: 100%;
+}
+
+.split-header-image-wrapper {
+  position: sticky;
+  width: 100%;
+  img {
+    display: block;
+    width: 100%;
+  }
+  @media (max-width: $bp--large) {
+    background-image: none !important;
+  }
+}
+
+@media (min-width: $bp--large) {
+  .split-header-image-wrapper {
+    img {
+      display: none;
+      visibility: hidden;
+    }
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    width: auto;
+    height: 100vh;
+    padding-top: 1rem;
+    height: #{"calc(100vh - var(--top-bar-nav-height-desktop, 64px) - 1rem)"};
+  }
+}

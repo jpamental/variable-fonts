@@ -1,42 +1,44 @@
 pre.css {
-  background-color: $color-gray-100;
+  background-color: $color-gray-200;
+  color: $color-black;
   border: none !important;
   border-radius: 0.5rem;
   overflow: hidden;
   padding: 0 0 1.5rem 0 !important;
   position: relative;
-  background: $color-gray-100;
   p + & {
     margin-top: calc( var(--body-text-spacer) * 2 );
   }
-  @media (prefers-color-scheme:dark) {
-    background: $color-gray-800;
-  }
   &::before {
     content: "CSS";
-    background-color: $color-gray-800;
-    color: #ffffff;
+    background-color: $color-gray-300;
+    color: $color-gray-800;
     display: block;
     font-family: $sans-serif-novf;
-    font-size: 1.125rem;
-    padding: 0.5em 1.5rem;
+    font-size: 0.8rem;
+    padding: 0.6em 1.5rem;
+    line-height: 1;
     text-align: left;
     width: 100%;
-    @media (prefers-color-scheme:dark) {
-      background: $color-gray-700;
-    }
     @supports (font-variation-settings: normal) {
       font-family: $sans-serif;
     }
   }
-
+  @media (prefers-color-scheme: dark) {
+    background-color: $color-gray-800;
+    color: $color-gray-200;
+    &::before {
+      background-color: $color-black;
+      color: $color-gray-300;
+    }
+  }
 }
 
 code.prettyprint {
   background-color: transparent !important;
   border: none !important;
   display: block;
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.5;
   overflow: scroll;
   padding: 0 !important;

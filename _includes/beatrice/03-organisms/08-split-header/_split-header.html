@@ -1,0 +1,38 @@
+<div>
+  <div class="split-header js-top-app-bar--blur">
+    <div class="split-header-content content-section mdc-top-app-bar--fixed-adjust">
+      {% if include.firstImage %}
+        <img
+          style="{{ include.firstImageStyle | default: 'max-width: 450px;' }}"
+          src="{{ site.baseurl }}/{{ include.firstImage }}"
+          alt=""
+          role="presentation"
+          class="content-section-image"
+        />
+      {% endif %}
+      <div class="split-header--breakout">
+        <h1>{{ include.title | default: page.title | default: "" }}</h1>
+        {% if include.subtitle %}
+          <h2>A new kind of font</h2>
+        {% endif %}
+      </div>
+      {{ include.content }}
+    </div>
+    <div class="split-header-image">
+      {% if include.featureImage %}
+      <div class="split-header-sticky-container">
+        <div
+          class="split-header-image-wrapper mdc-top-app-bar--fixed-adjust"
+          style="background-image: url('{{ site.baseurl }}/{{ include.featureImage }}')"
+        >
+          <img
+            src="{{ site.baseurl }}/{{ include.featureImage }}"
+            alt=""
+            role="presentation"
+          />
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

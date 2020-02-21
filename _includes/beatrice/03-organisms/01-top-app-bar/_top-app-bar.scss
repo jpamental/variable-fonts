@@ -6,23 +6,30 @@
 }
 
 .mdc-top-app-bar {
-  --mdc-theme-primary: var(--color-background);
+  --mdc-theme-primary: rgba(255, 255, 255, 0);
   --mdc-theme-on-primary: var(--color-text);
-  border-bottom: solid 1px $color-gray-300;
-  color: $color-gray-800;
-  color: var(--color-text);
+  transition: background-color 0.3s ease-in-out;
+  background-color: rgba(255, 255, 255, 1.0);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+  color: rgba(0, 0, 0, 0.54);
+  @media (prefers-reduced-motion: reduce) {
+    background-color: var(--color-background);
+  }
   @media (prefers-color-scheme:dark) {
-    border-bottom-color: $color-gray-700;
+    border-color: rgba(255, 255, 255, 0.14);
   }
-  &__row {
-    height: 4rem;
-  }
-  &__section {
-    padding: 0.5rem 0.75rem;
-  }
+  // &__row {
+  //   // This was already here, matches the margin
+  //   // in drawer, but might not be necessary?
+  //   height: 4rem;
+  // }
+  // &__section {
+  //   padding: 0.5rem 0.75rem;
+  // }
   &__navigation-icon.material-icons {
     @media (min-width: $bp--large) {
       display: none;
+      visibility: hidden;
     }
   }
   &__title {
@@ -33,19 +40,50 @@
       font-weight: 725;
       font-stretch: 85%;
     }
-    a {
-      &:link,
-      &:visited {
-        --color-text-link-visited: var(--color-text-link-active-trail);
-        text-decoration: none;
-      }
-      &:hover,
-      &:focus,
-      &:active {
-        text-decoration: underline;
-      }
-  
+  }
+  a {
+    color: rgba(0, 0, 0, 0.54);
+    &:link,
+    &:visited {
+      text-decoration: none;
     }
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+    }
+
   }
 }
 
+.mdc-top-app-bar--blur,
+.mdc-top-app-bar.mdc-top-app-bar--blur {
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(20px) opacity(95%);
+  // background-color: var(--color-background);
+}
+
+.top-app-bar-tabs {
+  display: none;
+  visibility: hidden;
+  @media (min-width: $bp--large) {
+    display: flex;
+    align-items: stretch;
+    visibility: visible;
+  }
+}
+
+.top-app-bar-tabs-item,
+a.top-app-bar-tabs-item {
+  height: 100%;
+  font-weight: 400;
+
+  /* TODO These should use MDC variables */
+  padding: 8px 12px;
+}
+
+.top-app-bar-tabs-item--activated,
+a.top-app-bar-tabs-item--activated {
+  font-weight: var(--link-font-weight);
+  color: var(--color-text, #{$color-gray-800});
+}
