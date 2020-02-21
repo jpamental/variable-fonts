@@ -3,6 +3,22 @@
   padding-right: 1vw;
   @include section-width();
 
+  h2 {
+    margin-top: calc( var(--body-text-spacer) * 4 );
+    margin-bottom: calc( var(--body-text-spacer) * 2 );
+  }
+  
+  .subtitle,
+  h3 {
+    margin-top: calc( var(--body-text-spacer) * 2.4 );
+    margin-bottom: calc( var(--body-text-spacer) * 1.2 );
+  }
+  
+  h4 {
+    margin-top: calc( var(--body-text-spacer) * 1.2 );
+    margin-bottom: calc( var(--body-text-spacer) * 1.2 );    
+  }
+
   &--grid {
     @media (min-width: $bp--medium) {
       display: grid;
