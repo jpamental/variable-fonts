@@ -49,16 +49,3 @@ a {
     text-decoration-skip-ink: auto;
   }
 }
-
-@supports (text-decoration-thickness: 1em) {
-  a {
-    &:link,
-    &:visited {
-      /* this below is so new it's not even in the editor's draft of the spec yet */
-      /* just to smooth the effect on hover */
-    }
-    &:hover,
-    &:focus {
-    }
-  }
-}
