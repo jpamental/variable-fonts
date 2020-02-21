@@ -12,37 +12,31 @@
 {% if include.card_style == 'outline' %}
   {% assign card_style = 'mdc-card--outlined' %}
 {% endif %}
-{% if include.heading_level == 3 %}
-  {% assign heading_level = 'h3' %}
-  {% assign subheading_level = 'h4' %}
-{% else %}
-  {% assign heading_level = 'h2' %}
-  {% assign subheading_level = 'h3' %}
-{% endif %}
 
-<article class="mdc-card vf-mdc-card {{ card_style }}">
-  {% if include.primary_link_url %}<a href="{{ include.primary_link_url }}">{% endif %}<div class="mdc-card__primary-action">
-    {% if include.label %}
-      <label class="vf-mdc-card__label">{{ include.label }}</label>
-    {% endif %}
-    {% if include.media %}
-      <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('{{ site.baseurl }}{{ include.media }}');"></div>
-    {% endif %}
-    <{{ heading_level }} class="vf-mdc-card__title">{{ include.title }}</{{ heading_level }}>
-    {% if include.body %}
-      <div class="vf-mdc-card__body">
-        {% if include.subtitle %}
-          <{{ subheading_level }} class="vf-mdc-card__subtitle">by {{ include.subtitle }}</{{ subheading_level }}>
-        {% endif %}
-        <p>{{ include.body }}</p>
+<div class="mdc-card vf-mdc-card {{ card_style }}">
+  {% if include.icon %}
+  {% endif %}
+  {% if include.primary_link_url %}
+    <a href="{{ include.primary_link_url }}">
+  {% endif %}
+    <div class="mdc-card__primary-action">
+      {% if include.media %}
+        <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('{{ site.baseurl }}{{ include.media }}');"></div>
+      {% endif %}
+      {% if include.body %}
+        <div class="vf-mdc-card__body">
+          {% if include.label and site.data.icons and site.data.icons[include.label] %}
+            <i class="material-icons mdc-card__action mdc-card__action--icon" title="{{ include.label }}">{{ site.data.icons[include.label] }}</i>
+          {% endif %}
+          <h3 class="vf-mdc-card__title">{{ include.title }}</h3>
+          {% if include.subtitle %}
+            <p class="vf-mdc-card__subtitle">by {{ include.subtitle }}</p>
+          {% endif %}
+          <p>{{ include.body }}</p>
+        </div>
+      {% endif %}
       </div>
+    {% if include.primary_link_url %}
+      </a>
     {% endif %}
-    </div>{% if include.primary_link_url %}</a>{% endif %}
-  <div class="mdc-card__actions">
-    <div class="mdc-card__action-buttons">
-    </div>
-    <div class="mdc-card__action-icons">
-      {% if include.primary_link_url %}<a href="{{ include.primary_link_url }}">{% endif %}<button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Learn more">arrow_forward</button>{% if include.primary_link_url %}</a>{% endif %}
-    </div>
-  </div>
-</article>
+</div>
