@@ -1,44 +1,85 @@
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/03-organisms/10-embeds/axis-component.css" />
+
 <style>
-  .range__axis.range__axis--italic {
+  .range__axis.range__axis-ital {
     --text-vf-wght: 400;
-    --text-vf-wdth: 95;
-    --current-value: var(--ital-text-vf-ital);
-}
-  .range__axis.range__axis--italic .paragraph .text {
-    font-family: "Jost VF", sans-serif;
-    font-variation-settings: 'ital' var(--ital-text-vf-ital);
+    --text-vf-wdth: 100;
+    --ital-toggle: 'normal';
+    --value-tag: 'font-style';
+    --low-value: 0;
+    --current-value: var(--ital-toggle);
+    --high-value: 1;
   }
-  .range__axis.range__axis--italic code.prettyprint {
+  .range__axis.range__axis-ital .paragraph .text {
+    font-family: "Literata", serif;
+    font-size: calc( 3.25vw + 1.25rem );
+    font-style: var(--ital-toggle);
+  }
+  .range__axis.range__axis-ital code.prettyprint {
     font-size: 1rem;
+  }
+
+  .range__axis.range__axis-ital .controls .value-tag {
+    grid-column: 1/2;
+  }
+  
+  .range__axis.range__axis-ital .controls .value-tag::before {
+    counter-reset: tag var(--value-tag);
+    content: "'" var(--value-tag) "'";
+  }
+  .range__axis.range__axis-ital code .current-value::before {
+      content: var(--current-value);
+      color: var(--color-prettify-pln);
+  }
+  .range__axis-ital .opsz-toggle {
+    font-family: sans-serif;
+    grid-column: 2/3;
   }
 </style>
 
-<div class="container range__axis range__axis--italic mdc-card">
+
+<div class="container range__axis range__axis-ital mdc-card">
   <div class="range__axis__label">
     <p>Italic</p>
   </div>
-    <div class="paragraph">
-      <div class="text">Good</div>
-    </div>
-    {% include beatrice/02-molecules/09-slider-group/slider-group.html 
-      keyword = 'ital'
-      style = 'wide'
-      id = 'ital-text-vf-ital'
-      min = '0'
-      max = '1'
-      now = '1'
-      step = '1'
-    %}
-      <div class="code dark">
-      <code class="prettyprint">
-        .text { <br />
-        &nbsp;&nbsp;  font-variation-settings: 'ital' <span class="current-value"></span>; <br />
-        }
-      </code>
-    </div>
+  <div class="paragraph">
+    <div class="text">Again</div>
   </div>
+  <div id='demo-controls' class="controls md-slider-group">
+    <div class="value-tag"></div>
+    <div class="ital-toggle">
+        <input type="radio" id="ital-toggle" name="ital-toggle" value="normal" checked>Upright
+        <input type="radio" id="ital-toggle" name="ital-toggle" value="italic">Italic
+        <label for="ital-toggle">Optical Size</label>
+  
+  
+    </div>
+  
+  </div>
+  <div class="code dark">
+    <code class="prettyprint">
+      .text { <br />
+      &nbsp;&nbsp;  font-style: <span class="pln current-value"></span>; <br />
+      }
+    </code>
+  </div>
+</div>
 
 <figcaption>
-  Featuring <a href="https://v-fonts.com/fonts/jost">Jost</a>
+  Featuring <a href="https://fonts.google.com/specimen/Literata">Literata</a>
 </figcaption>
+
+<script>
+    // get the inputs
+  var inputs = [].slice.call(document.querySelectorAll('.range__axis-ital .controls input'));
+
+  // listen for changes
+  inputs.forEach(input => input.addEventListener('change', handleUpdate));
+  inputs.forEach(input => input.addEventListener('onload', handleUpdate));
+
+
+  function handleUpdate(e) {
+    document.querySelector('.range__axis-ital').style.setProperty(`--${this.id}`, this.value);
+    document.querySelector('.range__axis-ital .current-value').textContent=this.value;
+  }
+</script>
