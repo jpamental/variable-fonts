@@ -50,8 +50,8 @@
       }
     }
   }
-  + .content-section {
-    margin-top: calc( var(--body-text-spacer) * 2 );
+  & + .content-section {
+    margin-top: calc( var(--body-text-spacer) * 4 );
   }
   .color + & {
     margin-top: calc( var(--body-text-spacer) * 3 );
@@ -59,7 +59,6 @@
 }
 
 .axis {
-  padding-top: calc( var(--body-text-spacer) * 2 );
   h2::before {
     display: block;
     font-family: $sans-serif-novf;
