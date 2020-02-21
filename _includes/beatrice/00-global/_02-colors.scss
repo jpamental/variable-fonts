@@ -4,7 +4,6 @@
 
 $color-offwhite: #fafafc;
 
-$color-coral: #ff5252;
 $color-blue: #0662ed;
 
 // Google colors
@@ -56,8 +55,8 @@ $color-callout-highlight: $color-blue-50;
 $color-callout-highlight-secondary: lighten($color-blue-50, 2.5%);
 $color-text-link: $color-gray-900;
 $color-text-link-visited: $color-gray-900;
-$color-text-link-hover: $color-coral;
-$color-text-link-focus: $color-coral;
-$color-text-link-active: $color-coral;
+$color-text-link-hover: $color-gray-800;
+$color-text-link-focus: $color-gray-800;
+$color-text-link-active: $color-gray-800;
 $color-text-link-active-trail: $color-gray-900;
 $color-slider-group-background: #F4EFF6;
