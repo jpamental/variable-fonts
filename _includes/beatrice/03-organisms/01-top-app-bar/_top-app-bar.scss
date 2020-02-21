@@ -10,14 +10,13 @@
   --mdc-theme-on-primary: var(--color-text);
   transition: background-color 0.3s ease-in-out;
   background-color: rgba(255, 255, 255, 1.0);
-  border-bottom: none;
-  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.54);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
   color: rgba(0, 0, 0, 0.54);
   @media (prefers-reduced-motion: reduce) {
     background-color: var(--color-background);
   }
   @media (prefers-color-scheme:dark) {
-    border-bottom-color: $color-gray-700;
+    border-color: rgba(255, 255, 255, 0.14);
   }
   // &__row {
   //   // This was already here, matches the margin
