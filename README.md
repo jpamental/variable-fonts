@@ -1,4 +1,11 @@
-# A Variable Fonts Design & Development Primer site
+# A Variable Fonts Primer for Designers & Developers
+
+**[googlefonts.github.io/variable-fonts](https://googlefonts.github.io/variable-fonts)**
+
+This is a project to create a thorough introduction to the latest font technology, Variable Fonts:
+their benefits, use cases, and techniques to adopt them in your own projects.
+
+This project is not an official Google product, and Google provides no support for it.
 
 ## Getting started
 
@@ -21,7 +28,6 @@ npm start
 
 ## Build
 
-
 To manually compile the site down to static HTML, CSS, and JavaScript, run:
 
 ```sh
@@ -32,4 +38,4 @@ Assets are currently built to the `assets` folder, which are kept as part of the
 
 ## Deployment
 
-The link to view the deployed site is [googlefonts.github.io/typography](https://googlefonts.github.io/typography).
+The link to view the deployed site is [googlefonts.github.io/variable-fonts](https://googlefonts.github.io/variable-fonts).
