@@ -44,67 +44,22 @@
 
 .axis {
   padding-top: calc( var(--body-text-spacer) * 2 );
-  hr + h2 {
-    margin-top: calc( var(--body-text-spacer) * 2 );
-  }
-  > h2 {
-    
-    margin-top: 0;
-    padding-bottom: calc( var(--body-text-spacer) / 2 );
-    position: relative;
-    z-index: 1;
-    @media (prefers-color-scheme:dark) {
-      padding-bottom: 0;
-    }
-   &::before {
-      display: block;
-      font-family: $sans-serif-novf;
-      font-size: 1rem;
-      font-weight: 375;
-      font-variant-caps: all-small-caps;
-      position: relative;
-      z-index: 1;
-      @supports (font-variation-settings: normal) {
-        font-family: $sans-serif;
-      }
-    }
-    &::after {
-      background-repeat: no-repeat;
-      background-size: 100%;
-      content: ' ';
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: 1;
-      @media (prefers-color-scheme:dark) {
-        opacity: 0.1;
-      }
+  h2::before {
+    display: block;
+    font-family: $sans-serif-novf;
+    font-size: 1rem;
+    font-weight: 500;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.1em;
+    margin-bottom: calc( var(--body-text-spacer) * 0.5 );
+    @supports (font-variation-settings: normal) {
+      font-family: $sans-serif;
     }
   }
-  &.registered {
-    > h2 {
-      &::before {
-        content: "Registered Axis";
-      }
-    }
+  &.registered > h2::before {
+    content: "Registered Axis";
   }
-  &.custom {
-    > h2 {
-      @media (prefers-color-scheme:dark) {
-        background-color: transparent;
-      }
-        &::before {
-        content: "Custom Axis";
-      }
-    }
-  }
-}
-.color {
-  &.light-blue {
-    background-color: var(--color-callout-highlight);
+  &.custom > h2::before {
+    content: "Custom Axis";
   }
 }
