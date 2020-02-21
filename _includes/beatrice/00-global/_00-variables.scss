@@ -33,8 +33,8 @@ $bp--xxxlarge-value: 110;
     --p-vf-slnt: 0;
   
     /* H1 variables */
-    --h1-line-height-min: 1;
-    --h1-line-height-max: 1.05;
+    --h1-line-height-min: 1.05;
+    --h1-line-height-max: 1;
     --h1-font-size-min: 2.5;
     --h1-font-size-max: 4;
     --h1-vf-wght-multiplier-s: 1.05;
@@ -43,8 +43,8 @@ $bp--xxxlarge-value: 110;
     --h1-vf-wdth: 80;
   
     /* H2 variables */
-    --h2-line-height-min: 1;
-    --h2-line-height-max: 1.05;
+    --h2-line-height-min: 1.05;
+    --h2-line-height-max: 1;
     --h2-font-size-min: 2.125;
     --h2-font-size-max: 3;
     --h2-vf-wght-multiplier-s: 0.7;
@@ -53,8 +53,8 @@ $bp--xxxlarge-value: 110;
     --h2-vf-wdth: 70;
 
     /* H3 variables */
-    --h3-line-height-min: 1.05;
-    --h3-line-height-max: 1.1;
+    --h3-line-height-min: 1.1;
+    --h3-line-height-max: 1.05;
     --h3-font-size-min: 1.5;
     --h3-font-size-max: 2.5;
     --h2-vf-wght-multiplier-s: 1.2;
