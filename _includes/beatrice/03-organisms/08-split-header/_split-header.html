@@ -1,6 +1,6 @@
 <div>
   <div class="split-header">
-    <div class="split-header-half content-section padded-bottom">
+    <div class="split-header-content content-section mdc-top-app-bar--fixed-adjust">
       {% if include.firstImage %}
         <img
           style="max-width: 500px"
@@ -18,17 +18,19 @@
       </div>
       {{ include.content }}
     </div>
-    <div class="split-header-half">
+    <div class="split-header-image">
       {% if include.featureImage %}
-      <div
-        class="split-header-image-wrapper"
-        style="background-image: url('{{ site.baseurl }}/{{ include.featureImage }}')"
-      >
-        <img
-          src="{{ site.baseurl }}/{{ include.featureImage }}"
-          alt=""
-          role="presentation"
-        />
+      <div class="split-header-sticky-container">
+        <div
+          class="split-header-image-wrapper mdc-top-app-bar--fixed-adjust"
+          style="background-image: url('{{ site.baseurl }}/{{ include.featureImage }}')"
+        >
+          <img
+            src="{{ site.baseurl }}/{{ include.featureImage }}"
+            alt=""
+            role="presentation"
+          />
+        </div>
       </div>
       {% endif %}
     </div>
