@@ -6,7 +6,9 @@ permalink: /variable-font-resources/
 
 
 ---
-<h1>{{ page.title }}</h1>
+<header class="mdc-top-app-bar--fixed-adjust js-top-app-bar--blur">
+  <h1>{{ page.title }}</h1>
+</header>
 <section class="content-section">
   <p>The literature on variable fonts has exploded since they were first announced in 2016. The best way to grok variable fonts is to jump in and start playing with them. Once you feel comfortable, you might want to branch out and explore a little. Here’s a list of selected resources to help you get started.</p>
 {% assign resourcesGrouped = site.resources | group_by: 'category' | sort: 'name' | reverse %}  
