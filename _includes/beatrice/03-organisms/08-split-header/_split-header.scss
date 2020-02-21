@@ -69,6 +69,9 @@
     display: block;
     width: 100%;
   }
+  @media (max-width: $bp--large) {
+    background-image: none !important;
+  }
 }
 
 @media (min-width: $bp--large) {
