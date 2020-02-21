@@ -23,8 +23,8 @@ $bp--xxxlarge-value: 110;
     --text-size-base: 16;
     
     /* Paragraph variables */
-    --p-line-height-min: 1.35;
-    --p-line-height-max: 1.55;
+    --p-line-height-min: 1.6;
+    --p-line-height-max: 1.45;
     --p-font-size-min: 1;
     --p-font-size-max: 1.125;
     --p-vf-wght: 350;
@@ -36,11 +36,11 @@ $bp--xxxlarge-value: 110;
     --h1-line-height-min: 1;
     --h1-line-height-max: 1.05;
     --h1-font-size-min: 2.5;
-    --h1-font-size-max: 4.5;
-    --h1-vf-wght-multiplier-s: 0.9;
-    --h1-vf-wght-multiplier-m: 0.85;
-    --h1-vf-wght-multiplier-l: 0.8;
-    --h1-vf-wdth: 75;
+    --h1-font-size-max: 4;
+    --h1-vf-wght-multiplier-s: 1.05;
+    --h1-vf-wght-multiplier-m: 0.95;
+    --h1-vf-wght-multiplier-l: 0.85;
+    --h1-vf-wdth: 80;
   
     /* H2 variables */
     --h2-line-height-min: 1;
@@ -57,9 +57,9 @@ $bp--xxxlarge-value: 110;
     --h3-line-height-max: 1.1;
     --h3-font-size-min: 1.5;
     --h3-font-size-max: 2.5;
-    --h3-vf-wght-multiplier-s: 0.7;
-    --h3-vf-wght-multiplier-m: 0.8;
-    --h3-vf-wght-multiplier-l: 0.9;
+    --h2-vf-wght-multiplier-s: 1.2;
+    --h2-vf-wght-multiplier-m: 1.1;
+    --h2-vf-wght-multiplier-l: 1.0;
     --h3-vf-wdth: 75;
   }
 }
