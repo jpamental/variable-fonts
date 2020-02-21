@@ -1,6 +1,8 @@
 {
-  "name": "typography",
+  "name": "@googlefonts/variable-fonts",
+  "private": true,
   "version": "1.0.0",
+  "homepage": "https://googlefonts.github.io/variable-fonts",
   "description": "Variable Fonts educational site",
   "main": "index.html",
   "scripts": {
@@ -10,14 +12,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/googlefonts/typography.git"
+    "url": "git+https://github.com/googlefonts/variable-fonts.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/googlefonts/typography/issues"
+    "url": "https://github.com/googlefonts/variable-fonts/issues"
   },
-  "homepage": "https://github.com/googlefonts/typography#readme",
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",

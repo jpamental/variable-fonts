@@ -28,12 +28,15 @@
     <link rel="manifest" href="{{ site.baseurl }}/site.webmanifest">
 
     <!-- Feed -->
+    {% comment %}
+    TODO Add this back if there is an XML feed for the resources, for example.
     <link
       rel="alternate"
       type="application/rss+xml"
       title="{{ site.name }} RSS Feed"
-      href="{{ '{{ site.baseurl }}/feed.xml' }}"
+      href="{{ site.baseurl }}/feed.xml"
     />
+    {% endcomment %}
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css" />
@@ -180,14 +183,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
-  <body class="{{
-    page.layout
-  }}
-  {% for class in page.design-classes %}
-    {{ class }} 
-  {% endfor %}
-  post{{ page.id | replace:"/","-"
-  
-  }}">
+  <body class="{{ page.layout }} post{{ page.id | replace:"/","-" }}">
   <div class="page-wrapper">
   
