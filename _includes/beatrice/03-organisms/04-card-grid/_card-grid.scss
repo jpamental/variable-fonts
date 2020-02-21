@@ -17,24 +17,26 @@
     margin-right: calc( (var(--body-text-spacer) * -1) - var(--card-grid-gutter) );
   }
   
-  // > * {
-  //   --h3-font-size-min: 1.25;
-  //   --h3-font-size-max: 1.5;
-  //   --h4-font-size-min: 0.925;
-  //   --h4-font-size-max: 1;
-  //   --h4-vf-wght-multiplier-s: 1;
-  //   --h4-vf-wght-multiplier-m: 1.05;
-  //   --h4-vf-wght-multiplier-l: 1.1;
-  //   --p-font-size-min: 0.875;
-  //   --p-font-size-max: 0.925;
-  //   --p-line-height-min: 1.25;
-  //   --p-line-height-max: 1.33;
+  > * {
+    --h3-font-size-min: 1.25;
+    --h3-font-size-max: 1.5;
+    --h3-line-height-min: 1.25;
+    --h3-line-height-max: 1.35;
+    --h4-font-size-min: 0.875;
+    --h4-font-size-max: 0.925;
+    --h4-vf-wght-multiplier-s: 1;
+    --h4-vf-wght-multiplier-m: 1.05;
+    --h4-vf-wght-multiplier-l: 1.1;
+    --p-font-size-min: 0.925;
+    --p-font-size-max: 1;
+    --p-line-height-min: 1.35;
+    --p-line-height-max: 1.5;
   //   border-top-width: 0.33rem;
   //   margin: 0 1rem 2rem 1rem;
   //   h4 {
   //     font-variation-settings: 'slnt' -10;
   //   }
-  // }
+  }
 }
 
 .card-grid-cell {
