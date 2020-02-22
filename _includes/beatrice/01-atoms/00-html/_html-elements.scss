@@ -70,24 +70,33 @@ hr {
   background-color: var(--color-text-highlight);
   border-radius: 0.5rem;
   padding: var(--body-text-spacer) 1rem;
-  ;
+  width: var(--content-width);
   &--right {
     min-width: 15rem;
     @media (min-width: $bp--large) {
       clear: right;
       float: right;
       margin-left: 4rem;
+      margin-top: 0;
       min-width: 15rem;
       width: calc( 100% - (var(--content-width) + 4rem) );
     }
   }
+  
   h3 {
     --h3-font-size-min: 1.25;
     --h3-font-size-max: 1.5;
   }
+  
+  .content-section & h4 {
+    margin-top: 0;
+  }
   p {
     --p-font-size-min: 0.875;
     --p-font-size-max: 1;
+  }
+  p + & {
+    margin-top: calc( var(--body-text-spacer) * 1 );
   }
 }
 
