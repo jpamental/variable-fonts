@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/03-organisms/10-embeds/axis-component.css" />
+
+<style>
+  .range__axis.range__axis-ital {
+    --text-vf-wght: 400;
+    --text-vf-wdth: 95;
+    --current-value: var(--ital-text-vf-ital);
+}
+  .range__axis.range__axis--italic .paragraph .text {
+    font-family: "Jost", sans-serif;
+    font-variation-settings: 'ital' var(--ital-text-vf-ital);
+  }
+  .range__axis.range__axis--italic code.prettyprint {
+    font-size: 1rem;
+  }
+
+  .range__axis.range__axis-ital .controls .value-tag {
+    grid-column: 1/2;
+  }
+  
+  .range__axis.range__axis-ital .controls .value-tag::before {
+    counter-reset: tag var(--value-tag);
+    content: "'" var(--value-tag) "'";
+  }
+  .range__axis.range__axis-ital code .current-value::before {
+      content: var(--current-value);
+      color: var(--color-prettify-pln);
+  }
+  .range__axis-ital .opsz-toggle {
+    font-family: sans-serif;
+    grid-column: 2/3;
+  }
+</style>
+
+
+<div class="container range__axis range__axis--italic mdc-card">
+  <div class="range__axis__label">
+    <p>Italic</p>
+  </div>
+  <div class="paragraph">
+    <div class="text">Good</div>
+  </div>
+  {% include beatrice/02-molecules/09-slider-group/slider-group.html 
+    keyword = 'ital'
+    style = 'wide'
+    id = 'ital-text-vf-ital'
+    min = '0'
+    max = '1'
+    now = '1'
+    step = '1'
+  %}
+    <div class="code dark">
+    <code class="prettyprint">
+      .text { <br />
+      &nbsp;&nbsp;  font-variation-settings: 'ital' <span class="current-value"></span>; <br />
+      }
+    </code>
+</div>
+</div>
+
+<figcaption>
+  Featuring <a href="https://v-fonts.com/fonts/jost">Jost</a>
+</figcaption>
+

@@ -78,3 +78,7 @@
     content: "Custom Axis";
   }
 }
+
+.padded-bottom {
+  margin-bottom: calc( var(--body-text-spacer) * 1 );
+}

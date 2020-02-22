@@ -173,7 +173,17 @@ permalink: /about-variable-fonts/
     <div class="content-section--main">
       <p>The italic axis is fairly straightforward. In most cases it’s a boolean 0 or 1: off ( upright) or on—usually meaning slanted strokes and sometimes glyph replacements (the lowercase <span class="medium">a</span> and <span class="medium">g</span> often have different italic forms, for example).</p> 
       <p>It’s possible to have a range rather than strictly 0 or 1, but the off/on scenario is the most common.</p>  
-      <p>Unfortunately, while it is intended to map to <code>font-style: italic</code>, this is one of the areas where browsers have not fully resolved the implementation, so for now it’s necessary to use the lower-level syntax of <code>font-variation-settings</code>. This is a good case for using a CSS custom property so that you can alter only the italic/upright setting without having to redeclare the entire <code>font-variation-settings</code> string.</p>
+      <p>Unfortunately, while it is intended to map to <code>font-style: italic</code>, this is one of the areas where browsers have not fully resolved the implementation. If you have separate variable font files for italic and upright (such as when you are referencing them from the Google Fonts API), then you can use the standard <code>font-style: italic</code> syntax.</p>
+      
+    
+      <pre class="css"><code class="prettyprint">
+        .italic-text {
+          font-style: italic;
+        }
+      </code></pre>
+
+      <p>If, however, you have a single variable font that contains both italic and upright axes, it’s necessary to use the lower-level syntax of <code>font-variation-settings</code>. This is a good case for using a CSS custom property so that you can alter only the italic/upright setting without having to redeclare the entire <code>font-variation-settings</code> string.</p>
+
     
 <pre class="css"><code class="prettyprint">
   :root {
@@ -191,7 +201,11 @@ permalink: /about-variable-fonts/
         {% include beatrice/03-organisms/10-embeds/axis-component.html 
           axis = 'italic'
         %}
-    </div>
+
+        {% include beatrice/03-organisms/10-embeds/axis-component.html 
+          axis = 'italic-combined'
+        %}
+      </div>
     <div class="content-section--main">
       <h3 class="manicule">Why this matters</h3>
       <p>Having italics available alongside the upright forms is useful when combined with weight to handle everyday needs for body copy, requiring only 1 or 2 files instead of at least 4. Combined with the range of additional axes available in some typeface designs, there may be no need for other fonts at all.</p>

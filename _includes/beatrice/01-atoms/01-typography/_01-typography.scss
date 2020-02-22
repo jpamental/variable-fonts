@@ -265,7 +265,8 @@ td {
   }
   p + &, 
   ul + &,
-  aside + & {
+  aside + &,
+  pre + & {
     margin-top: var(--body-text-spacer);
   }
   h3 + &,
