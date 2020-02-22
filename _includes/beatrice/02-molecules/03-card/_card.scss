@@ -79,6 +79,10 @@ a.vf-mdc-card {
     width: 48px;
     height: 48px;
   }
+  
+  &.vf-mdc-card--flat {
+    box-shadow: none;
+  }
 }
 
 .vf-mdc-card__description {

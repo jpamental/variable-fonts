@@ -1,11 +1,11 @@
 {% comment %}
   include fields:
+  media: src url for media as image
   title: title text
-  heading_level: heading tag (defaults to h2)
-  subheading: subhead text
-  subheading_level: subheading tag (defaults to h3)
+  subtitle: subhead text
   body: body text
-
+  primary_link_url: the url for a linked card
+  shadow: boolean whether or not the card should appear elevated on interaction
 {% endcomment %}
 
 {% assign tag = 'div' %}
@@ -13,13 +13,15 @@
   {% assign tag = 'a' %}
 {% endif %}
 
-<{{ tag }} class="mdc-card vf-mdc-card mdc-card--outlined"
+<{{ tag }} class="mdc-card vf-mdc-card mdc-card--outlined {% if include.elevate == false %}vf-mdc-card--flat{% endif %}"
            {% if include.primary_link_url %}
              href="{{ include.primary_link_url }}"
            {% endif %}>
-  {% if include.media %}
-    <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('{{ site.baseurl }}{{ include.media }}');"></div>
-  {% endif %}
+    {% if include.media %}
+      <div class="mdc-card__media">
+        <img src="{{ site.baseurl }}{{ include.media }}" alt="" />
+      </div>
+    {% endif %}
   {% if include.body %}
     <div class="vf-mdc-card__body">
       {% if include.label and site.data.icons and site.data.icons[include.label] %}

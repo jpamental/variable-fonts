@@ -2,6 +2,17 @@
   --card-grid-gutter: 0.333rem;
 }
 
+.card-grid.card-grid--singlerow {
+  display: flex;
+  flex-wrap: wrap;
+  @media (min-width: $bp--medium) {
+    flex-wrap: nowrap;
+  }
+  .card-grid-cell {
+    width: 100%;
+  }
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
