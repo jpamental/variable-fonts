@@ -256,7 +256,7 @@ td {
     }
     @media (min-width: $bp--xxlarge) {
       --text-opsz: calc( var(--p-font-size-max) * var(--text-size-base) );
-      font-size: calc( var(--p-font-size-max) * 1em );
+      font-size: calc( var(--p-font-size-max) * 1rem );
     }    
   }
   @media (prefers-color-scheme:dark) {
@@ -277,9 +277,15 @@ td {
   }
 }
 
+ol,
 ul {
   margin: var(--body-text-spacer) 0 0 0;
+  ul &,
+  ol & {
+    margin-top: calc( var(--body-text-spacer) * 0.25 );
+  }
 }
+
 .lede {
   --p-font-size-min: 1.33;
   --p-font-size-max: 1.5;
