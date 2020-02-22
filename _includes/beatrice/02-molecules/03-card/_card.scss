@@ -72,14 +72,6 @@ a.vf-mdc-card {
     margin-top: 0;
   }
 
-  .mdc-card__action--icon {
-    margin-top: 0.25rem;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 100%;
-    width: 48px;
-    height: 48px;
-  }
-  
   &.vf-mdc-card--flat {
     box-shadow: none;
   }
@@ -92,8 +84,37 @@ a.vf-mdc-card {
 .vf-mdc-card__body {
   padding: calc( var(--body-text-spacer) * 1 );
   padding-bottom: calc( var(--body-text-spacer) * 1.2 );
-  .mdc-card__action--icon {
-    background: $color-gray-100;
-    border-radius: 100%;
-  }
+}
+
+.vf-card-icon {
+  margin-top: 0.25rem;
+  border-radius: 100%;
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+}
+
+
+.vf-card-icon--book,
+.vf-card-icon--book:not(:disabled) {
+  background-color: rgba($color-icon-book, 0.12);
+  color: $color-icon-book;
+}
+
+.vf-card-icon--video,
+.vf-card-icon--video:not(:disabled) {
+  background-color: rgba($color-icon-video, 0.12);
+  color: $color-icon-video;
+}
+
+.vf-card-icon--website,
+.vf-card-icon--website:not(:disabled) {
+  background-color: rgba($color-icon-website, 0.12);
+  color: $color-icon-website;
+}
+
+.vf-card-icon--article,
+.vf-card-icon--article:not(:disabled) {
+  background-color: rgba($color-icon-article, 0.12);
+  color: $color-icon-article;
 }
