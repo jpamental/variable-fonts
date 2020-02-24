@@ -2,15 +2,14 @@
 @import "@material/list/mdc-list";
 
 .mdc-drawer {
-  @include mdc-drawer-item-activated-text-ink-color(darken($color-blue, 20%));
-  @include mdc-drawer-activated-overlay-color($color-blue);
+  // Updated to pass WCAG 2.1 AAA contrast ratio
+  --mdc-theme-primary: #{$color-blue-100};
   background-color: #ffffff;
   background-color: var(--color-background);
   width: 75vw;
-  // @media (min-width: $bp--large) {
-  //   background-color: transparent;
-  //   width: auto;
-  // }
+  .mdc-drawer &__title {
+    color: var(--color-text);
+  }
   &__content {
     @media (min-width: $bp--large) {
       // This was already here, matches the fixed navbar height
@@ -29,12 +28,27 @@
   //     top: 0;
   //   }
   // }
-}
-
-.mdc-list-item {
-  &__text {
-    text-overflow: inherit;
-    white-space: normal;
-    overflow: hidden;
+  .mdc-list-item {
+    font-family: $sans-serif-novf;
+    @supports (font-variation-settings: normal) {
+      font-family: $sans-serif;
+    }
+    @media (prefers-color-scheme:dark) {
+      color: #ffffff;
+    }
+    &__text {
+      text-overflow: inherit;
+      white-space: normal;
+      overflow: hidden;
+    }
+  }
+  .mdc-list-item--activated {
+    // Updated to pass WCAG 2.1 AAA contrast ratio
+    color: $color-blue-900;
+    font-weight: 600;
+    @media (prefers-color-scheme:dark) {
+      color: $color-blue-100;
+    }
   }
 }
+
