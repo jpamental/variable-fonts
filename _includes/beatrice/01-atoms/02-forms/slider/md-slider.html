@@ -21,9 +21,12 @@
 
 
 
-<div class="mdc-slider mdc-slider--discrete" id="{{ include.id }}" tabindex="0" role="slider"
+<div class="mdc-slider" id="{{ include.id }}" tabindex="0" role="slider"
      aria-valuemin="{{ min }}" aria-valuemax="{{ max }}" aria-valuenow="{{ now }}"
-     aria-label="Select Value" data-step="{{ step }}">
+     aria-label="Select Value" data-step="{{ step }}"
+     {% if include.axis %}
+     data-axis="{{ include.axis }}"
+     {% endif %}>
   <div class="mdc-slider__track-container">
     <div class="mdc-slider__track"></div>
   </div>

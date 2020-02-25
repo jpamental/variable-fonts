@@ -1,3 +1,5 @@
+import { MDCSlider } from "@material/slider";
+
 let initHero = function(heroEls) {
   let handleClick = function(e) {
     e.preventDefault();
@@ -19,11 +21,19 @@ let initHero = function(heroEls) {
       // heroElStyle.innerHTML = style;
       // console.log("heroElStyle", heroElStyle);
       if (!result) {
-        document.querySelector('.hero-animation').style.setProperty(`--text-vf-${{ axisName }}-min`, 0);
-        document.querySelector('.hero-animation').style.setProperty(`--text-vf-${{ axisName }}-min`, 0);
+        document
+          .querySelector(".hero-animation")
+          .style.setProperty(`--text-vf-${{ axisName }}-min`, 0);
+        document
+          .querySelector(".hero-animation")
+          .style.setProperty(`--text-vf-${{ axisName }}-min`, 0);
       } else {
-        document.querySelector('.hero-animation').style.removeProperty(`--text-vf-${{ axisName }}-min`);
-        document.querySelector('.hero-animation').style.removeProperty(`--text-vf-${{ axisName }}-max`);
+        document
+          .querySelector(".hero-animation")
+          .style.removeProperty(`--text-vf-${{ axisName }}-min`);
+        document
+          .querySelector(".hero-animation")
+          .style.removeProperty(`--text-vf-${{ axisName }}-max`);
       }
     }
     if (button) {
@@ -51,7 +61,7 @@ let initHero = function(heroEls) {
   //       .join("\n\n")}
   //   }
   //   `;
-  // 
+  //
   //   return style;
   // };
 
@@ -59,6 +69,8 @@ let initHero = function(heroEls) {
     let heroEl = heroEls[i];
     let heroElButtons = heroEl.children[0].children;
     let heroElStyle = heroEl.children[1];
+    let heroElControlLabels = heroEl.children[2].children;
+    let heroAnimationEl = heroEl.children[3]
     let heroAxes = [];
 
     for (let j = 0; j < heroElButtons.length; j++) {
@@ -73,6 +85,18 @@ let initHero = function(heroEls) {
           heroElIndex: i
         })
       );
+    }
+
+    for (let j = 0; j < heroElControlLabels.length; j++) {
+      let slider = heroElControlLabels[j].children[1];
+      let mdcSlider = new MDCSlider(slider);
+      let axis = slider.getAttribute("data-axis")
+      let property = `--text-vf-${axis}-min`
+
+      mdcSlider.listen("MDCSlider:input", (e) => {
+        console.log(property, mdcSlider.value)
+        return heroAnimationEl.style.setProperty(property, mdcSlider.value);
+      });
     }
 
     // let style = createAnimationCss(heroAxes);
