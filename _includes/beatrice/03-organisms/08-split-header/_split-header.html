@@ -13,7 +13,7 @@
       <div class="split-header--breakout">
         <h1>{{ include.title | default: page.title | default: "" }}</h1>
         {% if include.subtitle %}
-          <h2 class="subtitle">A new kind of font</h2>
+          <h2 class="subtitle">{{ include.subtitle }}</h2>
         {% endif %}
       </div>
       {{ include.content }}
