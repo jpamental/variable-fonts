@@ -4,6 +4,63 @@
   {% assign text = 'Variable Typography' %}
 {% endif %}
 
+{% capture fvsMinValues %}
+  {% for axis in include.axes %}
+    {% capture variableName %}--text-vf-{{ axis.name }}-min{% endcapture %}
+    "{{ axis.name }}" var({{ variableName }})
+    {% if forloop.last %};{% else %},{% endif %}
+  {% endfor %}
+{% endcapture %}
+
+{% capture cssAnimation %}
+.hero-animation {
+  {% for axis in include.axes %}
+    --text-vf-{{ axis.name }}-min: {{ axis.default | default: axis.min }};
+    --text-vf-{{ axis.name }}-max: {{ axis.default | default: axis.max }};
+  {% endfor %}
+  
+  color: green;
+  font-variation-settings: {{ fvsMinValues }};
+
+}
+
+@keyframes breath {
+  0% {
+    color: blue;
+    font-variation-settings: {{ fvsMinValues }};
+  }
+
+  100% {
+    color: orange;
+    font-variation-settings:
+      {% for axis in include.axes %}
+        {% capture variableName %}--text-vf-{{ axis.name }}-max{% endcapture %}
+        "{{ axis.name }}" var({{ variableName }})
+        {% if forloop.last %};{% else %},{% endif %}
+      {% endfor %}
+  }
+{% endcapture %}
+
+<form class="js-hero"
+      {% for axis in include.axes %}
+        data-{{ axis.name }}-active="true"
+      {% endfor %}>
+  <div class="js-hero-buttons">
+    {% for axis in include.axes %}
+      {% capture optionId %}{{ axis.name }}_{{ forloop.index }}{% endcapture %}
+      <button id="{{ optionId }}"
+              data-axis="{{ axis.name }}"
+              class="js-hero-button mdc-button mdc-button--raised">{{ axis.label }}</button>
+    {% endfor %}
+  </div>
+  <pre class="js-hero-style">
+    {{ cssAnimation }}
+  </pre>
+  <style class="js-hero-style">
+    {{ cssAnimation }}
+  </style>
+</form>
+
 <div class="hero-animation pause" id="hero_animation">
   <h1 class="hero-animation__text">{{ text }}</h1>
   <div class="hero-animation__controls">

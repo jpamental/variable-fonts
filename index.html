@@ -15,13 +15,39 @@ cards:
     url: /variable-font-resources
     description: Links to articles, videos, demos, and sources
     media: /assets/img/home-card-resources.svg
+heroAxes:
+  - label: Weight
+    name: wght
+    min: 100
+    max: 1000
+  - label: Casual
+    name: CASL
+    min: 0
+    max: 1
+  - label: Italic
+    name: ital
+    min: 0
+    max: 1
+    # Set a default to avoid animating
+    default: 0
+  - label: Monospaced
+    name: MONO
+    min: 0
+    max: 1
+    default: 1
+  - label: Slant
+    name: slnt
+    min: 0
+    max: 1
+    default: 0
 ---
 
 <div class="home-grid">
   <div class="home-grid__hero mdc-top-app-bar--fixed-adjust js-top-app-bar--blur">
       {% include beatrice/02-molecules/10-hero-animation/hero-animation.html 
         text = 'Invariably Interesting'
-      %} 
+        axes = page.heroAxes
+      %}
       <p class="home-grid__hero__more">Learn more about <a href="https://recursive.design" target="_blank" rel="noopener">Recursive</a>, a 5-axis variable font</p>   
   </div>
   <div class="home-grid__title">
