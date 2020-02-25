@@ -15,14 +15,14 @@ permalink: /implementing-variable-fonts/
   <li><a href="#gf-ui">Via the new Google Fonts user interface</a></li>
   {% endcomment %}
 </ul>
-<p>You’ll also find details about:</p>
+<p>On this page, you’ll find details about:</p>
 <ul>
   <li><a href="#prog-enhance">Production use and ensuring legacy browser support</a></li>
   <li><a href="#performance">Performance practices for better user experience</a></li>
 </ul>
 <p>Looking for more info on how variable fonts work and how to design with them? Start with <a href="{{ site.baseurl }}/about-variable-fonts/">Designing with variable fonts</a>.</p>
 <blockquote>
-  <p>Variable fonts are well supported & ready to use in production</p>
+  <p>Variable fonts are well supported and ready to use in production</p>
 </blockquote>
 {% endcapture %}
 
@@ -47,7 +47,7 @@ permalink: /implementing-variable-fonts/
 
   <div class="content-section--grid padded-bottom">
     <div class="content-section--main">
-      <p>After selecting a variable font to use via the API, the first thing you need to pay attention to is the changes in syntax from v1 to v2. Requesting Yanone Kaffeesatz as a variable font with a weight axis range of 200–700 looks like this:</p>
+      <p>After selecting a variable font to use via the API, pay special attention to the changes in syntax from v1 to v2. Requesting Yanone Kaffeesatz as a variable font with a weight axis range of 200–700 looks like this:</p>
 
       <p><code>https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700</code></p>
 
@@ -55,7 +55,7 @@ permalink: /implementing-variable-fonts/
 
       <p><code>css2?family=[font name]:[axis keyword]@[range (low)]..[range (high)]</code></p>
 
-      <p>First, note that while the address endpoint is <code>css2</code>, specifying the font name is relatively unchanged from the previous version of the API. It’s after the colon that things change more dramatically. This is where the axis (or axes) are listed, followed by an “@” symbol, followed by values indicating the ranges requested. The API allows for individual values to be specified, but here the request uses the ‘[range (low)]..[range (high)]’ syntax to request the full weight range of 200 to 700. If you only require the weight to cover part of the available range, you can adjust the values accordingly and end up with a slightly smaller download.</p>
+      <p>First, note that while the address endpoint is <code>css2</code>, specifying the font name is relatively unchanged from the previous version of the API. It’s after the colon that things change more dramatically. This is where the axis or axes are listed, followed by an @ symbol, followed by values indicating the ranges requested. The API allows for individual values to be specified, but here the request uses the “[range (low)]..[range (high)]” syntax to request the full weight range of 200 to 700. If you only require the weight to cover part of the available range, you can adjust the values accordingly and end up with a slightly smaller download.</p>
     </div>
   </div>
   <div class="content-section--grid">
@@ -64,10 +64,10 @@ permalink: /implementing-variable-fonts/
 
       <p>Italics can be requested separately with the corresponding weight axis range, or as a combination (if available) of both upright and italic in the full requested range.</p>
     
-      <p>Just italics with a weight range of 200-900</p>
+      <p>Just italics with a weight range of 200-900:</p>
       <p><code>https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@1,200..900</code></p>
     
-      <p>Or both upright and italics in the same range</p>
+      <p>Or both upright and italics in the same range:</p>
       <p><code>https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900</code></p>
     
       <p>There are detailed notes on the syntax <a href="https://developers.google.com/fonts/docs/css2#forming_api_urls">in the documentation</a>, but here are a couple of points to remember:</p>
@@ -93,16 +93,16 @@ permalink: /implementing-variable-fonts/
 
   <p>This version of the API can serve both static and variable fonts—and indeed static instances of variable fonts. In other words, the same URL structure can retrieve the static fonts, a variable font range, or a variable font instance at a single specific value. Although in some cases it may be useful to request, say, only the 575 weight of a given typeface, the real benefits of using variable fonts often lie in using more of the available range, which is why that’s the focus of most of the demos on this site.</p>
 
-  <p>Crimson Pro, static, normal weight</p>
+  <p>Crimson Pro, static, normal weight:</p>
   <p><code>https://fonts.googleapis.com/css2?family=Crimson+Pro:400</code></p>
 
   <p>Crimson Pro, variable, specific weight:</p>
   <p><code>https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@450</code></p>
 
-  <p>Crimson Pro, variable, full weight range</p>
+  <p>Crimson Pro, variable, full weight range:</p>
   <p><code>https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200..900</code></p>
 
-  <p>The first example above is closest to the syntax previously supported in the API. The second example includes the wght keyword with a specific weight listed after the “@” sign, indicating a static instance from the variable font. The third example is a request for the full weight range of the variable font.</p>
+  <p>The first example above is closest to the syntax previously supported in the API. The second example includes the <code>wght</code> keyword with a specific weight listed after the @ sign, indicating a static instance from the variable font. The third example is a request for the full weight range of the variable font.</p>
 
 </section>
 <section class="content-section" id="self-hosting">
@@ -115,9 +115,9 @@ permalink: /implementing-variable-fonts/
   <p>Hosting variable fonts on your site is not much different than hosting standard ones, but there are a few key parts that must be included in order for them to work best. While there have been several iterations of the specification, these examples will show the most current and complete implementation to ensure the broadest compatibility.</p>
   <p>The code example shows how the <code>@font-face</code> rules would look in your CSS.</p>
 
-  <p>So the first part you’ll notice is the source. Because the <a href="https://www.w3.org/TR/css-fonts-4/#font-face-src-requirement-types">CSS specification is evolving</a>, including both format hints ensures that it will work now and in the future once the full specification is supported in browsers. The first syntax (<code>woff2 supports variations</code>) is the more modern, as there will also be color fonts so there needs to be a way to indicate combinations of features. The second (<code>woff2-variations</code>) is the currently-supported syntax in all supporting browsers. As support evolves, the newer syntax will take over without compromising support for older browsers.</p>
+  <p>So the first part you’ll notice is the source. Because the <a href="https://www.w3.org/TR/css-fonts-4/#font-face-src-requirement-types">CSS specification is evolving</a>, including both format hints guarantees it will work now and in the future, once the full specification is supported in browsers. The first syntax (<code>woff2 supports variations</code>) is the more modern of the two, since there will also be color fonts, so there needs to be a way to indicate combinations of features. The second (<code>woff2-variations</code>) is the currently supported syntax in all supporting browsers. As support evolves, the newer syntax will take over without compromising support for older browsers.</p>
 
-  <p>Next you’ll notice that there are lines that show ranges for font-stretch, font-style, and font-weight. These help inform the browser how the font should behave and provides some indication about what CSS values are valid for that font.</p>
+      <p>Next, you’ll notice lines that show ranges for <code>font-stretch</code>, <code>font-style</code>, and <code>font-weight</code>. These help inform the browser as to how the font should behave and provide some indication about what CSS values are valid for that font.</p>
     </div>
     <div class="content-section--aside sticky">
 <pre class="css"><code class="prettyprint">
@@ -137,12 +137,12 @@ permalink: /implementing-variable-fonts/
     </div>
   </div>
   <h3>Font-stretch</h3>
-  <p>This is supplied as two percentage values: first low, then high. There will be some fonts that have ranges that don’t conform to the specification (which calls for 100% to be the ‘normal’ width), but even if the range is 3-5 or 60-220, they still have to be expressed as percentages here.</p>
+  <p>This is supplied as two percentage values: first low, then high. There will be some fonts that have ranges that don’t conform to the specification (which calls for 100% to be the “normal” width), but even if the range is 3-5 or 60-220, they still have to be expressed as percentages here.</p>
   <p><code>font-stretch: [low]% [high]%;</code></p>
 
   <h3>Font-style</h3>
 
-  <p>At this time, for variable fonts this should only be specified in two scenarios: if you are loading a font file that only contains italics (such as when loading upright and italic font files and grouping them with the same family name), or if your variable font contains a slant axis but no italic one.</p>
+  <p>Currently, <code>font-style</code> should only be specified for variable fonts in two scenarios: if you are loading a font file that only contains italics (such as when loading upright and italic font files and grouping them with the same family name), or if your variable font contains a slant axis but no italic one.</p>
   <p>If you are loading an italic-only font file:</p>
   <p><code>font-style: italic;</code></p>
 
@@ -150,19 +150,19 @@ permalink: /implementing-variable-fonts/
 
   <p><code>font-style: oblique 0deg 10deg;</code></p>
 
-  <p><strong>Note:</strong> Due to some inconsistencies with how browsers handle variable font files that contain both italic and upright variants (and also ones that contain both italic and slant axes), in these scenarios it’s best to omit the font-style line completely.</p>
+  <p><strong>Note:</strong> Due to some inconsistencies with how browsers handle variable font files that contain both italic and upright variants (and also files that contain both italic and slant axes), in these scenarios it’s best to omit the <code>font-style</code> line completely.</p>
 
   <h3>Font-weight</h3>
   <p>This is also supplied as low and high values:</p>
   <p><code>font-weight: 100 1000;</code></p>
 
   <h3>Font-display</h3>
-  <p>While <code>font-display</code> is not required, it is good practice to supply in order to get content on screen as fast as possible.</p>
+  <p>While <code>font-display</code> is not required, it is good practice to include it to get content on screen as fast as possible.</p>
 
   <h3 class="manicule">Why this matters</h3 class="manicule">
-  <p>It’s important to supply these values so the browser can make more intelligent decisions about how to render the font when the CSS values fall outside the range or are omitted entirely. Should the low-end value for <code>font-weight</code> be 300 but the CSS calls for <code>font-weight: 100</code>, the browser will know to clamp to the lowest valid number (in this case 300), avoiding a synthesized result.</p>
+  <p>It’s important to supply these values so the browser can make more intelligent decisions about how to render the font when the CSS values fall outside the range or are omitted entirely. If the low-end value for <code>font-weight</code> is 300 but the CSS calls for <code>font-weight: 100</code>, the browser will know to clamp to the lowest valid number (in this case 300), avoiding a synthesized result.</p>
 
-  <p>Once you have the <code>@font-face</code> rules declared, you can go about specifying the font-family and attributes just as you would if using the API or any other method of loading the fonts.</p>
+  <p>Once you have the <code>@font-face</code> rules declared, you can go about specifying the <code>font-family</code> and attributes just as you would if using the API or any other method of loading the fonts.</p>
 
 </section>
 {% comment %}
@@ -184,7 +184,7 @@ permalink: /implementing-variable-fonts/
 
   <div class="content-section--grid">
     <div class="content-section--main">
-      <p>To support the broadest set of browsers and devices, it’s important to set up your CSS with standard values first, and the variable styles within an <code>@supports</code> block. If you’re using the Google Fonts API, good news—the API is smart enough to <a href="https://developers.google.com/fonts/docs/css2#legacy_browser_support">supply the static font files if the browser doesn’t support variable ones</a>, so all you have to do is manage the CSS side of the equation. If you’re hosting the fonts yourself, you just need to add a reference to the variable font family inside the @supports block.</p>
+      <p>To support the broadest set of browsers and devices, it’s important to set up your CSS with standard values first, and the variable styles within an <code>@supports</code> block. If you’re using the Google Fonts API, good news—the API is smart enough to <a href="https://developers.google.com/fonts/docs/css2#legacy_browser_support">supply the static font files if the browser doesn’t support variable ones</a>, so all you have to do is manage the CSS side of the equation. If you’re hosting the fonts yourself, you just need to add a reference to the variable font family inside the <code>@supports</code> block.</p>
       <p>Adding in the <code>font-synthesis: none</code> declaration prevents browsers like Safari or Firefox from artificially bolding or italicizing the font, which can lead to unexpected and less-than-ideal results.
       </p>
     </div>
@@ -216,17 +216,17 @@ permalink: /implementing-variable-fonts/
 
   <h2>Performance</h2>
 
-  <p>Whether serving the fonts yourself or using the Google Fonts service, there are steps you can take to guarantee the best possible performance on your site. It helps to understand a bit about the loading and rendering process. The basic flow goes something like this:</p>
+  <p>Whether hosting the fonts yourself or using the Google Fonts service, there are steps you can take to guarantee the best possible performance on your site. It helps to understand a bit about the loading and rendering process. The basic flow goes something like this:</p>
 
   <ol>
     <li>Browser requests a page</li>
-    <li>Browser downloads HTML & linked CSS</li>
+    <li>Browser downloads HTML and linked CSS</li>
     <li>Browser parses HTML and CSS</li>
     <li>Browser initiates download of any linked CSS assets (like fonts)</li>
     <li>Browser now waits up to 3 seconds before starting to render the page while waiting for web fonts to download
       <ul>
         <li>If the fonts arrive within 3 seconds, the page is rendered as it should be</li>
-        <li>If the fonts have not fully loaded, the browser renders the page using fallback system fonts, re-rendering the page once the web fonts arrive</li>
+        <li>If the fonts have not fully loaded, the browser renders the page using fallback system fonts, rerendering the page once the web fonts arrive</li>
       </ul>
     </li>
   </ol>
@@ -235,7 +235,7 @@ permalink: /implementing-variable-fonts/
 
   <p>Given that the purpose of any site is generally to deliver content, FOUT should be preferred, and indeed hastened if possible. Introducing a delay of at least 3 seconds greatly increases the chances of users abandoning the process altogether and going elsewhere. The W3C actually introduced the ability to tell the browser how to behave in this scenario, and the Google Fonts service and API now support it too.</p> 
 
-  <p>This comes in the form of an attribute called <code>font-display</code>. By providing a value of <code>swap</code>, we tell the browser to render the page right away with fallback fonts, and then redraw the page once the fonts have loaded. This is only part of the solution, though. The next step is to include a web font loader, which lets you style the fallback fonts during the loading process. This helps minimize any reflow of content once the browser rerenders the page after the web fonts finish loading. It requires some Javascript, but it’s a really worthwhile enhancement of the user experience.</p>
+  <p>This comes in the form of an attribute called <code>font-display</code>. By providing a value of <code>swap</code>, we tell the browser to render the page right away with fallback fonts, and then redraw the page once the fonts have loaded. This is only part of the solution, though. The next step is to include a web font loader, which lets you style the fallback fonts during the loading process. This helps minimize any reflow of content once the browser rerenders the page after the web fonts finish loading. It requires some JavaScript, but it’s a really worthwhile enhancement of the user experience.</p>
 
   <p>The first part of this solution is easy: simply append <code>&display=swap</code> to the API request. One of the requests above for Crimson Pro would then look like this:</p>
 
@@ -243,7 +243,7 @@ permalink: /implementing-variable-fonts/
 
   <p>You can learn more about what <code>font-display</code> does and what options it affords on the <a href="https://www.w3.org/TR/css-fonts-4/#font-display-desc">W3C specifications page</a> and on the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display">MDN Web Docs</a> site.</p>
 
-  <p>To take your solution further, take a look at Bram Stein’s <a href="https://fontfaceobserver.com/">FontFaceObserver from Bram Stein</a>, or read more about font-loading performance in general in <a href="https://www.zachleat.com/web/css-tricks-web-fonts/">this post by Zach Leatherman</a>.</p>
+  <p>To take your solution further, take a look at Bram Stein’s <a href="https://fontfaceobserver.com/">FontFaceObserver</a>, or read more about font-loading performance in general in <a href="https://www.zachleat.com/web/css-tricks-web-fonts/">this post by Zach Leatherman</a>.</p>
 
 </section>
 <section class="content-section">
