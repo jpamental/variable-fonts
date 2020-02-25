@@ -144,8 +144,14 @@ body {
   margin: 0 auto;
 }
 
+.range__axis code .current-value,
+.range__axis code .current-value2 {
+  color: #eee;
+  color: var(--color-prettify-pun);
+}
+
 .range__axis code .current-value::before {
-  color: #550;
+  color: #eee;
   color: var(--color-prettify-pun);
   counter-reset: tag var(--current-value);
   content: counter(tag);
@@ -153,7 +159,7 @@ body {
 }
 
 .range__axis code .current-value2::before {
-  color: #550;
+  color: #eee;
   color: var(--color-prettify-pun);
   counter-reset: tag var(--current-value2);
   content: counter(tag);
