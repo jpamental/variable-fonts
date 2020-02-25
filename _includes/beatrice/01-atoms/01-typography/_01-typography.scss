@@ -40,6 +40,9 @@
   --color-prettify-pun: #{$color-gray-900};
   --color-prettify-str: #{$color-blue-900};
   --color-prettify-typ: #{$color-blue-900};
+  --header-background-gray-light: #{$header-background-gray-light};
+  --header-background-gray-lighter: #{$header-background-gray-lighter};
+  --header-background-blue-lighter: #{$header-background-blue-lighter};
   @media (prefers-color-scheme:dark) {
     --color-background: #{$color-gray-900};
     --color-text: #ffffff;
@@ -63,7 +66,10 @@
     --color-prettify-pun: #{$color-gray-200};
     --color-prettify-str: #{$color-blue-100};
     --color-prettify-typ: #{$color-blue-100};
-    .aside {
+    --header-background-gray-light: #{rgba($header-background-gray-light,.15)};
+    --header-background-gray-lighter: #{rgba($header-background-gray-lighter,.15)};
+    --header-background-blue-lighter: #{rgba($color-blue-900,.15)};
+      .aside {
       --color-text-highlight: #{$color-gray-700};
     }
     .range__axis.range__axis--width {
@@ -124,7 +130,10 @@
   --color-prettify-pun: #{$color-gray-200};
   --color-prettify-str: #{$color-blue-100};
   --color-prettify-typ: #{$color-blue-100};
-  .aside {
+  --header-background-gray-light: #{rgba($header-background-gray-light,.25)};
+  --header-background-gray-lighter: #{rgba($header-background-gray-lighter,.25)};
+  --header-background-blue-lighter: #{rgba($header-background-blue-lighter,.25)};
+.aside {
     --color-text-highlight: #{$color-gray-700};
   }
   .range__axis.range__axis--width {
