@@ -100,6 +100,7 @@
   font-weight: 300 1000; /* default: 400 */
   font-style: oblique 0deg 15deg;
   src: url('../fonts/recursive-MONO_CASL_wght_slnt_ital--full_gsub--2019_12_21-21_07.woff2') format('woff2 supports variations'), url('../fonts/recursive-MONO_CASL_wght_slnt_ital--full_gsub--2019_12_21-21_07.woff2') format('woff2-variations');
+  unicode-range: U+0020-007F, U+00A0-00FF, U+0100-017F;
 }
 
 
@@ -119,4 +120,5 @@
   src: url('../fonts/RobotoExtremo-VF-slnt-alpha.woff2') format('woff2 supports variations'), url('../fonts/RobotoExtremo-VF-slnt-alpha.woff2') format('woff2-variations');
   /* opsz: 8-144, 12 default */
   /* GRAD: -1 - 1, 0 default */
+  unicode-range: U+0020-007F, U+00A0-00FF, U+0100-017F;
 }
