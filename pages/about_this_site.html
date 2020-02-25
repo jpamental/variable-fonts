@@ -29,7 +29,21 @@ permalink: /about-this-site/
 
   <h3>Grade</h3>
     
-<pre class="css aside--right"><code class="prettyprint">
+<p>The <a href="{{ site.baseurl }}/about-variable-fonts/#grad">grade axis</a> is really useful on the web when considering light modes and UI animation. Varying the weight of the text without altering the overall spacing, grades give us the ability to make fine adjustments for better legibility. They also facilitate additional kinds of animation on UI elements like buttons. Increasing or decreasing the visual weight of a text label based on focus state or user interaction gives us another powerful tool to guide users through a set of actions or flows. </p>
+
+<p>This site supports a “dark mode” that’s detected based on user device settings (when viewed in a browser that <a href="https://caniuse.com/#feat=prefers-color-scheme">supports the <code>prefers-color-scheme</code> media query</a>). When the contrast inverts in dark mode, the <span class="medium">grade</span> of the body text increases slightly, as does the <code>letter-spacing</code>. Since text can look a little thinner when shown light-on-dark, making the text a bit heavier and giving it more space increases legibility in that scenario. Being able to make these fine adjustments without loading additional files helps preserve the quality of the overall design and reading experience in ways never before possible on the web.</p>
+ 
+</section>
+
+<section class="content-section" id="accessibility">
+  <hr />
+  <h2>Accessibility</h2>
+  <div class="content-section--grid">
+    <div class="content-section--main">       
+      <p>Far from being a fad, supporting light/dark mode can be a huge boon for readers with any kind of light sensitivity or predisposition to migraines. In this sense, being able to support both modes of viewing the site is tremendously beneficial. The same principles can be put into practice in offering a higher-contrast mode. This helps address not only readers with low vision, but also those in lower-light environments. In both cases, increasing the weight or grade of text will improve legibility along a wider spectrum of light levels and vision acuity. Estimates range from 60% to as high as 75% of all adults require some sort of vision correction, so supporting this kind of functionality likely benefits far more visitors to a given website than the amount of attention paid to many other technical concerns. We’ve worked hard on this site to maintain appropriate contrast ratios in both light and dark modes of viewing.</p>
+    </div>
+    <div class="content-section--aside">
+<pre class="css"><code class="prettyprint">
   :root {
     --p-vf-GRAD: 0;
   }
@@ -44,17 +58,8 @@ permalink: /about-this-site/
     }
   }
 </code></pre>
-     
-<p>The <a href="{{ site.baseurl }}/about-variable-fonts/#grad">grade axis</a> is really useful on the web when considering light modes and UI animation. Varying the weight of the text without altering the overall spacing, grades give us the ability to make fine adjustments for better legibility. They also facilitate additional kinds of animation on UI elements like buttons. Increasing or decreasing the visual weight of a text label based on focus state or user interaction gives us another powerful tool to guide users through a set of actions or flows. </p>
-
-<p>This site supports a “dark mode” that’s detected based on user device settings (when viewed in a browser that <a href="https://caniuse.com/#feat=prefers-color-scheme">supports the <code>prefers-color-scheme</code> media query</a>). When the contrast inverts in dark mode, the <span class="medium">grade</span> of the body text increases slightly, as does the <code>letter-spacing</code>. Since text can look a little thinner when shown light-on-dark, making the text a bit heavier and giving it more space increases legibility in that scenario. Being able to make these fine adjustments without loading additional files helps preserve the quality of the overall design and reading experience in ways never before possible on the web.</p>
- 
-</section>
-
-<section class="content-section" id="accessibility">
-  <hr />
-  <h2>Accessibility</h2>
-  <p>Far from being a fad, supporting light/dark mode can be a huge boon for readers with any kind of light sensitivity or predisposition to migraines. In this sense, being able to support both modes of viewing the site is tremendously beneficial. The same principles can be put into practice in offering a higher-contrast mode. This helps address not only readers with low vision, but also those in lower-light environments. In both cases, increasing the weight or grade of text will improve legibility along a wider spectrum of light levels and vision acuity. Estimates range from 60% to as high as 75% of all adults require some sort of vision correction, so supporting this kind of functionality likely benefits far more visitors to a given website than the amount of attention paid to many other technical concerns. We’ve worked hard on this site to maintain appropriate contrast ratios in both light and dark modes of viewing.</p>
+    </div>
+  </div>      
 </section>
 <section class="content-section" id="reading">
   <hr />
