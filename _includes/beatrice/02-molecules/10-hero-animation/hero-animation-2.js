@@ -8,6 +8,12 @@ let initHero = function(heroEls) {
     let heroAnimationEl = heroMain.children[0];
     let heroElControlLabels = heroMain.children[1].children;
 
+    let handleSliderInput = function(e) {
+      let axis = this.axis
+      let property = `--text-vf-${axis}-min`;
+      return heroAnimationEl.style.setProperty(property, e.detail.value);
+    }
+
     let handleClick = function(e) {
       e.preventDefault();
       let axisName = this.axis;
@@ -46,14 +52,11 @@ let initHero = function(heroEls) {
       let button = heroElButtons[j];
       let axis = button.getAttribute("data-axis");
 
-      console.log(slider)
-
       let mdcSlider = new MDCSlider(slider);
-      let property = `--text-vf-${axis}-min`;
 
-      mdcSlider.listen("MDCSlider:input", e => {
-        return heroAnimationEl.style.setProperty(property, mdcSlider.value);
-      });
+      mdcSlider.listen("MDCSlider:input", handleSliderInput.bind({
+        axis: axis
+      }));
 
       button.addEventListener(
         "click",
