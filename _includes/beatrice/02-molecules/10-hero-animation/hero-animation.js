@@ -63,16 +63,16 @@ function toggleEvent() {
     controls.classList.add('play');
     controls.classList.remove('pause');
     controlsIcon.innerHTML = 'pause';
-    var delayInMilliseconds = 15000; 
-    
-    setTimeout(function() {
-        container.classList.remove('play');
-        container.classList.add('pause');
-        controls.classList.remove('play');
-        controls.classList.add('pause');
-        controlsIcon.innerHTML = 'play_arrow';
-
-    }, delayInMilliseconds);
+    // var delayInMilliseconds = 15000; 
+    // 
+    // setTimeout(function() {
+    //     container.classList.remove('play');
+    //     container.classList.add('pause');
+    //     controls.classList.remove('play');
+    //     controls.classList.add('pause');
+    //     controlsIcon.innerHTML = 'play_arrow';
+    // 
+    // }, delayInMilliseconds);
   }
 };
 

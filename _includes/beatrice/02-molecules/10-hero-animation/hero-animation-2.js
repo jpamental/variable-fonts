@@ -1,107 +1,75 @@
 import { MDCSlider } from "@material/slider";
 
+let getProperty = function(axis) {
+  return;
+};
+
 let initHero = function(heroEls) {
-  let handleClick = function(e) {
-    e.preventDefault();
-    let axisName = this.axis;
-    let heroElIndex = this.heroElIndex || 0;
-    let button = e.target;
-    let heroEl = heroEls[heroElIndex];
-
-    let attrName = "data-" + axisName + "-active";
-    let attrValue =
-      heroEls[heroElIndex].getAttribute(attrName) === "false" ? false : true;
-    let result = !attrValue;
-
-    if (heroEl) {
-      heroEl.setAttribute(attrName, result);
-      let heroElStyle = heroEl.children[1];
-      // let style = createAnimationCss(["wght"]);
-      // console.log("style", style);
-      // heroElStyle.innerHTML = style;
-      // console.log("heroElStyle", heroElStyle);
-      if (!result) {
-        document
-          .querySelector(".hero-animation")
-          .style.setProperty(`--text-vf-${{ axisName }}-min`, 0);
-        document
-          .querySelector(".hero-animation")
-          .style.setProperty(`--text-vf-${{ axisName }}-min`, 0);
-      } else {
-        document
-          .querySelector(".hero-animation")
-          .style.removeProperty(`--text-vf-${{ axisName }}-min`);
-        document
-          .querySelector(".hero-animation")
-          .style.removeProperty(`--text-vf-${{ axisName }}-max`);
-      }
-    }
-    if (button) {
-      button.setAttribute("data-active", result);
-      button.innerHTML = result ? "On" : "Off";
-    }
-  };
-
-  // let createAnimationCss = function(heroAxes) {
-  //   let keyframes = [{ name: "min", value: 0 }, { name: "max", value: 100 }];
-  //   let style = `
-  //   @keyframes breath {
-  //     ${keyframes
-  //       .map(function(obj) {
-  //         return `${obj.value}% {
-  //         font-weight: var(--text-vf-wght-${obj.name});
-  //         font-variation-settings:
-  //           ${heroAxes
-  //             .map(function(axisName) {
-  //               return `'${axisName}' var(--text-vf-${axisName}-${obj.name})`;
-  //             })
-  //             .join(", ")};
-  //       }`;
-  //       })
-  //       .join("\n\n")}
-  //   }
-  //   `;
-  //
-  //   return style;
-  // };
-
   for (let i = 0; i < heroEls.length; i++) {
     let heroEl = heroEls[i];
     let heroElButtons = heroEl.children[0].children;
     let heroElStyle = heroEl.children[1];
     let heroElControlLabels = heroEl.children[2].children;
-    let heroAnimationEl = heroEl.children[3]
-    let heroAxes = [];
+    let heroAnimationEl = heroEl.children[3];
 
-    for (let j = 0; j < heroElButtons.length; j++) {
-      let button = heroElButtons[j];
-      // console.log('button', button)
-      let axis = button.getAttribute("data-axis");
-      heroAxes.push(axis);
-      let active = button.addEventListener(
-        "click",
-        handleClick.bind({
-          axis: axis,
-          heroElIndex: i
-        })
-      );
-    }
+    let handleClick = function(e) {
+      e.preventDefault();
+      let axisName = this.axis;
+      let slider = this.slider;
+      let button = e.target;
+
+      let attrName = "data-" + axisName + "-active";
+      let attrValue = heroEl.getAttribute(attrName) === "false" ? false : true;
+      let isActive = !attrValue;
+
+      if (heroEl) {
+        heroEl.setAttribute(attrName, isActive);
+        let heroElStyle = heroEl.children[1];
+        // let style = createAnimationCss(["wght"]);
+        // console.log("style", style);
+        // heroElStyle.innerHTML = style;
+        // console.log("heroElStyle", heroElStyle);
+        console.log("active", isActive);
+        if (!isActive) {
+          heroAnimationEl.style.setProperty(
+            `--text-vf-${axisName}-min`,
+            slider.min
+          );
+          heroAnimationEl.style.setProperty(
+            `--text-vf-${axisName}-max`,
+            slider.min
+          );
+        } else {
+          heroAnimationEl.style.removeProperty(`--text-vf-${axisName}-min`, 0);
+          heroAnimationEl.style.removeProperty(`--text-vf-${axisName}-max`, 0);
+        }
+      }
+      if (button) {
+        button.setAttribute("data-active", isActive);
+        button.innerHTML = isActive ? "On" : "Off";
+      }
+    };
 
     for (let j = 0; j < heroElControlLabels.length; j++) {
       let slider = heroElControlLabels[j].children[1];
-      let mdcSlider = new MDCSlider(slider);
-      let axis = slider.getAttribute("data-axis")
-      let property = `--text-vf-${axis}-min`
+      let button = heroElButtons[j];
+      let axis = button.getAttribute("data-axis");
 
-      mdcSlider.listen("MDCSlider:input", (e) => {
-        console.log(property, mdcSlider.value)
+      let mdcSlider = new MDCSlider(slider);
+      let property = `--text-vf-${axis}-min`;
+
+      mdcSlider.listen("MDCSlider:input", e => {
         return heroAnimationEl.style.setProperty(property, mdcSlider.value);
       });
-    }
 
-    // let style = createAnimationCss(heroAxes);
-    // heroElStyle.innerHTML = style;
-    // console.log(style);
+      button.addEventListener(
+        "click",
+        handleClick.bind({
+          axis: axis,
+          slider: mdcSlider
+        })
+      );
+    }
   }
 };
 
