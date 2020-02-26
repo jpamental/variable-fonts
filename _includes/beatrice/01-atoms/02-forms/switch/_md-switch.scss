@@ -1,0 +1,7 @@
+@use "@material/switch/mdc-switch";
+
+.mdc-switch {
+  &--checked {
+    //@include toggled-on-color($color-blue-700);
+  }
+}
