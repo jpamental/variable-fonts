@@ -18,10 +18,14 @@
 {% else %}
   {% assign step = 1 %}
 {% endif %}
+{% if step < '1' %}
+  {% assign slider_type = 'mdc-slider' %}
+{% else %}
+  {% assign slider_type = 'mdc-slider--discrete' %}
+{% endif %}
 
 
-
-<div class="mdc-slider mdc-slider--discrete" id="{{ include.id }}" tabindex="0" role="slider"
+<div class="mdc-slider {{ slider_type }}" id="{{ include.id }}" tabindex="0" role="slider"
      aria-valuemin="{{ min }}" aria-valuemax="{{ max }}" aria-valuenow="{{ now }}"
      aria-label="Select Value" data-step="{{ step }}">
   <div class="mdc-slider__track-container">
