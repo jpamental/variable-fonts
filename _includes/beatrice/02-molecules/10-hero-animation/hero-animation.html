@@ -41,11 +41,11 @@
   }
 {% endcapture %}
 
-<form class="js-hero"
+<form class="js-hero hero"
       {% for axis in include.axes %}
         data-{{ axis.name }}-active="true"
       {% endfor %}>
-  <div class="js-hero-buttons">
+  <div class="js-hero-buttons hero-buttons">
     {% for axis in include.axes %}
       {% capture optionId %}{{ axis.name }}_{{ forloop.index }}{% endcapture %}
       <button id="{{ optionId }}"
@@ -53,40 +53,43 @@
               class="js-hero-button mdc-button mdc-button--raised">{{ axis.label }}</button>
     {% endfor %}
   </div>
+  <div class="hero-main">
+    <div class="hero-animation pause" id="hero_animation">
+      <h1 class="hero-animation__text">{{ text }}</h1>
+      <div class="hero-animation__controls">
+        <button id="play_pause" name="play-pause" class="mdc-button mdc-button--raised play-pause pause"><i class="material-icons mdc-button__icon" aria-hidden="true">pause</i> Click to </button>
+        <div id='demo-controls' class="controls">
+          {% include beatrice/02-molecules/09-slider-group/slider-group.html 
+            style = 'wide'
+            keyword = 'wght'
+            id = 'hero-text-vf-wght'
+            min = '100'
+            max = '1000'
+            now = '150'
+            step = '1'
+          %}
+        </div>
+      </div>
+    </div>
+    <div class="js-hero-controls">
+      {% for axis in include.axes %}
+        <label><strong>{{ axis.label }}</strong>
+          {% include beatrice/01-atoms/02-forms/slider/md-slider.html
+                     axis=axis.name
+                     min=axis.min
+                     max=axis.max 
+                     step=axis.step %}
+        </label>
+      {% endfor %}
+    </div>
+  </div>
   {% comment %}
-    <pre class="js-hero-style">
+    <!-- If you need to debug the CSS in the style block: -->
+    <pre>
       {{ cssAnimation }}
     </pre>
   {% endcomment %}
   <style class="js-hero-style">
     {{ cssAnimation }}
   </style>
-  <div class="js-hero-controls">
-    {% for axis in include.axes %}
-      <label><strong>{{ axis.label }}</strong>
-        {% include beatrice/01-atoms/02-forms/slider/md-slider.html
-                   axis=axis.name
-                   min=axis.min
-                   max=axis.max 
-                   step=axis.step %}
-      </label>
-    {% endfor %}
-  </div>
-  <div class="hero-animation pause" id="hero_animation">
-    <h1 class="hero-animation__text">{{ text }}</h1>
-    <div class="hero-animation__controls">
-      <button id="play_pause" name="play-pause" class="mdc-button mdc-button--raised play-pause pause"><i class="material-icons mdc-button__icon" aria-hidden="true">pause</i> Click to </button>
-      <div id='demo-controls' class="controls">
-        {% include beatrice/02-molecules/09-slider-group/slider-group.html 
-          style = 'wide'
-          keyword = 'wght'
-          id = 'hero-text-vf-wght'
-          min = '100'
-          max = '1000'
-          now = '150'
-          step = '1'
-        %}
-      </div>
-    </div>
-  </div>
 </form>

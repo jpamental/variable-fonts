@@ -1,0 +1,16 @@
+.hero {
+  // Flex layout breaks sliders (!)
+  display: block;
+}
+
+.hero-buttons {
+  float: left;
+  width: 33%;
+  outline: 2px solid red;
+}
+
+.hero-main {
+  float: left;
+  width: 67%;
+  display: block;
+}

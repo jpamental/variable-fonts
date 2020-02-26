@@ -4,9 +4,9 @@ let initHero = function(heroEls) {
   for (let i = 0; i < heroEls.length; i++) {
     let heroEl = heroEls[i];
     let heroElButtons = heroEl.children[0].children;
-    let heroElStyle = heroEl.children[1];
-    let heroElControlLabels = heroEl.children[2].children;
-    let heroAnimationEl = heroEl.children[3];
+    let heroMain = heroEl.children[1]
+    let heroAnimationEl = heroMain.children[0];
+    let heroElControlLabels = heroMain.children[1].children;
 
     let handleClick = function(e) {
       e.preventDefault();
@@ -20,11 +20,6 @@ let initHero = function(heroEls) {
 
       if (heroEl) {
         heroEl.setAttribute(attrName, isActive);
-        let heroElStyle = heroEl.children[1];
-        // let style = createAnimationCss(["wght"]);
-        // console.log("style", style);
-        // heroElStyle.innerHTML = style;
-        // console.log("heroElStyle", heroElStyle);
         console.log("active", isActive);
         if (!isActive) {
           heroAnimationEl.style.setProperty(
@@ -45,11 +40,13 @@ let initHero = function(heroEls) {
         button.innerHTML = isActive ? "On" : "Off";
       }
     };
-
+    
     for (let j = 0; j < heroElControlLabels.length; j++) {
       let slider = heroElControlLabels[j].children[1];
       let button = heroElButtons[j];
       let axis = button.getAttribute("data-axis");
+
+      console.log(slider)
 
       let mdcSlider = new MDCSlider(slider);
       let property = `--text-vf-${axis}-min`;
