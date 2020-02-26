@@ -41,7 +41,7 @@
   }
 {% endcapture %}
 
-<form class="js-hero hero"
+<div class="js-hero hero hero--paused"
       {% for axis in include.axes %}
         data-{{ axis.name }}-active="true"
       {% endfor %}>
@@ -92,4 +92,4 @@
   <style class="js-hero-style">
     {{ cssAnimation }}
   </style>
-</form>
+</div>
