@@ -1,9 +1,5 @@
 import { MDCSlider } from "@material/slider";
 
-let getProperty = function(axis) {
-  return;
-};
-
 let initHero = function(heroEls) {
   for (let i = 0; i < heroEls.length; i++) {
     let heroEl = heroEls[i];
