@@ -1,6 +1,6 @@
 try {
 // Text from the hero animation element ('Typography Revolution')
-const heroElement = document.querySelector('.hero-animation__text');
+const heroElement = document.querySelector('.hero-animation-text');
 if (!heroElement) {
   return false
 }

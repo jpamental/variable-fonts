@@ -7,10 +7,24 @@
   float: left;
   width: 33%;
   outline: 2px solid red;
+  padding: 1rem;
+  button {
+    margin-bottom: 1rem;
+    display: block;
+    width: 100%;
+  }
+}
+
+.hero-button--active {
+  outline: 4px solid orange;
 }
 
 .hero-main {
   float: left;
   width: 67%;
   display: block;
+  padding: 1.5rem 1rem 0.5rem 1rem;
+  @media (min-width: $bp--medium) {
+    padding: 3rem 1rem;
+  }
 }

@@ -1,42 +1,26 @@
-.hero-animation {
-  //   --text-vf-CASL: var(--hero-text-vf-CASL);
-  //   --text-vf-wght: var(--hero-text-vf-wght);
-  //   --text-vf-MONO-min: 0;
-  //   --text-vf-slnt: 0;
-  //   --text-vf-ital: 0;
-  //   --text-vf-MONO-min: 0;
-  //   --text-vf-CASL-min: 0;
-  //   --text-vf-CASL-max: 1;
-  //   --text-vf-slnt-max: 0;
-  //   --text-vf-ital-max: 0;
-  //   --text-vf-wght-min: 100;
-  //   --text-vf-wght-max: 1000;
-  //   --h1-font-size-min: 3;
-  //   --h1-font-size-max: 6.5;
-  //   // font-variation-settings: 'MONO' var(--text-vf-MONO), 'CASL' var(--text-vf-CASL), 'slnt' var(--text-vf-slnt), 'ital' var(--text-vf-ital);
-  //
-  //   padding: 1.5rem 1rem 0.5rem 1rem;
-  //   @media (min-width: $bp--medium) {
-  //     padding: 3rem 1rem;
-  //   }
-  //
-  &__text {
-    font-family: "Recursive", Helvetica, sans-serif;
-    // font-weight: var(--text-vf-wght);
-    max-width: none;
-    text-align: center;
+.hero--playing .hero-animation-text {
+  animation-play-state: running;
+}
 
-    span {
-      // font-variation-settings: 'MONO' var(--text-vf-MONO-min), 'CASL' var(--text-vf-CASL), 'slnt' var(--text-vf-slnt), 'ital' var(--text-vf-ital);
-      //transition: all .2s ease-in;
-      outline: 2px solid red;
-      .play & {
-        outline: 2px solid green;
-        animation: breath 1.5s alternate 6 ease-in-out;
-        animation-iteration-count: infinite;
-      }
-    }
-  }
+.hero--paused .hero-animation-text {
+  animation-play-state: paused;  
+}
+
+.hero-animation-text {
+  outline: 2px solid green;
+  animation: breath 1.5s alternate ease-in-out;
+  animation-iteration-count: infinite;
+
+  font-family: "Recursive", Helvetica, sans-serif;
+  // font-weight: var(--text-vf-wght);
+  max-width: none;
+  text-align: center;
+}
+
+.hero-animation {
+  --h1-font-size-min: 3;
+  --h1-font-size-max: 6.5;
+
   //
   //   &__controls {
   //     display: grid;
@@ -101,16 +85,3 @@
   //     }
   //   }
 }
-//
-// /*
-// @keyframes breath {
-//   0% {
-//     font-weight: var(--text-vf-wght-min);
-//     font-variation-settings: 'MONO' var(--text-vf-MONO-min), 'CASL' var(--text-vf-CASL-min), 'slnt' var(--text-vf-slnt), 'ital' var(--text-vf-ital);
-//   }
-//   100% {
-//     font-weight: var(--text-vf-wght-max);
-//     font-variation-settings: 'MONO' var(--text-vf-MONO-min), 'CASL' var(--text-vf-CASL-max), 'slnt' var(--text-vf-slnt-max), 'ital' var(--text-vf-ital-max);
-//   }
-// }
-// */

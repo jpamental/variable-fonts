@@ -42,36 +42,36 @@
 {% endcapture %}
 
 <div class="js-hero hero hero--paused"
+      {% comment %} data-all-active="true" {% endcomment %}
       {% for axis in include.axes %}
-        data-{{ axis.name }}-active="true"
+        data-{{ axis.name }}-active="false"
       {% endfor %}>
   <div class="js-hero-buttons hero-buttons">
     {% for axis in include.axes %}
       {% capture optionId %}{{ axis.name }}_{{ forloop.index }}{% endcapture %}
       <button id="{{ optionId }}"
               data-axis="{{ axis.name }}"
-              class="js-hero-button mdc-button mdc-button--raised">{{ axis.label }}</button>
+              data-label="{{ axis.label }}"
+              data-active="false"
+              class="js-hero-button mdc-button hero-button">{{ axis.label }}</button>
     {% endfor %}
   </div>
+  {% comment %}
+  <button
+    data-axis="all"
+    data-label="All"
+    data-active="true"
+    class="js-hero-button mdc-button mdc-button--raised hero-button hero-button--active"
+  >
+    All
+  </button>
+  {% endcomment %}
   <div class="hero-main">
     <div class="hero-animation pause" id="hero_animation">
-      <h1 class="hero-animation__text">{{ text }}</h1>
-      <div class="hero-animation__controls">
-        <button id="play_pause" name="play-pause" class="mdc-button mdc-button--raised play-pause pause"><i class="material-icons mdc-button__icon" aria-hidden="true">pause</i> Click to </button>
-        <div id='demo-controls' class="controls">
-          {% include beatrice/02-molecules/09-slider-group/slider-group.html 
-            style = 'wide'
-            keyword = 'wght'
-            id = 'hero-text-vf-wght'
-            min = '100'
-            max = '1000'
-            now = '150'
-            step = '1'
-          %}
-        </div>
-      </div>
+      <h1 class="hero-animation-text">{{ text }}</h1>
+      <button id="play_pause" name="play-pause" class="mdc-button mdc-button--raised play-pause pause"><i class="material-icons mdc-button__icon" aria-hidden="true">pause</i> Click to </button>
     </div>
-    <div class="js-hero-controls">
+    <div class="js-hero-controls hero-animation__controls">
       {% for axis in include.axes %}
         <label><strong>{{ axis.label }}</strong>
           {% include beatrice/01-atoms/02-forms/slider/md-slider.html
