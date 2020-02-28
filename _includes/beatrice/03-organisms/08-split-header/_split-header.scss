@@ -29,11 +29,15 @@
 
 .split-header-content {
   padding-top: calc(var(--top-bar-nav-height-desktop, 64px) + 1rem);
+  position: relative;
   width: 100%;
+  z-index: 2;
 }
 
 .split-header-image {
   width: 100%;
+  position: relative;
+  z-index: 1;
   @media (min-width: $bp--large) {
     position: absolute;
     top: 0;
@@ -42,6 +46,9 @@
     width: 30%;
   }
   @media (min-width: $bp--xlarge) {
+    width: 40%;
+  }
+  @media (min-width: ($bp--xxlarge - 2em)) {
     width: 50%;
   }
 }

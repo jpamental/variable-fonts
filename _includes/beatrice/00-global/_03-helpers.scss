@@ -10,7 +10,6 @@ $sans-serif-novf: "Roboto", $sans-serif-fallback;
 
 $serif: "Roboto Slab", $serif-fallback;
 $sans-serif: "Roboto Extremo", $sans-serif-fallback;
-$sans-serif-slant: "Roboto Variable", $sans-serif-fallback;
 
 @mixin content-width() {
   max-width: 39rem;
@@ -78,6 +77,15 @@ $sans-serif-slant: "Roboto Variable", $sans-serif-fallback;
 
 /* Used to set the page backgrounds, without
  * being page-specific */
-.header-backgorund-gray-light   { background-color: $color-gray-200; }
-.header-backgorund-gray-lighter { background-color: $color-gray-100; }
-.header-backgorund-blue-lighter { background-color: $color-blue-50; }
+.header-background-gray-light   { 
+  background-color: $header-background-gray-light; 
+  background-color: var(--header-background-gray-light);
+}
+.header-background-gray-lighter { 
+  background-color: $header-background-gray-lighter; 
+  background-color: var(--header-background-gray-lighter);
+}
+.header-background-blue-lighter { 
+  background-color: $header-background-blue-lighter; 
+  background-color: var(--header-background-blue-lighter);
+}

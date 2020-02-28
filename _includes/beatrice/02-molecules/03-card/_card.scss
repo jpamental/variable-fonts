@@ -36,6 +36,7 @@
     &:hover,
     &:focus,
     &:active {
+      color: var(--color-text);
       text-decoration: none;
     }
   }
@@ -54,16 +55,24 @@ a.vf-mdc-card {
   display: block;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   transition: box-shadow 0.2s ease-in-out !important;
+  &:link,
+  &:visited {
+    color: var(--color-text);
+  }
   &:hover,
   &:focus,
   &:active {
     box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.2),
                 0px 3px 4px rgba(0, 0, 0, 0.12),
                 0px 3px 3px rgba(0, 0, 0, 0.14);
+    color: var(--color-text-link);
   }
+  
+
 
   // These need to be nested for specificity
   .vf-mdc-card__title {
+    color: var(--color-text-link);
     margin-top: calc( var(--body-text-spacer) * 1 );
     margin-bottom: calc( var(--body-text-spacer) * 0.2 );
   }

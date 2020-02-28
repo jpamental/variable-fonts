@@ -69,8 +69,8 @@ hr {
   --color-text-highlight: #{$color-peach-light};
   background-color: var(--color-text-highlight);
   border-radius: 0.5rem;
+  max-width: var(--content-width);
   padding: var(--body-text-spacer) 1rem;
-  width: var(--content-width);
   &--right {
     min-width: 15rem;
     @media (min-width: $bp--large) {
