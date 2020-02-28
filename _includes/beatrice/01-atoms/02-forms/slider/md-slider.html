@@ -14,11 +14,12 @@
   {% assign now = 0.5 %}
 {% endif %}
 {% if include.step %}
-  {% assign step = include.step %}
+  {% comment %}Convert string to number{% endcomment %}
+  {% assign step = include.step|plus: 0 %}
 {% else %}
   {% assign step = 1 %}
 {% endif %}
-{% if 1|number_format == step|number_format %}
+{% if 1 == step %}
   {% comment %}
   Discrete slider only works when step is 1, in current version of MDC
   https://github.com/googlefonts/variable-fonts/issues/122#issuecomment-591156684
