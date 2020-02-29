@@ -1,16 +1,22 @@
 .hero {
-  // Flex layout breaks sliders (!)
-  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  @media (min-width: $bp--medium) {
+    max-width: 94vw;
+  }
+  @media (min-width: $bp--xxlarge) {
+    max-width: 2500px;
+  }
 }
 
 .hero-buttons {
-  float: left;
-  width: 33%;
-  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
   button {
-    margin-bottom: 1rem;
-    display: block;
-    width: 100%;
+    display: inline-block;
+    width: 50%;
   }
 }
 
@@ -18,12 +24,42 @@
 }
 
 .hero-main {
-  float: left;
-  width: 67%;
   display: block;
   padding: 1.5rem 1rem 0.5rem 1rem;
-  @media (min-width: $bp--medium) {
+}
+
+
+@media (min-width: $bp--medium) {
+  .hero {
+    // Flex layout breaks sliders (!)
+    display: block;
+  }
+  
+  .hero-buttons {
+    float: left;
+    width: 33%;
+
+    button {
+      margin-bottom: 1rem;
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .hero-main {
+    float: left;
+    width: 67%;
     padding: 3rem 1rem;
+  }
+}
+
+@media (min-width: $bp--xxlarge) {
+  .hero-buttons {
+    width: 30%;
+  }
+  
+  .hero-main {
+    width: 70%
   }
 }
 
@@ -35,8 +71,18 @@
   background-color: var(--color-callout-highlight, #FFF8E1);
 }
 
-.hero-animation .hero-animation-text {
-  border-top: solid 1px var(--color-text-callout);  
+.hero-animation-frame {
+  border-top: solid 1px var(--color-text-callout);
+  display: flex;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.hero-animation-text {
+  display: block;
+
+  // Optically align in the centre
+  transform: translateY(-5%);
 }
 
 .hero-animation,

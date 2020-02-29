@@ -71,7 +71,9 @@
       <div class="range__axis__label">
         <p>{{ include.fontFamilyName | default: "Recursive" }}</p>
       </div>
-      <h1 class="hero-animation-text">{{ text }}</h1>
+      <div class="hero-animation-frame">
+        <h1 class="hero-animation-text">{{ text }}</h1>
+      </div>
     </div>
     <div class="js-hero-controls hero-animation__controls">
       {% for axis in include.axes %}
