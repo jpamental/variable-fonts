@@ -7,9 +7,13 @@ their benefits, use cases, and techniques to adopt them in your own projects.
 
 This project is not an official Google product, and Google provides no support for it.
 
-## Getting started
+## Contributing Ideas
 
-To run the static site generator for this project locally, you’ll need to have a recent version of Node.js and Ruby installed on your system.
+If you have any comments, questions or suggestions for this project, please post them as issues on the Github issue tracker, [github.com/googlefonts/variable-fonts/issues](https://github.com/googlefonts/variable-fonts/issues)
+
+## Web Development
+
+If you are a web developer, you can run the static site generator for this project locally with a recent version of Node.js and Ruby installed on your system.
 
 First, clone the project and `cd` into the directory. Then run:
 
@@ -22,11 +26,8 @@ npm install
 
 # Start the project
 npm start
-
-# Now serving locally at localhost:4000/typography
 ```
-
-## Build
+Then visit <http://localhost:4000/variable-fonts>
 
 To manually compile the site down to static HTML, CSS, and JavaScript, run:
 
