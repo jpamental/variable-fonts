@@ -19,19 +19,19 @@
     --text-vf-{{ axis.name }}-max: {{ axis.default | default: axis.max }};
   {% endfor %}
   
-  color: green;
+  /* debug: color: green; */
   font-variation-settings: {{ fvsMinValues }};
 
 }
 
 @keyframes breath {
   0% {
-    color: blue;
+    /* debug: color: blue; */
     font-variation-settings: {{ fvsMinValues }};
   }
 
   100% {
-    color: orange;
+    /* debug: color: orange; */
     font-variation-settings:
       {% for axis in include.axes %}
         {% capture variableName %}--text-vf-{{ axis.name }}-max{% endcapture %}
