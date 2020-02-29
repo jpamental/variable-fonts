@@ -28,3 +28,29 @@
     padding: 3rem 1rem;
   }
 }
+
+.hero-animation {
+  transition: background-color 0.3s ease-in-out;
+  background-color: #FFF8E1;
+}
+
+[data-wght-active="true"] .hero-animation  {
+  // All Variable Axes
+  background-color: #FFCCBC;
+}
+
+[data-wdth-active="true"] .hero-animation  {
+  background-color: #2196F3;
+}
+[data-ital-active="true"] .hero-animation  {
+  background-color: #FF8A65;
+}
+[data-slnt-active="true"] .hero-animation  {
+  background-color: #C8E6C9;
+}
+[data-opsz-active="true"] .hero-animation  {
+  background-color: #E1BEE7;
+}
+[data-casl-active="true"] .hero-animation  {
+  background-color: #B2DFDB;
+}
