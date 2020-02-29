@@ -89,3 +89,15 @@ $sans-serif: "Roboto Extremo", $sans-serif-fallback;
   background-color: $header-background-blue-lighter; 
   background-color: var(--header-background-blue-lighter);
 }
+
+/*
+ * Helper class to avoid single, trailing words 
+ * in headers. At the time of writing, only applied
+ * manually in the hero section.
+ */
+.widont {
+  display: inline-block; /* Ignore the breaking space */
+  @media (min-width: $bp--medium) {
+    display: inline; /* Restore the breaking space at larger screen sizes */
+  }
+}
