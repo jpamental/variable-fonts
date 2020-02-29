@@ -11,16 +11,16 @@
   }
 }
 
-.hero-buttons {
+.hero-sidebar {
   display: flex;
   flex-wrap: wrap;
-  button {
-    display: inline-block;
-    width: 50%;
-  }
 }
 
-.hero-button--active {
+.hero-sidebar-item {
+  display: inline-block;
+  width: 50%;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .hero-main {
@@ -35,15 +35,18 @@
     display: block;
   }
   
-  .hero-buttons {
+  .hero-sidebar {
     float: left;
     width: 33%;
-
-    button {
-      margin-bottom: 1rem;
-      display: block;
-      width: 100%;
-    }
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .hero-sidebar-item {
+    display: block;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .hero-main {
@@ -54,7 +57,7 @@
 }
 
 @media (min-width: $bp--xxlarge) {
-  .hero-buttons {
+  .hero-sidebar {
     width: 30%;
   }
   
@@ -69,6 +72,28 @@
 
   // All Variable Axes color is default
   background-color: var(--color-callout-highlight, #FFF8E1);
+}
+
+.hero-button {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  appearance: none;
+  border: solid 1px var(--color-text-callout);
+  border-radius: 100px;
+  box-sizing: 0 0 0 rgba(0, 0, 0, 0);
+  transition: box-shadow 100ms;
+  will-change: box-shadow;
+  text-transform: uppercase;
+  &:focus,
+  &:hover {
+    outline: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.hero-button--active {
+  background-color: var(--color-callout-highlight, #FFF8E1);  
 }
 
 .hero-animation-frame {
@@ -90,23 +115,23 @@
     transition: background-color 0.3s ease-in-out;  
 }
 
-[data-wght-active="true"] .hero-animation  {
+[data-wght-active="true"]  {
   --color-callout-highlight: #FFCCBC
 }
 
-[data-wdth-active="true"] .hero-animation  {
+[data-wdth-active="true"]  {
   --color-callout-highlight: #2196F3;
 }
-[data-ital-active="true"] .hero-animation  {
+[data-ital-active="true"]  {
   --color-callout-highlight: #FF8A65;
 }
-[data-slnt-active="true"] .hero-animation  {
+[data-slnt-active="true"]  {
   --color-callout-highlight: #C8E6C9;
 }
-[data-opsz-active="true"] .hero-animation  {
+[data-opsz-active="true"]  {
   --color-callout-highlight: #E1BEE7;
 }
-[data-casl-active="true"] .hero-animation  {
+[data-casl-active="true"]  {
   --color-callout-highlight: #B2DFDB;
 }
 

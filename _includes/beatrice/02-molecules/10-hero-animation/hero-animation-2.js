@@ -72,15 +72,14 @@ let initHero = function(heroEls) {
         button.innerHTML = `${label} On`;
 
         button.classList.add("hero-button--active");
-        button.classList.add("mdc-button--raised");
-        
+
         playStatePlaying()
       }
     };
 
     let resetAxes = function(axisToSkip) {
       for (let k = 0; k < heroElButtons.length; k++) {
-        let button = heroElButtons[k];
+        let button = heroElButtons[k].children[0];
         let slider = heroElControlLabels[k].children[1];
         let axisName = button.getAttribute("data-axis");
 
@@ -99,7 +98,6 @@ let initHero = function(heroEls) {
           heroAnimationEl.style.setProperty(`${propertyPrefix}-max`, valueNow);
 
           button.classList.remove("hero-button--active");
-          button.classList.remove("mdc-button--raised");
 
           // Update the state in the parent data attributes
           setActive(axisName, false);
@@ -109,7 +107,7 @@ let initHero = function(heroEls) {
     
     let removeCustomProperties = function () {
       for (let k = 0; k < heroElButtons.length; k++) {
-        let button = heroElButtons[k];
+        let button = heroElButtons[k].children[0];
         let axisName = button.getAttribute('data-axis')
         let propertyPrefix = `--text-vf-${axisName}`;
         heroAnimationEl.style.removeProperty(`${propertyPrefix}-min`);
@@ -122,7 +120,7 @@ let initHero = function(heroEls) {
 
     for (let j = 0; j < heroElControlLabels.length; j++) {
       let slider = heroElControlLabels[j].children[1];
-      let button = heroElButtons[j];
+      let button = heroElButtons[j].children[0];
       let buttonLabel = button.getAttribute("data-label");
       let axisName = button.getAttribute("data-axis");
       let isActiveInitially = getActive(axisName);

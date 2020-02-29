@@ -46,14 +46,16 @@
       {% for axis in include.axes %}
         data-{{ axis.name }}-active="false"
       {% endfor %}>
-  <div class="js-hero-buttons hero-buttons">
+  <div class="js-hero-buttons hero-sidebar">
     {% for axis in include.axes %}
       {% capture optionId %}{{ axis.name }}_{{ forloop.index }}{% endcapture %}
-      <button id="{{ optionId }}"
-              data-axis="{{ axis.name }}"
-              data-label="{{ axis.label }}"
-              data-active="false"
-              class="js-hero-button mdc-button hero-button">{{ axis.label }}</button>
+      <div class="hero-sidebar-item">
+        <button id="{{ optionId }}"
+                data-axis="{{ axis.name }}"
+                data-label="{{ axis.label }}"
+                data-active="false"
+                class="js-hero-button hero-button">{{ axis.label }}</button>
+      </div>
     {% endfor %}
   </div>
   {% comment %}
@@ -61,7 +63,7 @@
     data-axis="all"
     data-label="All"
     data-active="true"
-    class="js-hero-button mdc-button mdc-button--raised hero-button hero-button--active"
+    class="js-hero-button hero-button hero-button--active"
   >
     All
   </button>
