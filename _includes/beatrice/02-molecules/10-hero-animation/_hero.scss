@@ -6,6 +6,11 @@
   padding-right: 1vw;
   @media (min-width: $bp--medium) {
     max-width: 94vw;
+    margin-top: 4rem;
+  }
+  @media (min-width: $bp--large) {
+    padding-left: 2vw;
+    padding-right: 2vw;
   }
   @media (min-width: $bp--xxlarge) {
     max-width: 2500px;
@@ -13,11 +18,51 @@
 }
 
 .hero-sidebar {
-  display: flex;
-  flex-wrap: wrap;
   background: #EEEEEE;
   border: 1px solid #000000;
   border-radius: 8px;
+  position: relative;
+  @media (min-width: $bp--medium) {
+    margin-top: 3rem;
+  }
+  &:before,
+  &:after {
+    content: "";
+    width: 100%;
+    background: pink;
+    height: 10px;
+    position: absolute;
+    left: 0;
+  }
+  &:before {
+    top: 0;
+  }
+  &:after {
+    bottom: 0;
+    background: blue;
+  }
+}
+
+.hero-sidebar-icon {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  img {
+    width: 100%;
+    display: block;
+  }
+  @media (min-width: $bp--medium) {
+    margin-top: -3rem;
+    margin-bottom: -1rem;
+  }
+}
+
+.hero-sidebar-items {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
   padding: 1rem;
   @media (min-width: $bp--medium) {
     padding-top: 2rem;
@@ -32,6 +77,12 @@
   padding-right: 0.5rem;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  @media (min-width: $bp--medium) {
+    display: block;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .hero-main {
@@ -51,25 +102,17 @@
 @media (min-width: $bp--medium) {
   .hero {
     // Flex layout breaks sliders (!)
-    display: block;
+    display: flex;
+    align-items: stretch;
   }
   
   .hero-sidebar {
-    float: left;
     width: 30%;
     margin-left: 0;
     margin-right: 0;
   }
-  
-  .hero-sidebar-item {
-    display: block;
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-  }
 
   .hero-main {
-    float: left;
     width: 70%;
     padding: 3rem 1rem;
   }

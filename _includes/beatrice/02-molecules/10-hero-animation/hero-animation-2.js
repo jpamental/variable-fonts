@@ -3,7 +3,7 @@ import { MDCSlider } from "@material/slider";
 let initHero = function(heroEls) {
   for (let i = 0; i < heroEls.length; i++) {
     let heroEl = heroEls[i];
-    let heroElButtons = heroEl.children[0].children;
+    let heroElButtons = heroEl.children[0].children[1].children;
     let heroMain = heroEl.children[1];
     let heroAnimationEl = heroMain.children[0];
     let heroElControlLabels = heroMain.children[1].children;
@@ -21,7 +21,6 @@ let initHero = function(heroEls) {
     }
 
     let playStateToggle = function() {
-      console.log("has class", heroEl.classList.contains("hero--paused"));
       if (heroEl.classList.contains("hero--paused")) {
         playStatePlaying()
       } else {
@@ -84,7 +83,6 @@ let initHero = function(heroEls) {
         let axisName = button.getAttribute("data-axis");
 
         if (typeof axisToSkip === "undefined" || axisToSkip !== axisName) {
-          console.log("reset", axisName);
           let label = button.getAttribute("data-label");
 
           // Update label
@@ -93,7 +91,6 @@ let initHero = function(heroEls) {
           // Set both axes to the min value
           let propertyPrefix = `--text-vf-${axisName}`;
           let valueNow = parseFloat(slider.getAttribute("aria-valuenow"), 10);
-          console.log('set value now', slider)
           heroAnimationEl.style.setProperty(`${propertyPrefix}-min`, valueNow);
           heroAnimationEl.style.setProperty(`${propertyPrefix}-max`, valueNow);
 
