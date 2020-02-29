@@ -6,7 +6,6 @@
 .hero-buttons {
   float: left;
   width: 33%;
-  outline: 2px solid red;
   padding: 1rem;
   button {
     margin-bottom: 1rem;
@@ -16,7 +15,6 @@
 }
 
 .hero-button--active {
-  outline: 4px solid orange;
 }
 
 .hero-main {
@@ -30,27 +28,43 @@
 }
 
 .hero-animation {
-  transition: background-color 0.3s ease-in-out;
-  background-color: #FFF8E1;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: solid 1px var(--color-text-callout);
+
+  // All Variable Axes color is default
+  background-color: var(--color-callout-highlight, #FFF8E1);
+}
+
+.hero-animation .hero-animation-text {
+  border-top: solid 1px var(--color-text-callout);  
+}
+
+.hero-animation,
+.hero-animation .range__axis__label p {
+    transition: background-color 0.3s ease-in-out;  
 }
 
 [data-wght-active="true"] .hero-animation  {
-  // All Variable Axes
-  background-color: #FFCCBC;
+  --color-callout-highlight: #FFCCBC
 }
 
 [data-wdth-active="true"] .hero-animation  {
-  background-color: #2196F3;
+  --color-callout-highlight: #2196F3;
 }
 [data-ital-active="true"] .hero-animation  {
-  background-color: #FF8A65;
+  --color-callout-highlight: #FF8A65;
 }
 [data-slnt-active="true"] .hero-animation  {
-  background-color: #C8E6C9;
+  --color-callout-highlight: #C8E6C9;
 }
 [data-opsz-active="true"] .hero-animation  {
-  background-color: #E1BEE7;
+  --color-callout-highlight: #E1BEE7;
 }
 [data-casl-active="true"] .hero-animation  {
-  background-color: #B2DFDB;
+  --color-callout-highlight: #B2DFDB;
 }
+
+
+// [data-wght-active="true"] [data-axis="wght"] {
+//   outline: 2px solid red;
+// }
