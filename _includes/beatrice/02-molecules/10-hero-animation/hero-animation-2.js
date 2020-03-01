@@ -1,13 +1,63 @@
 import { MDCSlider } from "@material/slider";
 
+const labels = {
+  on: "Playing",
+  off: "",
+  onInitial: "Playing",
+  offInitial: ""
+}
+
 let initHero = function(heroEls) {
   for (let i = 0; i < heroEls.length; i++) {
     let heroEl = heroEls[i];
     let heroElButtons = heroEl.children[0].children[1].children;
     let heroMain = heroEl.children[1];
     let heroAnimationEl = heroMain.children[0];
+    let heroAnimationText = heroAnimationEl.children[1].children[0];
     let heroElControlLabels = heroMain.children[1].children;
     let heroPlayPauseButton = heroAnimationEl.children[1];
+    let clicked = false
+    
+    let createLetterDelay  = function (el, amount) {
+      if (!el) {
+        return
+      }
+      amount = amount || 0.25
+      
+      let str = el.innerHTML;
+      let words = str.split(' ');
+      let chars = str.split('');
+      el.setAttribute('aria-label', str);
+      el.innerHTML = '';
+      
+      chars.forEach(function (item, index) {
+        var c = document.createElement('span');
+        // and give it some content 
+        var letter = document.createTextNode(item); 
+        // add the text node to the newly created div
+        c.appendChild(letter);  
+        // add the newly created element and its content into the DOM 
+        el.append(c);
+      
+        // Add aria-hidden to each character if the aria-label has been applied to the parent
+        if (c.parentElement.getAttribute('aria-label')) {
+          c.setAttribute('aria-hidden', true);
+        }
+      
+        // Add a staggered animation delay to each span
+        c.style.setProperty('animation-delay', (index * amount) + 's');
+      });
+    }
+    
+    let removeLetterDelay = function(el, amount) {
+      if (!el || !el.children || !el.children.length) {
+        return
+      }
+      for(let k = 0; k < el.children.length; k++) {
+        let c = el.children[k]
+        c.style.removeProperty('animation-delay')
+      }
+    }
 
     let playStatePlaying = function () {
       heroEl.classList.remove("hero--paused");
@@ -68,11 +118,16 @@ let initHero = function(heroEls) {
 
       if (button) {
         let label = button.getAttribute("data-label");
-        button.innerHTML = `${label} On`;
+        button.innerHTML = `${label} ${labels.on}`;
 
         button.classList.add("hero-button--active");
 
         playStatePlaying()
+
+        if (!clicked) {
+          removeLetterDelay(heroAnimationText, 0)
+          clicked = true
+        }
       }
     };
 
@@ -86,7 +141,7 @@ let initHero = function(heroEls) {
           let label = button.getAttribute("data-label");
 
           // Update label
-          button.innerHTML = `${label} Off`;
+          button.innerHTML = `${label} ${labels.off}`;
 
           // Set both axes to the min value
           let propertyPrefix = `--text-vf-${axisName}`;
@@ -112,35 +167,40 @@ let initHero = function(heroEls) {
       }
     }
 
-    document.addEventListener("DOMContentLoaded", playStateToggle, false);
-    heroPlayPauseButton.addEventListener("click", playStateToggle);
+    let initHeroAnimation = function () {
+      playStateToggle()
+      createLetterDelay(heroAnimationText)
+      heroPlayPauseButton.addEventListener("click", playStateToggle);
 
-    for (let j = 0; j < heroElControlLabels.length; j++) {
-      let slider = heroElControlLabels[j].children[1];
-      let button = heroElButtons[j].children[0];
-      let buttonLabel = button.getAttribute("data-label");
-      let axisName = button.getAttribute("data-axis");
-      let isActiveInitially = getActive(axisName);
+      for (let j = 0; j < heroElControlLabels.length; j++) {
+        let slider = heroElControlLabels[j].children[1];
+        let button = heroElButtons[j].children[0];
+        let buttonLabel = button.getAttribute("data-label");
+        let axisName = button.getAttribute("data-axis");
+        let isActiveInitially = getActive(axisName);
 
-      let mdcSlider = new MDCSlider(slider);
+        let mdcSlider = new MDCSlider(slider);
 
-      mdcSlider.listen(
-        "MDCSlider:input",
-        handleSliderInput.bind({
-          axis: axisName
-        })
-      );
+        mdcSlider.listen(
+          "MDCSlider:input",
+          handleSliderInput.bind({
+            axis: axisName
+          })
+        );
 
-      button.innerHTML = `${buttonLabel} ${isActiveInitially ? "On" : "Off"}`;
+        button.innerHTML = `${buttonLabel} ${isActiveInitially ? labels.onInitial : labels.offInitial}`;
 
-      button.addEventListener(
-        "click",
-        handleClick.bind({
-          axis: axisName,
-          slider: mdcSlider
-        })
-      );
+        button.addEventListener(
+          "click",
+          handleClick.bind({
+            axis: axisName,
+            slider: mdcSlider
+          })
+        );
+      }
     }
+
+    document.addEventListener("DOMContentLoaded", initHeroAnimation, false);
   }
 };
 

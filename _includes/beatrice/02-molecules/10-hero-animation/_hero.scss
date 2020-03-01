@@ -4,6 +4,8 @@
   margin-bottom: calc( var(--body-text-spacer) * 5 );
   padding-left: 1vw;
   padding-right: 1vw;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
   @media (min-width: $bp--medium) {
     max-width: 94vw;
     margin-top: 4rem;
@@ -22,15 +24,22 @@
   border: 1px solid #000000;
   border-radius: 8px;
   position: relative;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
   @media (min-width: $bp--medium) {
-    margin-top: 3rem;
+    // margin-top: 3rem;
+    margin-bottom: 0;
   }
   &:before,
   &:after {
     content: "";
     width: 100%;
-    background: pink;
-    height: 10px;
+    // background-color: pink;
+    background:
+      url('../img/hero-sidebar-dot.svg') top left no-repeat,
+      url('../img/hero-sidebar-dot.svg') top right no-repeat;
+    height: 2rem;
     position: absolute;
     left: 0;
   }
@@ -39,23 +48,26 @@
   }
   &:after {
     bottom: 0;
-    background: blue;
+    // background-color: blue;
   }
 }
 
 .hero-sidebar-icon {
-  padding-left: 2rem;
-  padding-right: 2rem;
-  max-width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  img {
-    width: 100%;
-    display: block;
-  }
+  display: none;
+  visibility: hidden;
   @media (min-width: $bp--medium) {
-    margin-top: -3rem;
-    margin-bottom: -1rem;
+    display: block;
+    visibility: visible;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -2rem;
+    img {
+      width: 100%;
+      display: block;
+    }
   }
 }
 
@@ -65,7 +77,7 @@
   flex-wrap: wrap;
   padding: 1rem;
   @media (min-width: $bp--medium) {
-    padding-top: 2rem;
+    padding-top: 1rem;
     padding-bottom: 2.2rem;
   }
 }
@@ -87,7 +99,8 @@
 
 .hero-main {
   display: block;
-  padding: 1.5rem 1rem 0.5rem 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .hero-more {
@@ -101,20 +114,19 @@
 
 @media (min-width: $bp--medium) {
   .hero {
-    // Flex layout breaks sliders (!)
+    // Flex layout can break sliders (!)
     display: flex;
     align-items: stretch;
+  }
+  
+  .hero-main {
+    width: 70%;
   }
   
   .hero-sidebar {
     width: 30%;
     margin-left: 0;
     margin-right: 0;
-  }
-
-  .hero-main {
-    width: 70%;
-    padding: 3rem 1rem;
   }
 }
 
@@ -162,10 +174,16 @@
   display: flex;
   align-items: center;
   min-height: 50vh;
+  height: 100%;
+}
+
+.hero-animation {
+  height: 100%; 
 }
 
 .hero-animation-text {
   display: block;
+  text-align: center;
 
   // Optically align in the centre
   transform: translateY(-5%);

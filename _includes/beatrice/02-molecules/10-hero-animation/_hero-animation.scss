@@ -6,7 +6,7 @@
   animation-play-state: paused;  
 }
 
-.hero-animation-text {
+.hero-animation-text > span {
   animation: breath 1.5s alternate ease-in-out;
   animation-iteration-count: infinite;
 
@@ -14,6 +14,12 @@
   // font-weight: var(--text-vf-wght);
   max-width: none;
   text-align: center;
+}
+
+.hero-animation__controls,
+.play-pause {
+  display: none;
+  visibility: hidden;
 }
 
 .hero-animation {
