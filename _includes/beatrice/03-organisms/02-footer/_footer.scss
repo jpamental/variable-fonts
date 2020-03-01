@@ -35,3 +35,18 @@
     max-width: 250px;
   }
 }
+
+/* The badge has a fairly specific design that switches between
+   dark and light depending on the screen size. We aren’t using it
+   that way—these overrides change that. */
+.GoogleFontsBadge-inner {
+  background: transparent !important;
+  @media (max-width: $bp--medium) {
+    a {
+      padding-left: 0 !important;
+    }    
+  }
+  svg {
+    fill: var(--color-text) !important;
+  }
+}
