@@ -256,11 +256,7 @@ permalink: /about-variable-fonts/
   <h2>Optical Size</h2>
   <div class="content-section--grid">
     <div class="content-section--main">
-      <p>The practice of optical sizing evolved in the sixteenth century, back when punchcutters were carving type out of metal by hand. It entailed cutting physically smaller type with slightly thicker strokes and less contrast to ensure it would print well and be legible at smaller sizes. Other aspects could be fine-tuned as well—apertures could become wider, terminals more angled, bowls enlarged. [needs an illustration here] Conversely, larger point sizes would be cut with greater finesse, allowing for heightened contrast and intricate details. This allowed a single typeface design to work optimally at a range of physical sizes. </p>
-      <figure class="large">
-        <img src="{{ site.baseurl }}/assets/img/optical_sizing_illustrated.jpg" alt="Illustration of optical sizing of text" />
-        <figcaption>Notice the difference in stroke contrast (thick and thin) between the letters in the heading and text below</figcaption>
-      </figure>
+      <p>The practice of optical sizing evolved in the sixteenth century, back when punchcutters were carving type out of metal by hand. It entailed cutting physically smaller type with slightly thicker strokes and less contrast to ensure it would print well and be legible at smaller sizes. Other aspects could be fine-tuned as well—apertures could become wider, terminals more angled, bowls enlarged. Conversely, larger point sizes would be cut with greater finesse, allowing for heightened contrast and intricate details. This allowed a single typeface design to work optimally at a range of physical sizes. </p>
       <p>The practice of optical sizing was lost, however, with the shift to phototypesetting and then digital type. Both of these newer practices involved taking a single outline and scaling it up or down. The fine details that appeared so graceful at larger sizes grew muddy or even hampered legibility when type was scaled down; sturdier type that worked well in running text at smaller sizes became spindly and frail (especially on early lower-resolution screens) when scaled up. Regaining optical sizing in the form of a variable axis restores tremendous range to individual designs.</p>
       <p>The concept is that the numeric value for this axis should match the rendered font size, and a new attribute was introduced to go along with it: <code>font-optical-sizing</code>. The default is <code>auto</code>, and this is supported behavior in all shipping browsers. You can force it to <code>off</code>, or you can set an explicit value via <code>font-variation-settings</code>.</p>
     
@@ -296,6 +292,10 @@ permalink: /about-variable-fonts/
     <div class="content-section--main">
       <h3 class="manicule">Why this matters</h3>
       <p>A good optical-size axis makes type more legible at smaller sizes. Tailoring it to the size at which it’s used makes a remarkable difference. On the other end of the spectrum, increased stroke contrast (and anything else the type designer decides to vary) means a single font can feel completely different when used smaller for body copy and larger for headings. The variable version of Roslindale (from David Jonathan Ross’ <a href="https://fontofthemonth.club">Font of the Month Club</a>) <a href="https://web.archive.org/web/20191225211020/https://rwt.io/colophon">in use on RWT.io</a> (December 2019) showcases what a big impact this can have. The site uses a single font for both headings and body copy, yet they feel completely different in width, weight, and stroke contrast.</p>
+      <figure class="large">
+        <img src="{{ site.baseurl }}/assets/img/optical_sizing_illustrated.jpg" alt="Illustration of optical sizing of text" />
+        <figcaption>Notice the difference in stroke contrast (thick and thin) between the letters in the heading and text below</figcaption>
+      </figure>
     </div>
   </div>
 </section>
