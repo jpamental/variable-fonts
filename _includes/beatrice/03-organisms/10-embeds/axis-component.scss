@@ -112,6 +112,7 @@ body {
   .md-slider-group {
     border-top: 1px solid;
     background-color: $color-slider-group-background;
+    background-color: var(--color-slider-group-background);
     padding: 1rem;
     width: 100%;
     & + .md-slider-group {

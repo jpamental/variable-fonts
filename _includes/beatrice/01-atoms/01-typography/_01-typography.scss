@@ -43,6 +43,8 @@
   --header-background-gray-light: #{$header-background-gray-light};
   --header-background-gray-lighter: #{$header-background-gray-lighter};
   --header-background-blue-lighter: #{$header-background-blue-lighter};
+  --color-slider-group-background: #{$color-slider-group-background};
+
   @media (prefers-color-scheme:dark) {
     --color-background: #{$color-gray-900};
     --color-text: #ffffff;
@@ -69,6 +71,7 @@
     --header-background-gray-light: #{rgba($header-background-gray-light,.15)};
     --header-background-gray-lighter: #{rgba($header-background-gray-lighter,.15)};
     --header-background-blue-lighter: #{rgba($color-blue-900,.15)};
+    --color-slider-group-background: #{$color-gray-800};
       .aside {
       --color-text-highlight: #{$color-gray-700};
     }
