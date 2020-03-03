@@ -199,23 +199,23 @@
 
 
 [data-wght-active="true"]  {
-  --color-callout-highlight: $color-callout-wght;
+  --color-callout-highlight: #{$color-callout-wght};
 }
 
 [data-wdth-active="true"]  {
-  --color-callout-highlight: $color-callout-wdth;
+  --color-callout-highlight: #{$color-callout-wdth};
 }
 [data-ital-active="true"]  {
-  --color-callout-highlight: $color-callout-ital;
+  --color-callout-highlight: #{$color-callout-ital};
 }
 [data-slnt-active="true"]  {
-  --color-callout-highlight: $color-callout-slnt;
+  --color-callout-highlight: #{$color-callout-slnt};
 }
 [data-opsz-active="true"]  {
-  --color-callout-highlight: $color-callout-opsz;
+  --color-callout-highlight: #{$color-callout-opsz};
 }
 [data-casl-active="true"]  {
-  --color-callout-highlight: $color-callout-casl;
+  --color-callout-highlight: #{$color-callout-casl};
 }
 
 
