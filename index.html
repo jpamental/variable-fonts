@@ -71,7 +71,7 @@ heroAxes:
 <div class="content-section">
   <div class="card-grid card-grid--singlerow">
     {% for card in page.cards %}
-      {% assign primary_link_url = site.baseurl | append: card.link %}
+      {% assign primary_link_url = site.baseurl | append: card.url %}
       <div class="card-grid-cell">
         {% include beatrice/02-molecules/03-card/card.html 
                    elevate=false
