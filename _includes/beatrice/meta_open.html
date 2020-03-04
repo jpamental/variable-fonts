@@ -20,6 +20,16 @@
         site.description
       }}{% endif %}"
     />
+    {% if page.share-image %}
+      <meta 
+        name="twitter:image" 
+        content="{{ site.url }}{{ site.basepath }}/assets/img/{{ page.share-image }}"
+      />
+      <meta 
+        name="og:image" 
+        content="{{ site.url }}{{ site.basepath }}/assets/img/{{ page.share-image }}"
+      />
+    {% endif %}"
 
     <!-- Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/apple-touch-icon.png">
