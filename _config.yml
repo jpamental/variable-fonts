@@ -26,6 +26,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://variablefonts.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jpamental
 github_username:  jpamental
+github_repo:  variable-fonts
 
 # Build settings
 plugins:
