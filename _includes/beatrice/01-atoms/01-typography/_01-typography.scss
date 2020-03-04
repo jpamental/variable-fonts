@@ -321,6 +321,7 @@ td {
   ol + &,
   aside + &,
   .aside + &,
+  figure + &,
   pre + & {
     margin-top: var(--body-text-spacer);
   }

@@ -10,10 +10,7 @@ permalink: /implementing-variable-fonts/
 <ul>
   <li><a href="#gf-api">Use the Google Fonts API</a> (as of v2)</li>
   <li><a href="#self-hosting">Host them yourself with @font-face</a> (if you have the font files—and license, if required)</li>
-  {% comment %}
-  <!-- https://github.com/googlefonts/variable-fonts/issues/119 -->
-  <li><a href="#gf-ui">Via the new Google Fonts user interface</a></li>
-  {% endcomment %}
+  <li><a href="#gf-ui">Via the new Google Fonts UI</a></li>
 </ul>
 <p>On this page, you’ll find details about:</p>
 <ul>
@@ -165,19 +162,61 @@ permalink: /implementing-variable-fonts/
   <p>Once you have the <code>@font-face</code> rules declared, you can go about specifying the <code>font-family</code> and attributes just as you would if using the API or any other method of loading the fonts.</p>
 
 </section>
-{% comment %}
-<!-- https://github.com/googlefonts/variable-fonts/issues/119 -->
 
 <section class="content-section" id="gf-ui">
   <hr />
 
   <h2>Variable fonts in the Google Fonts UI</h2>
+  <h3>Finding variable fonts</h3>
+<div class="content-section--grid">
+  <div class="content-section--main">
 
-  <p>You can now find variable fonts right in the Google Fonts interface itself.</p> 
-  <p>[need more content here]</p>
+  <p>You can now find variable fonts right in the Google Fonts interface itself. A checkbox in the search interface lets you “show only variable fonts” in the results. Ticking that box is the quickest way to browse what’s available to customize.</p>
+  <figure class="large">
+    <img src="{{ site.baseurl }}/assets/img/gf_ui_1.png" alt="Google Fonts UI with checkbox to show only variable fonts" />
+  </figure>
+  <p>When you select one of the families with the “Variable” label in the top right corner, you’ll find the variable version at the bottom of the styles list.</p>
+  <figure class="large">
+    <img src="{{ site.baseurl }}/assets/img/gf_ui_2.png" alt="Google Fonts specimen page showing the variable font with weight slider" />
+  </figure>
+  <h3>Individual Styles</h3>
+  <p>To create a custom style, just move the slider to the desired value and follow the same steps as with any other font.</p> 
+  <figure class="large">
+    <img src="{{ site.baseurl }}/assets/img/gf_ui_3.png" alt="Example embedding code" />
+  </figure>
+  <p>This process gives you an embed code for a single instance (a font-weight of 674, for example)—or multiple static instances if you select more than one. Enabling the whole range requires only a small change to the code.</p>
+
+  <p>The embed code for Roboto Slab with a static weight would look like this:</p>
+  
+  <p><code>&lt;link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@674&display=swap" rel="stylesheet"&gt;</code></p>
+  <p>Some families have a range of weights that go beyond the traditional range of 9 separate fonts from 100 to 900. For example, here’s the minimum weight of Hepta Slab, a font-weight value of 1! This is new. As a designer, you’ll need to handle it with care, because while it looks fantastic at large sizes on high-DPI screens, it can become extremely faint or even disappear completely on low-resolution devices at smaller font sizes. </p>
+  <figure class="large">
+    <img src="{{ site.baseurl }}/assets/img/hepta_comparison.jpg" alt="Example of Hepta Slab with a weight of 1 at large and small sizes" />
+  </figure>
+  <p><code>
+    &lt;link href="https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@1&display=swap" rel="stylesheet"&gt;
+    &lt;span style="font-family: 'Hepta Slab', serif; font-weight: 1"&gt;
+  </code></p>
+  <h3>Fluid Ranges of Styles</h3>
+  <p>If you look at the variable style slider detail, you’ll see that you can move the slider to each end of the range to discover the minimum and maximum values of the family (in this case, 100 and 900). Replacing the single value “674” with the “..” range syntax for that family (“100..900”) gives you instant access to the entire range:</p>
+  <p><code>&lt;link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet"&gt;</code></p>
+  <p>Of course, not all designs will take advantage of the complete range of styles, but the real value of variable fonts is the ability to expand the range of your design while reducing the amount of font data transferred. In this case, you would get the entire range of 100-900 in weight for the equivalent of 2 or 3 individual styles—a single 30kb download!
+  </p>
+  <h3>Additional Axes</h3>
+  <p>There are 3 key benefits to variable font technology: to compress, to express, and to finesse. They tend to be realized in that order. </p>
+    
+  <p>The Google Fonts API has been delivering the compression benefit to end users for a few families (like Oswald and Comfortaa) since early 2019; if a page uses 2 or more styles, and a user has a browser that fully supports variable fonts, then a single variable font file URL is served for all of the weights, while continuing to serve several files for each style to older browsers. </p>
+    
+  <p>This all happened totally behind the scenes, without any UI changes. Now that Google Fonts has a UI for picking custom weights, you can easily use exactly the weights you want, and as many as you want, while still reaping the compression benefits. </p>
+    
+  <p>But there’s more to variable fonts than just compression. Other axes either offer more expressive options for display typography, or more ways to fine-tune text typography. These will first become available behind the scenes in the API, and will be described in the specimen pages’ “About this font” descriptions and the <a href="https://developers.google.com/fonts/docs/css2">API docs</a>. The information available on this site, along with the <a href="{{ site.baseurl }}/vriable-font-resources/">additional resources</a>, give you entirely new possibilities to expand your design vocabulary.</p>
+    
+  <p>When thinking about the finesse benefits, have a look at how this site was designed and developed as explained in the <a href="{{ site.baseurl }}/about-this-site/">About this site</a> section. This highlights some of the ways variable fonts can be used to improve accessibility and the reading experience for more users, in more contexts, on more devices. Each aspect may be small on its own, but taken together, all of these factors dramatically improve the experience as a whole.
+    </p>
+  </div>
+</div>
 
 </section>
-{% endcomment %}
 <section class="content-section" id="prog-enhance">
   <hr />
   <h2>Progressive enhancement and legacy browser support</h2>
