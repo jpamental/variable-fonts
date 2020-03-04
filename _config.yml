@@ -23,7 +23,7 @@ email: jason@rwt.io
 description: >- # this means to ignore newlines until "baseurl:"
   Welcome to a paradigm shift in type! Learn how to use variable fonts in your projects for improved UI design, long-form reading, and accessibility.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://variablefonts.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://variablefonts.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jpamental
 github_username:  jpamental
 

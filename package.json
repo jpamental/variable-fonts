@@ -1,8 +1,8 @@
 {
-  "name": "@googlefonts/variable-fonts",
+  "name": "@jpamental/variable-fonts",
   "private": true,
   "version": "1.0.0",
-  "homepage": "https://googlefonts.github.io/variable-fonts",
+  "homepage": "https://variablefonts.io",
   "description": "Variable Fonts educational site",
   "main": "index.html",
   "scripts": {
@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/googlefonts/variable-fonts.git"
+    "url": "git+https://github.com/jpamental/variable-fonts.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/googlefonts/variable-fonts/issues"
+    "url": "https://github.com/jpamental/variable-fonts/issues"
   },
   "devDependencies": {
     "gulp": "^4.0.2",

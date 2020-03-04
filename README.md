@@ -28,7 +28,7 @@ npm install
 # Start the project
 npm start
 ```
-Then visit <http://localhost:4000/variable-fonts>
+Then visit <http://localhost:4000>
 
 To manually compile the site down to static HTML, CSS, and JavaScript, run:
 
