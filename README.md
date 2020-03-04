@@ -1,6 +1,6 @@
 # A Variable Fonts Primer for Designers & Developers
 
-**[googlefonts.github.io/variable-fonts](https://googlefonts.github.io/variable-fonts)**
+**[variablefonts.io](https://variablefonts.io)**
 
 This is a project to create a thorough introduction to the latest font technology, variable fonts:
 their benefits, use cases, and techniques to adopt them in your own projects.
@@ -10,7 +10,7 @@ It is not an official Google product, and Google provides no support for it.
 
 ## Contributing Ideas
 
-If you have any comments, questions or suggestions for this project, please post them as issues on the Github issue tracker, [github.com/googlefonts/variable-fonts/issues](https://github.com/googlefonts/variable-fonts/issues)
+If you have any comments, questions or suggestions for this project, please post them as issues on the Github issue tracker, [github.com/jpamental/variable-fonts/issues](https://github.com/jpamental/variable-fonts/issues)
 
 ## Web Development
 
@@ -40,4 +40,5 @@ Assets are currently built to the `assets` folder, which are kept as part of the
 
 ## Deployment
 
-The link to view the deployed site is [googlefonts.github.io/variable-fonts](https://googlefonts.github.io/variable-fonts).
+The deployed site is [variablefonts.io](https://variablefonts.io) and hosted on [Github Pages](https://pages.github.io), so commits to the `gh-pages` branch are automatically made live.
+
