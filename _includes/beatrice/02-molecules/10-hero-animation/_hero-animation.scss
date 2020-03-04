@@ -8,7 +8,7 @@
 
 .hero-animation-text > span {
   animation: breath 1.5s alternate ease-in-out;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 500;
 
   font-family: "Recursive", Helvetica, sans-serif;
   // font-weight: var(--text-vf-wght);

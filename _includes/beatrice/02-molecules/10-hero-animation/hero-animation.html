@@ -20,14 +20,14 @@
   {% endfor %}
   
   /* debug: color: green; */
-  font-variation-settings: {{ fvsMinValues }};
+  font-variation-settings: {{ fvsMinValues }}
 
 }
 
 @keyframes breath {
   0% {
     /* debug: color: blue; */
-    font-variation-settings: {{ fvsMinValues }};
+    font-variation-settings: {{ fvsMinValues }}
   }
 
   100% {
@@ -39,6 +39,7 @@
         {% if forloop.last %};{% else %},{% endif %}
       {% endfor %}
   }
+}
 {% endcapture %}
 
 <div class="js-hero hero hero--paused"

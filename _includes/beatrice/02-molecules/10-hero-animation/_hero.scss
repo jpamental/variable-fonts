@@ -197,28 +197,209 @@
     transition: background-color 0.3s ease-in-out;  
 }
 
+[data-wght-active="true"],
+[data-casl-active="true"],
+[data-ital-active="true"],
+[data-mono-active="true"],
+[data-slnt-active="true"] {
+  .hero-animation span {
+    --text-vf-wght-min: 400;
+    --text-vf-wght-max: 400;
+
+    --text-vf-CASL-min: 0;
+    --text-vf-CASL-max: 0;
+
+    --text-vf-ital-min: 0;
+    --text-vf-ital-max: 0;
+
+    --text-vf-MONO-min: 1;
+    --text-vf-MONO-max: 1;
+
+    --text-vf-slnt-min: 0;
+    --text-vf-slnt-max: 0;
+    font-variation-settings: 
+      "wght" var(--text-vf-wght-min),
+      "CASL" var(--text-vf-CASL-min),
+      "ital" var(--text-vf-ital-min),
+      "MONO" var(--text-vf-MONO-min),
+      "slnt" var(--text-vf-slnt-min);
+  }
+}
 
 [data-wght-active="true"]  {
   --color-callout-highlight: #{$color-callout-wght};
+  .hero-animation-text span {
+    --text-vf-wght-min: 100;
+    --text-vf-wght-max: 1000;
+    animation-delay: 0s;
+    animation: breath-wght 1.5s alternate ease-in-out;
+    animation-iteration-count: 500;
+  }
 }
 
 [data-wdth-active="true"]  {
   --color-callout-highlight: #{$color-callout-wdth};
+  .hero-animation-text span {
+    --text-vf-wdth-min: 75;
+    --text-vf-wdth-max: 100;
+    animation-delay: 0s;
+    animation: breath-wdth 1.5s alternate ease-in-out;
+    animation-iteration-count: 500;
+  }
 }
 [data-ital-active="true"]  {
   --color-callout-highlight: #{$color-callout-ital};
+  .hero-animation-text span {
+    --text-vf-ital-min: 0;
+    --text-vf-ital-max: 1;
+    animation-delay: 0s;
+    animation: breath-ital 1.5s alternate ease-in-out;
+    animation-iteration-count: 500;
+  }
 }
 [data-slnt-active="true"]  {
   --color-callout-highlight: #{$color-callout-slnt};
+  .hero-animation-text span {
+    --text-vf-slnt-min: -15;
+    --text-vf-slnt-max: 0;
+    animation-delay: 0s;
+    animation: breath-slnt 1.5s alternate ease-in-out;
+    animation-iteration-count: 500;
+  }
 }
 [data-opsz-active="true"]  {
   --color-callout-highlight: #{$color-callout-opsz};
+  .hero-animation-text span {
+    --text-vf-opsz-min: 14;
+    --text-vf-opsz-max: 64;
+    animation-delay: 0s;
+    animation: breath-opsz 1.5s alternate ease-in-out;
+    animation-iteration-count: 500;
+  }
 }
 [data-casl-active="true"]  {
   --color-callout-highlight: #{$color-callout-casl};
+  .hero-animation-text span {
+    --text-vf-CASL-min: 0;
+    --text-vf-CASL-max: 1;
+    animation-delay: 0s;
+    animation: breath-casl 1.5s alternate ease-in-out;
+    animation-iteration-count: 500;
+  }
+}
+[data-mono-active="true"]  {
+
+  .hero-animation-text span {
+    --text-vf-MONO-min: 0;
+    --text-vf-MONO-max: 1;
+    animation-delay: 0s;
+    animation: breath-mono 1.5s alternate ease-in-out;
+    animation-iteration-count: 500;
+  }
 }
 
 
 // [data-wght-active="true"] [data-axis="wght"] {
 //   outline: 2px solid red;
 // }
+
+
+
+    
+
+@keyframes breath-wght {
+  0% {
+    font-variation-settings: 
+      "wght" var(--text-vf-wght-min),
+      "CASL" var(--text-vf-CASL-min),
+      "ital" var(--text-vf-ital-min),
+      "MONO" var(--text-vf-MONO-min),
+      "slnt" var(--text-vf-slnt-min);
+  }
+
+  100% {
+    font-variation-settings:
+      "wght" var(--text-vf-wght-max),
+      "CASL" var(--text-vf-CASL-max),
+      "ital" var(--text-vf-ital-max),
+      "MONO" var(--text-vf-MONO-max),
+      "slnt" var(--text-vf-slnt-max);
+  }
+}
+
+@keyframes breath-casl {
+  0% {
+    font-variation-settings: 
+      "wght" var(--text-vf-wght-min),
+      "CASL" var(--text-vf-CASL-min),
+      "ital" var(--text-vf-ital-min),
+      "MONO" var(--text-vf-MONO-min),
+      "slnt" var(--text-vf-slnt-min);
+  }
+
+  100% {
+    font-variation-settings:
+      "wght" var(--text-vf-wght-max),
+      "CASL" var(--text-vf-CASL-max),
+      "ital" var(--text-vf-ital-max),
+      "MONO" var(--text-vf-MONO-max),
+      "slnt" var(--text-vf-slnt-max);
+  }
+}
+@keyframes breath-ital {
+  0% {
+    font-variation-settings: 
+      "wght" var(--text-vf-wght-min),
+      "CASL" var(--text-vf-CASL-min),
+      "ital" var(--text-vf-ital-min),
+      "MONO" var(--text-vf-MONO-min),
+      "slnt" var(--text-vf-slnt-min);
+  }
+
+  100% {
+    font-variation-settings:
+      "wght" var(--text-vf-wght-max),
+      "CASL" var(--text-vf-CASL-max),
+      "ital" var(--text-vf-ital-max),
+      "MONO" var(--text-vf-MONO-max),
+      "slnt" var(--text-vf-slnt-max);
+  }
+}
+@keyframes breath-mono {
+  0% {
+    font-variation-settings: 
+      "wght" var(--text-vf-wght-min),
+      "CASL" var(--text-vf-CASL-min),
+      "ital" var(--text-vf-ital-min),
+      "MONO" var(--text-vf-MONO-min),
+      "slnt" var(--text-vf-slnt-min);
+  }
+
+  100% {
+    font-variation-settings:
+      "wght" var(--text-vf-wght-max),
+      "CASL" var(--text-vf-CASL-max),
+      "ital" var(--text-vf-ital-max),
+      "MONO" var(--text-vf-MONO-max),
+      "slnt" var(--text-vf-slnt-max);
+  }
+}
+@keyframes breath-slnt {
+  0% {
+    font-variation-settings: 
+      "wght" var(--text-vf-wght-min),
+      "CASL" var(--text-vf-CASL-min),
+      "ital" var(--text-vf-ital-min),
+      "MONO" var(--text-vf-MONO-min),
+      "slnt" var(--text-vf-slnt-min);
+  }
+
+  100% {
+    font-variation-settings:
+      "wght" var(--text-vf-wght-max),
+      "CASL" var(--text-vf-CASL-max),
+      "ital" var(--text-vf-ital-max),
+      "MONO" var(--text-vf-MONO-max),
+      "slnt" var(--text-vf-slnt-max);
+  }
+}
