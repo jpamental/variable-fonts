@@ -2,10 +2,11 @@
 
 **[googlefonts.github.io/variable-fonts](https://googlefonts.github.io/variable-fonts)**
 
-This is a project to create a thorough introduction to the latest font technology, Variable Fonts:
+This is a project to create a thorough introduction to the latest font technology, variable fonts:
 their benefits, use cases, and techniques to adopt them in your own projects.
 
-This project is not an official Google product, and Google provides no support for it.
+This project was initiated with generous funding from Google, as part of the Google Fonts update in 2020 to support variable fonts. 
+It is not an official Google product, and Google provides no support for it.
 
 ## Contributing Ideas
 
