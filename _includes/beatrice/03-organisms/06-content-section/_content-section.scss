@@ -83,3 +83,7 @@
 .padded-bottom {
   padding-bottom: calc( var(--body-text-spacer) * 1 );
 }
+
+.scroll-padded {
+  padding-top: calc( var(--body-text-spacer) * 1 );
+}
