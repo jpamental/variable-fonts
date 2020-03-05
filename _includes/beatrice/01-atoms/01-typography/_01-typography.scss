@@ -335,6 +335,7 @@ td {
 
 ol,
 ul {
+  @include content-width;
   margin: var(--body-text-spacer) 0 0 0;
   ul &,
   ol & {
