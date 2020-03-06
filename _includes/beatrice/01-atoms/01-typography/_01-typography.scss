@@ -60,7 +60,7 @@
     --color-text-menu-link: #{$color-gray-200};
     --color-text-link: #{$color-blue-100};
     --color-text-link-visited: #{$color-blue-100};
-    --color-text-link-hover: #{lighten($color-text-link-hover, 10%)};
+    --color-text-link-hover: #{lighten($color-text-link-hover, 60%)};
     --color-text-link-active: #{$color-text-link-active};
     --color-text-link-active-trail: #ffffff;
     --color-text-link-focus: #{$color-text-link-focus};
@@ -144,7 +144,7 @@
   --color-text-menu-link: #{$color-gray-200};
   --color-text-link: #{$color-blue-100};
   --color-text-link-visited: #{$color-blue-200};
-  --color-text-link-hover: #{lighten($color-text-link-hover, 10%)};
+  --color-text-link-hover: #{lighten($color-text-link-hover, 60%)};
   --color-text-link-active: #{$color-text-link-active};
   --color-text-link-active-trail: #ffffff;
   --color-text-link-focus: #{$color-text-link-focus};
