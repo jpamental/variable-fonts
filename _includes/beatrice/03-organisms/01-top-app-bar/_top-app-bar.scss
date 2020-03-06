@@ -10,11 +10,9 @@
   --mdc-theme-on-primary: var(--color-text);
   transition: background-color 0.3s ease-in-out;
   background-color: rgba(255, 255, 255, 1.0);
+  background-color: var(--color-background);
   border-bottom: 1px solid rgba(0, 0, 0, 0.14);
   color: rgba(0, 0, 0, 0.54);
-  @media (prefers-reduced-motion: reduce) {
-    background-color: var(--color-background);
-  }
   @media (prefers-color-scheme:dark) {
     border-color: rgba(255, 255, 255, 0.14);
   }
@@ -56,15 +54,6 @@
       text-decoration: underline;
     }
 
-  }
-}
-
-.mdc-top-app-bar--blur,
-.mdc-top-app-bar.mdc-top-app-bar--blur {
-  background-color: var(--color-background);
-  @supports (backdrop-filter: blur(20px)) {
-    backdrop-filter: blur(20px);
-    background-color: rgba(0, 0, 0, 0);
   }
 }
 
