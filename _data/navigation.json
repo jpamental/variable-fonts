@@ -2,6 +2,6 @@
   { "path": "/", "label": "Home" },
   { "path": "/about-variable-fonts/", "label": "Designing with variable fonts" },
   { "path": "/implementing-variable-fonts/", "label": "Implementation" },
-  { "path": "/variable-font-resources/", "label": "Resources" },
-  { "path": "/about-this-site/", "label": "About this site" }
+  { "path": "/about-this-site/", "label": "About this site" },
+    { "path": "/variable-font-resources/", "label": "Resources" }
 ]
