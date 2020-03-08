@@ -64,7 +64,7 @@ defaults:
   -
     scope:
       path:            "assets/**/*.pdf"
-      path:            "assets/*"
+      path:            "assets/**/*"
       path:            "third_party/*"
     values:
       sitemap:         false
