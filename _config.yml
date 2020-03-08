@@ -31,6 +31,8 @@ github_repo:  variable-fonts
 # Build settings
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-sitemap
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -40,6 +42,7 @@ plugins:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
+
 exclude:
   - .sass-cache/
   - .jekyll-cache/
@@ -53,6 +56,6 @@ exclude:
   - vendor/ruby/
   - package.json
   - gulpfile.js
-
+  
 collections:
   - resources
