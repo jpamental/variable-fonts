@@ -64,7 +64,6 @@ defaults:
   -
     scope:
       path:            "assets/**/*.pdf"
-      path:            "assets/js/google-code-prettify/*"
-      path:            "third_party/*"
+      path:            "third_party/**/*"
     values:
       sitemap:         false
