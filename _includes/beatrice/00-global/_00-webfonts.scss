@@ -87,7 +87,7 @@
 
 /* Variable fonts */
 /* Load Roboto Slab from GF API */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
 /* Load Roboto Extremo from GF API */
 //@import url('https://fonts.sandbox.google.com/css2?family=Roboto+Extremo:opsz,wdth,wght@8..144,75..125,100..900');
@@ -110,4 +110,29 @@
   src: url('../fonts/RobotoExtremo-VF-slnt-alpha.woff2') format('woff2 supports variations'), url('../fonts/RobotoExtremo-VF-slnt-alpha.woff2') format('woff2-variations');
   /* opsz: 8-144, 12 default */
   /* GRAD: -1 - 1, 0 default */
+  font-display: swap;
+}
+
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Material-Icons-v50.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -moz-font-feature-settings: 'liga';
+  -moz-osx-font-smoothing: grayscale;
 }
