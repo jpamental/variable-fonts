@@ -13,7 +13,7 @@ redirect_from:
   <p>The literature on variable fonts has exploded since they were first announced in 2016. The best way to grok variable fonts is to jump in and start playing with them. Once you feel comfortable, you might want to branch out and explore a little. Here’s a list of selected resources to help you get started. This collection will evolve over time.</p>
 </header>
 <section class="content-section">
-{% assign resourcesGrouped = site.resources | group_by: 'category' | sort: 'name' | reverse %}  
+{% assign resourcesGrouped = site.resources | group_by: 'category' | sort: 'name' %}  
 
 {% for resources in resourcesGrouped %}
   <h2>{{ resources.name }}</h2>
