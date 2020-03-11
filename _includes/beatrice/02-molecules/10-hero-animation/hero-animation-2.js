@@ -8,13 +8,6 @@ const labels = {
 
 let initHero = function(heroEls) {
   for (let i = 0; i < heroEls.length; i++) {
-    let heroEl = heroEls[i];
-    let heroElButtons = heroEl.children[0].children[1].children;
-    let heroMain = heroEl.children[1];
-    let heroAnimationEl = heroMain.children[0];
-    let heroAnimationText = heroAnimationEl.children[1].children[0];
-    let heroElControlLabels = heroMain.children[1].children;
-    let heroPlayPauseButton = heroAnimationEl.children[1];
     let clicked = false
     
     let createLetterDelay  = function (el, amount) {
@@ -57,25 +50,6 @@ let initHero = function(heroEls) {
       }
     }
 
-    let playStatePlaying = function () {
-      heroEl.classList.remove("hero--paused");
-      heroEl.classList.add("hero--playing");
-    }
-
-    let playStatePause = function () {
-      heroEl.classList.remove("hero--playing");
-      heroEl.classList.add("hero--paused");
-      // removeCustomProperties()
-    }
-
-    let playStateToggle = function() {
-      if (heroEl.classList.contains("hero--paused")) {
-        playStatePlaying()
-      } else {
-        playStatePause()
-      }
-    };
-
     let getActiveAttrName = function(axisName) {
       return `data-${axisName}-active`;
     };
@@ -95,7 +69,6 @@ let initHero = function(heroEls) {
       e.preventDefault();
       let axisName = this.axis;
       let button = e.target;
-      let isActive = true;
 
       setActive(axisName, true);
 
@@ -107,7 +80,6 @@ let initHero = function(heroEls) {
 
         button.classList.add("hero-button--active");
 
-        playStatePlaying()
 
         if (!clicked) {
           removeLetterDelay(heroAnimationText, 0)
@@ -134,29 +106,15 @@ let initHero = function(heroEls) {
         }
       }
     };
-    
-    let removeCustomProperties = function () {
-      for (let k = 0; k < heroElButtons.length; k++) {
-        let button = heroElButtons[k].children[0];
-        let axisName = button.getAttribute('data-axis')
-        let propertyPrefix = `--text-vf-${axisName}`;
-        heroAnimationEl.style.removeProperty(`${propertyPrefix}-min`);
-        heroAnimationEl.style.removeProperty(`${propertyPrefix}-max`);
-      }
-    }
 
     let initHeroAnimation = function () {
-      playStateToggle()
       createLetterDelay(heroAnimationText)
-      heroPlayPauseButton.addEventListener("click", playStateToggle);
 
       for (let j = 0; j < heroElControlLabels.length; j++) {
         let button = heroElButtons[j].children[0];
         let buttonLabel = button.getAttribute("data-label");
         let axisName = button.getAttribute("data-axis");
         let isActiveInitially = getActive(axisName);
-
-
 
         button.innerHTML = `${buttonLabel} ${isActiveInitially ? labels.onInitial : labels.offInitial}`;
 
