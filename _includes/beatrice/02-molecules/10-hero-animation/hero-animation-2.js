@@ -1,4 +1,3 @@
-import { MDCSlider } from "@material/slider";
 
 const labels = {
   on: "Playing",
@@ -25,7 +24,6 @@ let initHero = function(heroEls) {
       amount = amount || 0.25
       
       let str = el.innerHTML;
-      let words = str.split(' ');
       let chars = str.split('');
       el.setAttribute('aria-label', str);
       el.innerHTML = '';
@@ -78,14 +76,6 @@ let initHero = function(heroEls) {
       }
     };
 
-    let handleSliderInput = function(e) {
-      let axis = this.axis;
-      let propertyPrefix = `--text-vf-${axis}`;
-      playStatePause()
-      heroAnimationEl.style.setProperty(`${propertyPrefix}-min`, e.detail.value);
-      heroAnimationEl.style.setProperty(`${propertyPrefix}-max`, e.detail.value);
-    };
-
     let getActiveAttrName = function(axisName) {
       return `data-${axisName}-active`;
     };
@@ -104,15 +94,10 @@ let initHero = function(heroEls) {
     let handleClick = function(e) {
       e.preventDefault();
       let axisName = this.axis;
-      let slider = this.slider;
       let button = e.target;
       let isActive = true;
 
       setActive(axisName, true);
-
-      let propertyPrefix = `--text-vf-${axisName}`;
-      heroAnimationEl.style.setProperty(`${propertyPrefix}-min`, slider.min);
-      heroAnimationEl.style.setProperty(`${propertyPrefix}-max`, slider.max);
 
       resetAxes(axisName);
 
@@ -134,7 +119,6 @@ let initHero = function(heroEls) {
     let resetAxes = function(axisToSkip) {
       for (let k = 0; k < heroElButtons.length; k++) {
         let button = heroElButtons[k].children[0];
-        let slider = heroElControlLabels[k].children[1];
         let axisName = button.getAttribute("data-axis");
 
         if (typeof axisToSkip === "undefined" || axisToSkip !== axisName) {
@@ -142,12 +126,6 @@ let initHero = function(heroEls) {
 
           // Update label
           button.innerHTML = `${label} ${labels.off}`;
-
-          // Set both axes to the min value
-          let propertyPrefix = `--text-vf-${axisName}`;
-          let valueNow = parseFloat(slider.getAttribute("aria-valuenow"), 10);
-          heroAnimationEl.style.setProperty(`${propertyPrefix}-min`, valueNow);
-          heroAnimationEl.style.setProperty(`${propertyPrefix}-max`, valueNow);
 
           button.classList.remove("hero-button--active");
 
@@ -173,20 +151,12 @@ let initHero = function(heroEls) {
       heroPlayPauseButton.addEventListener("click", playStateToggle);
 
       for (let j = 0; j < heroElControlLabels.length; j++) {
-        let slider = heroElControlLabels[j].children[1];
         let button = heroElButtons[j].children[0];
         let buttonLabel = button.getAttribute("data-label");
         let axisName = button.getAttribute("data-axis");
         let isActiveInitially = getActive(axisName);
 
-        let mdcSlider = new MDCSlider(slider);
 
-        mdcSlider.listen(
-          "MDCSlider:input",
-          handleSliderInput.bind({
-            axis: axisName
-          })
-        );
 
         button.innerHTML = `${buttonLabel} ${isActiveInitially ? labels.onInitial : labels.offInitial}`;
 
@@ -194,7 +164,6 @@ let initHero = function(heroEls) {
           "click",
           handleClick.bind({
             axis: axisName,
-            slider: mdcSlider
           })
         );
       }

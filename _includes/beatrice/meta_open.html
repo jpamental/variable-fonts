@@ -101,32 +101,24 @@
     				sessionStorage.foutFontsLoaded = true;
   				});
         } else {
-					var fontA = new FontFaceObserver('Roboto Slab', {
+					var fontA = new FontFaceObserver('Roboto', {
 							weight: 'normal',
 							style: 'normal'
 						});
-					var fontB = new FontFaceObserver('Roboto Slab', {
-							weight: 'bold',
-							style: 'normal'
-						});
-					var fontC = new FontFaceObserver('Roboto', {
-							weight: 'normal',
-							style: 'normal'
-						});
-					var fontD = new FontFaceObserver('Roboto', {
+					var fontB = new FontFaceObserver('Roboto', {
 							weight: 'normal',
 							style: 'italic'
 						});
-          var fontE = new FontFaceObserver('Roboto', {
+          var fontC = new FontFaceObserver('Roboto', {
 							weight: 'bold',
 							style: 'normal'
 						});
-					var fontF = new FontFaceObserver('Roboto', {
+					var fontD = new FontFaceObserver('Roboto', {
 							weight: 'bold',
 							style: 'italic'
 						});
 
-					Promise.all([fontA.load(), fontB.load(), fontC.load(), fontD.load(), fontE.load(), fontF.load()]).then(function () {
+					Promise.all([fontA.load(), fontB.load(), fontC.load(), fontD.load()]).then(function () {
             document.documentElement.classList.remove("wf-inactive");
             document.documentElement.classList.add("wf-active");
           
