@@ -8,6 +8,12 @@ const labels = {
 
 let initHero = function(heroEls) {
   for (let i = 0; i < heroEls.length; i++) {
+    let heroEl = heroEls[i];
+    let heroElButtons = heroEl.children[0].children[1].children;
+    let heroMain = heroEl.children[1];
+    let heroAnimationEl = heroMain.children[0];
+    let heroAnimationText = heroAnimationEl.children[1].children[0];
+    let heroElControlLabels = heroMain.children[1].children;
     let clicked = false
     
     let createLetterDelay  = function (el, amount) {
