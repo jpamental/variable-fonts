@@ -49,7 +49,11 @@
     />
     {% endcomment %}
 
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com/" >
+    
     <!-- CSS -->
+    <link rel="preload" href="{{ site.baseurl }}/assets/fonts/RobotoExtremo-VF-slnt-alpha.woff2" as="font" type="font/woff2" />
+    <link rel="preload" href="{{ site.baseurl }}/assets/fonts/Recursive_VF_1.040-subset.woff2" as="font" type="font/woff2" />
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css" />
 
     <script src="{{ site.baseurl }}/assets/js/fontfaceobserver/fontfaceobserver.js"></script>
