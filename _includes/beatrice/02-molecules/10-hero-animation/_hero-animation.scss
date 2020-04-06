@@ -10,11 +10,12 @@
   animation: breath 1.5s alternate ease-in-out;
   animation-iteration-count: 500;
 
-  font-family: "Recursive", Helvetica, sans-serif;
+  font-family: "Recursive v47", Helvetica, sans-serif;
   // font-weight: var(--text-vf-wght);
   font-feature-settings: 'ss19' 1;
   max-width: none;
   text-align: center;
+  unicode-range: U+00A0-00BF,U+2194-2199;
 }
 
 .hero-animation__controls,

@@ -103,6 +103,13 @@
 }
 
 @font-face{
+  font-family: 'Recursive v47';
+  font-weight: 300 1000; /* default: 400 */
+  font-style: oblique 0deg 15deg;
+  src: url('../fonts/Recursive_VF_1.047--subset_range_latin_1_punc.woff2') format('woff2 supports variations'), url('../fonts/Recursive_VF_1.047--subset_range_latin_1_punc.woff2') format('woff2-variations');
+}
+
+@font-face{
   font-family: 'Roboto Extremo';
   font-weight: 100 900; /* default: 400 */
   font-style: oblique 0deg 10deg;
