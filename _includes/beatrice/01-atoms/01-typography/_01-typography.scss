@@ -313,7 +313,7 @@ td {
     }    
   }
   @media (prefers-color-scheme:dark) {
-    --p-vf-GRAD: 0.35;
+    --p-vf-GRAD: -0.35;
     letter-spacing: 0.025em;
   }
   p + &, 
