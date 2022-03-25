@@ -41,6 +41,6 @@
     "@material/top-app-bar": "^4.0.0",
     "acorn": "^7.1.1",
     "lodash.template": "^4.5.0",
-    "minimist": "^1.2.5"
+    "minimist": "^1.2.6"
   }
 }
